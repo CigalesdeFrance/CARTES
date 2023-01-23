@@ -3,13 +3,13 @@
 @import "https://ignf.github.io/geoportal-extensions/openlayers-latest/dist/GpPluginOpenLayers.css";
 
 #map {
-    position:fixed;
-    padding:0;
-    margin:0;
-    top:0;
-    left:0;
-    width: 100%;
-    height: 100%;
+	position:fixed;
+	padding:0;
+	margin:0;
+	top:0;
+	left:0;
+	width: 100%;
+	height: 100%;
 }
 
 #copy {
@@ -32,7 +32,7 @@
 }
 
 .copyright {
-    padding: 2px;
+	padding: 2px;
 	width: 20%;
 	
 }
@@ -74,7 +74,7 @@ h2 {
 	top:0%;
 	margin-left: auto;
 	margin-right: auto;
-	/* width:50%; */
+	width:50%;
 	max-height:100%;
 }
 
@@ -85,7 +85,7 @@ h2 {
 	top:0%;
 	margin-left: auto;
 	margin-right: auto;
-	/* width:50%; */
+	width:50%;
 	max-height:100%;
 }
 
