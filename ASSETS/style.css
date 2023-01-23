@@ -1,3 +1,7 @@
+@import "https://cdn.jsdelivr.net/npm/select2@latest/dist/css/select2.min.css";
+@import "https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@main/dist/en/latest/legacy/ol.css";
+@import "https://ignf.github.io/geoportal-extensions/openlayers-latest/dist/GpPluginOpenLayers.css";
+
 #map {
     position:fixed;
     padding:0;
@@ -8,9 +12,23 @@
     height: 100%;
 }
 
+#copy {
+	position: absolute;
+	padding: 2px;
+	color: #666666;
+	margin: 0;
+	text-shadow: 0 0 2px white;
+	font-size: 12px;
+	text-align: right;
+	bottom: 1em;
+	right: 1em;
+	max-width: 100%;
+}
+
 .ol-attribution ul {
 	text-align: center;
 	padding: 2px;
+	color: #666666;
 }
 
 .copyright {
@@ -29,6 +47,8 @@ h2 {
 }
 
 #details {
+	background-color: #e3e3e363;
+	border-radius: 15px;
 	position:absolute;
 	width: 50%;
 	z-index:100;    
@@ -37,14 +57,36 @@ h2 {
 	left: 25vw;
 }
 
-#observation {
+#boutons_obs, #carte_interactive {
 	margin: 5px;
 }
 
-#observation a {
+#boutons_obs a, #carte_interactive a {
 	text-decoration: none;
 	color: black;
 	font-weight: bold;
+}
+
+.ffmap {
+	display: block;
+	position:absolute;
+	left:0%;
+	top:0%;
+	margin-left: auto;
+	margin-right: auto;
+	/* width:50%; */
+	max-height:100%;
+}
+
+.onem {
+	display: block;
+	position:absolute;
+	right:0%;
+	top:0%;
+	margin-left: auto;
+	margin-right: auto;
+	/* width:50%; */
+	max-height:100%;
 }
 
 /* #map {
@@ -56,6 +98,6 @@ h2 {
     bottom: 0;
     left: 0;
     right: 0;
-    
-    margin: auto;
+	
+	margin: auto;
 } */

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Autres sources - Cigales de France</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- <link rel="icon" type="image/x-icon" href="ASSETS/favicon.ico"> -->
+		
+		<!-- STYLES -->
+		<link rel="stylesheet" href="../ASSETS/style.css" type="text/css" />
+		
+		<!-- SCRIPTS -->
+		<script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/select2@latest/dist/js/select2.min.js"></script>
+		<script>
+			$(function(){
+				$("#choix").select2();
+			}); 
+		</script>
+	</head>
+	<body>
+		<div id="details">
+			<select id="choix">
+				<option disabled selected>Sélectionner l'espèce</option>
+				<option espece="Cicadetta_brevipennis">Cigalette des collines / <i>Cicadetta brevipennis</i></option>
+				<option espece="Cicadetta_brevipennis_litoralis">Cigalette du littoral / <i>Cicadetta brevipennis littoralis</i></option>
+				<option espece="Cicadetta_cantilatrix">Cigalette qui fredonne / <i>Cicadetta cantilatrix</i></option>
+				<option espece="Cicadetta_cerdaniensis">Cigalette pyrénéenne / <i>Cicadetta cerdaniensis</i></option>
+				<option espece="Cicadetta_fangoana">Cigalette du Fango / <i>Cicadetta fangoana</i></option>
+				<option espece="Cicadetta_montana">Cigalette des montagnes / <i>Cicadetta montana</i></option>
+				<option espece="Cicadetta_petryi">Cigalette de Petry / <i>Cicadetta petryi</i></option>
+				<option espece="Cicadetta_sibillae">Cigalette de Sibille / <i>Cicadetta sibillae</i></option>
+				<option espece="Tettigettalna_argentata">Cigale argentée / <i>Tettigettalna argentata</i></option>
+				<option espece="Tettigettula_pygmea">Cigale pygmée / <i>Tettigettula pygmea</i></option>
+				<option espece="Cicada_barbara">Cigale mauresque / <i>Cicada barbara</i></option>
+				<option espece="Cicada_barbara_lusitanica">Cigale mauresque subsp. lusitanica / <i>Cicada barbara lusitanica</i></option>
+				<option espece="Cicada_orni">Cigale grise / <i>Cicada orni</i></option>
+				<option espece="Cicadatra_atra">Cigale noire / <i>Cicadatra atra</i></option>
+				<option espece="Cicadivetta_tibialis">Cigale aux tibias armés / <i>Cicadivetta tibialis</i></option>
+				<option espece="Dimissalna_dimissa">Cigale des Balkans / <i>Dimissalna dimissa</i></option>
+				<option espece="Graptopsaltria_nigrofuscata">Cigale friture / <i>Graptopsaltria nigrofuscata</i></option>
+				<option espece="Lyristes_plebejus">Cigale plébéienne / <i>Lyristes plebejus</i></option>
+				<option espece="Platypleura_kaempferi">Cigale nini / <i>Platypleura kaempferi</i></option>
+				<option espece="Tibicina_corsica"><i>Tibicina corsica</i></option>
+				<option espece="Tibicina_corsica_corsica">Cigale corse / <i>Tibicina corsica corsica</i></option>
+				<option espece="Tibicina_corsica_fairmairei">Cigale des Cistes / <i>Tibicina corsica fairmairei</i></option>
+				<option espece="Tibicina_garricola">Cigale des garrigues / <i>Tibicina garricola</i></option>
+				<option espece="Tibicina_haematodes">Cigale rouge / <i>Tibicina haematodes</i></option>
+				<option espece="Tibicina_nigronervosa">Cigale à nervures noires / <i>Tibicina nigronervosa</i></option>
+				<option espece="Tibicina_quadrisignata">Cigale quatre fois signée / <i>Tibicina quadrisignata</i></option>
+				<option espece="Tibicina_steveni">Cigale orientale / <i>Tibicina steveni</i></option>
+				<option espece="Tibicina_tomentosa">Cigale cotonneuse / <i>Tibicina tomentosa</i></option>
+			</select>
+			<div id="carte_interactive"></div>
+		</div>
+		<div id="ffmapdiv"></div>
+		<div id="onemdiv"></div>
+		<div style="pointer-events: auto;" class="ol-attribution ol-unselectable ol-control">
+			<ul>
+				<li>© <a href="https://www.cigalesdefrance.fr">Cigales de France</a></li>
+				<li><br><a href="https://www.faune-france.org/"><img style="height: 100%" src="https://cdnfiles2.biolovision.net/www.faune-france.org/images/das/FFnoirLeger-8901.png"></a><a href="http://www.onem-france.org/cigales/"><img src="../ASSETS/LOGOS/ONEM.png"></a></li>
+			</ul>
+		</div>
+		<script src="../ASSETS/autres.js"></script>
+	</body>
+</html>	

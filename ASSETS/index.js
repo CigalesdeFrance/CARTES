@@ -160,63 +160,71 @@ window.onload = function go() {
 	var attControl = new ol.control.GeoportalAttribution({collapsed: false});
 	map.addControl(attControl);
 	
+	var espece = location.search.substring(1);
+	$("#choix option[espece='" + espece + "']").attr("selected","selected");
+	
 	var choix = document.getElementById('choix');
 	
 	choix.onchange = function() {
 		//title.innerHTML = this.options[this.selectedIndex].text;
 		//sp.innerHTML = this.options[this.selectedIndex].getAttribute('espece');
+		
 		var espece = this.options[this.selectedIndex].getAttribute('espece');
 		
-		// Adresse du CSV
-		var url_bdd1 = './BDD/INATURALIST/' + espece + '.kml';
-		var url_bdd2 = './BDD/OBSERVATION/' + espece + '.kml';
-		var url_bdd3 = './BDD/GBIF/' + espece + '.kml';
+		/* autres_cartes.innerHTML = '<button><a href="./CARTES/' + espece + '.html" target="_blank">🡲 Autres sources</a></button>'; */
+		autres_cartes.innerHTML = '<button><a href="./CARTES/autres_sources.html?' + espece + '" target="_blank">🡲 Autres sources</a></button>';
 		
-		layer_bdd1.setSource(
-			new ol.source.Vector({
+		if (espece !== null) {
+			// Adresse du CSV
+			var url_bdd1 = './BDD/INATURALIST/' + espece + '.kml';
+			var url_bdd2 = './BDD/OBSERVATION/' + espece + '.kml';
+			var url_bdd3 = './BDD/GBIF/' + espece + '.kml';
+			
+			layer_bdd1.setSource(
+				new ol.source.Vector({
+					format: new ol.format.KML({
+						extractStyles: true,
+						extractAttributes: true
+					}),
+					url: url_bdd1
+				})
+			);
+			
+			
+			// CLUSTER
+			/* layer_bdd1.setSource(
+				new ol.source.Cluster({
+				distance: 10,
+				source : new ol.source.Vector({
 				format: new ol.format.KML({
-					extractStyles: true,
-					extractAttributes: true
+				extractStyles: true,
+				extractAttributes: true
 				}),
 				url: url_bdd1
-			})
-		);
-		
-		
-		// CLUSTER
-		/* layer_bdd1.setSource(
-			new ol.source.Cluster({
-			distance: 10,
-			source : new ol.source.Vector({
-			format: new ol.format.KML({
-			extractStyles: true,
-			extractAttributes: true
-			}),
-			url: url_bdd1
-			})
-			}));
-		*/
-		
-		layer_bdd2.setSource(
-			new ol.source.Vector({
-				format: new ol.format.KML({
-					extractStyles: true,
-					extractAttributes: true
-				}),
-				url: url_bdd2
-			})
-		);
-		
-		layer_bdd3.setSource(
-			new ol.source.Vector({
-				format: new ol.format.KML({
-					extractStyles: true,
-					extractAttributes: true
-				}),
-				url: url_bdd3
-			})
-		);
-		
+				})
+				}));
+			*/
+			
+			layer_bdd2.setSource(
+				new ol.source.Vector({
+					format: new ol.format.KML({
+						extractStyles: true,
+						extractAttributes: true
+					}),
+					url: url_bdd2
+				})
+			);
+			
+			layer_bdd3.setSource(
+				new ol.source.Vector({
+					format: new ol.format.KML({
+						extractStyles: true,
+						extractAttributes: true
+					}),
+					url: url_bdd3
+				})
+			);
+		};
 	};
 	choix.onchange();
-}
+};
