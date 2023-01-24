@@ -74,7 +74,7 @@ h2 {
 	top:0%;
 	margin-left: auto;
 	margin-right: auto;
-	width:50%;
+	max-width:50%;
 	max-height:100%;
 }
 
@@ -85,7 +85,7 @@ h2 {
 	top:0%;
 	margin-left: auto;
 	margin-right: auto;
-	width:50%;
+	max-width:50%;
 	max-height:100%;
 }
 
