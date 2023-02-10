@@ -8,7 +8,7 @@ jobs:
   TELECHARGEMENT-BDD:
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@main
 
       - name: Téléchargement des bases de données et construction des kml
         if: always()
