@@ -20,7 +20,7 @@ Remove-Item "sp.html"
 
 # git
 git config --local user.email "cigalesdefrance@outlook.fr"
-git config --local user.name "cigalesdefrance"
+git config --local user.name "CigalesdeFrance-dev"
 git add .
 git commit -m "[Bot] Sauvegarde des cartes de l'ONEM" #--allow-empty
 git push -f
