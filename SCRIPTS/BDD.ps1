@@ -168,7 +168,7 @@ foreach ($f in $files){
 }
 # git
 git config --local user.email "cigalesdefrance@outlook.fr"
-git config --local user.name "cigalesdefrance"
+git config --local user.name "CigalesdeFrance-dev"
 git add .
 git commit -m "[Bot] Téléchargement des données + kml"
 git push -f
