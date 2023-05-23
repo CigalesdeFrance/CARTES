@@ -17,6 +17,7 @@ window.onload = function go() {
 	var layer_bdd1 = new ol.layer.Vector();
 	var layer_bdd2 = new ol.layer.Vector();
 	var layer_bdd3 = new ol.layer.Vector();
+	var layer_bdd4 = new ol.layer.Vector();
 	
 	// Fonds de carte de base
 	var regions = new ol.layer.Vector({
@@ -114,6 +115,12 @@ window.onload = function go() {
 					description: "Données provenant du Global Biodiversity Information Facility, qui a pour but de mettre à disposition toute l'information connue sur la biodiversité (données d'observations ou de collections sur les animaux, plantes, champignons, bactéries et archaea)."
 				}
 			},
+			{layer: layer_bdd4,
+				config: {
+					title: "INPN",
+					description: "Données provenant de l'INPN par le biais d'OpenObs"
+				}
+			},
 			{layer: regions,
 				config: {
 					title: "Régions de France",
@@ -179,6 +186,7 @@ window.onload = function go() {
 			var url_bdd1 = './BDD/INATURALIST/' + espece + '.kml';
 			var url_bdd2 = './BDD/OBSERVATION/' + espece + '.kml';
 			var url_bdd3 = './BDD/GBIF/' + espece + '.kml';
+			var url_bdd4 = './BDD/INPN/' + espece + '.kml';
 			
 			layer_bdd1.setSource(
 				new ol.source.Vector({
@@ -222,6 +230,16 @@ window.onload = function go() {
 						extractAttributes: true
 					}),
 					url: url_bdd3
+				})
+			);
+
+			layer_bdd4.setSource(
+				new ol.source.Vector({
+					format: new ol.format.KML({
+						extractStyles: true,
+						extractAttributes: true
+					}),
+					url: url_bdd4
 				})
 			);
 		};

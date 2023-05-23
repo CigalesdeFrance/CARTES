@@ -1,4 +1,5 @@
 $cigales_codes = Import-Csv "CIGALES-CODES.csv"
+Remove-item "./BDD/INPN/*.csv"
 Remove-item "./BDD/INATURALIST/*.csv"
 Remove-Item "./BDD/GBIF/*.csv"
 $cigales_codes | ForEach-Object {
@@ -20,6 +21,36 @@ $cigales_codes | ForEach-Object {
 	Invoke-WebRequest -Uri "https://www.faune-france.org/index.php?m_id=95&sp_tg=19&sp_DChoice=all&sp_SChoice=species&sp_PChoice=all&sp_FChoice=map&sp_S=$faune_france" -OutFile "./BDD/FAUNE-FRANCE/$nom.png" }
 	
 	#INPN
+	"INPN - $nom"
+			if ($inpn -eq "") {
+			"  > L'espèce n'existe pas dans INPN" }
+			else {
+				
+				$totalRecords = (Invoke-WebRequest "https://openobs.mnhn.fr/biocache-service/occurrences/search?fq=taxonConceptID:$inpn" | ConvertFrom-Json).totalRecords
+				if ($totalRecords -eq 0) {
+				"  > L'espèce est présente dans INPN mais ne possède aucune donnée" }
+				else {
+					Add-Content "./BDD/INPN/$nom-coord.csv" "Latitude,Longitude"
+					Add-Content "./BDD/INPN/$nom-id.csv" "ID"
+					$pages = [math]::floor($totalRecords/300)
+					for ($num=0;$num -le $pages;$num++) {
+						if ($num -eq 0) {$startIndex=0} else {$startIndex = ($num*300)}
+						#$startIndex
+						"page $num sur $pages"
+						$json = (Invoke-WebRequest "https://openobs.mnhn.fr/biocache-service/occurrences/search?fq=taxonConceptID:$inpn&startIndex=$startIndex&pageSize=300" | ConvertFrom-Json)
+						$json_filter = $json | Where {$_.occurrences.latLong -ne $null}
+						$latLong = $json_filter.occurrences.latLong | Add-Content "./BDD/INPN/$nom-coord.csv"
+						$id = $json_filter.occurrences.uuid | Add-Content "./BDD/INPN/$nom-id.csv" 
+					}
+					
+					$coord = Get-content "./BDD/INPN/$nom-coord.csv" 
+					$id = Get-content "./BDD/INPN/$nom-id.csv"
+					$(for($index=0;$index -lt $coord.Count;$index++){$coord[$index] + "," + $id[$index]}) | Add-Content "./BDD/INPN/$nom.csv"
+					(Get-Content "./BDD/INPN/$nom.csv") | ? {$_.trim() -ne "" } | Set-Content "./BDD/INPN/$nom.csv"
+					Remove-item "./BDD/INPN/$nom-id.csv"
+					Remove-item "./BDD/INPN/$nom-coord.csv"
+				}}				
+}
 	
 	#INATURALIST
 	"Inaturalist - $nom"
@@ -106,6 +137,27 @@ $cigales_codes | ForEach-Object {
 }
 
 ### CREATION DES KML
+# INPN
+$files = Get-ChildItem "./BDD/INPN/" -Filter *.csv
+foreach ($f in $files){
+	$fichier = $f.Name
+	$espece = $f.Name -replace ".csv"
+	$kml =
+	"<?xml version=`"1.0`" encoding=`"UTF-8`"?><kml xmlns=`"http://www.opengis.net/kml/2.2`">
+	<Document>
+	<Style id=`"inpn`"><IconStyle><scale>0.3</scale><Icon><href>https://maps.google.com/mapfiles/kml/paddle/ylw-circle-lv.png</href></Icon></IconStyle></Style>
+	<name>$espece</name>
+	<Folder>
+	<name>INPN</name>
+	$(Import-Csv "./BDD/INPN/$fichier" | foreach {'<Placemark><description>https://openobs.mnhn.fr/openobs-hub/occurrences/{2}</description><styleUrl>#inpn</styleUrl><Point><coordinates>{1},{0}</coordinates></Point></Placemark>' -f $_.Latitude, $_.Longitude, $_.ID})
+	</Folder>
+	</Document>
+	</kml>"
+	
+	$kml | Out-File -Force -Encoding ascii ("./BDD/INPN/$espece.kml")
+	
+}
+
 # OBSERVATION
 $files = Get-ChildItem "./BDD/OBSERVATION/" -Filter *.csv
 foreach ($f in $files){
