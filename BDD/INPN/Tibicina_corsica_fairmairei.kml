@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://www.opengis.net/kml/2.2">
+	<Document>
+	<Style id="inpn"><IconStyle><scale>0.3</scale><Icon><href>https://maps.google.com/mapfiles/kml/paddle/ylw-circle-lv.png</href></Icon></IconStyle></Style>
+	<name>Tibicina_corsica_fairmairei</name>
+	<Folder>
+	<name>INPN</name>
+	<Placemark><description>https://openobs.mnhn.fr/openobs-hub/occurrences/b38bf6c6-f1c6-45d7-a0b1-4c9592e0eeaf</description><styleUrl>#inpn</styleUrl><Point><coordinates>2.56557,42.9752</coordinates></Point></Placemark> <Placemark><description>https://openobs.mnhn.fr/openobs-hub/occurrences/cd55f75f-0954-4202-a7bc-a08e9aa56587</description><styleUrl>#inpn</styleUrl><Point><coordinates>2.95378,43.16167</coordinates></Point></Placemark> <Placemark><description>https://openobs.mnhn.fr/openobs-hub/occurrences/1e8e5070-d56b-426b-a85a-c0199910a40e</description><styleUrl>#inpn</styleUrl><Point><coordinates>2.98026,43.09159</coordinates></Point></Placemark>
+	</Folder>
+	</Document>
+	</kml>
