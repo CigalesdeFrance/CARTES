@@ -67,6 +67,7 @@ window.onload = function go() {
 			layer_ortho,
 			regions,
 			departements,
+			layer_bdd4,
 			layer_bdd3,
 			layer_bdd2,
 			layer_bdd1
@@ -118,7 +119,7 @@ window.onload = function go() {
 			{layer: layer_bdd4,
 				config: {
 					title: "INPN",
-					description: "Données provenant de l'INPN par le biais d'OpenObs"
+					description: "Données provenant de l'Inventaire National du Patrimoine Naturel par le biais d'OpenObs"
 				}
 			},
 			{layer: regions,
