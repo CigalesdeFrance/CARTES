@@ -49,8 +49,7 @@ $cigales_codes | ForEach-Object {
 					(Get-Content "./BDD/INPN/$nom.csv") | ? {$_.trim() -ne "" } | Set-Content "./BDD/INPN/$nom.csv"
 					Remove-item "./BDD/INPN/$nom-id.csv"
 					Remove-item "./BDD/INPN/$nom-coord.csv"
-				}}				
-}
+				}}
 	
 	#INATURALIST
 	"Inaturalist - $nom"
