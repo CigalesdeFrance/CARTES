@@ -42,7 +42,7 @@ window.onload = function go() {
 	
 	var layer_osm = new ol.layer.Tile({
 		source: new ol.source.OSM({attributions: [
-		'© <a href="https://www.cigalesdefrance.fr">Cigales de France</a>',ol.source.OSM.ATTRIBUTION,'</br><a href="https://inpn.mnhn.fr"><img class="copyright" src="https://inpn.mnhn.fr/css/images_template/logo_inpn.png"></img></a><a href="https://observation.org"><img class="copyright" src="https://observation.org/static/img/logo/logo-observation-org.svg"></img></a><a href="https://www.gbif.org"><img  class="copyright" src="https://docs.gbif.org/style/logo.svg"></img></a><a href="https://www.inaturalist.org/"><img class="copyright" src="https://static.inaturalist.org/sites/1-logo.svg"></img></a>']}),
+		'<b>Version bêta</b> | <a href="https://github.com/CigalesdeFrance/CARTES/">Code source/Erreurs</a> | © <a href="https://www.cigalesdefrance.fr">Cigales de France</a> |',ol.source.OSM.ATTRIBUTION,'</br><a href="https://inpn.mnhn.fr"><img class="copyright" src="https://inpn.mnhn.fr/css/images_template/logo_inpn.png"></img></a><a href="https://observation.org"><img class="copyright" src="https://observation.org/static/img/logo/logo-observation-org.svg"></img></a><a href="https://www.gbif.org"><img  class="copyright" src="https://docs.gbif.org/style/logo.svg"></img></a><a href="https://www.inaturalist.org/"><img class="copyright" src="https://static.inaturalist.org/sites/1-logo.svg"></img></a>']}),
 		opacity: 1
 	});
 	
