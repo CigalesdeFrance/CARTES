@@ -11,7 +11,7 @@ body {
 	width: 90%;
 	max-width: 90%;
 	margin: 1em auto;
-	font: 0.9em/1.2 Arial, Helvetica, sans-serif;
+	font: 1em/1.5 Arial, Helvetica, sans-serif
 }
 
 h2 {
@@ -85,7 +85,6 @@ h2 {
 .header {
 	width: 100%;
 	text-align: center;
-	padding: 2em;
 }
 
 .row {
@@ -93,7 +92,6 @@ h2 {
 	display: flex;
 	-ms-flex-wrap: wrap; /* IE10 */
 	flex-wrap: wrap;
-	padding: 0 4px;
 }
 
 .column {
