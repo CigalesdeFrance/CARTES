@@ -2,16 +2,60 @@
 @import "https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@main/dist/en/latest/legacy/ol.css";
 @import "https://ignf.github.io/geoportal-extensions/openlayers-latest/dist/GpPluginOpenLayers.css";
 
-#map {
-	position:fixed;
-	padding:0;
-	margin:0;
-	top:0;
-	left:0;
-	width: 100%;
-	height: 100%;
+/* GLOBAL */
+* {
+	box-sizing: border-box;
 }
 
+body {
+	width: 90%;
+	max-width: 90%;
+	margin: 1em auto;
+	font: 0.9em/1.2 Arial, Helvetica, sans-serif;
+}
+
+h2 {
+	color: white;
+	text-shadow: 0 0 2px #000000;	
+}
+
+#choix {
+	width: 75%;
+}
+
+#boutons_obs, #carte_interactive {
+	margin: 5px;
+}
+
+#boutons_obs a, #carte_interactive a {
+	text-decoration: none;
+	color: black;
+	font-weight: bold;
+}
+
+/* CARTE */
+#map {
+    position:fixed;
+    padding:0;
+    margin:0;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+}
+
+#details {
+	background-color: #e3e3e363;
+	border-radius: 15px;
+	position:absolute;
+	width: 50%;
+	z-index:100;    
+	text-align: center;
+	top: .5em;
+	left: 25vw;
+}
+
+/* COPYRIGHT */
 #copy {
 	position: absolute;
 	padding: 2px;
@@ -32,72 +76,47 @@
 }
 
 .copyright {
-	padding: 2px;
+    padding: 2px;
 	width: 20%;
 	
 }
 
-h2 {
-	color: white;
-	text-shadow: 0 0 2px #000000;	
-}
-
-#choix {
-	width: 75%;
-}
-
-#details {
-	background-color: #e3e3e363;
-	border-radius: 15px;
-	position:absolute;
-	width: 50%;
-	z-index:100;    
+/* AUTRES CARTES */
+.header {
+	width: 100%;
 	text-align: center;
-	top: .5em;
-	left: 25vw;
+	padding: 2em;
 }
 
-#boutons_obs, #carte_interactive {
-	margin: 5px;
+.row {
+	display: -ms-flexbox; /* IE10 */
+	display: flex;
+	-ms-flex-wrap: wrap; /* IE10 */
+	flex-wrap: wrap;
+	padding: 0 4px;
 }
 
-#boutons_obs a, #carte_interactive a {
-	text-decoration: none;
-	color: black;
-	font-weight: bold;
+.column {
+	position:relative;
+	-ms-flex: 50%; /* IE10 */
+	flex: 50%;
+	max-width: 50%;
+}
+
+.column img {
+	margin-top: 3em;
+	vertical-align: middle;
+	max-width: 100%;
 }
 
 .ffmap {
-	display: block;
 	position:absolute;
-	left:0%;
-	top:0%;
-	margin-left: auto;
-	margin-right: auto;
-	max-width:50%;
-	max-height:100%;
 }
 
-.onem {
-	display: block;
-	position:absolute;
-	right:0%;
-	top:0%;
-	margin-left: auto;
-	margin-right: auto;
-	max-width:50%;
-	max-height:100%;
+@media screen and (max-width: 800px) {
+	.column {
+		-ms-flex: 100%;
+		flex: 100%;
+		max-width: 100%;
+	}
 }
-
-/* #map {
-    width: 50%;
-    height: 100%;
-    
-    position: absolute;
-    top:0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-	
-	margin: auto;
-} */

@@ -19,7 +19,7 @@
 		</script>
 	</head>
 	<body>
-		<div id="details">
+		<div class="header">
 			<select id="choix">
 				<option disabled selected>Sélectionner l'espèce</option>
 				<option espece="Cicadetta_brevipennis">Cigalette des collines / <i>Cicadetta brevipennis</i></option>
@@ -53,14 +53,20 @@
 			</select>
 			<div id="carte_interactive"></div>
 		</div>
-		<div id="ffmapdiv"></div>
-		<div id="onemdiv"></div>
-		<div style="pointer-events: auto;" class="ol-attribution ol-unselectable ol-control">
+		<div class="row">
+			<div class="column">
+				<div id="onemdiv"></div>
+			</div>  
+			<div class="column">
+				<div id="ffmapdiv"></div>
+			</div>
+		</div>
+		<div style="z-index:1;pointer-events: auto;" class="ol-attribution ol-unselectable ol-control">
 			<ul>
 				<li>© <a href="https://www.cigalesdefrance.fr">Cigales de France</a></li>
-				<li><br><a href="https://www.faune-france.org/"><img style="height: 100%" src="https://cdnfiles2.biolovision.net/www.faune-france.org/images/das/FFnoirLeger-8901.png"></a><a href="http://www.onem-france.org/cigales/"><img src="../ASSETS/LOGOS/ONEM.png"></a></li>
+				<li><br><a href="https://www.faune-france.org/"><img style="height: 100%" src="https://cdnfiles2.biolovision.net/www.faune-france.org/images/das/FFnoirLeger-8901.png"></a><a href="http://www.onem-france.org/cigales/"><img src="../ASSETS/ONEM.png"></a></li>
 			</ul>
 		</div>
 		<script src="../ASSETS/autres.js"></script>
 	</body>
-</html>	
+</html>
