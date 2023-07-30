@@ -2,7 +2,7 @@
 @import "https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@main/dist/en/latest/legacy/ol.css";
 @import "https://ignf.github.io/geoportal-extensions/openlayers-latest/dist/GpPluginOpenLayers.css";
 
-/* GLOBAL */
+/*------------------------------------- GLOBAL -------------------------------------*/
 * {
 	box-sizing: border-box;
 }
@@ -10,7 +10,7 @@
 body {
 	width: 90%;
 	max-width: 90%;
-	margin: 1em auto;
+	margin: 1em auto auto auto;
 	font: 1em/1.5 Arial, Helvetica, sans-serif
 }
 
@@ -33,7 +33,7 @@ h2 {
 	font-weight: bold;
 }
 
-/* CARTE */
+/*------------------------------------- CARTE -------------------------------------*/
 #map {
     position:fixed;
     padding:0;
@@ -55,7 +55,7 @@ h2 {
 	left: 25vw;
 }
 
-/* COPYRIGHT */
+/*------------------------------------- COPYRIGHT -------------------------------------*/
 #copy {
 	position: absolute;
 	padding: 2px;
@@ -81,7 +81,7 @@ h2 {
 	
 }
 
-/* AUTRES CARTES */
+/*------------------------------------- AUTRES CARTES -------------------------------------*/
 .header {
 	width: 100%;
 	text-align: center;
