@@ -7,8 +7,8 @@ Remove-Item "./BDD/GBIF/*.csv"
 $cigales_codes | ForEach-Object {
 	$code = $_.CODE
 	$nom = $_.NOM_SCIENTIFIQUE
-	$onem = $_.ONEM
-	$faune_france = $_.FAUNEFRANCE
+	#$onem = $_.ONEM
+	$faune_france = $_.FAUNE_FRANCE
 	$inpn = $_.INPN
 	$inaturalist = $_.INATURALIST
 	$observation = $_.OBSERVATION
