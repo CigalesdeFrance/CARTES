@@ -219,6 +219,28 @@ foreach ($f in $files){
 	$kml | Out-File -Force -Encoding ascii ("./BDD/GBIF/$espece.kml")
 }
 
+### SAUVEGARDE DE L'ONEM
+
+$regex = '<a href="([^"]*)">(.[a-z].+)</a>.([a-z].+)<br>'
+
+foreach($line in Get-Content ./BDD/ONEM/index.html) {
+    if($line -match $regex){
+		$url = $matches[1]
+		$sci1 = $matches[2]
+		$sci = $sci1 -replace " ","_"
+		$ver = $matches[3]
+		Invoke-WebRequest -Uri $url -OutFile "sp.html"
+		$Source = Get-Content -path "sp.html" -raw
+		$Source -match 'tools/cartowiki/CACHE/(.*).jpg'
+		$Sourceurl = $matches[1]
+        Echo $sci1
+		Invoke-WebRequest -Uri "http://www.onem-france.org/cigales/tools/cartowiki/CACHE/$Sourceurl.jpg" -OutFile "./BDD/ONEM/$sci.jpg"
+
+    }
+}
+
+Remove-Item "sp.html"
+
 ### SAUVEGARDE GIT
 git config --local user.email "cigalesdefrance@outlook.fr"
 git config --local user.name "CigalesdeFrance-dev"
