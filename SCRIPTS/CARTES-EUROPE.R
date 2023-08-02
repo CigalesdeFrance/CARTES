@@ -1,5 +1,7 @@
 #### INSTALLATION ET CHARGEMENT DES PACKAGES ####
 install.packages(c("leaflet", "mapview"))
+webshot::install_phantomjs()
+
 library(leaflet)
 library(mapview)
 
