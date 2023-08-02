@@ -13,7 +13,9 @@ jobs:
 
       - name: Création des cartes de l'Europe
         if: always()
-        run: Rscript ./SCRIPTS/CARTES-EUROPE.R
+        run:  |
+          choco install pandoc -y
+          Rscript ./SCRIPTS/CARTES-EUROPE.R
 
       - name: Téléchargement des bases de données et construction des kml
         if: always()
