@@ -26,11 +26,11 @@ choix.onchange = function() {
         http.send();
         if (http.status != 404) {
 			console.log("URL de Faune-France accessible ✅");
-            ffmapdiv.innerHTML = '<img class="ffmap" src="'+ ff_url +'"/>';
+            ffmapdiv.innerHTML = '<img class="ffmap" src="'+ ff_url +'" alt="Carte de la répartition de l\'espèce provenant de Faune-France">';
 		}
         else {
 			console.log("URL de Faune-France inaccessible ⛔");
-			ffmapdiv.innerHTML = '<img class="ffmap" src="https://cartes.cigalesdefrance.fr/BDD/FAUNE-FRANCE/null.png"/>';
+			ffmapdiv.innerHTML = '<img class="ffmap" src="https://cartes.cigalesdefrance.fr/BDD/FAUNE-FRANCE/null.png"/ alt="Carte vide provenant de Faune-France">';
 		}
 	}
 	
@@ -41,11 +41,11 @@ choix.onchange = function() {
         http.send();
         if (http.status != 404) {
 			console.log("URL de ONEM accessible ✅");
-            onemdiv.innerHTML = '<img class="onem" src="'+ onem_url +'"/>';
+            onemdiv.innerHTML = '<img class="onem" src="'+ onem_url +'" alt="Carte de la répartition de l\'espèce provenant de l\'ONEM">';
 		}
         else {
 			console.log("URL de ONEM inaccessible ⛔");
-			onemdiv.innerHTML = '<img class="onem" src="https://cartes.cigalesdefrance.fr/BDD/ONEM/null.jpg"/>';
+			onemdiv.innerHTML = '<img class="onem" src="https://cartes.cigalesdefrance.fr/BDD/ONEM/null.jpg" alt="Carte vide provenant de l\'ONEM">';
 		}
 	}
 	
@@ -56,11 +56,11 @@ choix.onchange = function() {
         http.send();
         if (http.status != 404) {
 			console.log("URL de GBIF accessible ✅");
-            gbifdiv.innerHTML = '<img class="gbif" src="'+ gbif_url +'"/>';
+            gbifdiv.innerHTML = '<img class="gbif" src="'+ gbif_url +'" alt="Carte de la répartition de l\'espèce provenant de GBIF">';
 		}
         else {
 			console.log("URL de ONEM inaccessible ⛔");
-			gbifdiv.innerHTML = '<img class="gbif" src="https://cartes.cigalesdefrance.fr/BDD/GBIF-EUROPE/null.png"/>';
+			gbifdiv.innerHTML = '<img class="gbif" src="https://cartes.cigalesdefrance.fr/BDD/GBIF-EUROPE/null.png" alt="Carte vide provenant de GBIF">';
 		}
 	}
 	
