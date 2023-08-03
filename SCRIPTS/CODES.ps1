@@ -131,7 +131,10 @@ $cigales_codes | ForEach-Object {
 # fin de foreach
 }
 echo "##################################################################################"
-if (-not(Test-Path -Path "./BDD/FAUNE-FRANCE/erreurs.txt"  -PathType Leaf)) { Write-Host "  > Tous les codes espèces de Faune-France sont "-NoNewline; Write-Host "corrects" -ForegroundColor Green } 
+if (-not(Test-Path -Path "./BDD/FAUNE-FRANCE/erreurs.txt"  -PathType Leaf)) { 
+	Write-Host "  > Tous les codes espèces de Faune-France sont "-NoNewline; Write-Host "corrects" -ForegroundColor Green
+	Remove-item "./BDD/FAUNE-FRANCE/code.html"
+} 
 else {
 	Write-Host "  > Quelques codes espèces sont "-NoNewline; Write-Host "en erreur" -ForegroundColor Red -NoNewline;Write-Host " dans Faune-France"
 	$ff_txt = (Get-Content "./BDD/FAUNE-FRANCE/erreurs.txt") + "`n`n"
@@ -153,7 +156,10 @@ else {
 	Remove-item "./BDD/INATURALIST/erreurs.txt"
 }
 
-if (-not(Test-Path -Path "./BDD/OBSERVATION/erreurs.txt" -PathType Leaf)) { Write-Host "  > Tous les codes espèces de Observation.org sont "-NoNewline; Write-Host "corrects" -ForegroundColor Green } 
+if (-not(Test-Path -Path "./BDD/OBSERVATION/erreurs.txt" -PathType Leaf)) {
+	Write-Host "  > Tous les codes espèces de Observation.org sont "-NoNewline; Write-Host "corrects" -ForegroundColor Green
+	Remove-item "./BDD/OBSERVATION/code.html"
+} 
 else {
 	Write-Host "  > Quelques codes espèces sont "-NoNewline; Write-Host "en erreur" -ForegroundColor Red -NoNewline;Write-Host "  dans Observation.org"
 	$obs_txt = (Get-Content "./BDD/OBSERVATION/erreurs.txt") + "`n`n"
@@ -175,10 +181,14 @@ else {
 	Remove-item "./BDD/CATALOGUE_OF_LIFE/erreurs.txt"
 }
 
-if (-not(Test-Path -Path "./BDD/FAUNA-EUROPEA/erreurs.txt" -PathType Leaf)) { Write-Host "  > Tous les codes espèces de Fauna-Europea sont "-NoNewline; Write-Host "corrects" -ForegroundColor Green } 
+if (-not(Test-Path -Path "./BDD/FAUNA-EUROPEA/erreurs.txt" -PathType Leaf)) {
+	Write-Host "  > Tous les codes espèces de Fauna-Europea sont "-NoNewline; Write-Host "corrects" -ForegroundColor Green
+	Remove-item "./BDD/FAUNA-EUROPEA/code.html"
+} 
 else {
 	Write-Host "  > Quelques codes espèces sont "-NoNewline; Write-Host "en erreur" -ForegroundColor Red -NoNewline;Write-Host "  dans Fauna-Europea"
 	$fe_txt = Get-Content "./BDD/FAUNA-EUROPEA/erreurs.txt"
+	Remove-item "./BDD/FAUNA-EUROPEA/code.html"
 	Remove-item "./BDD/FAUNA-EUROPEA/erreurs.txt"
 }
 
