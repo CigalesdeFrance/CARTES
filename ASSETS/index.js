@@ -179,9 +179,16 @@ window.onload = function go() {
 		
 		var espece = this.options[this.selectedIndex].getAttribute('espece');
 		
-		autres_cartes.innerHTML = '<button><a href="./AUTRES/index.html?' + espece + '" target="_blank">➤ Autres sources</a></button>';
+		autres_cartes.innerHTML = '<button><a href="./AUTRES/" target="_blank">➤ Autres sources</a></button>';
 		
 		if (espece !== null) {
+			
+			// MISE A JOUR DE L'URL EN TEMPS REEL //
+			var change_url = { Title: espece, Url: 'index.html?'+ espece	};
+			history.pushState(change_url, change_url.Title, change_url.Url);
+			
+			autres_cartes.innerHTML = '<button><a href="./AUTRES/index.html?' + espece + '" target="_blank">➤ Autres sources</a></button>';
+			
 			// Adresse du CSV
 			var url_bdd1 = './BDD/INATURALIST/' + espece + '.kml';
 			var url_bdd2 = './BDD/OBSERVATION/' + espece + '.kml';
