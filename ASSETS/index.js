@@ -1,25 +1,25 @@
 window.onload = function go() {
 	
+	// Style des couches
 	var style_regions = new ol.style.Style({
-		/* fill: new ol.style.Fill({color: 'blue'}), //remplissage */
 		stroke: new ol.style.Stroke({
-			color: "black", width: 1 //contour et taille du contour
+			color: "black", width: 1
 		})
 	})
 	
 	var style_departements = new ol.style.Style({
-		/* fill: new ol.style.Fill({color: 'blue'}), //remplissage */
 		stroke: new ol.style.Stroke({
-			color: "#3b609c", lineDash: [1, 6], width: 2 //contour et taille du contour
+			color: "#3b609c", lineDash: [1, 6], width: 2
 		})
 	})
 	
+	// Création des couches vecteurs
 	var layer_bdd1 = new ol.layer.Vector();
 	var layer_bdd2 = new ol.layer.Vector();
 	var layer_bdd3 = new ol.layer.Vector();
 	var layer_bdd4 = new ol.layer.Vector();
 	
-	// Fonds de carte de base
+	// Ajout des contours des régions/départements
 	var regions = new ol.layer.Vector({
 		source: new ol.source.Vector({
 			url: 'https://cartes.cigalesdefrance.fr/ASSETS/regions.geojson',
@@ -31,7 +31,7 @@ window.onload = function go() {
 	
 	var departements = new ol.layer.Vector({
 		source: new ol.source.Vector({
-			url: 'ASSETS/departements.geojson',
+			url: 'https://cartes.cigalesdefrance.fr/ASSETS/departements.geojson',
 			format: new ol.format.GeoJSON()
 		}),
 		minResolution: 10,
@@ -39,7 +39,7 @@ window.onload = function go() {
 		style: style_departements
 	});
 	
-	
+	// Fonds de carte de base : OSM et BDOrtho IGN
 	var layer_osm = new ol.layer.Tile({
 		source: new ol.source.OSM({attributions: [
 		'<span style="color:#b70000; font-weight:bold">Version bêta</span> | <a href="https://github.com/CigalesdeFrance/CARTES/">Code source/Erreurs</a> | © <a href="https://www.cigalesdefrance.fr">Cigales de France</a> |',ol.source.OSM.ATTRIBUTION,'</br><a href="https://inpn.mnhn.fr"><img class="copyright" src="https://inpn.mnhn.fr/css/images_template/logo_inpn.png"></img></a><a href="https://observation.org"><img class="copyright" src="https://observation.org/static/img/logo/logo-observation-org.svg"></img></a><a href="https://www.gbif.org"><img  class="copyright" src="https://docs.gbif.org/style/logo.svg"></img></a><a href="https://www.inaturalist.org/"><img class="copyright" src="https://static.inaturalist.org/sites/1-logo.svg"></img></a>']}),
@@ -57,8 +57,7 @@ window.onload = function go() {
 	// Bloquage de la rotation sur téléphone
 	var interactions = ol.interaction.defaults({altShiftDragRotate:false, pinchRotate:false});
 	
-	
-	// CARTE
+	// Création de la carte
 	var map = new ol.Map({
 		interactions: interactions,
 		target: 'map',
@@ -78,16 +77,15 @@ window.onload = function go() {
 		})
 	});
 	
-	// CLICK SUR FEATURES
+	// Fonctionnalité de sélection d'entités
 	var selectClick = new ol.interaction.Select({
         condition: ol.events.click
 	});
 	map.addInteraction(selectClick);
 	
-	
+	// Actions lors de la sélection
 	map.on('click', function(evt) {
 		var pixel = evt.pixel;
-		
 		var features = [];
 		map.forEachFeatureAtPixel(pixel, function(feature) {
 			features.push(feature);
@@ -136,7 +134,7 @@ window.onload = function go() {
 			{layer: layer_osm,
 				config: {
 					title: "OpenStreetMap",
-					description: "Couche OpenStreet Map"
+					description: "Couche OpenStreetMap"
 				}
 			}
 		]
@@ -146,8 +144,8 @@ window.onload = function go() {
 	map.addControl(lsControl);
 	
 	// Création du contrôle de mesure de distance
-	/* var length = new ol.control.MeasureLength({});
-	map.addControl(length); */
+	//var length = new ol.control.MeasureLength({});
+	//map.addControl(length);
 	
 	// Création du contrôle de détermination des coordonnées + altitude
 	var mpControl = new ol.control.GeoportalMousePosition({
@@ -168,14 +166,13 @@ window.onload = function go() {
 	var attControl = new ol.control.GeoportalAttribution({collapsed: false});
 	map.addControl(attControl);
 	
+	// Extraction de l'espèce dans l'URL
 	var espece = location.search.substring(1);
 	$("#choix option[espece='" + espece + "']").attr("selected","selected");
 	
+	// Sélection de l'espèce et actions lors du changement
 	var choix = document.getElementById('choix');
-	
 	choix.onchange = function() {
-		//title.innerHTML = this.options[this.selectedIndex].text;
-		//sp.innerHTML = this.options[this.selectedIndex].getAttribute('espece');
 		
 		var espece = this.options[this.selectedIndex].getAttribute('espece');
 		
@@ -183,13 +180,13 @@ window.onload = function go() {
 		
 		if (espece !== null) {
 			
-			// MISE A JOUR DE L'URL EN TEMPS REEL //
+			// Mise à jour de l'URL quand l'espèce change
 			var change_url = { Title: espece, Url: 'index.html?'+ espece	};
 			history.pushState(change_url, change_url.Title, change_url.Url);
 			
 			autres_cartes.innerHTML = '<button><a href="./AUTRES/index.html?' + espece + '" target="_blank">➤ Autres sources</a></button>';
 			
-			// Adresse du CSV
+			// Adresses des KML et ajout des sources aux couches
 			var url_bdd1 = 'https://cartes.cigalesdefrance.fr/BDD/INATURALIST/' + espece + '.kml';
 			var url_bdd2 = 'https://cartes.cigalesdefrance.fr/BDD/OBSERVATION/' + espece + '.kml';
 			var url_bdd3 = 'https://cartes.cigalesdefrance.fr/BDD/GBIF/' + espece + '.kml';
@@ -204,21 +201,6 @@ window.onload = function go() {
 					url: url_bdd1
 				})
 			);
-			
-			
-			// CLUSTER
-			/* layer_bdd1.setSource(
-				new ol.source.Cluster({
-				distance: 10,
-				source : new ol.source.Vector({
-				format: new ol.format.KML({
-				extractStyles: true,
-				extractAttributes: true
-				}),
-				url: url_bdd1
-				})
-				}));
-			*/
 			
 			layer_bdd2.setSource(
 				new ol.source.Vector({
@@ -239,7 +221,7 @@ window.onload = function go() {
 					url: url_bdd3
 				})
 			);
-
+			
 			layer_bdd4.setSource(
 				new ol.source.Vector({
 					format: new ol.format.KML({

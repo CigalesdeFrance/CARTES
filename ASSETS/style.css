@@ -59,13 +59,11 @@ body {
 	position: absolute;
 	padding: 2px;
 	color: #666666;
-	margin: 0;
+	padding: 1em;
 	text-shadow: 0 0 2px white;
 	font-size: 12px;
 	text-align: right;
 	bottom: auto;
-	right: 1em;
-	max-width: 100%;
 }
 
 .ol-attribution ul {
@@ -77,7 +75,6 @@ body {
 .copyright {
     padding: 2px;
 	width: 20%;
-	
 }
 
 /*------------------------------------- AUTRES CARTES -------------------------------------*/
@@ -112,7 +109,7 @@ body {
 	max-width: inherit;
 	border: 2px solid black;
 	background-image: url(https://cartes.cigalesdefrance.fr/ASSETS/fond.jpg); 
-	background-size: 100% 100%;"
+	background-size: 100% 100%;
 }
 
 .gbif {
