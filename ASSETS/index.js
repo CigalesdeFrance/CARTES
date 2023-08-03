@@ -179,8 +179,7 @@ window.onload = function go() {
 		
 		var espece = this.options[this.selectedIndex].getAttribute('espece');
 		
-		/* autres_cartes.innerHTML = '<button><a href="./CARTES/' + espece + '.html" target="_blank">🡲 Autres sources</a></button>'; */
-		autres_cartes.innerHTML = '<button><a href="./CARTES/autres_sources.html?' + espece + '" target="_blank">➤ Autres sources</a></button>';
+		autres_cartes.innerHTML = '<button><a href="./AUTRES/index.html?' + espece + '" target="_blank">➤ Autres sources</a></button>';
 		
 		if (espece !== null) {
 			// Adresse du CSV
