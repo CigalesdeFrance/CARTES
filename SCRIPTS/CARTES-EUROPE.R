@@ -5,6 +5,9 @@ webshot::install_phantomjs()
 library(leaflet)
 library(mapview)
 
+# Suppression des cartes actuelles
+unlink("./GBIF-EUROPE/*.png")
+
 #### CREATION DES VARIABLES ####
 CIGALES_CODES <- read.csv(file = "CIGALES-CODES.csv", header = T, sep = ",")
 projection = '3857'

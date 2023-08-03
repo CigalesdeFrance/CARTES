@@ -11,6 +11,11 @@ jobs:
       - uses: actions/checkout@main
       - uses: r-lib/actions/setup-r@v2-branch
 
+      - name: Vérification des codes espèces
+        if: always()
+        run:  |
+          ./SCRIPTS/CODES.ps1      
+      
       - name: Création des cartes de l'Europe
         if: always()
         run:  |
