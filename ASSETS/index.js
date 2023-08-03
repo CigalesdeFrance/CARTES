@@ -190,10 +190,10 @@ window.onload = function go() {
 			autres_cartes.innerHTML = '<button><a href="./AUTRES/index.html?' + espece + '" target="_blank">➤ Autres sources</a></button>';
 			
 			// Adresse du CSV
-			var url_bdd1 = './BDD/INATURALIST/' + espece + '.kml';
-			var url_bdd2 = './BDD/OBSERVATION/' + espece + '.kml';
-			var url_bdd3 = './BDD/GBIF/' + espece + '.kml';
-			var url_bdd4 = './BDD/INPN/' + espece + '.kml';
+			var url_bdd1 = 'https://cartes.cigalesdefrance.fr/BDD/INATURALIST/' + espece + '.kml';
+			var url_bdd2 = 'https://cartes.cigalesdefrance.fr/BDD/OBSERVATION/' + espece + '.kml';
+			var url_bdd3 = 'https://cartes.cigalesdefrance.fr/BDD/GBIF/' + espece + '.kml';
+			var url_bdd4 = 'https://cartes.cigalesdefrance.fr/BDD/INPN/' + espece + '.kml';
 			
 			layer_bdd1.setSource(
 				new ol.source.Vector({

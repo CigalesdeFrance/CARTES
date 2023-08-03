@@ -13,7 +13,7 @@ choix.onchange = function() {
 	}
 	
 	// MISE A JOUR DES CARTES + intégration si l'espèce n'existe pas dans la BDD //
-	carte_interactive.innerHTML = '<button><a href="https://cartes.cigalesdefrance.fr/index.html?' + espece + '">➤ Carte interactive</a></button>';
+	carte_interactive.innerHTML = '<button><a href="../index.html?' + espece + '">➤ Carte interactive</a></button>';
 	
 	var ff_url = 'https://cartes.cigalesdefrance.fr/BDD/FAUNE-FRANCE/' + espece + '.png';
 	var onem_url = 'https://cartes.cigalesdefrance.fr/BDD/ONEM/' + espece + '.jpg';
