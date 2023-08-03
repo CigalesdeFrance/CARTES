@@ -6,7 +6,7 @@ library(leaflet)
 library(mapview)
 
 # Suppression des cartes actuelles
-unlink("./GBIF-EUROPE/*.png")
+unlink("./BDD/GBIF-EUROPE/*.png")
 
 #### CREATION DES VARIABLES ####
 CIGALES_CODES <- read.csv(file = "CIGALES-CODES.csv", header = T, sep = ",")
