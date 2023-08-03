@@ -14,13 +14,8 @@ body {
 	font: 1em/1.5 Arial, Helvetica, sans-serif
 }
 
-/* h2 {
-	color: white;
-	text-shadow: 0 0 2px #000000;	
-} */
-
 #choix {
-	width: 75%;
+	max-width: 100%;
 }
 
 #boutons_obs, #carte_interactive {
@@ -53,6 +48,10 @@ body {
 	text-align: center;
 	top: .5em;
 	left: 25vw;
+}
+
+#observation {
+	padding-left: 10px;
 }
 
 /*------------------------------------- COPYRIGHT -------------------------------------*/

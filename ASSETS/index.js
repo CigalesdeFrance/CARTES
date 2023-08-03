@@ -10,7 +10,7 @@ window.onload = function go() {
 	var style_departements = new ol.style.Style({
 		/* fill: new ol.style.Fill({color: 'blue'}), //remplissage */
 		stroke: new ol.style.Stroke({
-			color: "black", lineDash: [4], width: 1 //contour et taille du contour
+			color: "#3b609c", lineDash: [1, 6], width: 2 //contour et taille du contour
 		})
 	})
 	
@@ -22,7 +22,7 @@ window.onload = function go() {
 	// Fonds de carte de base
 	var regions = new ol.layer.Vector({
 		source: new ol.source.Vector({
-			url: 'ASSETS/regions.geojson',
+			url: 'https://cartes.cigalesdefrance.fr/ASSETS/regions.geojson',
 			format: new ol.format.GeoJSON()
 		}),
 		minResolution: 200,
@@ -34,7 +34,7 @@ window.onload = function go() {
 			url: 'ASSETS/departements.geojson',
 			format: new ol.format.GeoJSON()
 		}),
-		minResolution: 20,
+		minResolution: 10,
 		maxResolution: 200,
 		style: style_departements
 	});
