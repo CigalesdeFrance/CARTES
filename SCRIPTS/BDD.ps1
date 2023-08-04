@@ -14,8 +14,6 @@ $cigales_codes | ForEach-Object {
 	$observation = $_.OBSERVATION
 	$gbif = $_.GBIF
 	
-	# ONEM - voir https://github.com/cigalesdefrance/cigalesdefrance.github.io/blob/main/SCRIPTS/sauvegarde_onem.ps1
-	
 	# FAUNE-FRANCE
 	"Faune-France - $nom"
 	if ($faune_france -eq "") { "  > L'espèce n'existe pas dans Faune-France" }

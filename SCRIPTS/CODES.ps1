@@ -115,9 +115,6 @@ $cigales_codes | ForEach-Object {
 	if ($nom -eq "Tibicina picta") { $nom = "Tibicina tomentosa" } # corrections taxonomiques sortie
 
 	# FAUNA-EUROPEA
-
-        mkdir "./BDD/FAUNA-EUROPEA"
-	
 	if ($fe -eq "") { Write-Host "  > $nom "-NoNewline; Write-Host "n'existe pas" -ForegroundColor Yellow -NoNewline;Write-Host " dans Fauna-Europea" }
 	else {		
 		Invoke-WebRequest -Uri "https://www.eu-nomen.eu/portal/taxon.php?GUID=urn:lsid:faunaeur.org:taxname:$fe" -OutFile "./BDD/FAUNA-EUROPEA/code.html"
