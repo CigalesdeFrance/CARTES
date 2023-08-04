@@ -29,6 +29,7 @@ $cigales_codes | ForEach-Object {
 	else {		
 		Invoke-WebRequest -Uri "https://www.faune-france.org/index.php?m_id=94&sp_tg=19&sp_DOffset=1&sp_SChoice=family&sp_Family=1511&sp_SChoice=species&sp_PChoice=all&sp_FDisplay=DATE_PLACE_SPECIES&sp_S=$faune_france" -OutFile "./BDD/FAUNE-FRANCE/code.html"
 		$Source = Get-Content -path "./BDD/FAUNE-FRANCE/code.html" -raw
+                Remove-item "./BDD/FAUNE-FRANCE/code.html"
 		$Source -match '<span class="sci_name">\((.*?)\)</span>' | Out-Null
 		$Sourcecode = $matches[1]
 		
@@ -45,7 +46,8 @@ $cigales_codes | ForEach-Object {
 	else {		
 		Invoke-WebRequest -Uri "https://observation.org/species/$observation/" -OutFile "./BDD/OBSERVATION/code.html"
 		$Source = Get-Content -path "./BDD/OBSERVATION/code.html" -raw
-		$Source -match '<i class="species-scientific-name">(.*?)</i>' | Out-Null
+		Remove-item "./BDD/OBSERVATION/code.html"
+                $Source -match '<i class="species-scientific-name">(.*?)</i>' | Out-Null
 		$Sourcecode = $matches[1]
 		
 		if ($nom -eq $Sourcecode) { Write-Host "  > Le code espèce de $nom dans Observation.org est "-NoNewline; Write-Host "correct" -ForegroundColor Green }
@@ -117,7 +119,8 @@ $cigales_codes | ForEach-Object {
 	else {		
 		Invoke-WebRequest -Uri "https://www.eu-nomen.eu/portal/taxon.php?GUID=urn:lsid:faunaeur.org:taxname:$fe" -OutFile "./BDD/FAUNA-EUROPEA/code.html"
 		$Source = Get-Content -path "./BDD/FAUNA-EUROPEA/code.html" -raw
-		$Source -match '<H1><i>(.*?)</i>' | Out-Null
+		Remove-item "./BDD/FAUNA-EUROPEA/code.html"
+                $Source -match '<H1><i>(.*?)</i>' | Out-Null
 		$Sourcecode = $matches[1]
 		
 		if ($nom -eq $Sourcecode) { Write-Host "  > Le code espèce de $nom dans Fauna-Europea est "-NoNewline; Write-Host "correct" -ForegroundColor Green }
@@ -133,12 +136,10 @@ $cigales_codes | ForEach-Object {
 echo "##################################################################################"
 if (-not(Test-Path -Path "./BDD/FAUNE-FRANCE/erreurs.txt"  -PathType Leaf)) { 
 	Write-Host "  > Tous les codes espèces de Faune-France sont "-NoNewline; Write-Host "corrects" -ForegroundColor Green
-	Remove-item "./BDD/FAUNE-FRANCE/code.html"
 } 
 else {
 	Write-Host "  > Quelques codes espèces sont "-NoNewline; Write-Host "en erreur" -ForegroundColor Red -NoNewline;Write-Host " dans Faune-France"
 	$ff_txt = (Get-Content "./BDD/FAUNE-FRANCE/erreurs.txt") + "`n`n"
-	Remove-item "./BDD/FAUNE-FRANCE/code.html"
 	Remove-item "./BDD/FAUNE-FRANCE/erreurs.txt"
 }
 
@@ -158,12 +159,10 @@ else {
 
 if (-not(Test-Path -Path "./BDD/OBSERVATION/erreurs.txt" -PathType Leaf)) {
 	Write-Host "  > Tous les codes espèces de Observation.org sont "-NoNewline; Write-Host "corrects" -ForegroundColor Green
-	Remove-item "./BDD/OBSERVATION/code.html"
 } 
 else {
 	Write-Host "  > Quelques codes espèces sont "-NoNewline; Write-Host "en erreur" -ForegroundColor Red -NoNewline;Write-Host "  dans Observation.org"
 	$obs_txt = (Get-Content "./BDD/OBSERVATION/erreurs.txt") + "`n`n"
-	Remove-item "./BDD/OBSERVATION/code.html"
 	Remove-item "./BDD/OBSERVATION/erreurs.txt"
 }
 
@@ -183,12 +182,10 @@ else {
 
 if (-not(Test-Path -Path "./BDD/FAUNA-EUROPEA/erreurs.txt" -PathType Leaf)) {
 	Write-Host "  > Tous les codes espèces de Fauna-Europea sont "-NoNewline; Write-Host "corrects" -ForegroundColor Green
-	Remove-item "./BDD/FAUNA-EUROPEA/code.html"
 } 
 else {
 	Write-Host "  > Quelques codes espèces sont "-NoNewline; Write-Host "en erreur" -ForegroundColor Red -NoNewline;Write-Host "  dans Fauna-Europea"
 	$fe_txt = Get-Content "./BDD/FAUNA-EUROPEA/erreurs.txt"
-	Remove-item "./BDD/FAUNA-EUROPEA/code.html"
 	Remove-item "./BDD/FAUNA-EUROPEA/erreurs.txt"
 }
 
