@@ -35,7 +35,7 @@ for (i in 1:length(CIGALES_CODES$CODE)) {
   map_CAN <- tm_shape(CANTONS) + tm_polygons("CIGALE", palette=c("TRUE" = "red", "FALSE" = "white"), border.alpha = 0, legend.show = FALSE)
   
   # Création de la carte finale
-  map_fr <- map_CAN + map_DEP + map_REG + tm_layout(title = expression(italic(CIGALES_CODES$NOM_SCIENTIFIQUE[i])))
+  map_fr <- map_CAN + map_DEP + map_REG + tm_layout(title = CIGALES_CODES$NOM_SCIENTIFIQUE[i])
 
   # Enregistrement  
   tmap_save(map_fr, filename=paste0("./BDD/CDF/",CIGALES_CODES$CODE[i],".png"))
