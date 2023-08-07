@@ -16,10 +16,11 @@ jobs:
         run:  |
           ./SCRIPTS/CODES.ps1      
       
-      - name: Création des cartes de l'Europe
+      - name: Création des cartes Cigales de France et de l'Europe
         if: always()
         run:  |
           choco install pandoc -y
+          Rscript ./SCRIPTS/CARTES-CDF.R
           Rscript ./SCRIPTS/CARTES-EUROPE.R
 
       - name: Téléchargement des bases de données et construction des kml

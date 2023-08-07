@@ -29,5 +29,4 @@ for (i in 1:length(CIGALES_CODES$CODE)) {
     addTiles(attribution = '<img src="https://docs.gbif.org/style/logo.svg" style="max-width:100px"/>')
   
   mapshot(map, file = paste0("./BDD/GBIF-EUROPE/",CIGALES_CODES$CODE[i],".png"), useragent = 'Mozilla/5.0',vwidth = 1500, vheight = 900)
-  i = i+1
 }
