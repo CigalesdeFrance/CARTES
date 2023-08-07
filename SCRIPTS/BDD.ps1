@@ -1,8 +1,8 @@
 $cigales_codes = Import-Csv "CIGALES-CODES.csv"
 
-Remove-item "./BDD/INPN/*.csv"
-Remove-item "./BDD/INATURALIST/*.csv"
-Remove-Item "./BDD/GBIF/*.csv"
+#Remove-item "./BDD/INPN/*.csv"
+#Remove-item "./BDD/INATURALIST/*.csv"
+#Remove-Item "./BDD/GBIF/*.csv"
 
 $cigales_codes | ForEach-Object {
 	$code = $_.CODE
