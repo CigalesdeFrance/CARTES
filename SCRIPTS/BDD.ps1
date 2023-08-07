@@ -16,18 +16,26 @@ $cigales_codes | ForEach-Object {
 	
 	# FAUNE-FRANCE
 	"Faune-France - $nom"
-	if ($faune_france -eq "") { "  > L'espèce n'existe pas dans Faune-France" }
+	if ($faune_france -eq "") {
+		"  > L'espèce n'existe pas dans Faune-France"
+		Invoke-WebRequest -Uri "https://raw.githubusercontent.com/CigalesdeFrance/CARTES/main/BDD/FAUNE-FRANCE/null.png" -OutFile "./BDD/FAUNE-FRANCE/$code.png"
+	}
 	else {
 		Invoke-WebRequest -Uri "https://www.faune-france.org/index.php?m_id=95&sp_tg=19&sp_DChoice=all&sp_SChoice=species&sp_PChoice=all&sp_FChoice=map&sp_S=$faune_france" -OutFile "./BDD/FAUNE-FRANCE/$code.png" 
 	}
 	
 	# INPN
 	"INPN - $nom"
-	if ($inpn -eq "") { "  > L'espèce n'existe pas dans INPN" }
+	if ($inpn -eq "") {
+		"  > L'espèce n'existe pas dans INPN"
+		Add-Content "./BDD/INPN/$code.csv" "Latitude,Longitude,ID"
+	}
 	else {
 		$totalRecords = (Invoke-WebRequest "https://openobs.mnhn.fr/biocache-service/occurrences/search?fq=taxonConceptID:$inpn" | ConvertFrom-Json).totalRecords
 		if ($totalRecords -eq 0) {
-		"  > L'espèce est présente dans INPN mais ne possède aucune donnée" }
+			"  > L'espèce est présente dans INPN mais ne possède aucune donnée" 
+			Add-Content "./BDD/INPN/$code.csv" "Latitude,Longitude,ID"
+		}
 		else {
 			Add-Content "./BDD/INPN/$code-coord.csv" "Latitude,Longitude"
 			Add-Content "./BDD/INPN/$code-id.csv" "ID"
@@ -53,10 +61,16 @@ $cigales_codes | ForEach-Object {
 	
 	# INATURALIST
 	"Inaturalist - $nom"
-	if ($inaturalist -eq "") { "  > L'espèce n'existe pas dans Inaturalist" }
+	if ($inaturalist -eq "") {
+		"  > L'espèce n'existe pas dans Inaturalist"
+		Add-Content "./BDD/INATURALIST/$code.csv" "Latitude,Longitude,ID"
+	}
 	else {
 		$total_results = (Invoke-WebRequest "https://api.inaturalist.org/v1/observations?&place_id=6753&taxon_id=$inaturalist" | ConvertFrom-Json).total_results
-		if ($total_results -eq 0) { "  > L'espèce est présente dans Inaturalist mais ne possède aucune donnée" }
+		if ($total_results -eq 0) {
+			"  > L'espèce est présente dans Inaturalist mais ne possède aucune donnée"
+			Add-Content "./BDD/INATURALIST/$code.csv" "Latitude,Longitude,ID"		
+		}
 		else {
 			Add-Content "./BDD/INATURALIST/$code-coord.csv" "Latitude,Longitude"
 			Add-Content "./BDD/INATURALIST/$code-id.csv" "ID"
@@ -79,16 +93,22 @@ $cigales_codes | ForEach-Object {
 	
 	# OBSERVATION.ORG
 	"Observation.org - $nom"
-	if ($observation -eq "") { "  > L'espèce n'existe pas dans Observation" }
+	if ($observation -eq "") {
+		"  > L'espèce n'existe pas dans Observation"
+		Add-Content "./BDD/OBSERVATION/$code.csv" "Latitude,Longitude,ID"
+	}
 	else {
 		[xml]$data = (invoke-webrequest -Uri "https://france.observation.org/kmlloc/soort_get_xml_points.php?soort=$observation")
 		$observation = $data.markers.line.point
-		if ($observation.count -eq 0) { "  > L'espèce est présente dans Observation mais ne possède aucune donnée" }
+		if ($observation.count -eq 0) {
+			"  > L'espèce est présente dans Observation mais ne possède aucune donnée"
+			Add-Content "./BDD/OBSERVATION/$code.csv" "Latitude,Longitude,ID"
+		}
 		else {
 			$observation | Out-File "observation.txt"
 			(Get-Content "observation.txt" | Select-Object -Skip 2) | Set-Content "observation.txt"
 			$observation = Get-Content "observation.txt"
-			$observation[0] = "Latitude,Longitude"
+			$observation[0] = "Latitude,Longitude,ID"
 			$observation = $observation -replace " ",","
 			$observation | Out-File "./BDD/OBSERVATION/$code.csv"
 			Remove-Item "observation.txt" 
@@ -97,10 +117,16 @@ $cigales_codes | ForEach-Object {
 	
 	# GBIF
 	"GBIF - $nom"
-	if ($GBIF -eq "") { "  > L'espèce n'existe pas dans GBIF" }
+	if ($GBIF -eq "") {
+		"  > L'espèce n'existe pas dans GBIF"
+		Add-Content "./BDD/GBIF/$code.csv" "Latitude,Longitude,ID"
+	}
 	else {
 		$count = (Invoke-WebRequest "https://api.gbif.org/v1/occurrence/search?country=FR&taxon_key=$gbif" | ConvertFrom-Json).count
-		if ($count -eq 0)  { "  > L'espèce est présente dans GBIF mais ne possède aucune donnée" }
+		if ($count -eq 0)  {
+			"  > L'espèce est présente dans GBIF mais ne possède aucune donnée"
+			Add-Content "./BDD/GBIF/$code.csv" "Latitude,Longitude,ID"
+		}
 		else {
 			Add-Content "./BDD/GBIF/$code-coord.csv" "Latitude,Longitude"
 			Add-Content "./BDD/GBIF/$code-id.csv" "ID"
@@ -169,7 +195,7 @@ foreach ($f in $files){
 	<name>$espece</name>
 	<Folder>
 	<name>OBSERVATION</name>
-	$(Import-Csv "./BDD/OBSERVATION/$fichier" | foreach {'<Placemark><description>https://france.observation.org/</description><styleUrl>#observation</styleUrl><Point><coordinates>{1},{0}</coordinates></Point></Placemark>' -f $_.Latitude, $_.Longitude})
+	$(Import-Csv "./BDD/OBSERVATION/$fichier" | foreach {'<Placemark><description>https://france.observation.org/{2}</description><styleUrl>#observation</styleUrl><Point><coordinates>{1},{0}</coordinates></Point></Placemark>' -f $_.Latitude, $_.Longitude, $_.ID})
 	</Folder>
 	</Document>
 	</kml>"
