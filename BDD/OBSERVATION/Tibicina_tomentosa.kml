@@ -4,7 +4,7 @@
 	<name>Tibicina_tomentosa</name>
 	<Folder>
 	<name>OBSERVATION</name>
-	
+	<Placemark><description>https://france.observation.org/ID</description><styleUrl>#observation</styleUrl><Point><coordinates>Longitude,Latitude</coordinates></Point></Placemark>
 	</Folder>
 	</Document>
 	</kml>
