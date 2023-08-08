@@ -138,7 +138,7 @@ $cigales_codes | ForEach-Object {
 				"page $num sur $pages"
 				$json = (Invoke-WebRequest "https://api.gbif.org/v1/occurrence/search?country=FR&taxon_key=$gbif&occurrenceStatus=PRESENT&offset=$offset&limit=300" | ConvertFrom-Json)
     				$json_filter = $json.results | where { $_.identificationVerificationStatus -ne "Douteux" }
-				$json_filter = $json.results -match "decimalLatitude"
+				$json_filter = $json_filter -match "decimalLatitude"
 				$latLong = $json_filter.latLong | Add-Content "./BDD/GBIF/$code-coord.csv"
 				$id = $json_filter.uuid | Add-Content "./BDD/GBIF/$code-id.csv" 
 				
