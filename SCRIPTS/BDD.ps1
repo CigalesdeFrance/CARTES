@@ -123,7 +123,7 @@ $cigales_codes | ForEach-Object {
 		Add-Content "./BDD/GBIF/$code.csv" "Latitude,Longitude,ID"
 	}
 	else {
-		$count = (Invoke-WebRequest "https://api.gbif.org/v1/occurrence/search?country=FR&taxon_key=$gbif" | ConvertFrom-Json).count
+		$count = (Invoke-WebRequest "https://api.gbif.org/v1/occurrence/search?country=FR&taxon_key=$gbif&occurrenceStatus=PRESENT" | ConvertFrom-Json).count
 		if ($count -eq 0)  {
 			"  > L'espèce est présente dans GBIF mais ne possède aucune donnée"
 			Add-Content "./BDD/GBIF/$code.csv" "Latitude,Longitude,ID"
@@ -136,7 +136,8 @@ $cigales_codes | ForEach-Object {
 				if ($num -eq 0) {$offset=0} else {$offset = ($num*300)}
 				#$offset
 				"page $num sur $pages"
-				$json = (Invoke-WebRequest "https://api.gbif.org/v1/occurrence/search?country=FR&taxon_key=$gbif&offset=$offset&limit=300" | ConvertFrom-Json)
+				$json = (Invoke-WebRequest "https://api.gbif.org/v1/occurrence/search?country=FR&taxon_key=$gbif&occurrenceStatus=PRESENT&offset=$offset&limit=300" | ConvertFrom-Json)
+    				$json_filter = $json.results | where { $_.identificationVerificationStatus -ne "Douteux" }
 				$json_filter = $json.results -match "decimalLatitude"
 				$latLong = $json_filter.latLong | Add-Content "./BDD/GBIF/$code-coord.csv"
 				$id = $json_filter.uuid | Add-Content "./BDD/GBIF/$code-id.csv" 
