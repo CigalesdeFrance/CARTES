@@ -32,7 +32,8 @@ $cigales_codes | ForEach-Object {
 		Add-Content "./BDD/INPN/$code.csv" "Latitude,Longitude,ID"
 	}
 	else {
-		$totalRecords = (Invoke-WebRequest "https://openobs.mnhn.fr/biocache-service/occurrences/search?fq=taxonConceptID:$inpn" | ConvertFrom-Json).totalRecords
+		$trurl = 'https://openobs.mnhn.fr/biocache-service/occurrences/search?q=taxonConceptID:' + $inpn +' AND ((dynamicProperties_nivValNationale:"Certain - très probable") OR (dynamicProperties_nivValNationale:"Probable") OR (dynamicProperties_nivValNationale:"Non réalisable")) AND ((dynamicProperties_nivValRegionale:"Certain - très probable") OR (dynamicProperties_nivValRegionale:"Probable") OR (dynamicProperties_nivValRegionale:"Non réalisable") OR (*:* dynamicProperties_nivValRegionale:*))'
+		$totalRecords = (Invoke-WebRequest $trurl | ConvertFrom-Json).totalRecords
 		if ($totalRecords -eq 0) {
 			"  > L'espèce est présente dans INPN mais ne possède aucune donnée" 
 			Add-Content "./BDD/INPN/$code.csv" "Latitude,Longitude,ID"
@@ -45,7 +46,8 @@ $cigales_codes | ForEach-Object {
 				if ($num -eq 0) {$startIndex=0} else {$startIndex = ($num*300)}
 				#$startIndex
 				"page $num sur $pages"
-				$json = (Invoke-WebRequest "https://openobs.mnhn.fr/biocache-service/occurrences/search?fq=taxonConceptID:$inpn&startIndex=$startIndex&pageSize=300" | ConvertFrom-Json)
+				$jsonurl = $trurl + '&startIndex=' + $startIndex + '&pageSize=300'
+				$json = (Invoke-WebRequest $jsonurl | ConvertFrom-Json)
 				$json_filter = $json.occurrences -match "latLong"
 				$latLong = $json_filter.latLong | Add-Content "./BDD/INPN/$code-coord.csv"
 				$id = $json_filter.uuid | Add-Content "./BDD/INPN/$code-id.csv" 
@@ -137,7 +139,7 @@ $cigales_codes | ForEach-Object {
 				#$offset
 				"page $num sur $pages"
 				$json = (Invoke-WebRequest "https://api.gbif.org/v1/occurrence/search?country=FR&taxon_key=$gbif&occurrenceStatus=PRESENT&offset=$offset&limit=300" | ConvertFrom-Json)
-    				$json_filter = $json.results | where { $_.identificationVerificationStatus -ne "Douteux" }
+				$json_filter = $json.results | where { ($_.identificationVerificationStatus -ne "Douteux") -and ($_.identificationVerificationStatus -ne "Invalide") }
 				$json_filter = $json_filter -match "decimalLatitude"
 				$lat = $json_filter.decimalLatitude | Add-Content "./BDD/GBIF/$code-lat.csv" 
 				$long = $json_filter.decimalLongitude | Add-Content "./BDD/GBIF/$code-long.csv" 
@@ -258,8 +260,8 @@ foreach($line in Get-Content ./BDD/ONEM/index.html) {
 		$Sourceurl = $matches[1]
         Echo $sci1
 		Invoke-WebRequest -Uri "http://www.onem-france.org/cigales/tools/cartowiki/CACHE/$Sourceurl.jpg" -OutFile "./BDD/ONEM/$sci.jpg"
-
-    }
+		
+	}
 }
 
 Remove-Item "sp.html"
