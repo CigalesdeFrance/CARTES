@@ -8,8 +8,8 @@
 }
 
 body {
-	width: 90%;
-	max-width: 90%;
+	width: 95%;
+	max-width: 95%;
 	margin: 1em auto auto auto;
 	font: 1em/1.5 Arial, Helvetica, sans-serif
 }
@@ -79,8 +79,11 @@ body {
 
 /*------------------------------------- AUTRES CARTES -------------------------------------*/
 .header {
-	width: 100%;
+	width: 95%;
 	text-align: center;
+	position: fixed !important;
+	position: absolute; /* IE10 */
+	z-index: 100;
 }
 
 .row {
@@ -89,7 +92,7 @@ body {
 	-ms-flex-wrap: wrap; /* IE10 */
 	flex-wrap: wrap;
 	vertical-align: middle;
-
+	
 }
 
 .column {
@@ -105,7 +108,7 @@ body {
 	max-width: 100%;
 }
 
- .ffmap {
+.ffmap {
 	max-width: inherit;
 	border: 2px solid black;
 	background-image: url(https://cartes.cigalesdefrance.fr/ASSETS/fond.jpg); 
