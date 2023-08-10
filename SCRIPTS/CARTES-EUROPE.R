@@ -1,5 +1,5 @@
 #### INSTALLATION ET CHARGEMENT DES PACKAGES ####
-install.packages(c("leaflet", "mapview"))
+install.packages(c("leaflet", "mapview"), repos = "https://cloud.r-project.org/")
 webshot::install_phantomjs()
 
 library(leaflet)

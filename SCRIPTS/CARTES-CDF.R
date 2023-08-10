@@ -1,5 +1,5 @@
 #### INSTALLATION ET CHARGEMENT DES PACKAGES ####
-install.packages(c("sf","tmap"))
+install.packages(c("sf","tmap"), repos = "https://cloud.r-project.org/")
 
 library(sf)
 library(tmap)
