@@ -22,7 +22,7 @@ window.onload = function go() {
 	// Ajout des contours des régions/départements
 	var regions = new ol.layer.Vector({
 		source: new ol.source.Vector({
-			url: 'https://cartes.cigalesdefrance.fr/ASSETS/regions.geojson',
+			url: 'https://cartes.cigalesdefrance.fr/DATA/regions.geojson',
 			format: new ol.format.GeoJSON()
 		}),
 		minResolution: 200,
@@ -31,7 +31,7 @@ window.onload = function go() {
 	
 	var departements = new ol.layer.Vector({
 		source: new ol.source.Vector({
-			url: 'https://cartes.cigalesdefrance.fr/ASSETS/departements.geojson',
+			url: 'https://cartes.cigalesdefrance.fr/DATA/departements.geojson',
 			format: new ol.format.GeoJSON()
 		}),
 		minResolution: 10,

@@ -6,9 +6,9 @@ library(tmap)
 
 #### CREATION DES VARIABLES ####
 CIGALES_CODES <- read.csv(file = "CIGALES-CODES.csv", header = T, sep = ",")
-REGIONS <- st_read("./ASSETS/regions.geojson")
-DEPARTEMENTS <- st_read("./ASSETS/departements.geojson")
-CANTONS <- st_read("./ASSETS/cantons.geojson")
+REGIONS <- st_read("./DATA/regions.geojson")
+DEPARTEMENTS <- st_read("./DATA/departements.geojson")
+CANTONS <- st_read("./DATA/cantons.geojson")
 
 #### STYLE DES COUCHES ####
 map_REG <- tm_shape(REGIONS) + tm_borders(col="black", lwd = 2) + tm_fill(alpha = 0) + tm_logo("./ASSETS/LOGOS/Cigales_de_France.png", height=3, position = c("left", "bottom"))

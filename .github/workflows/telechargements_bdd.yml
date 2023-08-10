@@ -23,7 +23,7 @@ jobs:
       - name: Création des cartes Cigales de France et de l'Europe
         if: always()
         run:  |
-          choco install r.project pandoc -y
+          choco install r.project pandoc --no-progress -y
           Rscript ./SCRIPTS/CARTES-CDF.R
           Rscript ./SCRIPTS/CARTES-EUROPE.R
           ./SCRIPTS/GIT.ps1
