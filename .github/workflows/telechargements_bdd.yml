@@ -9,21 +9,21 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@main
-      - uses: r-lib/actions/setup-r@v2-branch
-
+      
       - name: Vérification des codes espèces
         if: always()
         run:  |
-          ./SCRIPTS/CODES.ps1      
-      
-      - name: Création des cartes Cigales de France et de l'Europe
-        if: always()
-        run:  |
-          choco install pandoc -y
-          Rscript ./SCRIPTS/CARTES-CDF.R
-          Rscript ./SCRIPTS/CARTES-EUROPE.R
+          ./SCRIPTS/CODES.ps1
 
       - name: Téléchargement des bases de données et construction des kml
         if: always()
         run:  |
           ./SCRIPTS/BDD.ps1
+      
+      - name: Création des cartes Cigales de France et de l'Europe
+        if: always()
+        run:  |
+          choco install r.project pandoc -y
+          Rscript ./SCRIPTS/CARTES-CDF.R
+          Rscript ./SCRIPTS/CARTES-EUROPE.R
+          ./SCRIPTS/GIT.ps1
