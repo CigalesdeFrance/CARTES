@@ -35,7 +35,7 @@ window.onload = function go() {
 			format: new ol.format.GeoJSON()
 		}),
 		minResolution: 10,
-		maxResolution: 200,
+		maxResolution: 500,
 		style: style_departements
 	});
 	
