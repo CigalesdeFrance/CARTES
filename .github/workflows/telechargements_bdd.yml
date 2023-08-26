@@ -11,17 +11,16 @@ jobs:
       - uses: actions/checkout@main
       
       - name: Vérification des codes espèces
-        if: always()
         run:  |
           ./SCRIPTS/CODES.ps1
 
       - name: Téléchargement des bases de données et construction des kml
-        if: always()
+        if: success()
         run:  |
           ./SCRIPTS/BDD.ps1
       
       - name: Création des cartes Cigales de France et de l'Europe
-        if: always()
+        if: success()
         run:  |
           choco install r.project pandoc --no-progress -y
           Rscript ./SCRIPTS/CARTES-CDF.R
