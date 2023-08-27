@@ -130,4 +130,17 @@ button {
 		flex: 100%;
 		max-width: 100%;
 	}
+	
+	[id^="GPsearchEngine-"] {
+		top: 100px;
+		left: 8px;
+	}
+	
+	div[id^=GPlayerSwitcher-] {
+		top: 100px;
+	}
+	
+	div[id^="GPmousePosition-"] {
+		bottom: 100px;
+	}
 }
