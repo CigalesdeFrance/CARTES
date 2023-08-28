@@ -96,25 +96,36 @@ $cigales_codes | ForEach-Object {
 	
 	# OBSERVATION.ORG
 	"Observation.org - $nom"
+	$params = @{client_id=$env:CLIENT_ID;grant_type='password';email=$env:MAIL;password=$env:PASSWORD}
+	$TOKEN = (Invoke-WebRequest -Uri "https://observation.org/api/v1/oauth2/token/" -Method POST -Body $params | ConvertFrom-Json).access_token
+	$headers = @{Authorization="Bearer $TOKEN"}
 	if ($observation -eq "") {
-		"  > L'espèce n'existe pas dans Observation"
+		"  > L'espèce n'existe pas dans Observation.org"
 		Add-Content "./BDD/OBSERVATION/$code.csv" "Latitude,Longitude,ID"
 	}
 	else {
-		[xml]$data = (invoke-webrequest -Uri "https://france.observation.org/kmlloc/soort_get_xml_points.php?soort=$observation")
-		$observation = $data.markers.line.point
-		if ($observation.count -eq 0) {
-			"  > L'espèce est présente dans Observation mais ne possède aucune donnée"
+		$count = (Invoke-WebRequest "https://observation.org/api/v1/species/$observation/observations/?country_id=78" -Headers $headers | ConvertFrom-Json).count
+		if ($count -eq 0)  {
+			"  > L'espèce est présente dans Observation.org mais ne possède aucune donnée"
 			Add-Content "./BDD/OBSERVATION/$code.csv" "Latitude,Longitude,ID"
 		}
 		else {
-			$observation | Out-File "observation.txt"
-			(Get-Content "observation.txt" | Select-Object -Skip 2) | Set-Content "observation.txt"
-			$observation = Get-Content "observation.txt"
-			$observation[0] = "Latitude,Longitude,ID"
-			$observation = $observation -replace " ",","
-			$observation | Out-File "./BDD/OBSERVATION/$code.csv"
-			Remove-Item "observation.txt" 
+			$pages = [math]::floor($count/300)
+			for ($num=0;$num -le $pages;$num++) {
+				if ($num -eq 0) {$offset=0} else {$offset = ($num*300)}
+				#$offset
+				"page $num sur $pages"
+				$json = (Invoke-WebRequest "https://observation.org/api/v1/species/$observation/observations/?country_id=78&offset=$offset&limit=300" -Headers $headers  | ConvertFrom-Json)
+				$json_filter = $json.results | where {$_.is_certain -eq "True"}
+				Add-Content "./BDD/OBSERVATION/$code.csv" "Latitude,Longitude,ID"
+				For ($i=0; $i -le ($count-1); $i++) {
+					$lat = $tag.results[$i].point.coordinates[1]
+					$long = $tag.results[$i].point.coordinates[0]
+					$id = $tag.results[$i].id
+					$value = "$($lat),$($long),$($id)"
+					$value | Add-Content "./BDD/OBSERVATION/$code.csv"
+				}
+			}
 		}
 	}
 	
@@ -196,7 +207,7 @@ foreach ($f in $files){
 	<name>$espece</name>
 	<Folder>
 	<name>OBSERVATION</name>
-	$(Import-Csv "./BDD/OBSERVATION/$fichier" | foreach {'<Placemark><description>https://france.observation.org/{2}</description><styleUrl>#observation</styleUrl><Point><coordinates>{1},{0}</coordinates></Point></Placemark>' -f $_.Latitude, $_.Longitude, $_.ID})
+	$(Import-Csv "./BDD/OBSERVATION/$fichier" | foreach {'<Placemark><description>https://observation.org/observation/{2}</description><styleUrl>#observation</styleUrl><Point><coordinates>{1},{0}</coordinates></Point></Placemark>' -f $_.Latitude, $_.Longitude, $_.ID})
 	</Folder>
 	</Document>
 	</kml>"

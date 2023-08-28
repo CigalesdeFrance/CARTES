@@ -4,6 +4,11 @@ on:
     - cron:  '0 5 * * *'
   workflow_dispatch:
 
+env:
+    CLIENT_ID: ${{ secrets.CLIENT_ID }}
+    MAIL: ${{ secrets.MAIL }}
+    PASSWORD: ${{ secrets.PASSWORD }}
+
 jobs:
   TELECHARGEMENT-BDD:
     runs-on: windows-latest
