@@ -96,7 +96,6 @@ $cigales_codes | ForEach-Object {
 	
 	# OBSERVATION.ORG
 	"Observation.org - $nom"
-	$params = @{client_id=$env:CLIENT_ID;grant_type='password';email=$env:MAIL;password=$env:PASSWORD}
 	$TOKEN = (Invoke-WebRequest -Uri "https://observation.org/api/v1/oauth2/token/" -Method POST -Body $params | ConvertFrom-Json).access_token
 	$headers = @{Authorization="Bearer $TOKEN"}
 	if ($observation -eq "") {
