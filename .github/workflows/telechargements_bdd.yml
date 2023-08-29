@@ -20,7 +20,7 @@ jobs:
           ./SCRIPTS/CODES.ps1
 
       - name: Téléchargement des bases de données et construction des kml
-        if: success()
+        if: always()
         run:  |
           $params = @{client_id="$env:CLIENT_ID";grant_type='password';email="$env:MAIL";password="$env:PASSWORD"}
           ./SCRIPTS/BDD.ps1
