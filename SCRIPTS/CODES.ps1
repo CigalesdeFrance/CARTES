@@ -25,7 +25,7 @@ $cigales_codes | ForEach-Object {
 	
 	# FAUNE-FRANCE
 	if ($faune_france -eq "") { Write-Host "  > $nom "-NoNewline; Write-Host "n'existe pas" -ForegroundColor Yellow -NoNewline;Write-Host " dans Faune-France" }
-	elseif ($code -eq "Cicada_barbara_lusitanica") { Write-Host "  > $nom "-NoNewline; Write-Host "n'existe pas officiellement" -ForegroundColor Yellow -NoNewline;Write-Host " dans Faune-France" } # faux-positif
+	elseif ($code -eq "Cicada_barbara") { Write-Host "  > $nom "-NoNewline; Write-Host "n'existe pas officiellement" -ForegroundColor Yellow -NoNewline;Write-Host " dans Faune-France" } # faux-positif
 	else {		
 		Invoke-WebRequest -Uri "https://www.faune-france.org/index.php?m_id=94&sp_tg=19&sp_DOffset=1&sp_SChoice=family&sp_Family=1511&sp_SChoice=species&sp_PChoice=all&sp_FDisplay=DATE_PLACE_SPECIES&sp_S=$faune_france" -OutFile "./BDD/FAUNE-FRANCE/code.html"
 		$Source = Get-Content -path "./BDD/FAUNE-FRANCE/code.html" -raw
