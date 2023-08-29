@@ -143,6 +143,38 @@ window.onload = function go() {
 	// Ajout du LayerSwitcher à la carte
 	map.addControl(lsControl);
 	
+	// Lien vers le wiki
+	var wiki_a = document.createElement('a');
+    wiki_a.href = 'https://www.cigalesdefrance.fr';
+	wiki_a.title = 'Accès au wiki';
+	var wiki_button = document.createElement('button');
+	wiki_button.className = 'wikilink'
+	wiki_button.innerHTML = 'W';
+	var wiki = document.createElement('div');
+	wiki.className = 'ol-unselectable ol-control';
+	wiki.appendChild(wiki_a).appendChild(wiki_button);
+
+	var wiki_link = new ol.control.Control({
+    element: wiki
+	});
+	map.addControl(wiki_link);
+	
+	// Lien vers le forum
+	var forum_a = document.createElement('a');
+    forum_a.href = 'https://forum.cigalesdefrance.fr';
+	forum_a.title = 'Accès au forum';
+	var forum_button = document.createElement('button');
+	forum_button.className = 'forumlink'
+	forum_button.innerHTML = 'F';
+	var forum = document.createElement('div');
+	forum.className = 'ol-unselectable ol-control';
+	forum.appendChild(forum_a).appendChild(forum_button);
+
+	var forum_link = new ol.control.Control({
+    element: forum
+	});
+	map.addControl(forum_link);
+	
 	// Création du contrôle de mesure de distance
 	//var length = new ol.control.MeasureLength({});
 	//map.addControl(length);
