@@ -5,6 +5,11 @@ Remove-item "./BDD/INATURALIST/*.csv"
 Remove-Item "./BDD/OBSERVATION/*.csv"
 Remove-Item "./BDD/GBIF/*.csv"
 
+### AUTHENTIFICATION
+$OBS_TOKEN = (Invoke-WebRequest -Uri "https://observation.org/api/v1/oauth2/token/" -Method POST -Body $params | ConvertFrom-Json).access_token
+$OBS_HEADERS = @{Authorization="Bearer $OBS_TOKEN"}
+
+### CREATION DES CSV
 $cigales_codes | ForEach-Object {
 	$code = $_.CODE
 	$nom = $_.NOM_SCIENTIFIQUE
@@ -96,31 +101,29 @@ $cigales_codes | ForEach-Object {
 	
 	# OBSERVATION.ORG
 	"Observation.org - $nom"
-	$TOKEN = (Invoke-WebRequest -Uri "https://observation.org/api/v1/oauth2/token/" -Method POST -Body $params | ConvertFrom-Json).access_token
-	$headers = @{Authorization="Bearer $TOKEN"}
 	if ($observation -eq "") {
 		"  > L'espèce n'existe pas dans Observation.org"
 		Add-Content "./BDD/OBSERVATION/$code.csv" "Latitude,Longitude,ID"
 	}
 	else {
-		$count = (Invoke-WebRequest "https://observation.org/api/v1/species/$observation/observations/?country_id=78" -Headers $headers | ConvertFrom-Json).count
+		$count = (Invoke-WebRequest "https://observation.org/api/v1/species/$observation/observations/?country_id=78" -Headers $OBS_HEADERS | ConvertFrom-Json).count
 		if ($count -eq 0)  {
 			"  > L'espèce est présente dans Observation.org mais ne possède aucune donnée"
 			Add-Content "./BDD/OBSERVATION/$code.csv" "Latitude,Longitude,ID"
 		}
 		else {
+			Add-Content "./BDD/OBSERVATION/$code.csv" "Latitude,Longitude,ID"
 			$pages = [math]::floor($count/300)
 			for ($num=0;$num -le $pages;$num++) {
 				if ($num -eq 0) {$offset=0} else {$offset = ($num*300)}
 				#$offset
 				"page $num sur $pages"
-				$json = (Invoke-WebRequest "https://observation.org/api/v1/species/$observation/observations/?country_id=78&offset=$offset&limit=300" -Headers $headers  | ConvertFrom-Json)
+				$json = (Invoke-WebRequest "https://observation.org/api/v1/species/$observation/observations/?country_id=78&offset=$offset&limit=300" -Headers $OBS_HEADERS  | ConvertFrom-Json)
 				$json_filter = $json.results | where {$_.is_certain -eq "True"}
-				Add-Content "./BDD/OBSERVATION/$code.csv" "Latitude,Longitude,ID"
-				For ($i=0; $i -le ($count-1); $i++) {
-					$lat = $tag.results[$i].point.coordinates[1]
-					$long = $tag.results[$i].point.coordinates[0]
-					$id = $tag.results[$i].id
+				For ($i=0; $i -le (($json_filter.Length)-1); $i++) {
+					$lat = $json_filter[$i].point.coordinates[1]
+					$long = $json_filter[$i].point.coordinates[0]
+					$id = $json_filter[$i].id
 					$value = "$($lat),$($long),$($id)"
 					$value | Add-Content "./BDD/OBSERVATION/$code.csv"
 				}
@@ -202,7 +205,7 @@ foreach ($f in $files){
 	$kml =
 	"<?xml version=`"1.0`" encoding=`"UTF-8`"?><kml xmlns=`"http://www.opengis.net/kml/2.2`">
 	<Document>
-	<Style id=`"observation`"><IconStyle><scale>0.3</scale><Icon><href>https://maps.google.com/mapfiles/kml/paddle/red-circle-lv.png</href></Icon></IconStyle></Style>
+	<Style id=`"observation`"><IconStyle><scale>0.3</scale><Icon><href>https://maps.google.com/mapfiles/kml/paddle/blu-circle-lv.png</href></Icon></IconStyle></Style>
 	<name>$espece</name>
 	<Folder>
 	<name>OBSERVATION</name>
@@ -242,7 +245,7 @@ foreach ($f in $files){
 	$kml =
 	"<?xml version=`"1.0`" encoding=`"UTF-8`"?><kml xmlns=`"http://www.opengis.net/kml/2.2`">
 	<Document>
-	<Style id=`"gbif`"><IconStyle><scale>0.3</scale><Icon><href>https://maps.google.com/mapfiles/kml/paddle/blu-circle-lv.png</href></Icon></IconStyle></Style>
+	<Style id=`"gbif`"><IconStyle><scale>0.3</scale><Icon><href>https://maps.google.com/mapfiles/kml/paddle/red-circle-lv.png</href></Icon></IconStyle></Style>
 	<name>$espece</name>
 	<Folder>
 	<name>GBIF</name>
