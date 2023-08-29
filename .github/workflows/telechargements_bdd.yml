@@ -22,7 +22,7 @@ jobs:
       - name: Téléchargement des bases de données et construction des kml
         if: success()
         run:  |
-          $params = @{client_id=$env:CLIENT_ID;grant_type='password';email=$env:MAIL;password=$env:PASSWORD}
+          $params = @{client_id="$env:CLIENT_ID";grant_type='password';email="$env:MAIL";password="$env:PASSWORD"}
           ./SCRIPTS/BDD.ps1
       
       - name: Création des cartes Cigales de France et de l'Europe
