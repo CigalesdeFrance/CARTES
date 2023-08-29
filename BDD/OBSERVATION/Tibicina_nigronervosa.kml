@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://www.opengis.net/kml/2.2">
 	<Document>
-	<Style id="observation"><IconStyle><scale>0.3</scale><Icon><href>https://maps.google.com/mapfiles/kml/paddle/red-circle-lv.png</href></Icon></IconStyle></Style>
+	<Style id="observation"><IconStyle><scale>0.3</scale><Icon><href>https://maps.google.com/mapfiles/kml/paddle/blu-circle-lv.png</href></Icon></IconStyle></Style>
 	<name>Tibicina_nigronervosa</name>
 	<Folder>
 	<name>OBSERVATION</name>
-	<Placemark><description>https://france.observation.org/</description><styleUrl>#observation</styleUrl><Point><coordinates>9.466,42.905</coordinates></Point></Placemark> <Placemark><description>https://france.observation.org/</description><styleUrl>#observation</styleUrl><Point><coordinates>9.390,43.007</coordinates></Point></Placemark>
+	<Placemark><description>https://observation.org/observation/223695942</description><styleUrl>#observation</styleUrl><Point><coordinates>9.3895167344617,43.006548953421</coordinates></Point></Placemark> <Placemark><description>https://observation.org/observation/223695940</description><styleUrl>#observation</styleUrl><Point><coordinates>9.4655771628255,42.90526765249</coordinates></Point></Placemark>
 	</Folder>
 	</Document>
 	</kml>
