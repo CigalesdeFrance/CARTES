@@ -120,10 +120,11 @@ $cigales_codes | ForEach-Object {
 				"page $num sur $pages"
 				$json = (Invoke-WebRequest "https://observation.org/api/v1/species/$observation/observations/?country_id=78&offset=$offset&limit=300" -Headers $OBS_HEADERS  | ConvertFrom-Json)
 				$json_filter = $json.results | where {$_.is_certain -eq "True"}
-				For ($i=0; $i -le (($json_filter.Length)-1); $i++) {
-					$lat = $json_filter[$i].point.coordinates[1]
-					$long = $json_filter[$i].point.coordinates[0]
-					$id = $json_filter[$i].id
+    			$json_end = $json_filter | where {$_.number -gt 0}
+				For ($i=0; $i -le (($json_end.Length)-1); $i++) {
+					$lat = $json_end[$i].point.coordinates[1]
+					$long = $json_end[$i].point.coordinates[0]
+					$id = $json_end[$i].id
 					$value = "$($lat),$($long),$($id)"
 					$value | Add-Content "./BDD/OBSERVATION/$code.csv"
 				}
