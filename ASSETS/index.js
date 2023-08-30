@@ -3,6 +3,7 @@ window.onload = function go() {
 	// Affichage du loader
 	document.querySelector("body").style.visibility = "hidden";
 	document.getElementById("load").style.visibility = "visible";
+	/* console.log("Chargement de la carte ... ⛔"); */
 	
 	// Style des couches
 	var style_regions = new ol.style.Style({

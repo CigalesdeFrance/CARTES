@@ -1,3 +1,15 @@
+document.onreadystatechange = function () {
+	if (document.readyState !== "complete") {
+		document.querySelector("body").style.visibility = "hidden";
+		document.getElementById("load").style.visibility = "visible";
+		/* console.log("Chargement des cartes ... ⛔"); */
+	} else {
+		document.getElementById("load").style.display = "none";
+		document.querySelector("body").style.visibility = "visible";
+		/* console.log("Cartes prêtes ✅"); */
+		}
+};
+
 var espece = location.search.substring(1);
 $("#choix option[espece='" + espece + "']").attr("selected","selected");
 
