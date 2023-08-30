@@ -81,29 +81,44 @@ window.onload = function go() {
 			zoom: 5.8
 		})
 	});
-
+	
 	// Désactivation du loader et affichage de la carte
 	map.on('rendercomplete', e => {
-	document.getElementById("load").style.display ="none";
-    document.querySelector("body").style.visibility = "visible";
-    /* console.log("Carte prête ✅") */
-
-});
+		document.getElementById("load").style.display ="none";
+		document.querySelector("body").style.visibility = "visible";
+		/* console.log("Carte prête ✅") */
+	});
+	
+	// Pointeur
+ 	map.on("pointermove", function (evt) {
+		var hit = map.forEachFeatureAtPixel(evt.pixel, function(feature, layer) {
+			if ( layer == layer_bdd1 || layer == layer_bdd2 || layer == layer_bdd3 || layer == layer_bdd4 ) return true;
+		}); 
+		if (hit) {
+			map.getTargetElement().style.cursor = 'pointer';
+			} else {
+			map.getTargetElement().style.cursor = '';
+		}
+	});
 	
 	// Fonctionnalité de sélection d'entités
 	var selectClick = new ol.interaction.Select({
-        condition: ol.events.click
+		layers: [ layer_bdd1, layer_bdd2, layer_bdd3, layer_bdd4 ],
+		condition: ol.events.click
 	});
 	map.addInteraction(selectClick);
 	
 	// Actions lors de la sélection
-	map.on('click', function(evt) {
+ 	map.on('click', function(evt) {
 		var pixel = evt.pixel;
 		var features = [];
-		map.forEachFeatureAtPixel(pixel, function(feature) {
-			features.push(feature);
+		map.forEachFeatureAtPixel(pixel, function(feature, layer) {
+			if ( layer == layer_bdd1 || layer == layer_bdd2 || layer == layer_bdd3 || layer == layer_bdd4 ) { features.push(feature) };
 		});
-		observation.innerHTML = '<button><a href="' + features[0].get("description") + '" target="_blank">➤ Visualiser l\'observation</a></button>';
+		if ( features[0] == undefined ) {/* console.log("Clic hors données ⛔") */}
+		else {
+			observation.innerHTML = '<button><a href="' + features[0].get("description") + '" target="_blank">➤ Visualiser l\'observation</a></button>';
+		}
 	});
 	
 	// Création du Layer Switcher
@@ -158,7 +173,7 @@ window.onload = function go() {
 	
 	// Lien vers le wiki
 	var wiki_a = document.createElement('a');
-    wiki_a.href = 'https://www.cigalesdefrance.fr';
+	wiki_a.href = 'https://www.cigalesdefrance.fr';
 	wiki_a.title = 'Accès au wiki';
 	var wiki_button = document.createElement('button');
 	wiki_button.className = 'wikilink'
@@ -166,10 +181,8 @@ window.onload = function go() {
 	var wiki = document.createElement('div');
 	wiki.className = 'ol-unselectable ol-control';
 	wiki.appendChild(wiki_a).appendChild(wiki_button);
-
-	var wiki_link = new ol.control.Control({
-    element: wiki
-	});
+	
+	var wiki_link = new ol.control.Control({ element: wiki });
 	map.addControl(wiki_link);
 	
 	// Lien vers le forum
@@ -182,14 +195,12 @@ window.onload = function go() {
 	var forum = document.createElement('div');
 	forum.className = 'ol-unselectable ol-control';
 	forum.appendChild(forum_a).appendChild(forum_button);
-
-	var forum_link = new ol.control.Control({
-    element: forum
-	});
+	
+	var forum_link = new ol.control.Control({ element: forum });
 	map.addControl(forum_link);
 	
 	// Création du contrôle de mesure de distance
-	//var length = new ol.control.MeasureLength({});
+	//var length = new ol.control.MeasureLength();
 	//map.addControl(length);
 	
 	// Création du contrôle de détermination des coordonnées + altitude
@@ -204,7 +215,7 @@ window.onload = function go() {
 	map.addControl(mpControl);
 	
 	// Recherche de lieu
-	var searchControl = new ol.control.SearchEngine({});
+	var searchControl = new ol.control.SearchEngine();
 	map.addControl(searchControl);
 	
 	// Attribution automatique
