@@ -1,5 +1,9 @@
 window.onload = function go() {
 	
+	// Affichage du loader
+	document.querySelector("body").style.visibility = "hidden";
+	document.getElementById("load").style.visibility = "visible";
+	
 	// Style des couches
 	var style_regions = new ol.style.Style({
 		stroke: new ol.style.Stroke({
@@ -76,6 +80,14 @@ window.onload = function go() {
 			zoom: 5.8
 		})
 	});
+
+	// Désactivation du loader et affichage de la carte
+	map.on('rendercomplete', e => {
+	document.getElementById("load").style.display ="none";
+    document.querySelector("body").style.visibility = "visible";
+    /* console.log("Carte prête ✅") */
+
+});
 	
 	// Fonctionnalité de sélection d'entités
 	var selectClick = new ol.interaction.Select({
