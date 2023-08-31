@@ -27,6 +27,8 @@ for (i in 1:length(CIGALES_CODES$CODE)) {
     addTiles(urlTemplate=tileRaster) %>%
     addTiles(urlTemplate=tilePolygons) %>%
     addTiles(attribution = '<img src="https://docs.gbif.org/style/logo.svg" style="max-width:100px"/>')
+
+  Sys.sleep(5)
   
   mapshot(map, file = paste0("./BDD/GBIF-EUROPE/",CIGALES_CODES$CODE[i],".png"), useragent = 'Mozilla/5.0',vwidth = 1500, vheight = 900)
 }
