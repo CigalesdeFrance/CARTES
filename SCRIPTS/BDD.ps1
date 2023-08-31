@@ -53,7 +53,7 @@ $cigales_codes | ForEach-Object {
 				"page $num sur $pages"
 				$jsonurl = $trurl + '&startIndex=' + $startIndex + '&pageSize=300'
 				$json = (Invoke-WebRequest $jsonurl | ConvertFrom-Json)
-				$json_filter = $json.occurrences -match "latLong"
+				$json_filter = $json.occurrences -match "latLong" # Vérification de la présence de coordonnées
 				$latLong = $json_filter.latLong | Add-Content "./BDD/INPN/$code-coord.csv"
 				$id = $json_filter.uuid | Add-Content "./BDD/INPN/$code-id.csv" 
 			}
@@ -86,8 +86,10 @@ $cigales_codes | ForEach-Object {
 			$pages = [math]::ceiling($total_results/200)
 			for ($num=1;$num -le $pages;$num++) {
 				"page $num sur $pages"
-				(Invoke-WebRequest "https://api.inaturalist.org/v1/observations?&place_id=6753&taxon_id=$inaturalist&page=$num&per_page=200" | ConvertFrom-Json).results.location | Add-Content "./BDD/INATURALIST/$code-coord.csv" 
-				(Invoke-WebRequest "https://api.inaturalist.org/v1/observations?&place_id=6753&taxon_id=$inaturalist&page=$num&per_page=200" | ConvertFrom-Json).results.id | Add-Content "./BDD/INATURALIST/$code-id.csv" 
+				$json = (Invoke-WebRequest "https://api.inaturalist.org/v1/observations?&place_id=6753&taxon_id=$inaturalist&page=$num&per_page=200" | ConvertFrom-Json)
+				$json_filter = $tag.results | where {$_.quality_grade -ne "needs_id"} # Observation au moins validée par une personne
+				$json_filter.location | Add-Content "./BDD/INATURALIST/$code-coord.csv" 
+				$json_filter.id | Add-Content "./BDD/INATURALIST/$code-id.csv" 
 			}		
 			
 			$coord = Get-content "./BDD/INATURALIST/$code-coord.csv" 
@@ -119,8 +121,9 @@ $cigales_codes | ForEach-Object {
 				#$offset
 				"page $num sur $pages"
 				$json = (Invoke-WebRequest "https://observation.org/api/v1/species/$observation/observations/?country_id=78&offset=$offset&limit=300" -Headers $OBS_HEADERS  | ConvertFrom-Json)
-				$json_filter = $json.results | where {$_.is_certain -eq "True"}
-    			$json_end = $json_filter | where {$_.number -gt 0}
+				$json_filter = $json.results | where {$_.is_certain -eq "True"} # Observation certaine
+				$json_valid = $json_filter | where { ($_.validation_status -ne "I") -and ($_.validation_status -ne "N") } # Observation pas en attente ou invalide
+    			$json_end = $json_valid | where {$_.number -gt 0} # Effectif supérieur à 0
 				For ($i=0; $i -le (($json_end.Length)-1); $i++) {
 					$lat = $json_end[$i].point.coordinates[1]
 					$long = $json_end[$i].point.coordinates[0]
@@ -153,8 +156,8 @@ $cigales_codes | ForEach-Object {
 				#$offset
 				"page $num sur $pages"
 				$json = (Invoke-WebRequest "https://api.gbif.org/v1/occurrence/search?country=FR&taxon_key=$gbif&occurrenceStatus=PRESENT&offset=$offset&limit=300" | ConvertFrom-Json)
-				$json_filter = $json.results | where { ($_.identificationVerificationStatus -ne "Douteux") -and ($_.identificationVerificationStatus -ne "Invalide") }
-				$json_filter = $json_filter -match "decimalLatitude"
+				$json_filter = $json.results | where { ($_.identificationVerificationStatus -ne "Douteux") -and ($_.identificationVerificationStatus -ne "Invalide") } # Observation non douteuse ou invalide
+				$json_filter = $json_filter -match "decimalLatitude" # Vérification de la présence de coordonnées
 				$lat = $json_filter.decimalLatitude | Add-Content "./BDD/GBIF/$code-lat.csv" 
 				$long = $json_filter.decimalLongitude | Add-Content "./BDD/GBIF/$code-long.csv" 
 				$id = $json_filter.key | Add-Content "./BDD/GBIF/$code-id.csv" 
