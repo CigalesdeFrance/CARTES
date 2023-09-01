@@ -87,7 +87,7 @@ $cigales_codes | ForEach-Object {
 			for ($num=1;$num -le $pages;$num++) {
 				"page $num sur $pages"
 				$json = (Invoke-WebRequest "https://api.inaturalist.org/v1/observations?&place_id=6753&taxon_id=$inaturalist&page=$num&per_page=200" | ConvertFrom-Json)
-				$json_filter = $tag.results | where {$_.quality_grade -ne "needs_id"} # Observation au moins validée par une personne
+				$json_filter = $json.results | where {$_.quality_grade -ne "needs_id"} # Observation au moins validée par une personne
 				$json_filter.location | Add-Content "./BDD/INATURALIST/$code-coord.csv" 
 				$json_filter.id | Add-Content "./BDD/INATURALIST/$code-id.csv" 
 			}		
