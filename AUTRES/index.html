@@ -16,6 +16,18 @@
 			$(function(){
 				$("#choix").select2();
 			}); 
+			
+			document.onreadystatechange = function () {
+				if (document.readyState !== "complete") {
+					document.querySelector("body").style.visibility = "hidden";
+					document.getElementById("load").style.visibility = "visible";
+					/* console.log("Chargement des cartes ... ⛔"); */
+					} else {
+					document.getElementById("load").style.display = "none";
+					document.querySelector("body").style.visibility = "visible";
+					/* console.log("Cartes prêtes ✅"); */
+				}
+			};
 		</script>
 	</head>
 	<body>
@@ -64,7 +76,7 @@
 				<div id="onemdiv"></div>
 			</div>  
 			<div class="column">
-			<p>Faune-France [1905-<script>document.write( new Date().getFullYear() );</script>]</p>
+				<p>Faune-France [1905-<script>document.write( new Date().getFullYear() );</script>]</p>
 				<div id="ffmapdiv"></div>
 			</div>
 		</div>
