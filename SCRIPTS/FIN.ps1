@@ -46,5 +46,5 @@ Remove-Item "sp.html"
 git config --local user.email "cigalesdefrance@outlook.fr"
 git config --local user.name "CigalesdeFrance-dev"
 git add .
-git commit -m "[Bot] Création des cartes"
+git commit -m "[Bot] Téléchargement et création des cartes statiques"
 git push -f
