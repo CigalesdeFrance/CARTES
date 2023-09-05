@@ -28,7 +28,8 @@ jobs:
       - name: Création des fichiers KML et GeoJSON
         if: success()
         run:  |
-          ./SCRIPTS/FICHIERS.ps1
+          ./SCRIPTS/KML.ps1
+          #./SCRIPTS/GEOJSON.ps1
       
       - name: Création des cartes Cigales de France et de l'Europe
         if: success()
