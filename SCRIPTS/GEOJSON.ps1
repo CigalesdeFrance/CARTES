@@ -1,4 +1,4 @@
-### CREATION + GEOJSON
+### CREATION DES GEOJSON
 # INPN
 $files = Get-ChildItem "./BDD/INPN/" -Filter *.csv
 

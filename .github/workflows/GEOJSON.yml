@@ -1,11 +1,11 @@
-name: TELECHARGEMENT-BDD
+name: GEOJSON
 on:
   #schedule:
   #  - cron:  '0 5 * * *'
   workflow_dispatch:
 
 jobs:
-  TELECHARGEMENT-BDD:
+  GEOJSON:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@main
