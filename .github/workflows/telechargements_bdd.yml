@@ -29,7 +29,7 @@ jobs:
         if: success()
         run:  |
           ./SCRIPTS/KML.ps1
-          #./SCRIPTS/GEOJSON.ps1
+          ./SCRIPTS/GEOJSON.ps1
       
       - name: Création des cartes Cigales de France et de l'Europe
         if: success()
