@@ -1,0 +1,16 @@
+name: TELECHARGEMENT-BDD
+on:
+  #schedule:
+  #  - cron:  '0 5 * * *'
+  workflow_dispatch:
+
+jobs:
+  TELECHARGEMENT-BDD:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@main
+      
+      - name: Création des fichiers GeoJSON
+        if: success()
+        run:  |
+          ./SCRIPTS/GEOJSON.ps1
