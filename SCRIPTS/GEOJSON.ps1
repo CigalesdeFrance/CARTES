@@ -6,7 +6,6 @@ foreach ($f in $files){
 	$fichier = $f.Name
 	$espece = $f.Name -replace ".csv"
 
-	# GEOJSON
 	$csv = Import-Csv "./BDD/INPN/$fichier"
 	$TotalItems = $csv.Count
 	$CurrentItem = 0
@@ -56,7 +55,6 @@ foreach ($f in $files){
 	$fichier = $f.Name
 	$espece = $f.Name -replace ".csv"
 
-	# GEOJSON
 	$csv = Import-Csv "./BDD/OBSERVATION/$fichier"
 	$TotalItems = $csv.Count
 	$CurrentItem = 0
@@ -106,7 +104,6 @@ foreach ($f in $files){
 	$fichier = $f.Name
 	$espece = $f.Name -replace ".csv"
 
-	# GEOJSON
 	$csv = Import-Csv "./BDD/INATURALIST/$fichier"
 	$TotalItems = $csv.Count
 	$CurrentItem = 0
@@ -156,7 +153,6 @@ foreach ($f in $files){
 	$fichier = $f.Name
 	$espece = $f.Name -replace ".csv"
 
-	# GEOJSON
 	$csv = Import-Csv "./BDD/GBIF/$fichier"
 	$TotalItems = $csv.Count
 	$CurrentItem = 0
