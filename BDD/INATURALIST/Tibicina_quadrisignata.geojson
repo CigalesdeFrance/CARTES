@@ -4,6 +4,20 @@
 {
 		"type": "Feature",
 		"properties": {
+			"ID": "173600751"
+		},
+		"geometry": {
+			"coordinates": [
+				3.6116926931,
+				44.0411909401
+			],
+			"type": "Point"
+		},
+		"id": "173600751"
+	},
+{
+		"type": "Feature",
+		"properties": {
 			"ID": "170796332"
 		},
 		"geometry": {
