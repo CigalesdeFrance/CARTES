@@ -1,10 +1,45 @@
-<?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://www.opengis.net/kml/2.2">
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
 	<Document>
-	<Style id="observation"><IconStyle><scale>0.3</scale><Icon><href>https://maps.google.com/mapfiles/kml/paddle/blu-circle-lv.png</href></Icon></IconStyle></Style>
-	<name>Cicada_barbara</name>
-	<Folder>
-	<name>OBSERVATION</name>
-	<Placemark><description>https://observation.org/observation/286478856</description><styleUrl>#observation</styleUrl><Point><coordinates>9.330041383614,41.650050939951</coordinates></Point></Placemark> <Placemark><description>https://observation.org/observation/286478786</description><styleUrl>#observation</styleUrl><Point><coordinates>9.330041383614,41.650050939951</coordinates></Point></Placemark> <Placemark><description>https://observation.org/observation/286478785</description><styleUrl>#observation</styleUrl><Point><coordinates>9.330041383614,41.650050939951</coordinates></Point></Placemark> <Placemark><description>https://observation.org/observation/286478782</description><styleUrl>#observation</styleUrl><Point><coordinates>9.330041383614,41.650050939951</coordinates></Point></Placemark> <Placemark><description>https://observation.org/observation/286478778</description><styleUrl>#observation</styleUrl><Point><coordinates>9.330041383614,41.650050939951</coordinates></Point></Placemark>
-	</Folder>
+		<Style id="observation">
+			<IconStyle>
+				<scale>0.3</scale>
+				<Icon><href>https://maps.google.com/mapfiles/kml/paddle/blu-circle-lv.png</href></Icon>
+			</IconStyle>
+		</Style>
+		<name>Cicada_barbara</name>
+		<Folder>
+			<name>OBSERVATION</name>
+			<Placemark>
+				<name>286478856</name>
+				<description>https://observation.org/observation/286478856</description>
+				<styleUrl>#observation</styleUrl>
+				<Point><coordinates>9.330041383614,41.650050939951</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<name>286478786</name>
+				<description>https://observation.org/observation/286478786</description>
+				<styleUrl>#observation</styleUrl>
+				<Point><coordinates>9.330041383614,41.650050939951</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<name>286478785</name>
+				<description>https://observation.org/observation/286478785</description>
+				<styleUrl>#observation</styleUrl>
+				<Point><coordinates>9.330041383614,41.650050939951</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<name>286478782</name>
+				<description>https://observation.org/observation/286478782</description>
+				<styleUrl>#observation</styleUrl>
+				<Point><coordinates>9.330041383614,41.650050939951</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<name>286478778</name>
+				<description>https://observation.org/observation/286478778</description>
+				<styleUrl>#observation</styleUrl>
+				<Point><coordinates>9.330041383614,41.650050939951</coordinates></Point>
+			</Placemark>
+		</Folder>
 	</Document>
-	</kml>
+</kml>

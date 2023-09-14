@@ -1,10 +1,39 @@
-<?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://www.opengis.net/kml/2.2">
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
 	<Document>
-	<Style id="inaturalist"><IconStyle><scale>0.3</scale><Icon><href>https://maps.google.com/mapfiles/kml/paddle/grn-circle-lv.png</href></Icon></IconStyle></Style>
-	<name>Cicadetta_petryi</name>
-	<Folder>
-	<name>INATURALIST</name>
-	<Placemark><description>https://www.inaturalist.org/observations/168815178</description><styleUrl>#inaturalist</styleUrl><Point><coordinates>3.3351958171,44.2112990998</coordinates></Point></Placemark> <Placemark><description>https://www.inaturalist.org/observations/163547967</description><styleUrl>#inaturalist</styleUrl><Point><coordinates>6.9745662063,43.7463641143</coordinates></Point></Placemark> <Placemark><description>https://www.inaturalist.org/observations/67578221</description><styleUrl>#inaturalist</styleUrl><Point><coordinates>3.2210112384,44.0733971461</coordinates></Point></Placemark> <Placemark><description>https://www.inaturalist.org/observations/46609635</description><styleUrl>#inaturalist</styleUrl><Point><coordinates>3.08549066,43.98103397</coordinates></Point></Placemark>
-	</Folder>
+		<Style id="inaturalist">
+			<IconStyle>
+				<scale>0.3</scale>
+				<Icon><href>https://maps.google.com/mapfiles/kml/paddle/grn-circle-lv.png</href></Icon>
+			</IconStyle>
+		</Style>
+		<name>Cicadetta_petryi</name>
+		<Folder>
+			<name>INATURALIST</name>
+			<Placemark>
+				<name>168815178</name>
+				<description>https://www.inaturalist.org/observations/168815178</description>
+				<styleUrl>#inaturalist</styleUrl>
+				<Point><coordinates>3.3351958171,44.2112990998</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<name>163547967</name>
+				<description>https://www.inaturalist.org/observations/163547967</description>
+				<styleUrl>#inaturalist</styleUrl>
+				<Point><coordinates>6.9745662063,43.7463641143</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<name>67578221</name>
+				<description>https://www.inaturalist.org/observations/67578221</description>
+				<styleUrl>#inaturalist</styleUrl>
+				<Point><coordinates>3.2210112384,44.0733971461</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<name>46609635</name>
+				<description>https://www.inaturalist.org/observations/46609635</description>
+				<styleUrl>#inaturalist</styleUrl>
+				<Point><coordinates>3.08549066,43.98103397</coordinates></Point>
+			</Placemark>
+		</Folder>
 	</Document>
-	</kml>
+</kml>

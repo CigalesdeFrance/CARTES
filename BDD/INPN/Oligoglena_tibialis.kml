@@ -1,10 +1,27 @@
-<?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://www.opengis.net/kml/2.2">
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
 	<Document>
-	<Style id="inpn"><IconStyle><scale>0.3</scale><Icon><href>https://maps.google.com/mapfiles/kml/paddle/ylw-circle-lv.png</href></Icon></IconStyle></Style>
-	<name>Oligoglena_tibialis</name>
-	<Folder>
-	<name>INPN</name>
-	<Placemark><description>https://openobs.mnhn.fr/openobs-hub/occurrences/fcab4a76-53f0-410f-af7f-101bf50d7550</description><styleUrl>#inpn</styleUrl><Point><coordinates>7.26105,43.76728</coordinates></Point></Placemark> <Placemark><description>https://openobs.mnhn.fr/openobs-hub/occurrences/9620d558-afbb-4dac-a4f1-b5627477559c</description><styleUrl>#inpn</styleUrl><Point><coordinates>7.25614,43.78342</coordinates></Point></Placemark>
-	</Folder>
+		<Style id="inpn">
+			<IconStyle>
+				<scale>0.3</scale>
+				<Icon><href>https://maps.google.com/mapfiles/kml/paddle/ylw-circle-lv.png</href></Icon>
+			</IconStyle>
+		</Style>
+		<name>Oligoglena_tibialis</name>
+		<Folder>
+			<name>INPN</name>
+			<Placemark>
+				<name>fcab4a76-53f0-410f-af7f-101bf50d7550</name>
+				<description>https://openobs.mnhn.fr/openobs-hub/occurrences/fcab4a76-53f0-410f-af7f-101bf50d7550</description>
+				<styleUrl>#inpn</styleUrl>
+				<Point><coordinates>7.26105,43.76728</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<name>9620d558-afbb-4dac-a4f1-b5627477559c</name>
+				<description>https://openobs.mnhn.fr/openobs-hub/occurrences/9620d558-afbb-4dac-a4f1-b5627477559c</description>
+				<styleUrl>#inpn</styleUrl>
+				<Point><coordinates>7.25614,43.78342</coordinates></Point>
+			</Placemark>
+		</Folder>
 	</Document>
-	</kml>
+</kml>

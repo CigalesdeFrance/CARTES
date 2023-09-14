@@ -1,10 +1,33 @@
-<?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://www.opengis.net/kml/2.2">
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
 	<Document>
-	<Style id="observation"><IconStyle><scale>0.3</scale><Icon><href>https://maps.google.com/mapfiles/kml/paddle/blu-circle-lv.png</href></Icon></IconStyle></Style>
-	<name>Tibicina_corsica_corsica</name>
-	<Folder>
-	<name>OBSERVATION</name>
-	<Placemark><description>https://observation.org/observation/286478859</description><styleUrl>#observation</styleUrl><Point><coordinates>9.2646685381809,41.632654628334</coordinates></Point></Placemark> <Placemark><description>https://observation.org/observation/286478809</description><styleUrl>#observation</styleUrl><Point><coordinates>9.17841556824894,41.3741047263071</coordinates></Point></Placemark> <Placemark><description>https://observation.org/observation/286478808</description><styleUrl>#observation</styleUrl><Point><coordinates>9.18442648848784,41.3674682498627</coordinates></Point></Placemark>
-	</Folder>
+		<Style id="observation">
+			<IconStyle>
+				<scale>0.3</scale>
+				<Icon><href>https://maps.google.com/mapfiles/kml/paddle/blu-circle-lv.png</href></Icon>
+			</IconStyle>
+		</Style>
+		<name>Tibicina_corsica_corsica</name>
+		<Folder>
+			<name>OBSERVATION</name>
+			<Placemark>
+				<name>286478859</name>
+				<description>https://observation.org/observation/286478859</description>
+				<styleUrl>#observation</styleUrl>
+				<Point><coordinates>9.2646685381809,41.632654628334</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<name>286478809</name>
+				<description>https://observation.org/observation/286478809</description>
+				<styleUrl>#observation</styleUrl>
+				<Point><coordinates>9.17841556824894,41.3741047263071</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<name>286478808</name>
+				<description>https://observation.org/observation/286478808</description>
+				<styleUrl>#observation</styleUrl>
+				<Point><coordinates>9.18442648848784,41.3674682498627</coordinates></Point>
+			</Placemark>
+		</Folder>
 	</Document>
-	</kml>
+</kml>

@@ -1,10 +1,33 @@
-<?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://www.opengis.net/kml/2.2">
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
 	<Document>
-	<Style id="inaturalist"><IconStyle><scale>0.3</scale><Icon><href>https://maps.google.com/mapfiles/kml/paddle/grn-circle-lv.png</href></Icon></IconStyle></Style>
-	<name>Cicadetta_cantilatrix</name>
-	<Folder>
-	<name>INATURALIST</name>
-	<Placemark><description>https://www.inaturalist.org/observations/168637420</description><styleUrl>#inaturalist</styleUrl><Point><coordinates>3.3288953081,44.2289342781</coordinates></Point></Placemark> <Placemark><description>https://www.inaturalist.org/observations/168637383</description><styleUrl>#inaturalist</styleUrl><Point><coordinates>3.3149484918,44.2162681632</coordinates></Point></Placemark> <Placemark><description>https://www.inaturalist.org/observations/167523900</description><styleUrl>#inaturalist</styleUrl><Point><coordinates>5.9655445982,48.7434951677</coordinates></Point></Placemark>
-	</Folder>
+		<Style id="inaturalist">
+			<IconStyle>
+				<scale>0.3</scale>
+				<Icon><href>https://maps.google.com/mapfiles/kml/paddle/grn-circle-lv.png</href></Icon>
+			</IconStyle>
+		</Style>
+		<name>Cicadetta_cantilatrix</name>
+		<Folder>
+			<name>INATURALIST</name>
+			<Placemark>
+				<name>168637420</name>
+				<description>https://www.inaturalist.org/observations/168637420</description>
+				<styleUrl>#inaturalist</styleUrl>
+				<Point><coordinates>3.3288953081,44.2289342781</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<name>168637383</name>
+				<description>https://www.inaturalist.org/observations/168637383</description>
+				<styleUrl>#inaturalist</styleUrl>
+				<Point><coordinates>3.3149484918,44.2162681632</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<name>167523900</name>
+				<description>https://www.inaturalist.org/observations/167523900</description>
+				<styleUrl>#inaturalist</styleUrl>
+				<Point><coordinates>5.9655445982,48.7434951677</coordinates></Point>
+			</Placemark>
+		</Folder>
 	</Document>
-	</kml>
+</kml>

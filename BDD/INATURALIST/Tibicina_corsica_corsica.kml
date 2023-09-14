@@ -1,10 +1,39 @@
-<?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://www.opengis.net/kml/2.2">
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
 	<Document>
-	<Style id="inaturalist"><IconStyle><scale>0.3</scale><Icon><href>https://maps.google.com/mapfiles/kml/paddle/grn-circle-lv.png</href></Icon></IconStyle></Style>
-	<name>Tibicina_corsica_corsica</name>
-	<Folder>
-	<name>INATURALIST</name>
-	<Placemark><description>https://www.inaturalist.org/observations/179728671</description><styleUrl>#inaturalist</styleUrl><Point><coordinates>8.85322,42.606125</coordinates></Point></Placemark> <Placemark><description>https://www.inaturalist.org/observations/167326400</description><styleUrl>#inaturalist</styleUrl><Point><coordinates>8.7978296821,42.0407684776</coordinates></Point></Placemark> <Placemark><description>https://www.inaturalist.org/observations/167157853</description><styleUrl>#inaturalist</styleUrl><Point><coordinates>9.5519278174,42.1432141103</coordinates></Point></Placemark> <Placemark><description>https://www.inaturalist.org/observations/167157034</description><styleUrl>#inaturalist</styleUrl><Point><coordinates>9.4537278824,42.0566590745</coordinates></Point></Placemark>
-	</Folder>
+		<Style id="inaturalist">
+			<IconStyle>
+				<scale>0.3</scale>
+				<Icon><href>https://maps.google.com/mapfiles/kml/paddle/grn-circle-lv.png</href></Icon>
+			</IconStyle>
+		</Style>
+		<name>Tibicina_corsica_corsica</name>
+		<Folder>
+			<name>INATURALIST</name>
+			<Placemark>
+				<name>179728671</name>
+				<description>https://www.inaturalist.org/observations/179728671</description>
+				<styleUrl>#inaturalist</styleUrl>
+				<Point><coordinates>8.85322,42.606125</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<name>167326400</name>
+				<description>https://www.inaturalist.org/observations/167326400</description>
+				<styleUrl>#inaturalist</styleUrl>
+				<Point><coordinates>8.7978296821,42.0407684776</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<name>167157853</name>
+				<description>https://www.inaturalist.org/observations/167157853</description>
+				<styleUrl>#inaturalist</styleUrl>
+				<Point><coordinates>9.5519278174,42.1432141103</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<name>167157034</name>
+				<description>https://www.inaturalist.org/observations/167157034</description>
+				<styleUrl>#inaturalist</styleUrl>
+				<Point><coordinates>9.4537278824,42.0566590745</coordinates></Point>
+			</Placemark>
+		</Folder>
 	</Document>
-	</kml>
+</kml>
