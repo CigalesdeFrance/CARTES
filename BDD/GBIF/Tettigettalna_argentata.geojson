@@ -774,6 +774,20 @@
 {
 		"type": "Feature",
 		"properties": {
+			"ID": "4408159539"
+		},
+		"geometry": {
+			"coordinates": [
+				6.820691,
+				44.028464
+			],
+			"type": "Point"
+		},
+		"id": "4408159539"
+	},
+{
+		"type": "Feature",
+		"properties": {
 			"ID": "3939350969"
 		},
 		"geometry": {

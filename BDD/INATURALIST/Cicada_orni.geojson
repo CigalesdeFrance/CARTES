@@ -4,6 +4,20 @@
 {
 		"type": "Feature",
 		"properties": {
+			"ID": "183244717"
+		},
+		"geometry": {
+			"coordinates": [
+				3.8705100833,
+				43.6254386667
+			],
+			"type": "Point"
+		},
+		"id": "183244717"
+	},
+{
+		"type": "Feature",
+		"properties": {
 			"ID": "182911313"
 		},
 		"geometry": {
@@ -3052,6 +3066,20 @@
 			"type": "Point"
 		},
 		"id": "173559675"
+	},
+{
+		"type": "Feature",
+		"properties": {
+			"ID": "173557105"
+		},
+		"geometry": {
+			"coordinates": [
+				5.9385887906,
+				44.0263134709
+			],
+			"type": "Point"
+		},
+		"id": "173557105"
 	},
 {
 		"type": "Feature",
