@@ -1,159 +1,50 @@
 ### CREATION DES GEOJSON
-# INPN
-$files = Get-ChildItem "./BDD/INPN/" -Filter *.csv
+$bdd_codes = Import-Csv "BDD-CODES.csv"
 
-foreach ($f in $files){
-	$fichier = $f.Name
-	$espece = $f.Name -replace ".csv"
-
-	$csv = Import-Csv "./BDD/INPN/$fichier"
-	$TotalItems = $csv.Count
-	$CurrentItem = 0
-	$PercentComplete = 0
+$bdd_codes | ForEach-Object {
+	$bdd_nom = $_.BDD_NOM
+	$bdd_min = $_.BDD_MIN
+	$icon = $_.ICON
+	$bdd_url = $_.BDD_URL
 	
-	$geojson = '{
+	$files = Get-ChildItem "./BDD/$bdd_nom/" -Filter *.csv
+	
+	foreach ($f in $files){
+		$fichier = $f.Name
+		$espece = $f.Name -replace ".csv"
+		
+		$csv = Import-Csv "./BDD/$bdd_nom/$fichier"
+		$TotalItems = $csv.Count
+		$CurrentItem = 0
+		$PercentComplete = 0
+		
+		$geojson = '{
 "type": "FeatureCollection",
 "name": "'+ $espece +'",
 "features": ['
-
-	Set-Content "./BDD/INPN/$espece.geojson" $geojson
-	
-	$csv| ForEach-Object {
-		$lat = $_.Latitude
-		$long = $_.Longitude
-		$id = $_.ID
-		#$id
-		Write-Progress -Activity "INPN - $espece" -Status "$PercentComplete% achevé" -PercentComplete $PercentComplete
-
-	$feature = '{"type": "Feature", "properties": {"ID": "'+ $id +'"},"geometry": {"coordinates": ['+ $long +','+ $lat +'],"type": "Point"},"id": "'+ $id +'"},'
-
-	$feature | Add-Content "./BDD/INPN/$espece.geojson"
-	
-	$CurrentItem++
-	$PercentComplete = [int](($CurrentItem / $TotalItems) * 100)
+		
+		Set-Content "./BDD/$bdd_nom/$espece.geojson" $geojson
+		
+		$csv | ForEach-Object {
+			$lat = $_.Latitude
+			$long = $_.Longitude
+			$id = $_.ID
+			#$id
+			Write-Progress -Activity "$bdd_nom - $espece" -Status "$PercentComplete% achevé" -PercentComplete $PercentComplete
+			
+			$feature = '{"type": "Feature", "properties": {"ID": "'+ $id +'"},"geometry": {"coordinates": ['+ $long +','+ $lat +'],"type": "Point"},"id": "'+ $id +'"},'
+			
+			$feature | Add-Content "./BDD/$bdd_nom/$espece.geojson"
+			
+			$CurrentItem++
+			$PercentComplete = [int](($CurrentItem / $TotalItems) * 100)
+		}
+		
+		$geojson = Get-Content "./BDD/$bdd_nom/$espece.geojson"
+		$geojson[-1] = $geojson[-1] -replace ',$', ''
+		$geojson | Set-Content "./BDD/$bdd_nom/$espece.geojson"
+		"]}" | Add-Content "./BDD/$bdd_nom/$espece.geojson"
 	}
-	
-	$geojson = Get-Content "./BDD/INPN/$espece.geojson"
-	$geojson[-1] = $geojson[-1] -replace ',', ''
-	$geojson | Set-Content "./BDD/INPN/$espece.geojson"
-	"]}" | Add-Content "./BDD/INPN/$espece.geojson"
-}
-
-# OBSERVATION
-$files = Get-ChildItem "./BDD/OBSERVATION/" -Filter *.csv
-foreach ($f in $files){
-	$fichier = $f.Name
-	$espece = $f.Name -replace ".csv"
-
-	$csv = Import-Csv "./BDD/OBSERVATION/$fichier"
-	$TotalItems = $csv.Count
-	$CurrentItem = 0
-	$PercentComplete = 0
-	
-	$geojson = '{
-"type": "FeatureCollection",
-"name": "'+ $espece +'",
-"features": ['
-
-	Set-Content "./BDD/OBSERVATION/$espece.geojson" $geojson
-	
-	$csv| ForEach-Object {
-		$lat = $_.Latitude
-		$long = $_.Longitude
-		$id = $_.ID
-		#$id
-		Write-Progress -Activity "Observation.org - $espece" -Status "$PercentComplete% achevé" -PercentComplete $PercentComplete
-
-	$feature = '{"type": "Feature", "properties": {"ID": "'+ $id +'"},"geometry": {"coordinates": ['+ $long +','+ $lat +'],"type": "Point"},"id": "'+ $id +'"},'
-
-	$feature | Add-Content "./BDD/OBSERVATION/$espece.geojson"
-	
-	$CurrentItem++
-	$PercentComplete = [int](($CurrentItem / $TotalItems) * 100)
-	}
-	
-	$geojson = Get-Content "./BDD/OBSERVATION/$espece.geojson"
-	$geojson[-1] = $geojson[-1] -replace ',', ''
-	$geojson | Set-Content "./BDD/OBSERVATION/$espece.geojson"
-	"]}" | Add-Content "./BDD/OBSERVATION/$espece.geojson"
-}
-
-# INATURALIST
-$files = Get-ChildItem "./BDD/INATURALIST/" -Filter *.csv
-foreach ($f in $files){
-	$fichier = $f.Name
-	$espece = $f.Name -replace ".csv"
-
-	$csv = Import-Csv "./BDD/INATURALIST/$fichier"
-	$TotalItems = $csv.Count
-	$CurrentItem = 0
-	$PercentComplete = 0
-	
-	$geojson = '{
-"type": "FeatureCollection",
-"name": "'+ $espece +'",
-"features": ['
-
-	Set-Content "./BDD/INATURALIST/$espece.geojson" $geojson
-	
-	$csv| ForEach-Object {
-		$lat = $_.Latitude
-		$long = $_.Longitude
-		$id = $_.ID
-		#$id
-		Write-Progress -Activity "iNaturalist - $espece" -Status "$PercentComplete% achevé" -PercentComplete $PercentComplete
-
-	$feature = '{"type": "Feature", "properties": {"ID": "'+ $id +'"},"geometry": {"coordinates": ['+ $long +','+ $lat +'],"type": "Point"},"id": "'+ $id +'"},'
-
-	$feature | Add-Content "./BDD/INATURALIST/$espece.geojson"
-	
-	$CurrentItem++
-	$PercentComplete = [int](($CurrentItem / $TotalItems) * 100)
-	}
-	
-	$geojson = Get-Content "./BDD/INATURALIST/$espece.geojson"
-	$geojson[-1] = $geojson[-1] -replace ',', ''
-	$geojson | Set-Content "./BDD/INATURALIST/$espece.geojson"
-	"]}" | Add-Content "./BDD/INATURALIST/$espece.geojson"
-}
-
-# GBIF
-$files = Get-ChildItem "./BDD/GBIF/" -Filter *.csv
-foreach ($f in $files){
-	$fichier = $f.Name
-	$espece = $f.Name -replace ".csv"
-
-	$csv = Import-Csv "./BDD/GBIF/$fichier"
-	$TotalItems = $csv.Count
-	$CurrentItem = 0
-	$PercentComplete = 0
-	
-	$geojson = '{
-"type": "FeatureCollection",
-"name": "'+ $espece +'",
-"features": ['
-
-	Set-Content "./BDD/GBIF/$espece.geojson" $geojson
-	
-	$csv| ForEach-Object {
-		$lat = $_.Latitude
-		$long = $_.Longitude
-		$id = $_.ID
-		#$id
-		Write-Progress -Activity "GBIF - $espece" -Status "$PercentComplete% achevé" -PercentComplete $PercentComplete
-
-	$feature = '{"type": "Feature", "properties": {"ID": "'+ $id +'"},"geometry": {"coordinates": ['+ $long +','+ $lat +'],"type": "Point"},"id": "'+ $id +'"},'
-
-	$feature | Add-Content "./BDD/GBIF/$espece.geojson"
-	
-	$CurrentItem++
-	$PercentComplete = [int](($CurrentItem / $TotalItems) * 100)
-	}
-	
-	$geojson = Get-Content "./BDD/GBIF/$espece.geojson"
-	$geojson[-1] = $geojson[-1] -replace ',', ''
-	$geojson | Set-Content "./BDD/GBIF/$espece.geojson"
-	"]}" | Add-Content "./BDD/GBIF/$espece.geojson"
 }
 
 ### SAUVEGARDE GIT
