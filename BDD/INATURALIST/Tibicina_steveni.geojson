@@ -1,144 +1,15 @@
 {
-		"type": "FeatureCollection",
-		"features": [
-{
-		"type": "Feature",
-		"properties": {
-			"ID": "170837151"
-		},
-		"geometry": {
-			"coordinates": [
-				3.8569744905,
-				44.0446543171
-			],
-			"type": "Point"
-		},
-		"id": "170837151"
-	},
-{
-		"type": "Feature",
-		"properties": {
-			"ID": "167670016"
-		},
-		"geometry": {
-			"coordinates": [
-				3.99555,
-				44.228305
-			],
-			"type": "Point"
-		},
-		"id": "167670016"
-	},
-{
-		"type": "Feature",
-		"properties": {
-			"ID": "167167327"
-		},
-		"geometry": {
-			"coordinates": [
-				3.99555,
-				44.2283033333
-			],
-			"type": "Point"
-		},
-		"id": "167167327"
-	},
-{
-		"type": "Feature",
-		"properties": {
-			"ID": "167165488"
-		},
-		"geometry": {
-			"coordinates": [
-				3.9955338118,
-				44.2282269905
-			],
-			"type": "Point"
-		},
-		"id": "167165488"
-	},
-{
-		"type": "Feature",
-		"properties": {
-			"ID": "167159137"
-		},
-		"geometry": {
-			"coordinates": [
-				3.9955016667,
-				44.2283233333
-			],
-			"type": "Point"
-		},
-		"id": "167159137"
-	},
-{
-		"type": "Feature",
-		"properties": {
-			"ID": "125420645"
-		},
-		"geometry": {
-			"coordinates": [
-				2.8322963789,
-				43.5225134888
-			],
-			"type": "Point"
-		},
-		"id": "125420645"
-	},
-{
-		"type": "Feature",
-		"properties": {
-			"ID": "125420611"
-		},
-		"geometry": {
-			"coordinates": [
-				2.8616504744,
-				43.5161098746
-			],
-			"type": "Point"
-		},
-		"id": "125420611"
-	},
-{
-		"type": "Feature",
-		"properties": {
-			"ID": "52414153"
-		},
-		"geometry": {
-			"coordinates": [
-				4.12242783,
-				44.30245333
-			],
-			"type": "Point"
-		},
-		"id": "52414153"
-	},
-{
-		"type": "Feature",
-		"properties": {
-			"ID": "36131926"
-		},
-		"geometry": {
-			"coordinates": [
-				4.0047833333,
-				44.0955778333
-			],
-			"type": "Point"
-		},
-		"id": "36131926"
-	},
-{
-		"type": "Feature",
-		"properties": {
-			"ID": "14101224"
-		},
-		"geometry": {
-			"coordinates": [
-				2.911214741,
-				43.5345163368
-			],
-			"type": "Point"
-		},
-		"id": "14101224"
-	}
+"type": "FeatureCollection",
+"name": "Tibicina_steveni",
+"features": [
+{"type": "Feature", "properties": {"ID": "170837151"},"geometry": {"coordinates": [3.8569744905,44.0446543171],"type": "Point"},"id": "170837151"},
+{"type": "Feature", "properties": {"ID": "167670016"},"geometry": {"coordinates": [3.99555,44.228305],"type": "Point"},"id": "167670016"},
+{"type": "Feature", "properties": {"ID": "167167327"},"geometry": {"coordinates": [3.99555,44.2283033333],"type": "Point"},"id": "167167327"},
+{"type": "Feature", "properties": {"ID": "167165488"},"geometry": {"coordinates": [3.9955338118,44.2282269905],"type": "Point"},"id": "167165488"},
+{"type": "Feature", "properties": {"ID": "167159137"},"geometry": {"coordinates": [3.9955016667,44.2283233333],"type": "Point"},"id": "167159137"},
+{"type": "Feature", "properties": {"ID": "125420645"},"geometry": {"coordinates": [2.8322963789,43.5225134888],"type": "Point"},"id": "125420645"},
+{"type": "Feature", "properties": {"ID": "125420611"},"geometry": {"coordinates": [2.8616504744,43.5161098746],"type": "Point"},"id": "125420611"},
+{"type": "Feature", "properties": {"ID": "52414153"},"geometry": {"coordinates": [4.12242783,44.30245333],"type": "Point"},"id": "52414153"},
+{"type": "Feature", "properties": {"ID": "36131926"},"geometry": {"coordinates": [4.0047833333,44.0955778333],"type": "Point"},"id": "36131926"},
+{"type": "Feature" "properties": {"ID": "14101224"}"geometry": {"coordinates": [2.91121474143.5345163368]"type": "Point"}"id": "14101224"}
 ]}

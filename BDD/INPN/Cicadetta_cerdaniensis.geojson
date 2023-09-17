@@ -1,74 +1,10 @@
 {
-		"type": "FeatureCollection",
-		"features": [
-{
-		"type": "Feature",
-		"properties": {
-			"ID": "24360f70-2d67-43ca-a678-a2dd8adcc7d4"
-		},
-		"geometry": {
-			"coordinates": [
-				1.99598,
-				42.40556
-			],
-			"type": "Point"
-		},
-		"id": "24360f70-2d67-43ca-a678-a2dd8adcc7d4"
-	},
-{
-		"type": "Feature",
-		"properties": {
-			"ID": "bbceef98-8f53-4aa3-829d-b2a89f92cf3b"
-		},
-		"geometry": {
-			"coordinates": [
-				1.99611,
-				42.40556
-			],
-			"type": "Point"
-		},
-		"id": "bbceef98-8f53-4aa3-829d-b2a89f92cf3b"
-	},
-{
-		"type": "Feature",
-		"properties": {
-			"ID": "713a4396-6ff9-410d-a415-40139d09b905"
-		},
-		"geometry": {
-			"coordinates": [
-				1.99598,
-				42.40569
-			],
-			"type": "Point"
-		},
-		"id": "713a4396-6ff9-410d-a415-40139d09b905"
-	},
-{
-		"type": "Feature",
-		"properties": {
-			"ID": "7720b375-40fb-4009-a7e7-ddb3a4cd8fad"
-		},
-		"geometry": {
-			"coordinates": [
-				2.35999,
-				42.47312
-			],
-			"type": "Point"
-		},
-		"id": "7720b375-40fb-4009-a7e7-ddb3a4cd8fad"
-	},
-{
-		"type": "Feature",
-		"properties": {
-			"ID": "130dac8d-c58b-4fce-ab37-a405c9004a47"
-		},
-		"geometry": {
-			"coordinates": [
-				1.98827,
-				42.41541
-			],
-			"type": "Point"
-		},
-		"id": "130dac8d-c58b-4fce-ab37-a405c9004a47"
-	}
+"type": "FeatureCollection",
+"name": "Cicadetta_cerdaniensis",
+"features": [
+{"type": "Feature", "properties": {"ID": "24360f70-2d67-43ca-a678-a2dd8adcc7d4"},"geometry": {"coordinates": [1.99598,42.40556],"type": "Point"},"id": "24360f70-2d67-43ca-a678-a2dd8adcc7d4"},
+{"type": "Feature", "properties": {"ID": "bbceef98-8f53-4aa3-829d-b2a89f92cf3b"},"geometry": {"coordinates": [1.99611,42.40556],"type": "Point"},"id": "bbceef98-8f53-4aa3-829d-b2a89f92cf3b"},
+{"type": "Feature", "properties": {"ID": "713a4396-6ff9-410d-a415-40139d09b905"},"geometry": {"coordinates": [1.99598,42.40569],"type": "Point"},"id": "713a4396-6ff9-410d-a415-40139d09b905"},
+{"type": "Feature", "properties": {"ID": "7720b375-40fb-4009-a7e7-ddb3a4cd8fad"},"geometry": {"coordinates": [2.35999,42.47312],"type": "Point"},"id": "7720b375-40fb-4009-a7e7-ddb3a4cd8fad"},
+{"type": "Feature" "properties": {"ID": "130dac8d-c58b-4fce-ab37-a405c9004a47"}"geometry": {"coordinates": [1.9882742.41541]"type": "Point"}"id": "130dac8d-c58b-4fce-ab37-a405c9004a47"}
 ]}
