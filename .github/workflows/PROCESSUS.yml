@@ -1,0 +1,22 @@
+name: PROCESSUS
+on:
+  schedule:
+    - cron:  '0 5 * * *'
+  workflow_dispatch:
+
+jobs:
+  CODES-ESPECE:
+    uses: ./.github/workflows/CODES.yml
+
+  TELECHARGEMENTS-BDD:
+    needs: CODES-ESPECE
+    uses: ./.github/workflows/TELECHARGEMENTS.yml
+    secrets: inherit
+
+  FICHIER-KML-GEOJSON:
+      needs: TELECHARGEMENTS-BDD
+      uses: ./.github/workflows/FICHIERS.yml
+  
+  CARTES:
+     needs: FICHIER-KML-GEOJSON
+     uses: ./.github/workflows/CARTES.yml

@@ -1,0 +1,14 @@
+name: CODES-ESPECES
+on:
+  workflow_call:
+  workflow_dispatch:
+
+jobs:
+  CODES-ESPECES:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@main
+      
+      - name: Vérification des codes espèces
+        run:  |
+          ./SCRIPTS/CODES.ps1

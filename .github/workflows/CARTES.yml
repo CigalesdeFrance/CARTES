@@ -1,0 +1,18 @@
+name: CARTES
+on:
+  workflow_call:
+  workflow_dispatch:
+
+jobs:
+  CARTES:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@main
+      
+      - name: Création des cartes Cigales de France et de l'Europe
+        run:  |
+          git pull origin main
+          choco install r.project pandoc --no-progress -y
+          Rscript ./SCRIPTS/CARTES-CDF.R
+          Rscript ./SCRIPTS/CARTES-EUROPE.R
+          ./SCRIPTS/FIN.ps1

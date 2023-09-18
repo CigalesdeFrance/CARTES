@@ -1,0 +1,21 @@
+name: TELECHARGEMENTS-BDD
+on:
+  workflow_call:
+  workflow_dispatch:
+
+env:
+    CLIENT_ID: ${{ secrets.CLIENT_ID }}
+    MAIL: ${{ secrets.MAIL }}
+    PASSWORD: ${{ secrets.PASSWORD }}
+
+jobs:
+  TELECHARGEMENTS-BDD:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@main
+      
+      - name: Téléchargement des bases de données
+        run:  |
+          git pull origin main
+          $params = @{client_id="$env:CLIENT_ID";grant_type='password';email="$env:MAIL";password="$env:PASSWORD"}
+          ./SCRIPTS/TELECHARGEMENTS.ps1

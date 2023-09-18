@@ -52,4 +52,4 @@ git config --local user.email "cigalesdefrance@outlook.fr"
 git config --local user.name "CigalesdeFrance-dev"
 git add .
 git commit -m "[Bot] Création des fichiers GeoJSON"
-git push -f
+git push origin main -f

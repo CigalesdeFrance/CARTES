@@ -1,0 +1,16 @@
+name: FICHIERS-KML-GEOJSON
+on:
+  workflow_call:
+  workflow_dispatch:
+
+jobs:
+  FICHIERS-KML-GEOJSON:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@main
+      
+      - name: Création des fichiers KML et GeoJSON
+        run:  |
+          git pull origin main
+          ./SCRIPTS/KML.ps1
+          ./SCRIPTS/GEOJSON.ps1
