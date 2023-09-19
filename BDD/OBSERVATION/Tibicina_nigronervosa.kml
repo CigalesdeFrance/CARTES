@@ -11,43 +11,43 @@
 		<Folder>
 			<name>OBSERVATION</name>
 			<Placemark>
+				<styleUrl>#observation</styleUrl>
 				<description>https://observation.org/observation/286478854</description>
-				<styleUrl>#observation</styleUrl>
 				<Point><coordinates>9.2429239577612,41.51194087132</coordinates></Point>
 			</Placemark> 
 			<Placemark>
+				<styleUrl>#observation</styleUrl>
 				<description>https://observation.org/observation/286478853</description>
-				<styleUrl>#observation</styleUrl>
 				<Point><coordinates>9.2429239577612,41.51194087132</coordinates></Point>
 			</Placemark> 
 			<Placemark>
+				<styleUrl>#observation</styleUrl>
 				<description>https://observation.org/observation/286478852</description>
-				<styleUrl>#observation</styleUrl>
 				<Point><coordinates>9.2429239577612,41.51194087132</coordinates></Point>
 			</Placemark> 
 			<Placemark>
-				<description>https://observation.org/observation/286478814</description>
 				<styleUrl>#observation</styleUrl>
+				<description>https://observation.org/observation/286478814</description>
 				<Point><coordinates>9.2976645922595,41.65554006438</coordinates></Point>
 			</Placemark> 
 			<Placemark>
-				<description>https://observation.org/observation/286478800</description>
 				<styleUrl>#observation</styleUrl>
+				<description>https://observation.org/observation/286478800</description>
 				<Point><coordinates>9.261368516781,41.531634649013</coordinates></Point>
 			</Placemark> 
 			<Placemark>
-				<description>https://observation.org/observation/286478749</description>
 				<styleUrl>#observation</styleUrl>
+				<description>https://observation.org/observation/286478749</description>
 				<Point><coordinates>9.2941729684856,41.650592643788</coordinates></Point>
 			</Placemark> 
 			<Placemark>
-				<description>https://observation.org/observation/223695942</description>
 				<styleUrl>#observation</styleUrl>
+				<description>https://observation.org/observation/223695942</description>
 				<Point><coordinates>9.3895167344617,43.006548953421</coordinates></Point>
 			</Placemark> 
 			<Placemark>
-				<description>https://observation.org/observation/223695940</description>
 				<styleUrl>#observation</styleUrl>
+				<description>https://observation.org/observation/223695940</description>
 				<Point><coordinates>9.4655771628255,42.90526765249</coordinates></Point>
 			</Placemark>
 		</Folder>

@@ -11,13 +11,13 @@
 		<Folder>
 			<name>OBSERVATION</name>
 			<Placemark>
-				<description>https://observation.org/observation/249231204</description>
 				<styleUrl>#observation</styleUrl>
+				<description>https://observation.org/observation/249231204</description>
 				<Point><coordinates>2.79789996147156,42.9114532470703</coordinates></Point>
 			</Placemark> 
 			<Placemark>
-				<description>https://observation.org/observation/85834247</description>
 				<styleUrl>#observation</styleUrl>
+				<description>https://observation.org/observation/85834247</description>
 				<Point><coordinates>3.65960833333333,43.526445</coordinates></Point>
 			</Placemark>
 		</Folder>
