@@ -1,10 +1,10 @@
 $cigales_codes = Import-Csv "CIGALES-CODES.csv"
 
 # Test des API
-$INPN_url = try {(Invoke-WebRequest -Uri 'https://openobs.mnhn.fr/biocache-service/occurrences/search' -ErrorAction Stop).BaseResponse} catch [System.Net.WebException] { $_.Exception.Response }
-$INATURALIST_url = try {(Invoke-WebRequest -Uri 'https://api.inaturalist.org/v1/docs/' -ErrorAction Stop).BaseResponse} catch [System.Net.WebException] { $_.Exception.Response }
-$OBSERVATION_url = try {(Invoke-WebRequest -Uri 'https://observation.org/api/v1/docs/' -ErrorAction Stop).BaseResponse} catch [System.Net.WebException] { $_.Exception.Response }
-$GBIF_url = try {(Invoke-WebRequest -Uri 'https://api.gbif.org/v1/occurrence/search' -ErrorAction Stop).BaseResponse} catch [System.Net.WebException] { $_.Exception.Response }
+$INPN_url = (Invoke-WebRequest -Uri 'https://openobs.mnhn.fr/biocache-service/occurrences/search' -SkipHttpErrorCheck -ErrorAction Stop).BaseResponse
+$INATURALIST_url = (Invoke-WebRequest -Uri 'https://api.inaturalist.org/v1/docs/' -SkipHttpErrorCheck -ErrorAction Stop).BaseResponse
+$OBSERVATION_url = (Invoke-WebRequest -Uri 'https://observation.org/api/v1/docs/' -SkipHttpErrorCheck -ErrorAction Stop).BaseResponse
+$GBIF_url = (Invoke-WebRequest -Uri 'https://api.gbif.org/v1/occurrence/search' -SkipHttpErrorCheck -ErrorAction Stop).BaseResponse
 
 if ($INPN_url.StatusCode -eq "OK") { Remove-item "./BDD/INPN/*.csv" }
 if ($INATURALIST_url.StatusCode -eq "OK") { Remove-item "./BDD/INATURALIST/*.csv" }
