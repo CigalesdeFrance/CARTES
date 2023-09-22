@@ -347,6 +347,16 @@
 			</Placemark> 
 			<Placemark>
 				<styleUrl>#gbif</styleUrl>
+				<description>https://www.gbif.org/occurrence/4413595855</description>
+				<Point><coordinates>1.063317,43.61734</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#gbif</styleUrl>
+				<description>https://www.gbif.org/occurrence/4413680372</description>
+				<Point><coordinates>3.736431,43.818933</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#gbif</styleUrl>
 				<description>https://www.gbif.org/occurrence/3944317401</description>
 				<Point><coordinates>1.73661,44.15624</coordinates></Point>
 			</Placemark> 
