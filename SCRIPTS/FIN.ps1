@@ -43,8 +43,8 @@ foreach($line in Get-Content ./BDD/ONEM/index.html) {
 Remove-Item "sp.html"
 
 ### SAUVEGARDE GIT
-git config --local user.email "cigalesdefrance@outlook.fr"
-git config --local user.name "CigalesdeFrance-dev"
+git config user.name 'github-actions[bot]'
+git config user.email 'github-actions[bot]@users.noreply.github.com'
 git add .
 git commit -m "[Bot] Téléchargement et création des cartes statiques"
 git push origin main -f
