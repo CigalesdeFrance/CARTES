@@ -19,12 +19,14 @@ $OBS_HEADERS = @{Authorization="Bearer $OBS_TOKEN"}
 $cigales_codes | ForEach-Object {
 	$code = $_.CODE
 	$nom = $_.NOM_SCIENTIFIQUE
-	#$onem = $_.ONEM
 	$faune_france = $_.FAUNE_FRANCE
 	$inpn = $_.INPN
+	$wad = $_.WAD
 	$inaturalist = $_.INATURALIST
 	$observation = $_.OBSERVATION
 	$gbif = $_.GBIF
+	$col = $_.CATALOGUE_OF_LIFE
+	$fauna_europea = $_.FAUNA_EUROPEA
 	
 	# INPN
 	"INPN - $nom"

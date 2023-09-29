@@ -2,6 +2,7 @@ $cigales_codes = Import-CSV "CIGALES-CODES.csv"
 
 $ff_erreurs = "Faune-France :"
 $inpn_erreurs = "INPN :"
+$wad_erreurs = "WAD :"
 $inat_erreurs = "iNaturalist :"
 $obs_erreurs = "Observation :"
 $gbif_erreurs = "GBIF :"
@@ -13,11 +14,12 @@ $cigales_codes | ForEach-Object {
 	$nom = $_.NOM_SCIENTIFIQUE
 	$faune_france = $_.FAUNE_FRANCE
 	$inpn = $_.INPN
+	$wad = $_.WAD
 	$inaturalist = $_.INATURALIST
 	$observation = $_.OBSERVATION
 	$gbif = $_.GBIF
-	$cof = $_.CATALOGUE_OF_LIFE
-	$fe = $_.FAUNA_EUROPEA
+	$col = $_.CATALOGUE_OF_LIFE
+	$fauna_europea = $_.FAUNA_EUROPEA
 
 	echo "Vérification de $nom"
 	
