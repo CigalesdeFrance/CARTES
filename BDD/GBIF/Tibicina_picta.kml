@@ -7,7 +7,7 @@
 				<Icon><href>https://maps.google.com/mapfiles/kml/paddle/red-circle-lv.png</href></Icon>
 			</IconStyle>
 		</Style>
-		<name>Tibicina_tomentosa</name>
+		<name>Tibicina_picta</name>
 		<Folder>
 			<name>GBIF</name>
 			<Placemark>
@@ -19,6 +19,11 @@
 				<styleUrl>#gbif</styleUrl>
 				<description>https://www.gbif.org/occurrence/3943463395</description>
 				<Point><coordinates>3.17752,43.26131</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#gbif</styleUrl>
+				<description>https://www.gbif.org/occurrence/2641596593</description>
+				<Point><coordinates>3.176882,43.259073</coordinates></Point>
 			</Placemark> 
 			<Placemark>
 				<styleUrl>#gbif</styleUrl>
@@ -44,6 +49,11 @@
 				<styleUrl>#gbif</styleUrl>
 				<description>https://www.gbif.org/occurrence/2475578613</description>
 				<Point><coordinates>3.21135,43.27184</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#gbif</styleUrl>
+				<description>https://www.gbif.org/occurrence/3044794795</description>
+				<Point><coordinates>6.607412,43.183031</coordinates></Point>
 			</Placemark> 
 			<Placemark>
 				<styleUrl>#gbif</styleUrl>
