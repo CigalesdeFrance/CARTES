@@ -6,7 +6,7 @@ $wad_erreurs = "WAD :"
 $inat_erreurs = "iNaturalist :"
 $obs_erreurs = "Observation :"
 $gbif_erreurs = "GBIF :"
-$cof_erreurs = "COF :"
+$col_erreurs = "COL :"
 $fe_erreurs = "Fauna-Europea :"
 
 $cigales_codes | ForEach-Object {
@@ -23,7 +23,7 @@ $cigales_codes | ForEach-Object {
 
 	echo "Vérification de $nom"
 	
-	if ($code -eq "Oligoglena_tibialis") { $nom = "Cicadivetta tibialis" } # corrections taxonomiques entrée
+	if ($nom -eq "Oligoglena tibialis") { $nom = "Cicadivetta tibialis" } # corrections taxonomiques entrée
 	
 	# FAUNE-FRANCE
 	if ($faune_france -eq "") { Write-Host "  > $nom "-NoNewline; Write-Host "n'existe pas" -ForegroundColor Yellow -NoNewline;Write-Host " dans Faune-France" }
@@ -42,6 +42,8 @@ $cigales_codes | ForEach-Object {
 			$ff_erreurs > "./BDD/FAUNE-FRANCE/erreurs.txt"
 		}
 	}
+	
+	if ($nom -eq "Tibicina picta") { $nom = "Tibicina tomentosa" } # corrections taxonomiques entrée
 	
 	# OBSERVATION
 	if ($observation -eq "") { Write-Host "  > $nom "-NoNewline; Write-Host "n'existe pas" -ForegroundColor Yellow -NoNewline;Write-Host " dans Observation.org" }
@@ -75,6 +77,23 @@ $cigales_codes | ForEach-Object {
 		}
 	}
 	
+	if ($nom -eq "Tibicina tomentosa") { $nom = "Tibicina picta" } # corrections taxonomiques sortie
+	
+	# WAD - World Auchenorrhyncha Database
+	if ($wad -eq "") { Write-Host "  > $nom "-NoNewline; Write-Host "n'existe pas" -ForegroundColor Yellow -NoNewline;Write-Host " dans World Auchenorrhyncha Database" }
+	else {		
+		$Sourcecode_json = (Invoke-WebRequest "https://sfg.taxonworks.org/api/v1/otus/$wad/inventory/taxonomy.json?project_token=ZEJhFp9sq8kBfks15qAbAg" | ConvertFrom-Json).name
+		$Sourcecode_json -match "<i>(.*)<\/i>"
+		$Sourcecode = $matches[1]
+		if ($nom -eq $Sourcecode) { Write-Host "  > Le code espèce de $nom dans World Auchenorrhyncha Database est "-NoNewline; Write-Host "correct" -ForegroundColor Green }
+		else {
+			Write-Host "  > Le code espèce de $nom dans World Auchenorrhyncha Database est "-NoNewline; Write-Host "incorrect" -ForegroundColor Red
+			$wad_erreurs = $wad_erreurs + " " + $nom
+			$wad_erreurs > "./BDD/WAD/erreurs.txt"
+		}
+	}
+
+	
 	# INATURALIST
 	if ($inaturalist -eq "") { Write-Host "  > $nom "-NoNewline; Write-Host "n'existe pas" -ForegroundColor Yellow -NoNewline;Write-Host " dans iNaturalist" }
 	else {		
@@ -86,7 +105,7 @@ $cigales_codes | ForEach-Object {
 			$inat_erreurs = $inat_erreurs + " " + $nom
 			$inat_erreurs > "./BDD/INATURALIST/erreurs.txt"
 		}
-	}
+	}	
 	
 	# GBIF
 	if ($gbif -eq "") { Write-Host "  > $nom "-NoNewline; Write-Host "n'existe pas" -ForegroundColor Yellow -NoNewline;Write-Host " dans GBIF" }
@@ -102,19 +121,17 @@ $cigales_codes | ForEach-Object {
 	}
 	
 	# CATALOGUE OF LIFE
-	if ($code -eq "Tibicina_tomentosa") { $nom = "Tibicina picta" } # corrections taxonomiques entrée
-	if ($cof -eq "") { Write-Host "  > $nom "-NoNewline; Write-Host "n'existe pas" -ForegroundColor Yellow -NoNewline;Write-Host " dans Catalogue of Life" }
+	if ($col -eq "") { Write-Host "  > $nom "-NoNewline; Write-Host "n'existe pas" -ForegroundColor Yellow -NoNewline;Write-Host " dans Catalogue of Life" }
 	else {		
-		$Sourcecode = (Invoke-WebRequest "https://api.checklistbank.org/dataset/9916/taxon/$cof" | ConvertFrom-Json).name.scientificName
+		$Sourcecode = (Invoke-WebRequest "https://api.checklistbank.org/dataset/9916/taxon/$col" | ConvertFrom-Json).name.scientificName
 		
 		if ($nom -eq $Sourcecode) { Write-Host "  > Le code espèce de $nom dans Catalogue of Life est "-NoNewline; Write-Host "correct" -ForegroundColor Green }
 		else {
 			Write-Host "  > Le code espèce de $nom dans Catalogue of Life est "-NoNewline; Write-Host "incorrect" -ForegroundColor Red
-			$cof_erreurs = $cof_erreurs + " " + $nom
-			$cof_erreurs > "./BDD/CATALOGUE_OF_LIFE/erreurs.txt"
+			$col_erreurs = $col_erreurs + " " + $nom
+			$col_erreurs > "./BDD/CATALOGUE_OF_LIFE/erreurs.txt"
 		}
 	}
-	if ($nom -eq "Tibicina picta") { $nom = "Tibicina tomentosa" } # corrections taxonomiques sortie
 
 	# FAUNA-EUROPEA
 	if ($fe -eq "") { Write-Host "  > $nom "-NoNewline; Write-Host "n'existe pas" -ForegroundColor Yellow -NoNewline;Write-Host " dans Fauna-Europea" }
@@ -152,6 +169,13 @@ else {
 	Remove-item "./BDD/INPN/erreurs.txt"
 }
 
+if (-not(Test-Path -Path "./BDD/WAD/erreurs.txt" -PathType Leaf)) { Write-Host "  > Tous les codes espèces de World Auchenorrhyncha Database sont "-NoNewline; Write-Host "corrects" -ForegroundColor Green } 
+else {
+	Write-Host "  > Quelques codes espèces sont "-NoNewline; Write-Host "en erreur" -ForegroundColor Red -NoNewline;Write-Host "  dans World Auchenorrhyncha Database"
+	$wad_txt = (Get-Content "./BDD/WAD/erreurs.txt") + "`n`n"
+	Remove-item "./BDD/WAD/erreurs.txt"
+}
+
 if (-not(Test-Path -Path "./BDD/INATURALIST/erreurs.txt" -PathType Leaf)) { Write-Host "  > Tous les codes espèces de iNaturalist sont "-NoNewline; Write-Host "corrects" -ForegroundColor Green } 
 else {
 	Write-Host "  > Quelques codes espèces sont "-NoNewline; Write-Host "en erreur" -ForegroundColor Red -NoNewline;Write-Host "  dans iNaturalist"
@@ -178,7 +202,7 @@ else {
 if (-not(Test-Path -Path "./BDD/CATALOGUE_OF_LIFE/erreurs.txt" -PathType Leaf)) { Write-Host "  > Tous les codes espèces de Catalogue of Life sont "-NoNewline; Write-Host "corrects" -ForegroundColor Green } 
 else {
 	Write-Host "  > Quelques codes espèces sont "-NoNewline; Write-Host "en erreur" -ForegroundColor Red -NoNewline;Write-Host "  dans Catalogue of Life"
-	$cof_txt = (Get-Content "./BDD/CATALOGUE_OF_LIFE/erreurs.txt") + "`n`n"
+	$col_txt = (Get-Content "./BDD/CATALOGUE_OF_LIFE/erreurs.txt") + "`n`n"
 	Remove-item "./BDD/CATALOGUE_OF_LIFE/erreurs.txt"
 }
 
@@ -191,7 +215,7 @@ else {
 	Remove-item "./BDD/FAUNA-EUROPEA/erreurs.txt"
 }
 
-$erreurs = $ff_txt + $inpn_txt + $inat_txt + $obs_txt + $gbif_txt + $cof_txt + $fe_txt
+$erreurs = $ff_txt + $inpn_txt + + $wad_txt + $inat_txt + $obs_txt + $gbif_txt + $col_txt + $fe_txt
 
 if ($erreurs -eq $null) {Write-Host "Tous les codes espèces sont corrects !" -ForegroundColor Green}
 else {
