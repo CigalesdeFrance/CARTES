@@ -31,11 +31,11 @@ $cigales_codes | ForEach-Object {
 	else {		
 		Invoke-WebRequest -Uri "https://www.faune-france.org/index.php?m_id=94&sp_tg=19&sp_DOffset=1&sp_SChoice=family&sp_Family=1511&sp_SChoice=species&sp_PChoice=all&sp_FDisplay=DATE_PLACE_SPECIES&sp_S=$faune_france" -OutFile "./BDD/FAUNE-FRANCE/code.html"
 		$Source = Get-Content -path "./BDD/FAUNE-FRANCE/code.html" -raw
-                Remove-item "./BDD/FAUNE-FRANCE/code.html"
+		Remove-item "./BDD/FAUNE-FRANCE/code.html"
 		$Source -match '<span class="sci_name">\((.*?)\)</span>' | Out-Null
-		$Sourcecode = $matches[1]
+		$Sourcecode_ff = $matches[1]
 		
-		if ($nom -eq $Sourcecode) { Write-Host "  > Le code espèce de $nom dans Faune-France est "-NoNewline; Write-Host "correct" -ForegroundColor Green }
+		if ($nom -eq $Sourcecode_ff) { Write-Host "  > Le code espèce de $nom dans Faune-France est "-NoNewline; Write-Host "correct" -ForegroundColor Green }
 		else {
 			Write-Host "  > Le code espèce de $nom dans Faune-France est "-NoNewline; Write-Host "incorrect" -ForegroundColor Red
 			$ff_erreurs = $ff_erreurs + " " + $nom
@@ -51,10 +51,10 @@ $cigales_codes | ForEach-Object {
 		Invoke-WebRequest -Uri "https://observation.org/species/$observation/" -OutFile "./BDD/OBSERVATION/code.html"
 		$Source = Get-Content -path "./BDD/OBSERVATION/code.html" -raw
 		Remove-item "./BDD/OBSERVATION/code.html"
-                $Source -match '<i class="species-scientific-name">(.*?)</i>' | Out-Null
-		$Sourcecode = $matches[1]
+		$Source -match '<i class="species-scientific-name">(.*?)</i>' | Out-Null
+		$Sourcecode_obs = $matches[1]
 		
-		if ($nom -eq $Sourcecode) { Write-Host "  > Le code espèce de $nom dans Observation.org est "-NoNewline; Write-Host "correct" -ForegroundColor Green }
+		if ($nom -eq $Sourcecode_obs) { Write-Host "  > Le code espèce de $nom dans Observation.org est "-NoNewline; Write-Host "correct" -ForegroundColor Green }
 		else {
 			Write-Host "  > Le code espèce de $nom dans Observation.org est "-NoNewline; Write-Host "incorrect" -ForegroundColor Red
 			$obs_erreurs = $obs_erreurs + " " + $nom
@@ -67,9 +67,9 @@ $cigales_codes | ForEach-Object {
 	# INPN
 	if ($inpn -eq "") { Write-Host "  > $nom "-NoNewline; Write-Host "n'existe pas" -ForegroundColor Yellow -NoNewline;Write-Host " dans l'INPN" }
 	else {		
-		$Sourcecode = (Invoke-WebRequest "https://odata-inpn.mnhn.fr/taxa/$inpn" | ConvertFrom-Json).names.binomial
+		$Sourcecode_inpn = (Invoke-WebRequest "https://odata-inpn.mnhn.fr/taxa/$inpn" | ConvertFrom-Json).names.binomial
 		
-		if ($nom -eq $Sourcecode) { Write-Host "  > Le code espèce de $nom dans l'INPN est "-NoNewline; Write-Host "correct" -ForegroundColor Green }
+		if ($nom -eq $Sourcecode_inpn) { Write-Host "  > Le code espèce de $nom dans l'INPN est "-NoNewline; Write-Host "correct" -ForegroundColor Green }
 		else {
 			Write-Host "  > Le code espèce de $nom dans l'INPN est "-NoNewline; Write-Host "incorrect" -ForegroundColor Red
 			$inpn_erreurs = $inpn_erreurs + " " + $nom
@@ -83,8 +83,9 @@ $cigales_codes | ForEach-Object {
 	if ($wad -eq "") { Write-Host "  > $nom "-NoNewline; Write-Host "n'existe pas" -ForegroundColor Yellow -NoNewline;Write-Host " dans World Auchenorrhyncha Database" }
 	else {		
 		$Sourcecode_json = (Invoke-WebRequest "https://sfg.taxonworks.org/api/v1/otus/$wad/inventory/taxonomy.json?project_token=ZEJhFp9sq8kBfks15qAbAg" | ConvertFrom-Json).name
-		$Sourcecode_json -match "<i>(.*)<\/i>"
+		$Sourcecode_json -match "<i>(.*)<\/i>"  | Out-Null
 		$Sourcecode = $matches[1]
+		
 		if ($nom -eq $Sourcecode) { Write-Host "  > Le code espèce de $nom dans World Auchenorrhyncha Database est "-NoNewline; Write-Host "correct" -ForegroundColor Green }
 		else {
 			Write-Host "  > Le code espèce de $nom dans World Auchenorrhyncha Database est "-NoNewline; Write-Host "incorrect" -ForegroundColor Red
@@ -120,7 +121,7 @@ $cigales_codes | ForEach-Object {
 		}
 	}
 	
-	# CATALOGUE OF LIFE
+<#  	# CATALOGUE OF LIFE
 	if ($col -eq "") { Write-Host "  > $nom "-NoNewline; Write-Host "n'existe pas" -ForegroundColor Yellow -NoNewline;Write-Host " dans Catalogue of Life" }
 	else {		
 		$Sourcecode = (Invoke-WebRequest "https://api.checklistbank.org/dataset/9916/taxon/$col" | ConvertFrom-Json).name.scientificName
@@ -128,10 +129,8 @@ $cigales_codes | ForEach-Object {
 		if ($nom -eq $Sourcecode) { Write-Host "  > Le code espèce de $nom dans Catalogue of Life est "-NoNewline; Write-Host "correct" -ForegroundColor Green }
 		else {
 			Write-Host "  > Le code espèce de $nom dans Catalogue of Life est "-NoNewline; Write-Host "incorrect" -ForegroundColor Red
-			$col_erreurs = $col_erreurs + " " + $nom
-			$col_erreurs > "./BDD/CATALOGUE_OF_LIFE/erreurs.txt"
 		}
-	}
+	} #>
 
 	# FAUNA-EUROPEA
 	if ($fe -eq "") { Write-Host "  > $nom "-NoNewline; Write-Host "n'existe pas" -ForegroundColor Yellow -NoNewline;Write-Host " dans Fauna-Europea" }
@@ -139,7 +138,7 @@ $cigales_codes | ForEach-Object {
 		Invoke-WebRequest -Uri "https://www.eu-nomen.eu/portal/taxon.php?GUID=urn:lsid:faunaeur.org:taxname:$fe" -OutFile "./BDD/FAUNA-EUROPEA/code.html"
 		$Source = Get-Content -path "./BDD/FAUNA-EUROPEA/code.html" -raw
 		Remove-item "./BDD/FAUNA-EUROPEA/code.html"
-                $Source -match '<H1><i>(.*?)</i>' | Out-Null
+		$Source -match '<H1><i>(.*?)</i>' | Out-Null
 		$Sourcecode = $matches[1]
 		
 		if ($nom -eq $Sourcecode) { Write-Host "  > Le code espèce de $nom dans Fauna-Europea est "-NoNewline; Write-Host "correct" -ForegroundColor Green }
@@ -215,7 +214,7 @@ else {
 	Remove-item "./BDD/FAUNA-EUROPEA/erreurs.txt"
 }
 
-$erreurs = $ff_txt + $inpn_txt + + $wad_txt + $inat_txt + $obs_txt + $gbif_txt + $col_txt + $fe_txt
+$erreurs = $ff_txt + $inpn_txt + $wad_txt + $inat_txt + $obs_txt + $gbif_txt + $col_txt + $fe_txt
 
 if ($erreurs -eq $null) {Write-Host "Tous les codes espèces sont corrects !" -ForegroundColor Green}
 else {
