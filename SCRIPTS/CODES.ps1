@@ -33,9 +33,9 @@ $cigales_codes | ForEach-Object {
 		$Source = Get-Content -path "./BDD/FAUNE-FRANCE/code.html" -raw
 		Remove-item "./BDD/FAUNE-FRANCE/code.html"
 		$Source -match '<span class="sci_name">\((.*?)\)</span>' | Out-Null
-		$Sourcecode_ff = $matches[1]
+		$Sourcecode = $matches[1]
 		
-		if ($nom -eq $Sourcecode_ff) { Write-Host "  > Le code espèce de $nom dans Faune-France est "-NoNewline; Write-Host "correct" -ForegroundColor Green }
+		if ($nom -eq $Sourcecode) { Write-Host "  > Le code espèce de $nom dans Faune-France est "-NoNewline; Write-Host "correct" -ForegroundColor Green }
 		else {
 			Write-Host "  > Le code espèce de $nom dans Faune-France est "-NoNewline; Write-Host "incorrect" -ForegroundColor Red
 			$ff_erreurs = $ff_erreurs + " " + $nom
@@ -52,9 +52,9 @@ $cigales_codes | ForEach-Object {
 		$Source = Get-Content -path "./BDD/OBSERVATION/code.html" -raw
 		Remove-item "./BDD/OBSERVATION/code.html"
 		$Source -match '<i class="species-scientific-name">(.*?)</i>' | Out-Null
-		$Sourcecode_obs = $matches[1]
+		$Sourcecode = $matches[1]
 		
-		if ($nom -eq $Sourcecode_obs) { Write-Host "  > Le code espèce de $nom dans Observation.org est "-NoNewline; Write-Host "correct" -ForegroundColor Green }
+		if ($nom -eq $Sourcecode) { Write-Host "  > Le code espèce de $nom dans Observation.org est "-NoNewline; Write-Host "correct" -ForegroundColor Green }
 		else {
 			Write-Host "  > Le code espèce de $nom dans Observation.org est "-NoNewline; Write-Host "incorrect" -ForegroundColor Red
 			$obs_erreurs = $obs_erreurs + " " + $nom
@@ -67,9 +67,9 @@ $cigales_codes | ForEach-Object {
 	# INPN
 	if ($inpn -eq "") { Write-Host "  > $nom "-NoNewline; Write-Host "n'existe pas" -ForegroundColor Yellow -NoNewline;Write-Host " dans l'INPN" }
 	else {		
-		$Sourcecode_inpn = (Invoke-WebRequest "https://odata-inpn.mnhn.fr/taxa/$inpn" | ConvertFrom-Json).names.binomial
+		$Sourcecode = (Invoke-WebRequest "https://odata-inpn.mnhn.fr/taxa/$inpn" | ConvertFrom-Json).names.binomial
 		
-		if ($nom -eq $Sourcecode_inpn) { Write-Host "  > Le code espèce de $nom dans l'INPN est "-NoNewline; Write-Host "correct" -ForegroundColor Green }
+		if ($nom -eq $Sourcecode) { Write-Host "  > Le code espèce de $nom dans l'INPN est "-NoNewline; Write-Host "correct" -ForegroundColor Green }
 		else {
 			Write-Host "  > Le code espèce de $nom dans l'INPN est "-NoNewline; Write-Host "incorrect" -ForegroundColor Red
 			$inpn_erreurs = $inpn_erreurs + " " + $nom
