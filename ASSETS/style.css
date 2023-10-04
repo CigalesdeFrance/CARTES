@@ -23,11 +23,11 @@ button {
 	margin: 2px;
 }
 
-#boutons_obs, #carte_interactive {
+#boutons_obs {
 	margin: 5px;
 }
 
-#boutons_obs a, #carte_interactive a {
+#boutons_obs a {
 	text-decoration: none;
 	color: black;
 	font-weight: bold;

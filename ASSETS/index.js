@@ -47,7 +47,7 @@ window.onload = function go() {
 	// Fonds de carte de base : OSM et BDOrtho IGN
 	var layer_osm = new ol.layer.Tile({
 		source: new ol.source.OSM({attributions: [
-		'<span style="color:#b70000; font-weight:bold">Version bêta</span> | <a href="https://github.com/CigalesdeFrance/CARTES/">Code source/Erreurs</a> | © <a href="https://www.cigalesdefrance.fr">Cigales de France</a> |',ol.source.OSM.ATTRIBUTION,'<br><a href="https://inpn.mnhn.fr"><img class="copyright" src="https://cartes.cigalesdefrance.fr/ASSETS/LOGOS/INPN.png" alt="Logo de l\'INPN"></a><a href="https://observation.org"><img class="copyright" src="https://cartes.cigalesdefrance.fr/ASSETS/LOGOS/OBSERVATION.svg" alt="Logo d\'Observation.org"></a><a href="https://www.gbif.org"><img class="copyright" src="https://cartes.cigalesdefrance.fr/ASSETS/LOGOS/GBIF.svg" alt="Logo de GBIF"></a><a href="https://www.inaturalist.org/"><img class="copyright" src="https://cartes.cigalesdefrance.fr/ASSETS/LOGOS/INATURALIST.svg" alt="Logo d\'iNaturalist"></a>']}),
+		'<span style="color:#b70000; font-weight:bold">Version en développement</span> | <a href="https://github.com/CigalesdeFrance/CARTES/">Code source/Erreurs</a> | © <a href="https://www.cigalesdefrance.fr">Cigales de France</a> |',ol.source.OSM.ATTRIBUTION,'<br><a href="https://inpn.mnhn.fr"><img class="copyright" src="https://cartes.cigalesdefrance.fr/ASSETS/LOGOS/INPN.png" alt="Logo de l\'INPN"></a><a href="https://observation.org"><img class="copyright" src="https://cartes.cigalesdefrance.fr/ASSETS/LOGOS/OBSERVATION.svg" alt="Logo d\'Observation.org"></a><a href="https://www.gbif.org"><img class="copyright" src="https://cartes.cigalesdefrance.fr/ASSETS/LOGOS/GBIF.svg" alt="Logo de GBIF"></a><a href="https://www.inaturalist.org/"><img class="copyright" src="https://cartes.cigalesdefrance.fr/ASSETS/LOGOS/INATURALIST.svg" alt="Logo d\'iNaturalist"></a>']}),
 		opacity: 1
 	});
 	
@@ -241,6 +241,7 @@ window.onload = function go() {
 			history.pushState(change_url, change_url.Title, change_url.Url);
 			
 			autres_cartes.innerHTML = '<button><a href="./AUTRES/index.html?' + espece + '" target="_blank">➤ Autres sources</a></button>';
+			fiche_espece.innerHTML = '<button><a href="https://www.cigalesdefrance.fr/espece:' + espece + '" target="_blank">➤ Fiche espèce</a></button>';
 			
 			// Adresses des KML et ajout des sources aux couches
 			var url_bdd1 = 'https://cartes.cigalesdefrance.fr/BDD/INATURALIST/' + espece + '.kml';

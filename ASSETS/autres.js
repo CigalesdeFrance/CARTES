@@ -6,14 +6,19 @@ choix.onchange = function() {
 	
 	var espece = this.options[this.selectedIndex].getAttribute('espece');
 	
+	carte_interactive.innerHTML = '<button><a href="../">➤ Carte interactive</a></button>';
+	
 	// MISE A JOUR DE L'URL EN TEMPS REEL //
 	if (espece !== null) {
 		var change_url = { Title: espece, Url: 'index.html?'+ espece	};
 		history.pushState(change_url, change_url.Title, change_url.Url);
-	}
+
 	
-	// MISE A JOUR DES CARTES + intégration si l'espèce n'existe pas dans la BDD //
-	carte_interactive.innerHTML = '<button><a href="../index.html?' + espece + '">➤ Carte interactive</a></button>';
+		// MISE A JOUR DES CARTES + intégration si l'espèce n'existe pas dans la BDD //
+		carte_interactive.innerHTML = '<button><a href="../index.html?' + espece + '">➤ Carte interactive</a></button>';
+		fiche_espece.innerHTML = '<button><a href="https://www.cigalesdefrance.fr/espece:' + espece + '" target="_blank">➤ Fiche espèce</a></button>';
+		
+	};
 	
 	var ff_url = 'https://cartes.cigalesdefrance.fr/BDD/FAUNE-FRANCE/' + espece + '.png';
 	var onem_url = 'https://cartes.cigalesdefrance.fr/BDD/ONEM/' + espece + '.jpg';
@@ -63,7 +68,6 @@ choix.onchange = function() {
 			gbifdiv.innerHTML = '<img class="gbif" src="https://cartes.cigalesdefrance.fr/BDD/GBIF-EUROPE/null.png" alt="Carte vide provenant de GBIF">';
 		}
 	}
-	
 	
 	};
 	choix.onchange();
