@@ -1,4 +1,5 @@
 # Cigales de France - Cartes interactives
+<a href="https://www.cigalesdefrance.fr"><img src="https://img.shields.io/badge/Site-Cigales%20de%20France-dbdbdb.svg?style=for-the-badge"></a> <a href="https://forum.cigalesdefrance.fr"><img src="https://img.shields.io/badge/Forum-Cigales%20de%20France-699600.svg?style=for-the-badge"></a> <a href="https://discord.gg/ugqdcJgaPW"><img src="https://img.shields.io/badge/Cigales de France-%235865F2.svg?style=for-the-badge&logo=discord&logoColor=white"></a> 
 
 Dans le cadre du projet de synthèse des connaissances sur les Cigales de France métropolitaine il s'avère très vite nécessaire de présenter des cartes de répartition.
 
