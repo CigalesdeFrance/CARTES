@@ -17,6 +17,11 @@
 			</Placemark> 
 			<Placemark>
 				<styleUrl>#inpn</styleUrl>
+				<description>https://openobs.mnhn.fr/openobs-hub/occurrences/68fc3ae4-daca-43cf-b96f-ce116c6c8556</description>
+				<Point><coordinates>3.21516,43.277</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#inpn</styleUrl>
 				<description>https://openobs.mnhn.fr/openobs-hub/occurrences/b38bf6c6-f1c6-45d7-a0b1-4c9592e0eeaf</description>
 				<Point><coordinates>2.56557,42.9752</coordinates></Point>
 			</Placemark> 
