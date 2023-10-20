@@ -2,6 +2,7 @@
 "type": "FeatureCollection",
 "name": "Cicadetta_cantilatrix",
 "features": [
+{"type": "Feature", "properties": {"ID": "291114633"},"geometry": {"coordinates": [6.025611,49.017389],"type": "Point"},"id": "291114633"},
 {"type": "Feature", "properties": {"ID": "286479075"},"geometry": {"coordinates": [3.1109342857764,47.130957303784],"type": "Point"},"id": "286479075"},
 {"type": "Feature", "properties": {"ID": "286478906"},"geometry": {"coordinates": [3.1109342857764,47.130957303784],"type": "Point"},"id": "286478906"},
 {"type": "Feature", "properties": {"ID": "286478905"},"geometry": {"coordinates": [3.1109342857764,47.130957303784],"type": "Point"},"id": "286478905"},
@@ -39,7 +40,5 @@
 {"type": "Feature", "properties": {"ID": "259684257"},"geometry": {"coordinates": [4.71601163767567,46.314620991663],"type": "Point"},"id": "259684257"},
 {"type": "Feature", "properties": {"ID": "259684256"},"geometry": {"coordinates": [4.72192189632135,46.3114001927094],"type": "Point"},"id": "259684256"},
 {"type": "Feature", "properties": {"ID": "259684255"},"geometry": {"coordinates": [4.71601163767567,46.314620991663],"type": "Point"},"id": "259684255"},
-{"type": "Feature", "properties": {"ID": "259684254"},"geometry": {"coordinates": [4.71601163767567,46.314620991663],"type": "Point"},"id": "259684254"},
-{"type": "Feature", "properties": {"ID": "226630608"},"geometry": {"coordinates": [6.389671,49.463187],"type": "Point"},"id": "226630608"},
-{"type": "Feature", "properties": {"ID": "225527738"},"geometry": {"coordinates": [6.025611,49.017389],"type": "Point"},"id": "225527738"}
+{"type": "Feature", "properties": {"ID": "259684254"},"geometry": {"coordinates": [4.71601163767567,46.314620991663],"type": "Point"},"id": "259684254"}
 ]}
