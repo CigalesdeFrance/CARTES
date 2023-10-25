@@ -12,18 +12,13 @@
 			<name>INPN</name>
 			<Placemark>
 				<styleUrl>#inpn</styleUrl>
-				<description>https://openobs.mnhn.fr/openobs-hub/occurrences/3c442cb2-2129-495c-a0e5-e5d0144f0d85</description>
-				<Point><coordinates>4.17953,44.39681</coordinates></Point>
+				<description>https://openobs.mnhn.fr/openobs-hub/occurrences/d2b821c4-91f0-4497-98fc-a1a3ab1f587f</description>
+				<Point><coordinates>4.17732,44.39534</coordinates></Point>
 			</Placemark> 
 			<Placemark>
 				<styleUrl>#inpn</styleUrl>
 				<description>https://openobs.mnhn.fr/openobs-hub/occurrences/b7159264-caef-409f-bd7b-27529d2edd3a</description>
 				<Point><coordinates>4.22,44.413</coordinates></Point>
-			</Placemark> 
-			<Placemark>
-				<styleUrl>#inpn</styleUrl>
-				<description>https://openobs.mnhn.fr/openobs-hub/occurrences/5aecb16f-4211-4f54-9800-70c5e7d2d2d9</description>
-				<Point><coordinates>4.18892,44.40236</coordinates></Point>
 			</Placemark> 
 			<Placemark>
 				<styleUrl>#inpn</styleUrl>
@@ -37,13 +32,18 @@
 			</Placemark> 
 			<Placemark>
 				<styleUrl>#inpn</styleUrl>
-				<description>https://openobs.mnhn.fr/openobs-hub/occurrences/32125f6a-f4f7-4af5-beb8-1f71454653a1</description>
-				<Point><coordinates>4.1717,44.3972</coordinates></Point>
+				<description>https://openobs.mnhn.fr/openobs-hub/occurrences/5aecb16f-4211-4f54-9800-70c5e7d2d2d9</description>
+				<Point><coordinates>4.18892,44.40236</coordinates></Point>
 			</Placemark> 
 			<Placemark>
 				<styleUrl>#inpn</styleUrl>
-				<description>https://openobs.mnhn.fr/openobs-hub/occurrences/d2b821c4-91f0-4497-98fc-a1a3ab1f587f</description>
-				<Point><coordinates>4.17732,44.39534</coordinates></Point>
+				<description>https://openobs.mnhn.fr/openobs-hub/occurrences/3c442cb2-2129-495c-a0e5-e5d0144f0d85</description>
+				<Point><coordinates>4.17953,44.39681</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#inpn</styleUrl>
+				<description>https://openobs.mnhn.fr/openobs-hub/occurrences/32125f6a-f4f7-4af5-beb8-1f71454653a1</description>
+				<Point><coordinates>4.1717,44.3972</coordinates></Point>
 			</Placemark> 
 			<Placemark>
 				<styleUrl>#inpn</styleUrl>
