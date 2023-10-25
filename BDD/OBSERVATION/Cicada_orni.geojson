@@ -2,6 +2,7 @@
 "type": "FeatureCollection",
 "name": "Cicada_orni",
 "features": [
+{"type": "Feature", "properties": {"ID": "71323949"},"geometry": {"coordinates": [4.07855674155,44.4367347045],"type": "Point"},"id": "71323949"},
 {"type": "Feature", "properties": {"ID": "291114593"},"geometry": {"coordinates": [4.777225,44.013205],"type": "Point"},"id": "291114593"},
 {"type": "Feature", "properties": {"ID": "291114585"},"geometry": {"coordinates": [4.777225,44.013205],"type": "Point"},"id": "291114585"},
 {"type": "Feature", "properties": {"ID": "291112987"},"geometry": {"coordinates": [4.548309,44.322491],"type": "Point"},"id": "291112987"},
@@ -1369,7 +1370,6 @@
 {"type": "Feature", "properties": {"ID": "72564885"},"geometry": {"coordinates": [5.1504925484187,44.238132345722],"type": "Point"},"id": "72564885"},
 {"type": "Feature", "properties": {"ID": "79384899"},"geometry": {"coordinates": [4.00478861822,43.6510213204],"type": "Point"},"id": "79384899"},
 {"type": "Feature", "properties": {"ID": "69557039"},"geometry": {"coordinates": [4.99331857078,44.2808235297],"type": "Point"},"id": "69557039"},
-{"type": "Feature", "properties": {"ID": "71323949"},"geometry": {"coordinates": [4.07855674155,44.4367347045],"type": "Point"},"id": "71323949"},
 {"type": "Feature", "properties": {"ID": "70793312"},"geometry": {"coordinates": [4.68286201358,43.6803254179],"type": "Point"},"id": "70793312"},
 {"type": "Feature", "properties": {"ID": "70793093"},"geometry": {"coordinates": [4.68321070075,43.6803215384],"type": "Point"},"id": "70793093"},
 {"type": "Feature", "properties": {"ID": "61448381"},"geometry": {"coordinates": [6.90677940846,43.4486506511],"type": "Point"},"id": "61448381"},
