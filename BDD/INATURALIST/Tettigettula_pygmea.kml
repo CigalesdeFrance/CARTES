@@ -62,6 +62,11 @@
 			</Placemark> 
 			<Placemark>
 				<styleUrl>#inaturalist</styleUrl>
+				<description>https://www.inaturalist.org/observations/173008145</description>
+				<Point><coordinates>0.4930460081,43.663670714</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#inaturalist</styleUrl>
 				<description>https://www.inaturalist.org/observations/172468095</description>
 				<Point><coordinates>5.2893161761,44.4441060005</coordinates></Point>
 			</Placemark> 
@@ -89,6 +94,11 @@
 				<styleUrl>#inaturalist</styleUrl>
 				<description>https://www.inaturalist.org/observations/169429200</description>
 				<Point><coordinates>5.9110384807,44.1731306627</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#inaturalist</styleUrl>
+				<description>https://www.inaturalist.org/observations/168801424</description>
+				<Point><coordinates>1.5980537608,44.6253010724</coordinates></Point>
 			</Placemark> 
 			<Placemark>
 				<styleUrl>#inaturalist</styleUrl>
