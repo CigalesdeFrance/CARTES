@@ -10,6 +10,11 @@
 		<name>Tibicina_nigronervosa</name>
 		<Folder>
 			<name>INATURALIST</name>
+			<Placemark>
+				<styleUrl>#inaturalist</styleUrl>
+				<description>https://www.inaturalist.org/observations/194136423</description>
+				<Point><coordinates>8.8111247817,41.5580066326</coordinates></Point>
+			</Placemark>
 		</Folder>
 	</Document>
 </kml>
