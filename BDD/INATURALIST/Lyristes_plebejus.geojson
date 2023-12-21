@@ -3,6 +3,7 @@
 "name": "Lyristes_plebejus",
 "features": [
 {"type": "Feature", "properties": {"ID": "194233614"},"geometry": {"coordinates": [6.0015619613,43.1050112865],"type": "Point"},"id": "194233614"},
+{"type": "Feature", "properties": {"ID": "194194273"},"geometry": {"coordinates": [3.8142544325,43.879928903],"type": "Point"},"id": "194194273"},
 {"type": "Feature", "properties": {"ID": "193939499"},"geometry": {"coordinates": [3.6906415789,43.6502123937],"type": "Point"},"id": "193939499"},
 {"type": "Feature", "properties": {"ID": "193117768"},"geometry": {"coordinates": [5.0544888889,44.2641611111],"type": "Point"},"id": "193117768"},
 {"type": "Feature", "properties": {"ID": "192730064"},"geometry": {"coordinates": [2.812402,43.0985609722],"type": "Point"},"id": "192730064"},
@@ -452,7 +453,6 @@
 {"type": "Feature", "properties": {"ID": "126379732"},"geometry": {"coordinates": [6.126501672,43.1112441181],"type": "Point"},"id": "126379732"},
 {"type": "Feature", "properties": {"ID": "126339377"},"geometry": {"coordinates": [3.6126367868,43.4859300747],"type": "Point"},"id": "126339377"},
 {"type": "Feature", "properties": {"ID": "126318538"},"geometry": {"coordinates": [3.858921,43.640813],"type": "Point"},"id": "126318538"},
-{"type": "Feature", "properties": {"ID": "126261486"},"geometry": {"coordinates": [4.4252445549,44.016765347],"type": "Point"},"id": "126261486"},
 {"type": "Feature", "properties": {"ID": "126211627"},"geometry": {"coordinates": [3.2581450045,43.3395465461],"type": "Point"},"id": "126211627"},
 {"type": "Feature", "properties": {"ID": "126171548"},"geometry": {"coordinates": [5.2582247,43.5228324],"type": "Point"},"id": "126171548"},
 {"type": "Feature", "properties": {"ID": "126056107"},"geometry": {"coordinates": [3.3346216667,43.6540116667],"type": "Point"},"id": "126056107"},
@@ -603,6 +603,7 @@
 {"type": "Feature", "properties": {"ID": "93054541"},"geometry": {"coordinates": [3.8078166667,43.6840972222],"type": "Point"},"id": "93054541"},
 {"type": "Feature", "properties": {"ID": "93035442"},"geometry": {"coordinates": [2.9196905,42.8328315],"type": "Point"},"id": "93035442"},
 {"type": "Feature", "properties": {"ID": "93034791"},"geometry": {"coordinates": [3.5619888889,43.93385],"type": "Point"},"id": "93034791"},
+{"type": "Feature", "properties": {"ID": "92897101"},"geometry": {"coordinates": [5.9279997647,43.1243597002],"type": "Point"},"id": "92897101"},
 {"type": "Feature", "properties": {"ID": "91649566"},"geometry": {"coordinates": [3.0596642196,43.4173980712],"type": "Point"},"id": "91649566"},
 {"type": "Feature", "properties": {"ID": "91620033"},"geometry": {"coordinates": [3.3729556203,43.6447728694],"type": "Point"},"id": "91620033"},
 {"type": "Feature", "properties": {"ID": "91539544"},"geometry": {"coordinates": [4.9559450895,44.1616792077],"type": "Point"},"id": "91539544"},
