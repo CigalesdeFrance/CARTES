@@ -6367,6 +6367,11 @@
 			</Placemark> 
 			<Placemark>
 				<styleUrl>#gbif</styleUrl>
+				<description>https://www.gbif.org/occurrence/4506401511</description>
+				<Point><coordinates>3.805242,43.64276</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#gbif</styleUrl>
 				<description>https://www.gbif.org/occurrence/4063027395</description>
 				<Point><coordinates>3.458828,43.559113</coordinates></Point>
 			</Placemark> 
