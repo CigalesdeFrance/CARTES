@@ -132,7 +132,7 @@ $cigales_codes | ForEach-Object {
 		}
 	} #>
 
-	# FAUNA-EUROPEA
+<#      # FAUNA-EUROPEA
 	if ($fe -eq "") { Write-Host "  > $nom "-NoNewline; Write-Host "n'existe pas" -ForegroundColor Yellow -NoNewline;Write-Host " dans Fauna-Europea" }
 	else {		
 		Invoke-WebRequest -Uri "https://www.eu-nomen.eu/portal/taxon.php?GUID=urn:lsid:faunaeur.org:taxname:$fe" -OutFile "./BDD/FAUNA-EUROPEA/code.html"
@@ -147,7 +147,7 @@ $cigales_codes | ForEach-Object {
 			$fe_erreurs = $fe_erreurs + " " + $nom
 			$fe_erreurs > "./BDD/FAUNA-EUROPEA/erreurs.txt"
 		}
-	}
+	} #>
 
 # fin de foreach
 }
