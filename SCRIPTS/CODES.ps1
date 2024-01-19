@@ -132,10 +132,10 @@ $cigales_codes | ForEach-Object {
 		}
 	} #>
 
-<#      # FAUNA-EUROPEA
-	if ($fe -eq "") { Write-Host "  > $nom "-NoNewline; Write-Host "n'existe pas" -ForegroundColor Yellow -NoNewline;Write-Host " dans Fauna-Europea" }
+	# FAUNA-EUROPEA
+	if ($fauna_europea -eq "") { Write-Host "  > $nom "-NoNewline; Write-Host "n'existe pas" -ForegroundColor Yellow -NoNewline;Write-Host " dans Fauna-Europea" }
 	else {		
-		Invoke-WebRequest -Uri "https://www.eu-nomen.eu/portal/taxon.php?GUID=urn:lsid:faunaeur.org:taxname:$fe" -OutFile "./BDD/FAUNA-EUROPEA/code.html"
+		Invoke-WebRequest -Uri "https://www.eu-nomen.eu/portal/taxon.php?GUID=urn:lsid:faunaeur.org:taxname:$fauna_europea" -OutFile "./BDD/FAUNA-EUROPEA/code.html"
 		$Source = Get-Content -path "./BDD/FAUNA-EUROPEA/code.html" -raw
 		Remove-item "./BDD/FAUNA-EUROPEA/code.html"
 		$Source -match '<H1><i>(.*?)</i>' | Out-Null
@@ -147,7 +147,7 @@ $cigales_codes | ForEach-Object {
 			$fe_erreurs = $fe_erreurs + " " + $nom
 			$fe_erreurs > "./BDD/FAUNA-EUROPEA/erreurs.txt"
 		}
-	} #>
+	}
 
 # fin de foreach
 }
