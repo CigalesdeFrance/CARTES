@@ -992,6 +992,11 @@
 			</Placemark> 
 			<Placemark>
 				<styleUrl>#gbif</styleUrl>
+				<description>https://www.gbif.org/occurrence/4525080131</description>
+				<Point><coordinates>3.050259,43.295602</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#gbif</styleUrl>
 				<description>https://www.gbif.org/occurrence/4085522786</description>
 				<Point><coordinates>5.12674,43.35073</coordinates></Point>
 			</Placemark> 
