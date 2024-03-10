@@ -12,6 +12,11 @@
 			<name>INATURALIST</name>
 			<Placemark>
 				<styleUrl>#inaturalist</styleUrl>
+				<description>https://www.inaturalist.org/observations/201774336</description>
+				<Point><coordinates>3.2473924377,43.2446823091</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#inaturalist</styleUrl>
 				<description>https://www.inaturalist.org/observations/179728671</description>
 				<Point><coordinates>8.85322,42.606125</coordinates></Point>
 			</Placemark> 
