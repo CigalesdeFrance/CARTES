@@ -10,6 +10,36 @@
 		<name>Cicada_barbara</name>
 		<Folder>
 			<name>GBIF</name>
+			<Placemark>
+				<styleUrl>#gbif</styleUrl>
+				<description>https://www.gbif.org/occurrence/4541670151</description>
+				<Point><coordinates>9.32749,41.64925</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#gbif</styleUrl>
+				<description>https://www.gbif.org/occurrence/4541830159</description>
+				<Point><coordinates>9.32746,41.64935</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#gbif</styleUrl>
+				<description>https://www.gbif.org/occurrence/4541718775</description>
+				<Point><coordinates>9.32746,41.64935</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#gbif</styleUrl>
+				<description>https://www.gbif.org/occurrence/4541767356</description>
+				<Point><coordinates>9.32753,41.64971</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#gbif</styleUrl>
+				<description>https://www.gbif.org/occurrence/4541782945</description>
+				<Point><coordinates>9.32753,41.64971</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#gbif</styleUrl>
+				<description>https://www.gbif.org/occurrence/4145550340</description>
+				<Point><coordinates>2.367026,48.863399</coordinates></Point>
+			</Placemark>
 		</Folder>
 	</Document>
 </kml>
