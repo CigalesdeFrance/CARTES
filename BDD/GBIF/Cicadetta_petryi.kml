@@ -877,6 +877,11 @@
 			</Placemark> 
 			<Placemark>
 				<styleUrl>#gbif</styleUrl>
+				<description>https://www.gbif.org/occurrence/4594523358</description>
+				<Point><coordinates>-0.79811,45.48186</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#gbif</styleUrl>
 				<description>https://www.gbif.org/occurrence/3843743408</description>
 				<Point><coordinates>5.51626,44.17548</coordinates></Point>
 			</Placemark> 
