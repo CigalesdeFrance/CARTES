@@ -67,6 +67,11 @@
 			</Placemark> 
 			<Placemark>
 				<styleUrl>#gbif</styleUrl>
+				<description>https://www.gbif.org/occurrence/4596882981</description>
+				<Point><coordinates>3.247392,43.244682</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#gbif</styleUrl>
 				<description>https://www.gbif.org/occurrence/4569090725</description>
 				<Point><coordinates>3.2474,43.24465</coordinates></Point>
 			</Placemark> 
