@@ -59,8 +59,10 @@ $cigales_codes | ForEach-Object {
 					
 					# date
 					$timestamp = $json_filter.eventDate
-					$datetime = [datetimeoffset]::FromUnixTimeMilliseconds($timestamp).DateTime
-					$date = $datetime.ToString('yyyy-MM-dd') | Add-Content "./BDD/INPN/$code-date.csv"
+					foreach ($time in $timestamp) {
+						$datetime = [datetimeoffset]::FromUnixTimeMilliseconds($time).DateTime
+						$datetime.ToString('yyyy-MM-dd') | Add-Content "./BDD/INPN/$code-date.csv"
+					}
 					
 					# vérifier la cohérence avec $month et $year
 				}
