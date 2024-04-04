@@ -33,18 +33,19 @@ $cigales_codes | ForEach-Object {
 	if ($INPN_url.StatusCode -eq "OK") {
 		if ($inpn -eq "") {
 			"  > L'espèce n'existe pas dans INPN"
-			Add-Content "./BDD/INPN/$code.csv" "Latitude,Longitude,ID"
+			Add-Content "./BDD/INPN/$code.csv" "Latitude,Longitude,ID,Date"
 		}
 		else {
 			$trurl = 'https://openobs.mnhn.fr/biocache-service/occurrences/search?q=taxonConceptID:' + $inpn +' AND ((dynamicProperties_nivValNationale:"Certain - très probable") OR (dynamicProperties_nivValNationale:"Probable") OR (dynamicProperties_nivValNationale:"Non réalisable")) AND ((dynamicProperties_nivValRegionale:"Certain - très probable") OR (dynamicProperties_nivValRegionale:"Probable") OR (dynamicProperties_nivValRegionale:"Non réalisable") OR (*:* dynamicProperties_nivValRegionale:*))'
 			$totalRecords = (Invoke-WebRequest $trurl | ConvertFrom-Json).totalRecords
 			if ($totalRecords -eq 0) {
 				"  > L'espèce est présente dans INPN mais ne possède aucune donnée" 
-				Add-Content "./BDD/INPN/$code.csv" "Latitude,Longitude,ID"
+				Add-Content "./BDD/INPN/$code.csv" "Latitude,Longitude,ID,Date"
 			}
 			else {
 				Add-Content "./BDD/INPN/$code-coord.csv" "Latitude,Longitude"
 				Add-Content "./BDD/INPN/$code-id.csv" "ID"
+				Add-Content "./BDD/INPN/$code-date.csv" "Date"
 				$pages = [math]::floor($totalRecords/300)
 				for ($num=0;$num -le $pages;$num++) {
 					if ($num -eq 0) {$startIndex=0} else {$startIndex = ($num*300)}
@@ -54,15 +55,25 @@ $cigales_codes | ForEach-Object {
 					$json = (Invoke-WebRequest $jsonurl | ConvertFrom-Json)
 					$json_filter = $json.occurrences -match "latLong" # Vérification de la présence de coordonnées
 					$latLong = $json_filter.latLong | Add-Content "./BDD/INPN/$code-coord.csv"
-					$id = $json_filter.uuid | Add-Content "./BDD/INPN/$code-id.csv" 
+					$id = $json_filter.uuid | Add-Content "./BDD/INPN/$code-id.csv"
+					
+					# date
+					$timestamp = $json_filter.eventDate
+					$datetime = [datetimeoffset]::FromUnixTimeMilliseconds($timestamp).DateTime
+					$date = $datetime.ToString('yyyy-MM-dd') | Add-Content "./BDD/INPN/$code-date.csv"
+					
+					# vérifier la cohérence avec $month et $year
 				}
 				
 				$coord = Get-content "./BDD/INPN/$code-coord.csv" 
 				$id = Get-content "./BDD/INPN/$code-id.csv"
-				$(for($index=0;$index -lt $coord.Count;$index++){$coord[$index] + "," + $id[$index]}) | Add-Content "./BDD/INPN/$code.csv"
+				$date = Get-content "./BDD/INPN/$code-date.csv"
+				$(for($index=0;$index -lt $coord.Count;$index++){$coord[$index] + "," + $id[$index] + "," + $date[$index]}) | Add-Content "./BDD/INPN/$code.csv"
 				(Get-Content "./BDD/INPN/$code.csv") | ? {$_.trim() -ne "" } | Set-Content "./BDD/INPN/$code.csv"
-				Remove-item "./BDD/INPN/$code-id.csv"
+				
 				Remove-item "./BDD/INPN/$code-coord.csv"
+				Remove-item "./BDD/INPN/$code-id.csv"
+				Remove-item "./BDD/INPN/$code-date.csv"
 			}
 		}
 	}
@@ -75,17 +86,18 @@ $cigales_codes | ForEach-Object {
 	if ($INATURALIST_url.StatusCode -eq "OK") {
 		if ($inaturalist -eq "") {
 			"  > L'espèce n'existe pas dans Inaturalist"
-			Add-Content "./BDD/INATURALIST/$code.csv" "Latitude,Longitude,ID"
+			Add-Content "./BDD/INATURALIST/$code.csv" "Latitude,Longitude,ID,Date"
 		}
 		else {
 			$total_results = (Invoke-WebRequest "https://api.inaturalist.org/v1/observations?&place_id=6753&taxon_id=$inaturalist" | ConvertFrom-Json).total_results
 			if ($total_results -eq 0) {
 				"  > L'espèce est présente dans Inaturalist mais ne possède aucune donnée"
-				Add-Content "./BDD/INATURALIST/$code.csv" "Latitude,Longitude,ID"		
+				Add-Content "./BDD/INATURALIST/$code.csv" "Latitude,Longitude,ID,Date"		
 			}
 			else {
 				Add-Content "./BDD/INATURALIST/$code-coord.csv" "Latitude,Longitude"
 				Add-Content "./BDD/INATURALIST/$code-id.csv" "ID"
+				Add-Content "./BDD/INATURALIST/$code-date.csv" "Date"
 				
 				$pages = [math]::ceiling($total_results/200)
 				for ($num=1;$num -le $pages;$num++) {
@@ -93,15 +105,19 @@ $cigales_codes | ForEach-Object {
 					$json = (Invoke-WebRequest "https://api.inaturalist.org/v1/observations?&place_id=6753&taxon_id=$inaturalist&page=$num&per_page=200" | ConvertFrom-Json)
 					$json_filter = $json.results | where {$_.quality_grade -ne "needs_id"} # Observation au moins validée par une personne
 					$json_filter.location | Add-Content "./BDD/INATURALIST/$code-coord.csv" 
-					$json_filter.id | Add-Content "./BDD/INATURALIST/$code-id.csv" 
+					$json_filter.id | Add-Content "./BDD/INATURALIST/$code-id.csv"
+					$json_filter.observed_on | Add-Content "./BDD/INATURALIST/$code-date.csv" 
 				}		
 				
 				$coord = Get-content "./BDD/INATURALIST/$code-coord.csv" 
 				$id = Get-content "./BDD/INATURALIST/$code-id.csv"
-				$(for($index=0;$index -lt $coord.Count;$index++){$coord[$index] + "," + $id[$index]}) | Add-Content "./BDD/INATURALIST/$code.csv"
+				$date = Get-content "./BDD/INATURALIST/$code-date.csv"
+				$(for($index=0;$index -lt $coord.Count;$index++){$coord[$index] + "," + $id[$index] + "," + $date[$index]}) | Add-Content "./BDD/INATURALIST/$code.csv"
 				(Get-Content "./BDD/INATURALIST/$code.csv") | ? {$_.trim() -ne "" } | Set-Content "./BDD/INATURALIST/$code.csv"
-				Remove-item "./BDD/INATURALIST/$code-id.csv"
+				
 				Remove-item "./BDD/INATURALIST/$code-coord.csv"
+				Remove-item "./BDD/INATURALIST/$code-id.csv"
+				Remove-item "./BDD/INATURALIST/$code-date.csv"
 			}
 		}
 	}
@@ -114,7 +130,7 @@ $cigales_codes | ForEach-Object {
 	if ($OBSERVATION_url.StatusCode -eq "OK") {
 		if ($observation -eq "") {
 			"  > L'espèce n'existe pas dans Observation.org"
-			Add-Content "./BDD/OBSERVATION/$code.csv" "Latitude,Longitude,ID"
+			Add-Content "./BDD/OBSERVATION/$code.csv" "Latitude,Longitude,ID,Date"
 		}
 		else {
 			$count = (Invoke-WebRequest "https://observation.org/api/v1/species/$observation/observations/?country_id=78" -Headers $OBS_HEADERS | ConvertFrom-Json).count
@@ -123,7 +139,7 @@ $cigales_codes | ForEach-Object {
 				Add-Content "./BDD/OBSERVATION/$code.csv" "Latitude,Longitude,ID"
 			}
 			else {
-				Add-Content "./BDD/OBSERVATION/$code.csv" "Latitude,Longitude,ID"
+				Add-Content "./BDD/OBSERVATION/$code.csv" "Latitude,Longitude,ID,Date"
 				$pages = [math]::floor($count/300)
 				for ($num=0;$num -le $pages;$num++) {
 					if ($num -eq 0) {$offset=0} else {$offset = ($num*300)}
@@ -137,7 +153,8 @@ $cigales_codes | ForEach-Object {
 						$lat = $json_end[$i].point.coordinates[1]
 						$long = $json_end[$i].point.coordinates[0]
 						$id = $json_end[$i].id
-						$value = "$($lat),$($long),$($id)"
+						$date = $json_end[$i].date
+						$value = "$($lat),$($long),$($id),$($date)"
 						$value | Add-Content "./BDD/OBSERVATION/$code.csv"
 					}
 				}
@@ -153,17 +170,19 @@ $cigales_codes | ForEach-Object {
 	if ($GBIF_url.StatusCode -eq "OK") {
 		if ($GBIF -eq "") {
 			"  > L'espèce n'existe pas dans GBIF"
-			Add-Content "./BDD/GBIF/$code.csv" "Latitude,Longitude,ID"
+			Add-Content "./BDD/GBIF/$code.csv" "Latitude,Longitude,ID,Date"
 		}
 		else {
 			$count = (Invoke-WebRequest "https://api.gbif.org/v1/occurrence/search?country=FR&taxon_key=$gbif&occurrenceStatus=PRESENT" | ConvertFrom-Json).count
 			if ($count -eq 0)  {
 				"  > L'espèce est présente dans GBIF mais ne possède aucune donnée"
-				Add-Content "./BDD/GBIF/$code.csv" "Latitude,Longitude,ID"
+				Add-Content "./BDD/GBIF/$code.csv" "Latitude,Longitude,ID,Date"
 			}
 			else {
 				Add-Content "./BDD/GBIF/$code-coord.csv" "Latitude,Longitude"
 				Add-Content "./BDD/GBIF/$code-id.csv" "ID"
+				Add-Content "./BDD/GBIF/$code-date.csv" "Date"
+				
 				$pages = [math]::floor($count/300)
 				for ($num=0;$num -le $pages;$num++) {
 					if ($num -eq 0) {$offset=0} else {$offset = ($num*300)}
@@ -175,6 +194,7 @@ $cigales_codes | ForEach-Object {
 					$lat = $json_filter.decimalLatitude | Add-Content "./BDD/GBIF/$code-lat.csv" 
 					$long = $json_filter.decimalLongitude | Add-Content "./BDD/GBIF/$code-long.csv" 
 					$id = $json_filter.key | Add-Content "./BDD/GBIF/$code-id.csv" 
+					$date = $json_filter.eventDate | Add-Content "./BDD/GBIF/$code-date.csv" 
 				}
 				
 				$lat = Get-content "./BDD/GBIF/$code-lat.csv" 
@@ -186,10 +206,13 @@ $cigales_codes | ForEach-Object {
 				
 				$coord = Get-content "./BDD/GBIF/$code-coord.csv" 
 				$id = Get-content "./BDD/GBIF/$code-id.csv"
-				$(for($index=0;$index -lt $coord.Count;$index++){$coord[$index] + "," + $id[$index]}) | Add-Content "./BDD/GBIF/$code.csv"
+				$date = Get-content "./BDD/GBIF/$code-date.csv"
+				$(for($index=0;$index -lt $coord.Count;$index++){$coord[$index] + "," + $id[$index] + "," + $date[$index]}) | Add-Content "./BDD/GBIF/$code.csv"
 				(Get-Content "./BDD/GBIF/$code.csv") | ? {$_.trim() -ne "" } | Set-Content "./BDD/GBIF/$code.csv"
-				Remove-item "./BDD/GBIF/$code-id.csv"
+				
 				Remove-item "./BDD/GBIF/$code-coord.csv"
+				Remove-item "./BDD/GBIF/$code-id.csv"
+				Remove-item "./BDD/GBIF/$code-date.csv"
 			}
 		}
 	}
