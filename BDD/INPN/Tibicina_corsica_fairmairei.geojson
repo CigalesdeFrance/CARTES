@@ -2,8 +2,16 @@
 "type": "FeatureCollection",
 "name": "Tibicina_corsica_fairmairei",
 "features": [
-{"type": "Feature", "properties": {"ID": "1e8e5070-d56b-426b-a85a-c0199910a40e"},"geometry": {"coordinates": [2.98026,43.09159],"type": "Point"},"id": "1e8e5070-d56b-426b-a85a-c0199910a40e"},
-{"type": "Feature", "properties": {"ID": "68fc3ae4-daca-43cf-b96f-ce116c6c8556"},"geometry": {"coordinates": [3.21516,43.277],"type": "Point"},"id": "68fc3ae4-daca-43cf-b96f-ce116c6c8556"},
-{"type": "Feature", "properties": {"ID": "b38bf6c6-f1c6-45d7-a0b1-4c9592e0eeaf"},"geometry": {"coordinates": [2.56557,42.9752],"type": "Point"},"id": "b38bf6c6-f1c6-45d7-a0b1-4c9592e0eeaf"},
-{"type": "Feature", "properties": {"ID": "cd55f75f-0954-4202-a7bc-a08e9aa56587"},"geometry": {"coordinates": [2.95378,43.16167],"type": "Point"},"id": "cd55f75f-0954-4202-a7bc-a08e9aa56587"}
+{"type": "Feature", "properties": {"ID": "9272dc38-2e82-4165-880f-e5336793a506"},"geometry": {"coordinates": [7.13715,43.66395],"type": "Point"},"id": "9272dc38-2e82-4165-880f-e5336793a506"},
+{"type": "Feature", "properties": {"ID": "934e25eb-2969-4411-9ef2-80faf794992d"},"geometry": {"coordinates": [9.06828,42.66108],"type": "Point"},"id": "934e25eb-2969-4411-9ef2-80faf794992d"},
+{"type": "Feature", "properties": {"ID": "858029bd-207d-4d07-9ce1-a759b9422683"},"geometry": {"coordinates": [5.02752,43.33464],"type": "Point"},"id": "858029bd-207d-4d07-9ce1-a759b9422683"},
+{"type": "Feature", "properties": {"ID": "236e66f9-b2b8-43e8-9d7c-97bc98abfea0"},"geometry": {"coordinates": [8.6781,42.4756],"type": "Point"},"id": "236e66f9-b2b8-43e8-9d7c-97bc98abfea0"},
+{"type": "Feature", "properties": {"ID": "1f969bfe-ea15-4b23-a8b6-b7b0288c692e"},"geometry": {"coordinates": [5.38796,43.2547],"type": "Point"},"id": "1f969bfe-ea15-4b23-a8b6-b7b0288c692e"},
+{"type": "Feature", "properties": {"ID": "99a14631-3285-4688-bfac-935f1b239097"},"geometry": {"coordinates": [9.34128,42.70452],"type": "Point"},"id": "99a14631-3285-4688-bfac-935f1b239097"},
+{"type": "Feature", "properties": {"ID": "68893853-ef9e-48c2-a7db-6f9fb519f409"},"geometry": {"coordinates": [9.22028,42.71804],"type": "Point"},"id": "68893853-ef9e-48c2-a7db-6f9fb519f409"},
+{"type": "Feature", "properties": {"ID": "005d9cfa-b5f0-43af-9821-e8790fa1d064"},"geometry": {"coordinates": [5.37306,43.28444],"type": "Point"},"id": "005d9cfa-b5f0-43af-9821-e8790fa1d064"},
+{"type": "Feature", "properties": {"ID": "1da5a54f-d8c6-4de5-8f4d-3f01be177a49"},"geometry": {"coordinates": [8.8351,42.00179],"type": "Point"},"id": "1da5a54f-d8c6-4de5-8f4d-3f01be177a49"},
+{"type": "Feature", "properties": {"ID": "1e77b0da-fc6f-4f71-a3a0-fd88aeb29431"},"geometry": {"coordinates": [6.1899,43.10166],"type": "Point"},"id": "1e77b0da-fc6f-4f71-a3a0-fd88aeb29431"},
+{"type": "Feature", "properties": {"ID": "f3f64117-9815-4949-870c-e9cbdb721fac"},"geometry": {"coordinates": [9.06828,42.66108],"type": "Point"},"id": "f3f64117-9815-4949-870c-e9cbdb721fac"},
+{"type": "Feature", "properties": {"ID": "d5a00228-03a3-4587-8378-e5f104e3486a"},"geometry": {"coordinates": [5.40583,43.32341],"type": "Point"},"id": "d5a00228-03a3-4587-8378-e5f104e3486a"}
 ]}
