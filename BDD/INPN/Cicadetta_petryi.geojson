@@ -2,9 +2,9 @@
 "type": "FeatureCollection",
 "name": "Cicadetta_petryi",
 "features": [
+{"type": "Feature", "properties": {"ID": "1547f590-a043-48d5-8fc3-c32b40244cdb"},"geometry": {"coordinates": [6.23586,44.0907],"type": "Point"},"id": "1547f590-a043-48d5-8fc3-c32b40244cdb"},
 {"type": "Feature", "properties": {"ID": "28095cfb-7b80-48ea-b6e0-c84a8742ef7f"},"geometry": {"coordinates": [6.53212,44.01681],"type": "Point"},"id": "28095cfb-7b80-48ea-b6e0-c84a8742ef7f"},
 {"type": "Feature", "properties": {"ID": "609d7599-53b5-4f50-8d36-cc731584b0e4"},"geometry": {"coordinates": [6.0299,44.34127],"type": "Point"},"id": "609d7599-53b5-4f50-8d36-cc731584b0e4"},
-{"type": "Feature", "properties": {"ID": "1547f590-a043-48d5-8fc3-c32b40244cdb"},"geometry": {"coordinates": [6.23586,44.0907],"type": "Point"},"id": "1547f590-a043-48d5-8fc3-c32b40244cdb"},
 {"type": "Feature", "properties": {"ID": "86e607d6-8625-4fc3-9b81-1d756ddff57d"},"geometry": {"coordinates": [6.60097,44.08587],"type": "Point"},"id": "86e607d6-8625-4fc3-9b81-1d756ddff57d"},
 {"type": "Feature", "properties": {"ID": "4e6ebe3e-5a18-4c59-bb8e-f5e7c7cadfb3"},"geometry": {"coordinates": [6.25326,44.27281],"type": "Point"},"id": "4e6ebe3e-5a18-4c59-bb8e-f5e7c7cadfb3"}
 ]}
