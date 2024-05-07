@@ -1627,6 +1627,16 @@
 			</Placemark> 
 			<Placemark>
 				<styleUrl>#gbif</styleUrl>
+				<description>https://www.gbif.org/occurrence/4851879867</description>
+				<Point><coordinates>5.438005,43.710329</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#gbif</styleUrl>
+				<description>https://www.gbif.org/occurrence/4852055817</description>
+				<Point><coordinates>5.437983,43.710325</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#gbif</styleUrl>
 				<description>https://www.gbif.org/occurrence/4409089734</description>
 				<Point><coordinates>3.046605,43.051586</coordinates></Point>
 			</Placemark> 
@@ -2057,6 +2067,11 @@
 			</Placemark> 
 			<Placemark>
 				<styleUrl>#gbif</styleUrl>
+				<description>https://www.gbif.org/occurrence/4851970019</description>
+				<Point><coordinates>3.984242,44.057385</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#gbif</styleUrl>
 				<description>https://www.gbif.org/occurrence/4462140970</description>
 				<Point><coordinates>6.192201,43.858124</coordinates></Point>
 			</Placemark> 
@@ -2419,6 +2434,11 @@
 				<styleUrl>#gbif</styleUrl>
 				<description>https://www.gbif.org/occurrence/4171850784</description>
 				<Point><coordinates>3.732149,43.893391</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#gbif</styleUrl>
+				<description>https://www.gbif.org/occurrence/4851810764</description>
+				<Point><coordinates>3.776052,43.826719</coordinates></Point>
 			</Placemark> 
 			<Placemark>
 				<styleUrl>#gbif</styleUrl>
@@ -10859,6 +10879,11 @@
 				<styleUrl>#gbif</styleUrl>
 				<description>https://www.gbif.org/occurrence/4085593634</description>
 				<Point><coordinates>5.85699,43.15388</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#gbif</styleUrl>
+				<description>https://www.gbif.org/occurrence/4853048339</description>
+				<Point><coordinates>3.030599,42.948566</coordinates></Point>
 			</Placemark> 
 			<Placemark>
 				<styleUrl>#gbif</styleUrl>
