@@ -2,6 +2,7 @@
 "type": "FeatureCollection",
 "name": "Cicada_orni",
 "features": [
+{"type": "Feature", "properties": {"ID": "217298572"},"geometry": {"coordinates": [0.4069691138,44.7314053365],"type": "Point"},"id": "217298572"},
 {"type": "Feature", "properties": {"ID": "214635012"},"geometry": {"coordinates": [4.4695308,44.10469614],"type": "Point"},"id": "214635012"},
 {"type": "Feature", "properties": {"ID": "214617721"},"geometry": {"coordinates": [3.7817568414,43.9967388984],"type": "Point"},"id": "214617721"},
 {"type": "Feature", "properties": {"ID": "213710972"},"geometry": {"coordinates": [-1.1524916667,45.3926366667],"type": "Point"},"id": "213710972"},
