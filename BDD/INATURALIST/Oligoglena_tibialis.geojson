@@ -2,5 +2,6 @@
 "type": "FeatureCollection",
 "name": "Oligoglena_tibialis",
 "features": [
+{"type": "Feature", "properties": {"ID": "222458532"},"geometry": {"coordinates": [7.5145178273,43.8046394495],"type": "Point"},"id": "222458532"},
 {"type": "Feature", "properties": {"ID": "163547930"},"geometry": {"coordinates": [7.4958436506,43.8161216422],"type": "Point"},"id": "163547930"}
 ]}
