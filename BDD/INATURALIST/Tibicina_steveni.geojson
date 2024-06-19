@@ -2,6 +2,8 @@
 "type": "FeatureCollection",
 "name": "Tibicina_steveni",
 "features": [
+{"type": "Feature", "properties": {"ID": "223301573"},"geometry": {"coordinates": [3.9961327747,44.2285418862],"type": "Point"},"id": "223301573"},
+{"type": "Feature", "properties": {"ID": "223301571"},"geometry": {"coordinates": [3.9978474362,44.2280780552],"type": "Point"},"id": "223301571"},
 {"type": "Feature", "properties": {"ID": "222043375"},"geometry": {"coordinates": [3.9966436594,44.2290928539],"type": "Point"},"id": "222043375"},
 {"type": "Feature", "properties": {"ID": "175348705"},"geometry": {"coordinates": [4.0233423561,44.269672439],"type": "Point"},"id": "175348705"},
 {"type": "Feature", "properties": {"ID": "170837151"},"geometry": {"coordinates": [3.8569744905,44.0446543171],"type": "Point"},"id": "170837151"},
