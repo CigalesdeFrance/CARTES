@@ -2,6 +2,7 @@
 "type": "FeatureCollection",
 "name": "Cicadatra_atra",
 "features": [
+{"type": "Feature", "properties": {"ID": "224189411"},"geometry": {"coordinates": [2.81532906,43.1917588251],"type": "Point"},"id": "224189411"},
 {"type": "Feature", "properties": {"ID": "223747633"},"geometry": {"coordinates": [4.1588946,43.7268884],"type": "Point"},"id": "223747633"},
 {"type": "Feature", "properties": {"ID": "223300320"},"geometry": {"coordinates": [2.9216316997,43.2678295997],"type": "Point"},"id": "223300320"},
 {"type": "Feature", "properties": {"ID": "222872962"},"geometry": {"coordinates": [3.7679461017,43.5926167534],"type": "Point"},"id": "222872962"},
@@ -15,7 +16,6 @@
 {"type": "Feature", "properties": {"ID": "201010023"},"geometry": {"coordinates": [3.9602833333,43.6949083333],"type": "Point"},"id": "201010023"},
 {"type": "Feature", "properties": {"ID": "200969353"},"geometry": {"coordinates": [3.80222,43.7040783333],"type": "Point"},"id": "200969353"},
 {"type": "Feature", "properties": {"ID": "199350279"},"geometry": {"coordinates": [3.0502587623,43.2956015302],"type": "Point"},"id": "199350279"},
-{"type": "Feature", "properties": {"ID": "196678573"},"geometry": {"coordinates": [5.9939992,43.3261772],"type": "Point"},"id": "196678573"},
 {"type": "Feature", "properties": {"ID": "194194270"},"geometry": {"coordinates": [3.8142544325,43.879928903],"type": "Point"},"id": "194194270"},
 {"type": "Feature", "properties": {"ID": "187117624"},"geometry": {"coordinates": [3.8987166667,43.6658694444],"type": "Point"},"id": "187117624"},
 {"type": "Feature", "properties": {"ID": "183518576"},"geometry": {"coordinates": [5.81282,43.726075],"type": "Point"},"id": "183518576"},
