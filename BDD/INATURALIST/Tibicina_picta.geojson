@@ -2,6 +2,7 @@
 "type": "FeatureCollection",
 "name": "Tibicina_picta",
 "features": [
+{"type": "Feature", "properties": {"ID": "225942785"},"geometry": {"coordinates": [6.6274166667,43.1687333333],"type": "Point"},"id": "225942785"},
 {"type": "Feature", "properties": {"ID": "68415133"},"geometry": {"coordinates": [6.6074118035,43.1830311089],"type": "Point"},"id": "68415133"},
 {"type": "Feature", "properties": {"ID": "49155699"},"geometry": {"coordinates": [3.1768816045,43.2590730748],"type": "Point"},"id": "49155699"}
 ]}
