@@ -2,6 +2,7 @@
 "type": "FeatureCollection",
 "name": "Tibicina_haematodes",
 "features": [
+{"type": "Feature", "properties": {"ID": "226509611"},"geometry": {"coordinates": [3.3082319722,43.766466],"type": "Point"},"id": "226509611"},
 {"type": "Feature", "properties": {"ID": "226159107"},"geometry": {"coordinates": [4.8130088997,45.7687768997],"type": "Point"},"id": "226159107"},
 {"type": "Feature", "properties": {"ID": "225933291"},"geometry": {"coordinates": [1.4494349935,43.6759346012],"type": "Point"},"id": "225933291"},
 {"type": "Feature", "properties": {"ID": "225508213"},"geometry": {"coordinates": [1.4872113645,45.0371482978],"type": "Point"},"id": "225508213"},
@@ -10,7 +11,6 @@
 {"type": "Feature", "properties": {"ID": "225057395"},"geometry": {"coordinates": [2.2419404984,43.6075652894],"type": "Point"},"id": "225057395"},
 {"type": "Feature", "properties": {"ID": "224897623"},"geometry": {"coordinates": [-0.5317194444,44.8528944444],"type": "Point"},"id": "224897623"},
 {"type": "Feature", "properties": {"ID": "224895018"},"geometry": {"coordinates": [1.0575634986,43.6035199268],"type": "Point"},"id": "224895018"},
-{"type": "Feature", "properties": {"ID": "224837207"},"geometry": {"coordinates": [0.9400207177,43.600818416],"type": "Point"},"id": "224837207"},
 {"type": "Feature", "properties": {"ID": "224686987"},"geometry": {"coordinates": [5.8170012385,45.2194451198],"type": "Point"},"id": "224686987"},
 {"type": "Feature", "properties": {"ID": "224640015"},"geometry": {"coordinates": [1.2253716404,45.0987758596],"type": "Point"},"id": "224640015"},
 {"type": "Feature", "properties": {"ID": "223583042"},"geometry": {"coordinates": [3.8126216456,43.7780266059],"type": "Point"},"id": "223583042"},

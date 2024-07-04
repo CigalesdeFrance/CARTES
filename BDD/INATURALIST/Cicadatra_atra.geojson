@@ -2,6 +2,9 @@
 "type": "FeatureCollection",
 "name": "Cicadatra_atra",
 "features": [
+{"type": "Feature", "properties": {"ID": "226925585"},"geometry": {"coordinates": [5.6179339997,43.2884961997],"type": "Point"},"id": "226925585"},
+{"type": "Feature", "properties": {"ID": "226653617"},"geometry": {"coordinates": [3.761886321,43.6012027581],"type": "Point"},"id": "226653617"},
+{"type": "Feature", "properties": {"ID": "226652625"},"geometry": {"coordinates": [3.7337965518,43.6093457163],"type": "Point"},"id": "226652625"},
 {"type": "Feature", "properties": {"ID": "226460640"},"geometry": {"coordinates": [3.71980007,43.66260302],"type": "Point"},"id": "226460640"},
 {"type": "Feature", "properties": {"ID": "226397272"},"geometry": {"coordinates": [3.5971681774,43.4896949272],"type": "Point"},"id": "226397272"},
 {"type": "Feature", "properties": {"ID": "226267342"},"geometry": {"coordinates": [3.76965,43.5974716667],"type": "Point"},"id": "226267342"},

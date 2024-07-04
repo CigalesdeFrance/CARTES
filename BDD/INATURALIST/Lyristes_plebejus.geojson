@@ -2,6 +2,10 @@
 "type": "FeatureCollection",
 "name": "Lyristes_plebejus",
 "features": [
+{"type": "Feature", "properties": {"ID": "226940914"},"geometry": {"coordinates": [3.4231930599,43.4615204241],"type": "Point"},"id": "226940914"},
+{"type": "Feature", "properties": {"ID": "226907999"},"geometry": {"coordinates": [5.6427458372,43.9995199882],"type": "Point"},"id": "226907999"},
+{"type": "Feature", "properties": {"ID": "226848459"},"geometry": {"coordinates": [4.60227,43.9302416667],"type": "Point"},"id": "226848459"},
+{"type": "Feature", "properties": {"ID": "226711202"},"geometry": {"coordinates": [4.4362432882,43.9476521247],"type": "Point"},"id": "226711202"},
 {"type": "Feature", "properties": {"ID": "226497549"},"geometry": {"coordinates": [3.1709218379,43.6173279273],"type": "Point"},"id": "226497549"},
 {"type": "Feature", "properties": {"ID": "226494708"},"geometry": {"coordinates": [3.7059381997,43.7529333],"type": "Point"},"id": "226494708"},
 {"type": "Feature", "properties": {"ID": "226217494"},"geometry": {"coordinates": [4.8066,43.92855],"type": "Point"},"id": "226217494"},
@@ -14,6 +18,7 @@
 {"type": "Feature", "properties": {"ID": "225886854"},"geometry": {"coordinates": [3.8446781396,43.6256141862],"type": "Point"},"id": "225886854"},
 {"type": "Feature", "properties": {"ID": "225886842"},"geometry": {"coordinates": [3.8446814923,43.6256162792],"type": "Point"},"id": "225886842"},
 {"type": "Feature", "properties": {"ID": "225880484"},"geometry": {"coordinates": [3.8446793243,43.6256313577],"type": "Point"},"id": "225880484"},
+{"type": "Feature", "properties": {"ID": "225872982"},"geometry": {"coordinates": [3.8606749289,43.8143897709],"type": "Point"},"id": "225872982"},
 {"type": "Feature", "properties": {"ID": "225765764"},"geometry": {"coordinates": [2.3806548998,43.3339054442],"type": "Point"},"id": "225765764"},
 {"type": "Feature", "properties": {"ID": "225748234"},"geometry": {"coordinates": [5.3644444444,43.2333333333],"type": "Point"},"id": "225748234"},
 {"type": "Feature", "properties": {"ID": "225733830"},"geometry": {"coordinates": [3.71983759,43.66167242],"type": "Point"},"id": "225733830"},
