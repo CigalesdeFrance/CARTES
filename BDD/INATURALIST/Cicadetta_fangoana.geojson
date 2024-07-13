@@ -2,6 +2,7 @@
 "type": "FeatureCollection",
 "name": "Cicadetta_fangoana",
 "features": [
+{"type": "Feature", "properties": {"ID": "228664545"},"geometry": {"coordinates": [9.5334255997,42.4009056],"type": "Point"},"id": "228664545"},
 {"type": "Feature", "properties": {"ID": "206042570"},"geometry": {"coordinates": [9.3649401516,41.5950871197],"type": "Point"},"id": "206042570"},
 {"type": "Feature", "properties": {"ID": "194199574"},"geometry": {"coordinates": [8.8168581978,41.551900107],"type": "Point"},"id": "194199574"},
 {"type": "Feature", "properties": {"ID": "181573361"},"geometry": {"coordinates": [9.1840770997,41.367707],"type": "Point"},"id": "181573361"},
