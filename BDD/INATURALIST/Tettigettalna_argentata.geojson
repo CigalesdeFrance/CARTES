@@ -2,6 +2,7 @@
 "type": "FeatureCollection",
 "name": "Tettigettalna_argentata",
 "features": [
+{"type": "Feature", "properties": {"ID": "228991436"},"geometry": {"coordinates": [0.8779888889,46.4253972222],"type": "Point"},"id": "228991436"},
 {"type": "Feature", "properties": {"ID": "228008266"},"geometry": {"coordinates": [1.4258287847,43.7450358413],"type": "Point"},"id": "228008266"},
 {"type": "Feature", "properties": {"ID": "227978956"},"geometry": {"coordinates": [1.8002266064,43.3002822613],"type": "Point"},"id": "227978956"},
 {"type": "Feature", "properties": {"ID": "227254945"},"geometry": {"coordinates": [0.9431461617,43.5884790763],"type": "Point"},"id": "227254945"},
