@@ -2,6 +2,9 @@
 "type": "FeatureCollection",
 "name": "Tibicina_haematodes",
 "features": [
+{"type": "Feature", "properties": {"ID": "229239646"},"geometry": {"coordinates": [1.4191427874,43.5253476083],"type": "Point"},"id": "229239646"},
+{"type": "Feature", "properties": {"ID": "229229382"},"geometry": {"coordinates": [1.5684975997,43.5907764997],"type": "Point"},"id": "229229382"},
+{"type": "Feature", "properties": {"ID": "229220816"},"geometry": {"coordinates": [4.8201016667,47.03637],"type": "Point"},"id": "229220816"},
 {"type": "Feature", "properties": {"ID": "228782375"},"geometry": {"coordinates": [5.8602790162,43.8590430652],"type": "Point"},"id": "228782375"},
 {"type": "Feature", "properties": {"ID": "228411501"},"geometry": {"coordinates": [5.8934594,45.2722198],"type": "Point"},"id": "228411501"},
 {"type": "Feature", "properties": {"ID": "228069085"},"geometry": {"coordinates": [3.8066456766,43.9910133599],"type": "Point"},"id": "228069085"},

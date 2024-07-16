@@ -2,6 +2,8 @@
 "type": "FeatureCollection",
 "name": "Tibicina_corsica",
 "features": [
+{"type": "Feature", "properties": {"ID": "229376131"},"geometry": {"coordinates": [3.1751083333,43.2611805556],"type": "Point"},"id": "229376131"},
+{"type": "Feature", "properties": {"ID": "229328454"},"geometry": {"coordinates": [9.260709174,42.3203937155],"type": "Point"},"id": "229328454"},
 {"type": "Feature", "properties": {"ID": "201774336"},"geometry": {"coordinates": [3.2473924377,43.2446823091],"type": "Point"},"id": "201774336"},
 {"type": "Feature", "properties": {"ID": "179728671"},"geometry": {"coordinates": [8.85322,42.606125],"type": "Point"},"id": "179728671"},
 {"type": "Feature", "properties": {"ID": "167326400"},"geometry": {"coordinates": [8.7978296821,42.0407684776],"type": "Point"},"id": "167326400"},

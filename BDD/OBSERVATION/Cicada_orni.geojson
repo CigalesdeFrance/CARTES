@@ -2,6 +2,9 @@
 "type": "FeatureCollection",
 "name": "Cicada_orni",
 "features": [
+{"type": "Feature", "properties": {"ID": "319163747"},"geometry": {"coordinates": [4.138863,44.413675],"type": "Point"},"id": "319163747"},
+{"type": "Feature", "properties": {"ID": "319066799"},"geometry": {"coordinates": [4.33511111111111,44.4468972222222],"type": "Point"},"id": "319066799"},
+{"type": "Feature", "properties": {"ID": "319029593"},"geometry": {"coordinates": [4.09769868850708,44.0793304443359],"type": "Point"},"id": "319029593"},
 {"type": "Feature", "properties": {"ID": "318838784"},"geometry": {"coordinates": [4.86009693145752,43.7104530334473],"type": "Point"},"id": "318838784"},
 {"type": "Feature", "properties": {"ID": "318802325"},"geometry": {"coordinates": [5.03787509972222,43.7789962],"type": "Point"},"id": "318802325"},
 {"type": "Feature", "properties": {"ID": "318719708"},"geometry": {"coordinates": [4.72635269131172,43.7814682262136],"type": "Point"},"id": "318719708"},
@@ -798,6 +801,7 @@
 {"type": "Feature", "properties": {"ID": "221527024"},"geometry": {"coordinates": [5.6234035,45.279063],"type": "Point"},"id": "221527024"},
 {"type": "Feature", "properties": {"ID": "221482563"},"geometry": {"coordinates": [4.414232,44.465616],"type": "Point"},"id": "221482563"},
 {"type": "Feature", "properties": {"ID": "221481277"},"geometry": {"coordinates": [6.20927707894771,43.4725784970026],"type": "Point"},"id": "221481277"},
+{"type": "Feature", "properties": {"ID": "219977583"},"geometry": {"coordinates": [6.87685871124268,43.4634170532227],"type": "Point"},"id": "219977583"},
 {"type": "Feature", "properties": {"ID": "219348308"},"geometry": {"coordinates": [4.66705989837646,43.8851547241211],"type": "Point"},"id": "219348308"},
 {"type": "Feature", "properties": {"ID": "219162785"},"geometry": {"coordinates": [3.54056239128113,43.3842887878418],"type": "Point"},"id": "219162785"},
 {"type": "Feature", "properties": {"ID": "219162756"},"geometry": {"coordinates": [3.97517848014832,43.6474876403809],"type": "Point"},"id": "219162756"},
