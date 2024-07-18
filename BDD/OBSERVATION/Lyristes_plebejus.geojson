@@ -2,6 +2,9 @@
 "type": "FeatureCollection",
 "name": "Lyristes_plebejus",
 "features": [
+{"type": "Feature", "properties": {"ID": "319357003"},"geometry": {"coordinates": [5.60226166666667,43.1713216666667],"type": "Point"},"id": "319357003"},
+{"type": "Feature", "properties": {"ID": "319356874"},"geometry": {"coordinates": [5.60226166666667,43.1713216666667],"type": "Point"},"id": "319356874"},
+{"type": "Feature", "properties": {"ID": "319304500"},"geometry": {"coordinates": [3.44941165298545,43.5079956054688],"type": "Point"},"id": "319304500"},
 {"type": "Feature", "properties": {"ID": "319202792"},"geometry": {"coordinates": [5.26191645591825,44.7507198295097],"type": "Point"},"id": "319202792"},
 {"type": "Feature", "properties": {"ID": "319073501"},"geometry": {"coordinates": [1.14693653583333,44.4630126952778],"type": "Point"},"id": "319073501"},
 {"type": "Feature", "properties": {"ID": "319046969"},"geometry": {"coordinates": [3.61762666666667,43.827715],"type": "Point"},"id": "319046969"},
