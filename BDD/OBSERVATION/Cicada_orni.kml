@@ -12,6 +12,36 @@
 			<name>OBSERVATION</name>
 			<Placemark>
 				<styleUrl>#observation</styleUrl>
+				<description>https://observation.org/observation/321072075</description>
+				<Point><coordinates>4.83248833333333,43.774795</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#observation</styleUrl>
+				<description>https://observation.org/observation/321070351</description>
+				<Point><coordinates>7.083536,43.683188</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#observation</styleUrl>
+				<description>https://observation.org/observation/321040382</description>
+				<Point><coordinates>2.57243129972222,42.8699285</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#observation</styleUrl>
+				<description>https://observation.org/observation/321028575</description>
+				<Point><coordinates>5.0583178,43.996396</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#observation</styleUrl>
+				<description>https://observation.org/observation/320992388</description>
+				<Point><coordinates>4.1980487,43.7580856</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#observation</styleUrl>
+				<description>https://observation.org/observation/320970281</description>
+				<Point><coordinates>4.3006993,44.4502192</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#observation</styleUrl>
 				<description>https://observation.org/observation/320837869</description>
 				<Point><coordinates>-1.17087969972222,45.1106203</coordinates></Point>
 			</Placemark> 
