@@ -12,6 +12,46 @@
 			<name>OBSERVATION</name>
 			<Placemark>
 				<styleUrl>#observation</styleUrl>
+				<description>https://observation.org/observation/321482932</description>
+				<Point><coordinates>6.1600082,43.0342518</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#observation</styleUrl>
+				<description>https://observation.org/observation/321460569</description>
+				<Point><coordinates>1.12981666666667,44.838325</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#observation</styleUrl>
+				<description>https://observation.org/observation/321446766</description>
+				<Point><coordinates>5.5396263,43.2147547</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#observation</styleUrl>
+				<description>https://observation.org/observation/321426550</description>
+				<Point><coordinates>-1.3101529,43.9092733</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#observation</styleUrl>
+				<description>https://observation.org/observation/321417133</description>
+				<Point><coordinates>4.6362731,44.1727831</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#observation</styleUrl>
+				<description>https://observation.org/observation/321388836</description>
+				<Point><coordinates>4.9937999763853,44.3924255371094</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#observation</styleUrl>
+				<description>https://observation.org/observation/321381849</description>
+				<Point><coordinates>4.1392673,44.2740937</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#observation</styleUrl>
+				<description>https://observation.org/observation/321381438</description>
+				<Point><coordinates>4.1392797,44.2742286</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#observation</styleUrl>
 				<description>https://observation.org/observation/321372922</description>
 				<Point><coordinates>3.02862691879273,44.1015167236328</coordinates></Point>
 			</Placemark> 
