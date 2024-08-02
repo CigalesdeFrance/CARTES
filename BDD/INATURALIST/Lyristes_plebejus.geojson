@@ -2,6 +2,12 @@
 "type": "FeatureCollection",
 "name": "Lyristes_plebejus",
 "features": [
+{"type": "Feature", "properties": {"ID": "233093715"},"geometry": {"coordinates": [3.1742416667,43.263845],"type": "Point"},"id": "233093715"},
+{"type": "Feature", "properties": {"ID": "233043938"},"geometry": {"coordinates": [5.9630216667,43.1285833333],"type": "Point"},"id": "233043938"},
+{"type": "Feature", "properties": {"ID": "232904103"},"geometry": {"coordinates": [5.0016916667,43.5841666667],"type": "Point"},"id": "232904103"},
+{"type": "Feature", "properties": {"ID": "232891060"},"geometry": {"coordinates": [4.7501964,43.6261692],"type": "Point"},"id": "232891060"},
+{"type": "Feature", "properties": {"ID": "232888533"},"geometry": {"coordinates": [5.0427598134,43.7925959866],"type": "Point"},"id": "232888533"},
+{"type": "Feature", "properties": {"ID": "232853997"},"geometry": {"coordinates": [3.8648916667,43.6221383333],"type": "Point"},"id": "232853997"},
 {"type": "Feature", "properties": {"ID": "232699037"},"geometry": {"coordinates": [3.8392888889,43.5352916667],"type": "Point"},"id": "232699037"},
 {"type": "Feature", "properties": {"ID": "232664831"},"geometry": {"coordinates": [4.8800388889,44.7310472222],"type": "Point"},"id": "232664831"},
 {"type": "Feature", "properties": {"ID": "232544452"},"geometry": {"coordinates": [5.2573981111,43.3382568333],"type": "Point"},"id": "232544452"},
