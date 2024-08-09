@@ -2,7 +2,10 @@
 "type": "FeatureCollection",
 "name": "Cicada_orni",
 "features": [
+{"type": "Feature", "properties": {"ID": "234469461"},"geometry": {"coordinates": [4.7939033,43.7432116],"type": "Point"},"id": "234469461"},
+{"type": "Feature", "properties": {"ID": "234388371"},"geometry": {"coordinates": [1.2993341605,44.4705582804],"type": "Point"},"id": "234388371"},
 {"type": "Feature", "properties": {"ID": "234356053"},"geometry": {"coordinates": [6.4410234629,43.0658209931],"type": "Point"},"id": "234356053"},
+{"type": "Feature", "properties": {"ID": "234351849"},"geometry": {"coordinates": [-1.1453283951,44.9671489327],"type": "Point"},"id": "234351849"},
 {"type": "Feature", "properties": {"ID": "234305433"},"geometry": {"coordinates": [2.1384011376,42.6024195771],"type": "Point"},"id": "234305433"},
 {"type": "Feature", "properties": {"ID": "234270048"},"geometry": {"coordinates": [4.195650816,44.4537961333],"type": "Point"},"id": "234270048"},
 {"type": "Feature", "properties": {"ID": "234269986"},"geometry": {"coordinates": [4.1956518218,44.4538002019],"type": "Point"},"id": "234269986"},
@@ -15,6 +18,7 @@
 {"type": "Feature", "properties": {"ID": "234120904"},"geometry": {"coordinates": [3.8002316667,44.2248533333],"type": "Point"},"id": "234120904"},
 {"type": "Feature", "properties": {"ID": "233988247"},"geometry": {"coordinates": [0.941133883,45.2797357281],"type": "Point"},"id": "233988247"},
 {"type": "Feature", "properties": {"ID": "233988246"},"geometry": {"coordinates": [0.941133883,45.2797357281],"type": "Point"},"id": "233988246"},
+{"type": "Feature", "properties": {"ID": "233988242"},"geometry": {"coordinates": [0.941133883,45.2797357281],"type": "Point"},"id": "233988242"},
 {"type": "Feature", "properties": {"ID": "233941095"},"geometry": {"coordinates": [3.877075,43.6423277778],"type": "Point"},"id": "233941095"},
 {"type": "Feature", "properties": {"ID": "233931275"},"geometry": {"coordinates": [1.2198966742,44.6130561829],"type": "Point"},"id": "233931275"},
 {"type": "Feature", "properties": {"ID": "233913327"},"geometry": {"coordinates": [7.0466495678,43.5142364841],"type": "Point"},"id": "233913327"},
