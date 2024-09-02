@@ -10327,6 +10327,11 @@
 			</Placemark> 
 			<Placemark>
 				<styleUrl>#observation</styleUrl>
+				<description>https://observation.org/observation/224600227</description>
+				<Point><coordinates>4.40528535842896,43.8359336853027</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#observation</styleUrl>
 				<description>https://observation.org/observation/224098563</description>
 				<Point><coordinates>4.3055157661438,43.8672790527344</coordinates></Point>
 			</Placemark> 
