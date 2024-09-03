@@ -2,4 +2,9 @@
 "type": "FeatureCollection",
 "name": "Cicada_barbara",
 "features": [
+{"type": "Feature", "properties": {"ID": "ac244bb6-7ef3-4d38-affd-ecb0adc3acb5"},"geometry": {"coordinates": [9.32746,41.64935],"type": "Point"},"id": "ac244bb6-7ef3-4d38-affd-ecb0adc3acb5"},
+{"type": "Feature", "properties": {"ID": "00495e2d-2b9a-407a-ab95-c00ab801fd82"},"geometry": {"coordinates": [9.32749,41.64925],"type": "Point"},"id": "00495e2d-2b9a-407a-ab95-c00ab801fd82"},
+{"type": "Feature", "properties": {"ID": "25560269-2265-4b94-afe5-5f0b92da5bc5"},"geometry": {"coordinates": [9.32753,41.64971],"type": "Point"},"id": "25560269-2265-4b94-afe5-5f0b92da5bc5"},
+{"type": "Feature", "properties": {"ID": "dfc5453e-e2e6-4c7a-9b22-b3acf4c96694"},"geometry": {"coordinates": [9.32753,41.64971],"type": "Point"},"id": "dfc5453e-e2e6-4c7a-9b22-b3acf4c96694"},
+{"type": "Feature", "properties": {"ID": "a0ec6366-6929-4e3b-ab45-9ef06e7de087"},"geometry": {"coordinates": [9.32746,41.64935],"type": "Point"},"id": "a0ec6366-6929-4e3b-ab45-9ef06e7de087"}
 ]}
