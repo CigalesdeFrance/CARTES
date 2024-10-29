@@ -2,6 +2,12 @@
 "type": "FeatureCollection",
 "name": "Cicadetta_cantilatrix",
 "features": [
+{"type": "Feature", "properties": {"ID": "332449441"},"geometry": {"coordinates": [4.7160116376757,46.314620991663],"type": "Point"},"id": "332449441"},
+{"type": "Feature", "properties": {"ID": "332449434"},"geometry": {"coordinates": [4.7180845144313,47.039788511657],"type": "Point"},"id": "332449434"},
+{"type": "Feature", "properties": {"ID": "332449432"},"geometry": {"coordinates": [4.7180845144313,47.039788511657],"type": "Point"},"id": "332449432"},
+{"type": "Feature", "properties": {"ID": "332449431"},"geometry": {"coordinates": [4.6627729720193,46.99366639442],"type": "Point"},"id": "332449431"},
+{"type": "Feature", "properties": {"ID": "332449429"},"geometry": {"coordinates": [4.7160116376757,46.314620991663],"type": "Point"},"id": "332449429"},
+{"type": "Feature", "properties": {"ID": "332449427"},"geometry": {"coordinates": [4.7160116376757,46.314620991663],"type": "Point"},"id": "332449427"},
 {"type": "Feature", "properties": {"ID": "294011001"},"geometry": {"coordinates": [6.377565,49.424931],"type": "Point"},"id": "294011001"},
 {"type": "Feature", "properties": {"ID": "291114633"},"geometry": {"coordinates": [6.025611,49.017389],"type": "Point"},"id": "291114633"},
 {"type": "Feature", "properties": {"ID": "286479075"},"geometry": {"coordinates": [3.1109342857764,47.130957303784],"type": "Point"},"id": "286479075"},
