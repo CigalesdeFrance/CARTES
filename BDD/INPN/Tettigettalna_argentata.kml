@@ -262,6 +262,21 @@
 			</Placemark> 
 			<Placemark>
 				<styleUrl>#inpn</styleUrl>
+				<description>https://openobs.mnhn.fr/openobs-hub/occurrences/e340e50f-9b1e-4edf-bf3d-0ba6afce5af0</description>
+				<Point><coordinates>2.05509,43.86577</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#inpn</styleUrl>
+				<description>https://openobs.mnhn.fr/openobs-hub/occurrences/ce7bf944-1e7f-4cd6-8b64-08553534f77e</description>
+				<Point><coordinates>1.46541,44.3527</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#inpn</styleUrl>
+				<description>https://openobs.mnhn.fr/openobs-hub/occurrences/064dc12e-0723-4425-b553-8e0ce87253f3</description>
+				<Point><coordinates>1.89458,44.25193</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#inpn</styleUrl>
 				<description>https://openobs.mnhn.fr/openobs-hub/occurrences/4e934cdc-be2a-43ee-90ec-419173a43e65</description>
 				<Point><coordinates>2.10002,43.82405</coordinates></Point>
 			</Placemark> 
@@ -314,21 +329,6 @@
 				<styleUrl>#inpn</styleUrl>
 				<description>https://openobs.mnhn.fr/openobs-hub/occurrences/5274f8d7-2aac-44af-bd72-b389da33cade</description>
 				<Point><coordinates>1.45541,44.44276</coordinates></Point>
-			</Placemark> 
-			<Placemark>
-				<styleUrl>#inpn</styleUrl>
-				<description>https://openobs.mnhn.fr/openobs-hub/occurrences/e340e50f-9b1e-4edf-bf3d-0ba6afce5af0</description>
-				<Point><coordinates>2.05509,43.86577</coordinates></Point>
-			</Placemark> 
-			<Placemark>
-				<styleUrl>#inpn</styleUrl>
-				<description>https://openobs.mnhn.fr/openobs-hub/occurrences/ce7bf944-1e7f-4cd6-8b64-08553534f77e</description>
-				<Point><coordinates>1.46541,44.3527</coordinates></Point>
-			</Placemark> 
-			<Placemark>
-				<styleUrl>#inpn</styleUrl>
-				<description>https://openobs.mnhn.fr/openobs-hub/occurrences/064dc12e-0723-4425-b553-8e0ce87253f3</description>
-				<Point><coordinates>1.89458,44.25193</coordinates></Point>
 			</Placemark> 
 			<Placemark>
 				<styleUrl>#inpn</styleUrl>
