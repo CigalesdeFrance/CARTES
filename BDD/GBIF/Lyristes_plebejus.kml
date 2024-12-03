@@ -12207,6 +12207,11 @@
 			</Placemark> 
 			<Placemark>
 				<styleUrl>#gbif</styleUrl>
+				<description>https://www.gbif.org/occurrence/4987536062</description>
+				<Point><coordinates>4.935305,44.078944</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#gbif</styleUrl>
 				<description>https://www.gbif.org/occurrence/4083887303</description>
 				<Point><coordinates>7.19742,43.83076</coordinates></Point>
 			</Placemark> 
