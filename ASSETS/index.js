@@ -60,11 +60,11 @@ window.onload = function go() {
 	});
 	
 	// Bloquage de la rotation sur téléphone
-	var interactions = ol.interaction.defaults({altShiftDragRotate:false, pinchRotate:false});
+	//var interactions = ol.interaction.defaults({altShiftDragRotate:false, pinchRotate:false});
 	
 	// Création de la carte
 	var map = new ol.Map({
-		interactions: interactions,
+		//interactions: interactions,
 		target: 'map',
 		layers: [
 			layer_osm,
@@ -117,7 +117,7 @@ window.onload = function go() {
 		});
 		if ( features[0] == undefined ) {/* console.log("Clic hors données ⛔") */}
 		else {
-			observation.innerHTML = '<button><a href="' + features[0].get("description") + '" target="_blank">➤ Visualiser l\'observation</a></button>';
+			observation.innerHTML = '<button class="detail"><a href="' + features[0].get("description") + '" target="_blank">➤ Visualiser l\'observation</a></button>';
 		}
 	});
 	
@@ -232,7 +232,7 @@ window.onload = function go() {
 		
 		var espece = this.options[this.selectedIndex].getAttribute('espece');
 		
-		autres_cartes.innerHTML = '<button><a href="./AUTRES/" target="_blank">➤ Autres sources</a></button>';
+		autres_cartes.innerHTML = '<button class="detail"><a href="./AUTRES/" target="_blank">➤ Autres sources</a></button>';
 		
 		if (espece !== null) {
 			
@@ -240,8 +240,8 @@ window.onload = function go() {
 			var change_url = { Title: espece, Url: 'index.html?'+ espece	};
 			history.pushState(change_url, change_url.Title, change_url.Url);
 			
-			autres_cartes.innerHTML = '<button><a href="./AUTRES/index.html?' + espece + '" target="_blank">➤ Autres sources</a></button>';
-			fiche_espece.innerHTML = '<button><a href="https://www.cigalesdefrance.fr/espece:' + espece + '" target="_blank">➤ Fiche espèce</a></button>';
+			autres_cartes.innerHTML = '<button class="detail"><a href="./AUTRES/index.html?' + espece + '" target="_blank">➤ Autres sources</a></button>';
+			fiche_espece.innerHTML = '<button class="detail"><a href="https://www.cigalesdefrance.fr/espece:' + espece + '" target="_blank">➤ Fiche espèce</a></button>';
 			
 			// Adresses des KML et ajout des sources aux couches
 			var url_bdd1 = 'https://cartes.cigalesdefrance.fr/BDD/INATURALIST/' + espece + '.kml';

@@ -1,6 +1,7 @@
 @import "https://cdn.jsdelivr.net/npm/select2@latest/dist/css/select2.min.css";
 @import "https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@main/dist/en/latest/legacy/ol.css";
-@import "https://ignf.github.io/geoportal-extensions/openlayers-latest/dist/GpPluginOpenLayers.css";
+@import "https://ignf.github.io/geopf-extensions-openlayers/dist/bundle/Classic.css";
+@import "https://ignf.github.io/geopf-extensions-openlayers/dist/bundle/GpfExtOL.css";
 
 /*------------------------------------- GLOBAL -------------------------------------*/
 * {
@@ -18,7 +19,7 @@ body {
 	max-width: 100%;
 }
 
-button {
+.detail {
 	font-size: 15px;
 	margin: 2px;
 }
@@ -44,12 +45,17 @@ button {
     height: 100%;
 }
 
+[id^="GPsearchEngine-"] {
+	top: 135px;
+	left: 8px;
+}
+
 #details {
 	background-color: #e3e3e363;
 	border-radius: 15px;
 	position:absolute;
 	width: 50%;
-	z-index:100;    
+	z-index:1;    
 	text-align: center;
 	top: .5em;
 	left: 25vw;
