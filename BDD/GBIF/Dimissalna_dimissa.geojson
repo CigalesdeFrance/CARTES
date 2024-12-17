@@ -2,6 +2,7 @@
 "type": "FeatureCollection",
 "name": "Dimissalna_dimissa",
 "features": [
+{"type": "Feature", "properties": {"ID": "4993954555"},"geometry": {"coordinates": [4.308838,44.472927],"type": "Point"},"id": "4993954555"},
 {"type": "Feature", "properties": {"ID": "4541741509"},"geometry": {"coordinates": [4.1717,44.3972],"type": "Point"},"id": "4541741509"},
 {"type": "Feature", "properties": {"ID": "4541669348"},"geometry": {"coordinates": [4.18458,44.39993],"type": "Point"},"id": "4541669348"},
 {"type": "Feature", "properties": {"ID": "4541749780"},"geometry": {"coordinates": [4.1717,44.3972],"type": "Point"},"id": "4541749780"},
