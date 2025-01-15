@@ -602,6 +602,11 @@
 			</Placemark> 
 			<Placemark>
 				<styleUrl>#gbif</styleUrl>
+				<description>https://www.gbif.org/occurrence/1579932018</description>
+				<Point><coordinates>5.015772,43.672737</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#gbif</styleUrl>
 				<description>https://www.gbif.org/occurrence/2511395837</description>
 				<Point><coordinates>1.69737,49.03618</coordinates></Point>
 			</Placemark> 
