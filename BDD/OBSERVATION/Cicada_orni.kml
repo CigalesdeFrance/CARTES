@@ -12,6 +12,11 @@
 			<name>OBSERVATION</name>
 			<Placemark>
 				<styleUrl>#observation</styleUrl>
+				<description>https://observation.org/observation/337611586</description>
+				<Point><coordinates>4.9441185593605,43.7756095903021</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#observation</styleUrl>
 				<description>https://observation.org/observation/279420986</description>
 				<Point><coordinates>6.10527222222222,43.4381388888889</coordinates></Point>
 			</Placemark> 
