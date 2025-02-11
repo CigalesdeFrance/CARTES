@@ -2,6 +2,8 @@
 "type": "FeatureCollection",
 "name": "Tettigettula_pygmea",
 "features": [
+{"type": "Feature", "properties": {"ID": "261232453"},"geometry": {"coordinates": [3.8197695845,43.5660343833],"type": "Point"},"id": "261232453"},
+{"type": "Feature", "properties": {"ID": "261232442"},"geometry": {"coordinates": [3.8202718539,43.5661761521],"type": "Point"},"id": "261232442"},
 {"type": "Feature", "properties": {"ID": "252621573"},"geometry": {"coordinates": [7.0698101211,43.6118956399],"type": "Point"},"id": "252621573"},
 {"type": "Feature", "properties": {"ID": "251789901"},"geometry": {"coordinates": [5.1934828609,43.5023533848],"type": "Point"},"id": "251789901"},
 {"type": "Feature", "properties": {"ID": "248481353"},"geometry": {"coordinates": [3.7066810951,43.755328944],"type": "Point"},"id": "248481353"},
