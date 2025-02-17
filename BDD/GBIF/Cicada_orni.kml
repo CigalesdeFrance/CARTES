@@ -12,6 +12,11 @@
 			<name>GBIF</name>
 			<Placemark>
 				<styleUrl>#gbif</styleUrl>
+				<description>https://www.gbif.org/occurrence/5063576549</description>
+				<Point><coordinates>5.412027,43.33385</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#gbif</styleUrl>
 				<description>https://www.gbif.org/occurrence/4952873088</description>
 				<Point><coordinates>3.86936,43.642159</coordinates></Point>
 			</Placemark> 
@@ -544,6 +549,11 @@
 				<styleUrl>#gbif</styleUrl>
 				<description>https://www.gbif.org/occurrence/4919284457</description>
 				<Point><coordinates>4.152483,44.453734</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#gbif</styleUrl>
+				<description>https://www.gbif.org/occurrence/5062777094</description>
+				<Point><coordinates>5.514439,43.507625</coordinates></Point>
 			</Placemark> 
 			<Placemark>
 				<styleUrl>#gbif</styleUrl>
@@ -3847,6 +3857,11 @@
 			</Placemark> 
 			<Placemark>
 				<styleUrl>#gbif</styleUrl>
+				<description>https://www.gbif.org/occurrence/5062639722</description>
+				<Point><coordinates>2.877812,43.324537</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#gbif</styleUrl>
 				<description>https://www.gbif.org/occurrence/4599709039</description>
 				<Point><coordinates>6.125736,43.079689</coordinates></Point>
 			</Placemark> 
@@ -3924,6 +3939,11 @@
 				<styleUrl>#gbif</styleUrl>
 				<description>https://www.gbif.org/occurrence/4171782034</description>
 				<Point><coordinates>5.256964,44.409866</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#gbif</styleUrl>
+				<description>https://www.gbif.org/occurrence/5063669647</description>
+				<Point><coordinates>6.449815,43.097689</coordinates></Point>
 			</Placemark> 
 			<Placemark>
 				<styleUrl>#gbif</styleUrl>
@@ -4852,6 +4872,11 @@
 			</Placemark> 
 			<Placemark>
 				<styleUrl>#gbif</styleUrl>
+				<description>https://www.gbif.org/occurrence/5062619778</description>
+				<Point><coordinates>3.421724,43.388008</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#gbif</styleUrl>
 				<description>https://www.gbif.org/occurrence/4153777460</description>
 				<Point><coordinates>5.151733,43.33387</coordinates></Point>
 			</Placemark> 
@@ -4939,6 +4964,11 @@
 				<styleUrl>#gbif</styleUrl>
 				<description>https://www.gbif.org/occurrence/4442617795</description>
 				<Point><coordinates>2.687431,43.088284</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#gbif</styleUrl>
+				<description>https://www.gbif.org/occurrence/5062593811</description>
+				<Point><coordinates>6.739767,43.415647</coordinates></Point>
 			</Placemark> 
 			<Placemark>
 				<styleUrl>#gbif</styleUrl>
@@ -5269,6 +5299,11 @@
 				<styleUrl>#gbif</styleUrl>
 				<description>https://www.gbif.org/occurrence/4165802333</description>
 				<Point><coordinates>-0.747171,43.593462</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#gbif</styleUrl>
+				<description>https://www.gbif.org/occurrence/5062598943</description>
+				<Point><coordinates>0.580434,44.994682</coordinates></Point>
 			</Placemark> 
 			<Placemark>
 				<styleUrl>#gbif</styleUrl>
@@ -5794,6 +5829,11 @@
 				<styleUrl>#gbif</styleUrl>
 				<description>https://www.gbif.org/occurrence/4875426451</description>
 				<Point><coordinates>2.27309,48.728011</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#gbif</styleUrl>
+				<description>https://www.gbif.org/occurrence/5063316842</description>
+				<Point><coordinates>7.129195,43.622142</coordinates></Point>
 			</Placemark> 
 			<Placemark>
 				<styleUrl>#gbif</styleUrl>
@@ -7897,6 +7937,11 @@
 			</Placemark> 
 			<Placemark>
 				<styleUrl>#gbif</styleUrl>
+				<description>https://www.gbif.org/occurrence/5063988644</description>
+				<Point><coordinates>3.845101,43.625781</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#gbif</styleUrl>
 				<description>https://www.gbif.org/occurrence/4051006215</description>
 				<Point><coordinates>8.63523,42.37317</coordinates></Point>
 			</Placemark> 
@@ -8747,6 +8792,11 @@
 			</Placemark> 
 			<Placemark>
 				<styleUrl>#gbif</styleUrl>
+				<description>https://www.gbif.org/occurrence/5062980253</description>
+				<Point><coordinates>3.866607,43.630903</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#gbif</styleUrl>
 				<description>https://www.gbif.org/occurrence/3995870161</description>
 				<Point><coordinates>4.166574,44.413202</coordinates></Point>
 			</Placemark> 
@@ -8904,6 +8954,16 @@
 				<styleUrl>#gbif</styleUrl>
 				<description>https://www.gbif.org/occurrence/3996652033</description>
 				<Point><coordinates>4.170265,44.39551</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#gbif</styleUrl>
+				<description>https://www.gbif.org/occurrence/5063643962</description>
+				<Point><coordinates>6.474406,43.168881</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#gbif</styleUrl>
+				<description>https://www.gbif.org/occurrence/5063952601</description>
+				<Point><coordinates>3.845101,43.625781</coordinates></Point>
 			</Placemark> 
 			<Placemark>
 				<styleUrl>#gbif</styleUrl>
@@ -24612,6 +24672,11 @@
 			</Placemark> 
 			<Placemark>
 				<styleUrl>#gbif</styleUrl>
+				<description>https://www.gbif.org/occurrence/5063034705</description>
+				<Point><coordinates>7.129571,43.623592</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#gbif</styleUrl>
 				<description>https://www.gbif.org/occurrence/3337797330</description>
 				<Point><coordinates>-1.172488,45.003925</coordinates></Point>
 			</Placemark> 
@@ -33169,6 +33234,11 @@
 				<styleUrl>#gbif</styleUrl>
 				<description>https://www.gbif.org/occurrence/3489854456</description>
 				<Point><coordinates>5.74105,43.60549</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#gbif</styleUrl>
+				<description>https://www.gbif.org/occurrence/5063683884</description>
+				<Point><coordinates>4.758224,43.657485</coordinates></Point>
 			</Placemark> 
 			<Placemark>
 				<styleUrl>#gbif</styleUrl>
