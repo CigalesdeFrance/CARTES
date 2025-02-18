@@ -6,7 +6,7 @@ choix.onchange = function() {
 	
 	var espece = this.options[this.selectedIndex].getAttribute('espece');
 	
-	carte_interactive.innerHTML = '<button><a href="../">➤ Carte interactive</a></button>';
+	carte_interactive.innerHTML = '<button class="detail"><a href="../">➤ Carte interactive</a></button>';
 	
 	// MISE A JOUR DE L'URL EN TEMPS REEL //
 	if (espece !== null) {
@@ -15,8 +15,8 @@ choix.onchange = function() {
 
 	
 		// MISE A JOUR DES CARTES + intégration si l'espèce n'existe pas dans la BDD //
-		carte_interactive.innerHTML = '<button><a href="../index.html?' + espece + '">➤ Carte interactive</a></button>';
-		fiche_espece.innerHTML = '<button><a href="https://www.cigalesdefrance.fr/espece:' + espece + '" target="_blank">➤ Fiche espèce</a></button>';
+		carte_interactive.innerHTML = '<button class="detail"><a href="../index.html?' + espece + '">➤ Carte interactive</a></button>';
+		fiche_espece.innerHTML = '<button class="detail"><a href="https://www.cigalesdefrance.fr/espece:' + espece + '" target="_blank">➤ Fiche espèce</a></button>';
 		
 	};
 	
