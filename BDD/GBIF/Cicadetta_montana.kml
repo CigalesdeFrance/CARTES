@@ -727,22 +727,22 @@
 			</Placemark> 
 			<Placemark>
 				<styleUrl>#gbif</styleUrl>
-				<description>https://www.gbif.org/occurrence/2511593665</description>
-				<Point><coordinates>2.71819,48.21802</coordinates></Point>
-			</Placemark> 
-			<Placemark>
-				<styleUrl>#gbif</styleUrl>
 				<description>https://www.gbif.org/occurrence/4590083424</description>
 				<Point><coordinates>2.71819,48.21802</coordinates></Point>
 			</Placemark> 
 			<Placemark>
 				<styleUrl>#gbif</styleUrl>
-				<description>https://www.gbif.org/occurrence/4590129313</description>
-				<Point><coordinates>2.72211,48.21864</coordinates></Point>
+				<description>https://www.gbif.org/occurrence/2511593665</description>
+				<Point><coordinates>2.71819,48.21802</coordinates></Point>
 			</Placemark> 
 			<Placemark>
 				<styleUrl>#gbif</styleUrl>
 				<description>https://www.gbif.org/occurrence/2511561724</description>
+				<Point><coordinates>2.72211,48.21864</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#gbif</styleUrl>
+				<description>https://www.gbif.org/occurrence/4590129313</description>
 				<Point><coordinates>2.72211,48.21864</coordinates></Point>
 			</Placemark> 
 			<Placemark>
