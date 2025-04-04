@@ -2,6 +2,7 @@
 "type": "FeatureCollection",
 "name": "Tettigettula_pygmea",
 "features": [
+{"type": "Feature", "properties": {"ID": "265984910"},"geometry": {"coordinates": [6.6524816667,43.5844249722],"type": "Point"},"id": "265984910"},
 {"type": "Feature", "properties": {"ID": "261232453"},"geometry": {"coordinates": [3.8197695845,43.5660343833],"type": "Point"},"id": "261232453"},
 {"type": "Feature", "properties": {"ID": "261232442"},"geometry": {"coordinates": [3.8202718539,43.5661761521],"type": "Point"},"id": "261232442"},
 {"type": "Feature", "properties": {"ID": "252621573"},"geometry": {"coordinates": [7.0698101211,43.6118956399],"type": "Point"},"id": "252621573"},
@@ -52,6 +53,7 @@
 {"type": "Feature", "properties": {"ID": "171568670"},"geometry": {"coordinates": [4.9784629047,43.458919383],"type": "Point"},"id": "171568670"},
 {"type": "Feature", "properties": {"ID": "171193570"},"geometry": {"coordinates": [6.9507683069,43.6743667649],"type": "Point"},"id": "171193570"},
 {"type": "Feature", "properties": {"ID": "170630815"},"geometry": {"coordinates": [1.2317962219,45.0973335554],"type": "Point"},"id": "170630815"},
+{"type": "Feature", "properties": {"ID": "170301515"},"geometry": {"coordinates": [1.2315304925,45.0965982601],"type": "Point"},"id": "170301515"},
 {"type": "Feature", "properties": {"ID": "170074834"},"geometry": {"coordinates": [0.3843972222,44.7897361111],"type": "Point"},"id": "170074834"},
 {"type": "Feature", "properties": {"ID": "169813608"},"geometry": {"coordinates": [5.8182662353,43.5557321276],"type": "Point"},"id": "169813608"},
 {"type": "Feature", "properties": {"ID": "169429200"},"geometry": {"coordinates": [5.9110384807,44.1731306627],"type": "Point"},"id": "169429200"},
