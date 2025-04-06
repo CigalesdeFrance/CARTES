@@ -882,6 +882,11 @@
 			</Placemark> 
 			<Placemark>
 				<styleUrl>#gbif</styleUrl>
+				<description>https://www.gbif.org/occurrence/5104385297</description>
+				<Point><coordinates>6.652482,43.584425</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#gbif</styleUrl>
 				<description>https://www.gbif.org/occurrence/4084178094</description>
 				<Point><coordinates>6.04367,44.36446</coordinates></Point>
 			</Placemark> 

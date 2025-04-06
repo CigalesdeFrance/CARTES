@@ -5912,6 +5912,11 @@
 			</Placemark> 
 			<Placemark>
 				<styleUrl>#gbif</styleUrl>
+				<description>https://www.gbif.org/occurrence/5104342660</description>
+				<Point><coordinates>5.127858,44.269725</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#gbif</styleUrl>
 				<description>https://www.gbif.org/occurrence/4408986625</description>
 				<Point><coordinates>4.994157,44.082741</coordinates></Point>
 			</Placemark> 
@@ -11882,6 +11887,16 @@
 			</Placemark> 
 			<Placemark>
 				<styleUrl>#gbif</styleUrl>
+				<description>https://www.gbif.org/occurrence/5104382594</description>
+				<Point><coordinates>6.702852,43.483133</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#gbif</styleUrl>
+				<description>https://www.gbif.org/occurrence/5104379601</description>
+				<Point><coordinates>7.112733,43.637886</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#gbif</styleUrl>
 				<description>https://www.gbif.org/occurrence/4081529484</description>
 				<Point><coordinates>-1.10764,44.98342</coordinates></Point>
 			</Placemark> 
@@ -13904,6 +13919,11 @@
 				<styleUrl>#gbif</styleUrl>
 				<description>https://www.gbif.org/occurrence/3384426697</description>
 				<Point><coordinates>3.929349,43.698402</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#gbif</styleUrl>
+				<description>https://www.gbif.org/occurrence/5104264559</description>
+				<Point><coordinates>5.482724,43.349194</coordinates></Point>
 			</Placemark> 
 			<Placemark>
 				<styleUrl>#gbif</styleUrl>
@@ -19029,6 +19049,11 @@
 				<styleUrl>#gbif</styleUrl>
 				<description>https://www.gbif.org/occurrence/4087617384</description>
 				<Point><coordinates>5.28383,44.20276</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#gbif</styleUrl>
+				<description>https://www.gbif.org/occurrence/5104254401</description>
+				<Point><coordinates>6.853766,43.415713</coordinates></Point>
 			</Placemark> 
 			<Placemark>
 				<styleUrl>#gbif</styleUrl>
