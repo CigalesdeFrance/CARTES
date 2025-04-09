@@ -1987,11 +1987,6 @@
 			</Placemark> 
 			<Placemark>
 				<styleUrl>#inpn</styleUrl>
-				<description>https://openobs.mnhn.fr/openobs-hub/occurrences/aa889407-c037-4ce1-b032-42f9c9e3591f</description>
-				<Point><coordinates>9.3272,42.33456</coordinates></Point>
-			</Placemark> 
-			<Placemark>
-				<styleUrl>#inpn</styleUrl>
 				<description>https://openobs.mnhn.fr/openobs-hub/occurrences/82d6d7f5-2a80-4329-bdd7-1f11be9d20ef</description>
 				<Point><coordinates>9.18218,41.67006</coordinates></Point>
 			</Placemark> 
@@ -1999,6 +1994,11 @@
 				<styleUrl>#inpn</styleUrl>
 				<description>https://openobs.mnhn.fr/openobs-hub/occurrences/9930a1f5-7e53-463e-9043-6c90fe633722</description>
 				<Point><coordinates>9.40486,43.00338</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#inpn</styleUrl>
+				<description>https://openobs.mnhn.fr/openobs-hub/occurrences/aa889407-c037-4ce1-b032-42f9c9e3591f</description>
+				<Point><coordinates>9.3272,42.33456</coordinates></Point>
 			</Placemark> 
 			<Placemark>
 				<styleUrl>#inpn</styleUrl>
