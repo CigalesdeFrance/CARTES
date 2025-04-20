@@ -12,26 +12,6 @@
 			<name>INPN</name>
 			<Placemark>
 				<styleUrl>#inpn</styleUrl>
-				<description>https://openobs.mnhn.fr/openobs-hub/occurrences/b78ef817-e668-4d73-9ab8-4d88ed3abbe1</description>
-				<Point><coordinates>2.87115,42.96128</coordinates></Point>
-			</Placemark> 
-			<Placemark>
-				<styleUrl>#inpn</styleUrl>
-				<description>https://openobs.mnhn.fr/openobs-hub/occurrences/e7570242-34bf-443b-9a3a-30b208923197</description>
-				<Point><coordinates>7.40255,43.77487</coordinates></Point>
-			</Placemark> 
-			<Placemark>
-				<styleUrl>#inpn</styleUrl>
-				<description>https://openobs.mnhn.fr/openobs-hub/occurrences/7bc3414c-b6e1-43d7-826a-d065ee28a89c</description>
-				<Point><coordinates>5.56598,43.52123</coordinates></Point>
-			</Placemark> 
-			<Placemark>
-				<styleUrl>#inpn</styleUrl>
-				<description>https://openobs.mnhn.fr/openobs-hub/occurrences/0accddfb-d0a2-4128-855c-5ba128239b0e</description>
-				<Point><coordinates>5.56598,43.52123</coordinates></Point>
-			</Placemark> 
-			<Placemark>
-				<styleUrl>#inpn</styleUrl>
 				<description>https://openobs.mnhn.fr/openobs-hub/occurrences/bf90037f-d57d-4c6b-8e28-9a9a2206bde1</description>
 				<Point><coordinates>2.05634,43.28969</coordinates></Point>
 			</Placemark> 
@@ -64,6 +44,26 @@
 				<styleUrl>#inpn</styleUrl>
 				<description>https://openobs.mnhn.fr/openobs-hub/occurrences/48575ed4-1687-490d-97a7-a598b8400901</description>
 				<Point><coordinates>2.06297,43.29947</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#inpn</styleUrl>
+				<description>https://openobs.mnhn.fr/openobs-hub/occurrences/b78ef817-e668-4d73-9ab8-4d88ed3abbe1</description>
+				<Point><coordinates>2.87115,42.96128</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#inpn</styleUrl>
+				<description>https://openobs.mnhn.fr/openobs-hub/occurrences/e7570242-34bf-443b-9a3a-30b208923197</description>
+				<Point><coordinates>7.40255,43.77487</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#inpn</styleUrl>
+				<description>https://openobs.mnhn.fr/openobs-hub/occurrences/7bc3414c-b6e1-43d7-826a-d065ee28a89c</description>
+				<Point><coordinates>5.56598,43.52123</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#inpn</styleUrl>
+				<description>https://openobs.mnhn.fr/openobs-hub/occurrences/0accddfb-d0a2-4128-855c-5ba128239b0e</description>
+				<Point><coordinates>5.56598,43.52123</coordinates></Point>
 			</Placemark> 
 			<Placemark>
 				<styleUrl>#inpn</styleUrl>
@@ -122,6 +122,16 @@
 			</Placemark> 
 			<Placemark>
 				<styleUrl>#inpn</styleUrl>
+				<description>https://openobs.mnhn.fr/openobs-hub/occurrences/7398a098-5039-49f6-8dfa-f0af62351afc</description>
+				<Point><coordinates>3.00845,42.75386</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#inpn</styleUrl>
+				<description>https://openobs.mnhn.fr/openobs-hub/occurrences/95bfcba6-36f1-406d-900e-8c7136212a72</description>
+				<Point><coordinates>3.00845,42.75386</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#inpn</styleUrl>
 				<description>https://openobs.mnhn.fr/openobs-hub/occurrences/5f04338d-dede-4956-b532-8fab4f39b5dc</description>
 				<Point><coordinates>2.91052,42.63984</coordinates></Point>
 			</Placemark> 
@@ -139,16 +149,6 @@
 				<styleUrl>#inpn</styleUrl>
 				<description>https://openobs.mnhn.fr/openobs-hub/occurrences/bb4f73a7-d612-4ab0-942c-14461ae5a8eb</description>
 				<Point><coordinates>3.02016,42.7887</coordinates></Point>
-			</Placemark> 
-			<Placemark>
-				<styleUrl>#inpn</styleUrl>
-				<description>https://openobs.mnhn.fr/openobs-hub/occurrences/7398a098-5039-49f6-8dfa-f0af62351afc</description>
-				<Point><coordinates>3.00845,42.75386</coordinates></Point>
-			</Placemark> 
-			<Placemark>
-				<styleUrl>#inpn</styleUrl>
-				<description>https://openobs.mnhn.fr/openobs-hub/occurrences/95bfcba6-36f1-406d-900e-8c7136212a72</description>
-				<Point><coordinates>3.00845,42.75386</coordinates></Point>
 			</Placemark> 
 			<Placemark>
 				<styleUrl>#inpn</styleUrl>
