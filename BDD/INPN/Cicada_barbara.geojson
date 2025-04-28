@@ -2,6 +2,8 @@
 "type": "FeatureCollection",
 "name": "Cicada_barbara",
 "features": [
+{"type": "Feature", "properties": {"ID": "9feb9afb-b61c-4343-8643-b697fc5e24ca"},"geometry": {"coordinates": [9.32712,41.64979],"type": "Point"},"id": "9feb9afb-b61c-4343-8643-b697fc5e24ca"},
+{"type": "Feature", "properties": {"ID": "ae09f462-045c-4403-8a81-183769b08516"},"geometry": {"coordinates": [9.32763,41.64963],"type": "Point"},"id": "ae09f462-045c-4403-8a81-183769b08516"},
 {"type": "Feature", "properties": {"ID": "6eb2ae6b-655e-4c6f-9c01-1cc6ebdc974b"},"geometry": {"coordinates": [9.32763,41.64963],"type": "Point"},"id": "6eb2ae6b-655e-4c6f-9c01-1cc6ebdc974b"},
 {"type": "Feature", "properties": {"ID": "2ade75c6-2bed-4196-84c6-a021dd39f433"},"geometry": {"coordinates": [9.32746,41.64935],"type": "Point"},"id": "2ade75c6-2bed-4196-84c6-a021dd39f433"},
 {"type": "Feature", "properties": {"ID": "c9878c80-9f7a-4bcc-8553-83f14c1ed1a6"},"geometry": {"coordinates": [9.32713,41.64765],"type": "Point"},"id": "c9878c80-9f7a-4bcc-8553-83f14c1ed1a6"},
@@ -11,8 +13,6 @@
 {"type": "Feature", "properties": {"ID": "4fcfd37f-e6a0-4d3f-a92f-9a7d04371186"},"geometry": {"coordinates": [9.32753,41.64971],"type": "Point"},"id": "4fcfd37f-e6a0-4d3f-a92f-9a7d04371186"},
 {"type": "Feature", "properties": {"ID": "f94d607f-13e2-4ffd-bad6-66233ab527a9"},"geometry": {"coordinates": [9.32763,41.64963],"type": "Point"},"id": "f94d607f-13e2-4ffd-bad6-66233ab527a9"},
 {"type": "Feature", "properties": {"ID": "933192b6-3602-485e-af83-616b19ca8e44"},"geometry": {"coordinates": [9.32749,41.64925],"type": "Point"},"id": "933192b6-3602-485e-af83-616b19ca8e44"},
-{"type": "Feature", "properties": {"ID": "ae09f462-045c-4403-8a81-183769b08516"},"geometry": {"coordinates": [9.32763,41.64963],"type": "Point"},"id": "ae09f462-045c-4403-8a81-183769b08516"},
-{"type": "Feature", "properties": {"ID": "9feb9afb-b61c-4343-8643-b697fc5e24ca"},"geometry": {"coordinates": [9.32712,41.64979],"type": "Point"},"id": "9feb9afb-b61c-4343-8643-b697fc5e24ca"},
 {"type": "Feature", "properties": {"ID": "2960c285-27cd-467b-93f1-ec6010600697"},"geometry": {"coordinates": [9.32672,41.65041],"type": "Point"},"id": "2960c285-27cd-467b-93f1-ec6010600697"},
 {"type": "Feature", "properties": {"ID": "f3851cdc-07de-435e-9526-fdbd0e0d08c3"},"geometry": {"coordinates": [9.32753,41.64971],"type": "Point"},"id": "f3851cdc-07de-435e-9526-fdbd0e0d08c3"},
 {"type": "Feature", "properties": {"ID": "b3116b22-6c5b-46e2-b17b-c003ae1a8797"},"geometry": {"coordinates": [9.32746,41.64935],"type": "Point"},"id": "b3116b22-6c5b-46e2-b17b-c003ae1a8797"},
