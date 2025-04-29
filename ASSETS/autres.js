@@ -20,7 +20,7 @@ choix.onchange = function() {
 		
 	};
 	
-	var ff_url = 'https://cartes.cigalesdefrance.fr/BDD/FAUNE-FRANCE/' + espece + '.png';
+	var ff_url = 'https://cartes.cigalesdefrance.fr/BDD/FAUNE-FRANCE/IMG/' + espece + '.png';
 	var onem_url = 'https://cartes.cigalesdefrance.fr/BDD/ONEM/' + espece + '.jpg';
 	var gbif_url = 'https://cartes.cigalesdefrance.fr/BDD/GBIF-EUROPE/'+ espece + '.png';
 	
@@ -35,7 +35,7 @@ choix.onchange = function() {
 		}
         else {
 			console.log("URL de Faune-France inaccessible ⛔");
-			ffmapdiv.innerHTML = '<img class="ffmap" src="https://cartes.cigalesdefrance.fr/BDD/FAUNE-FRANCE/null.png"/ alt="Carte vide provenant de Faune-France">';
+			ffmapdiv.innerHTML = '<img class="ffmap" src="https://cartes.cigalesdefrance.fr/BDD/FAUNE-FRANCE/IMG/null.png"/ alt="Carte vide provenant de Faune-France">';
 		}
 	}
 	
