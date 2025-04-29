@@ -24,6 +24,7 @@ window.onload = function go() {
 		var layer_bdd2 = new ol.layer.Vector();
 		var layer_bdd3 = new ol.layer.Vector();
 		var layer_bdd4 = new ol.layer.Vector();
+		var layer_bdd5 = new ol.layer.Vector();
 		
 		// Ajout des contours des régions/départements
 		var regions = new ol.layer.Vector({
@@ -72,6 +73,7 @@ window.onload = function go() {
 				layer_ortho,
 				regions,
 				departements,
+				layer_bdd5,
 				layer_bdd4,
 				layer_bdd3,
 				layer_bdd2,
@@ -104,7 +106,7 @@ window.onload = function go() {
 		
 		// Fonctionnalité de sélection d'entités
 		var selectClick = new ol.interaction.Select({
-			layers: [ layer_bdd1, layer_bdd2, layer_bdd3, layer_bdd4 ],
+			layers: [ layer_bdd1, layer_bdd2, layer_bdd3, layer_bdd4, layer_bdd5 ],
 			condition: ol.events.click
 		});
 		map.addInteraction(selectClick);
@@ -114,7 +116,7 @@ window.onload = function go() {
 			var pixel = evt.pixel;
 			var features = [];
 			map.forEachFeatureAtPixel(pixel, function(feature, layer) {
-				if ( layer == layer_bdd1 || layer == layer_bdd2 || layer == layer_bdd3 || layer == layer_bdd4 ) { features.push(feature) };
+				if ( layer == layer_bdd1 || layer == layer_bdd2 || layer == layer_bdd3 || layer == layer_bdd4 || layer == layer_bdd5 ) { features.push(feature) };
 			});
 			if ( features[0] == undefined ) {/* console.log("Clic hors données ⛔") */}
 			else {
@@ -147,6 +149,12 @@ window.onload = function go() {
 					config: {
 						title: "INPN",
 						description: "Données provenant de l'Inventaire National du Patrimoine Naturel par le biais d'OpenObs"
+					}
+				},
+				{layer: layer_bdd5,
+					config: {
+						title: "Faune-France",
+						description: "Données provenant de la base de données Faune-France"
 					}
 				},
 				{layer: regions,
@@ -249,6 +257,7 @@ window.onload = function go() {
 				var url_bdd2 = 'https://cartes.cigalesdefrance.fr/BDD/OBSERVATION/' + espece + '.kml';
 				var url_bdd3 = 'https://cartes.cigalesdefrance.fr/BDD/GBIF/' + espece + '.kml';
 				var url_bdd4 = 'https://cartes.cigalesdefrance.fr/BDD/INPN/' + espece + '.kml';
+				var url_bdd5 = 'https://cartes.cigalesdefrance.fr/BDD/FAUNE-FRANCE/' + espece + '.kml';
 				
 				layer_bdd1.setSource(
 					new ol.source.Vector({
@@ -287,6 +296,16 @@ window.onload = function go() {
 							extractAttributes: true
 						}),
 						url: url_bdd4
+					})
+				);
+				
+				layer_bdd5.setSource(
+					new ol.source.Vector({
+						format: new ol.format.KML({
+							extractStyles: true,
+							extractAttributes: true
+						}),
+						url: url_bdd5
 					})
 				);
 			};

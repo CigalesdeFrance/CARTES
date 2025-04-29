@@ -23,9 +23,10 @@ for (i in 1:length(CIGALES_CODES$CODE)) {
   INATURALIST<- read.csv(paste0("./BDD/INATURALIST/",CIGALES_CODES$CODE[i],".csv"), h=T, sep=",")
   INPN<- read.csv(paste0("./BDD/INPN/",CIGALES_CODES$CODE[i],".csv"), h=T, sep=",")
   OBSERVATION<- read.csv(paste0("./BDD/OBSERVATION/",CIGALES_CODES$CODE[i],".csv"), h=T, sep=",")
+  FAUNE_FRANCE<- read.csv(paste0("./BDD/FAUNE-FRANCE/",CIGALES_CODES$CODE[i],".csv"), h=T, sep=",")
   
   # Fusion des bases de données
-  df <- rbind(GBIF,INATURALIST,INPN,OBSERVATION)
+  df <- rbind(GBIF,INATURALIST,INPN,OBSERVATION,FAUNE_FRANCE)
   data <- st_as_sf(data.frame(x=df$Longitude,y=df$Latitude),coords = 1:2,crs=st_crs(CANTONS))
   
   # Recherche des points présents dans les cantons

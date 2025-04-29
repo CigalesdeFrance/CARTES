@@ -5,11 +5,13 @@ $INPN_url = (Invoke-WebRequest -Uri 'https://openobs.mnhn.fr/biocache-service/oc
 $INATURALIST_url = (Invoke-WebRequest -Uri 'https://api.inaturalist.org/v1/docs/' -SkipHttpErrorCheck -ErrorAction Stop).BaseResponse
 $OBSERVATION_url = (Invoke-WebRequest -Uri 'https://observation.org/api/v1/docs/' -SkipHttpErrorCheck -ErrorAction Stop).BaseResponse
 $GBIF_url = (Invoke-WebRequest -Uri 'https://api.gbif.org/v1/occurrence/search' -SkipHttpErrorCheck -ErrorAction Stop).BaseResponse
+$FF_url = (Invoke-WebRequest -Uri 'https://www.faune-france.org' -SkipHttpErrorCheck -ErrorAction Stop).BaseResponse
 
 if ($INPN_url.StatusCode -eq "OK") { Remove-item "./BDD/INPN/*.csv" }
 if ($INATURALIST_url.StatusCode -eq "OK") { Remove-item "./BDD/INATURALIST/*.csv" }
 if ($OBSERVATION_url.StatusCode -eq "OK") { Remove-Item "./BDD/OBSERVATION/*.csv" }
 if ($GBIF_url.StatusCode -eq "OK") { Remove-Item "./BDD/GBIF/*.csv" }
+if ($FF_url.StatusCode -eq "OK") { Remove-Item "./BDD/FAUNE-FRANCE/*.csv" }
 
 ### AUTHENTIFICATION
 $OBS_TOKEN = (Invoke-WebRequest -Uri "https://observation.org/api/v1/oauth2/token/" -Method POST -Body $params | ConvertFrom-Json).access_token
@@ -220,6 +222,42 @@ $cigales_codes | ForEach-Object {
 	}
 	else {
 		"  > L'API de GBIF est inaccessible"
+	}
+
+	# FAUNE-FRANCE
+	"FAUNE-FRANCE - $nom"
+	if ($FF_url.StatusCode -eq "OK") {
+		if ($faune_france -eq "") {
+			"  > L'espèce n'existe pas dans Faune-France"
+			Add-Content "./BDD/FAUNE-FRANCE/$code.csv" "Latitude,Longitude,ID,Date"
+		}
+		else {
+			$ff_data_all = (Invoke-WebRequest "https://www.faune-france.org/index.php?m_id=95&action=geojson&sp_tg=19&sp_DChoice=all&sp_PChoice=all&sp_SChoice=species&sp_S=$faune_france" | ConvertFrom-Json).data
+			
+			$ff_data = $ff_data_all | where {$_.c -gt 0} # Effectif supérieur à 0
+			$count = $ff_data.count
+			
+			if ($count -eq 0)  {
+				"  > L'espèce est présente dans Faune-France mais ne possède aucune donnée"
+				Add-Content "./BDD/FAUNE-FRANCE/$code.csv" "Latitude,Longitude,ID,Date"
+			}
+			else {
+				Add-Content "./BDD/FAUNE-FRANCE/$code.csv" "Latitude,Longitude,ID,Date"
+				
+				for ($num=0;$num -le ($count -1) ;$num++) {
+					$lat = $ff_data[$num].p[1]
+					$long = $ff_data[$num].p[0]
+					$id = $ff_data[$num].i
+					$date = $ff_data[$num].d
+					
+					$value = "$($lat),$($long),$($id),$($date)"
+					$value | Add-Content "./BDD/FAUNE-FRANCE/$code.csv"
+				}
+			}
+		}
+	}
+	else {
+		"  > Faune-France est inaccessible"
 	}
 }
 
