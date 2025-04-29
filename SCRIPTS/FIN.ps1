@@ -15,10 +15,10 @@ $cigales_codes | ForEach-Object {
 	"Faune-France - $nom"
 	if ($faune_france -eq "") {
 		"  > L'espèce n'existe pas dans Faune-France"
-		Invoke-WebRequest -Uri "https://raw.githubusercontent.com/CigalesdeFrance/CARTES/main/BDD/FAUNE-FRANCE/null.png" -OutFile "./BDD/FAUNE-FRANCE/$code.png"
+		Invoke-WebRequest -Uri "https://raw.githubusercontent.com/CigalesdeFrance/CARTES/main/BDD/FAUNE-FRANCE/null.png" -OutFile "./BDD/FAUNE-FRANCE/IMG/$code.png"
 	}
 	else {
-		Invoke-WebRequest -Uri "https://www.faune-france.org/index.php?m_id=95&sp_tg=19&sp_DChoice=all&sp_SChoice=species&sp_PChoice=all&sp_FChoice=map&sp_S=$faune_france" -OutFile "./BDD/FAUNE-FRANCE/$code.png" 
+		Invoke-WebRequest -Uri "https://www.faune-france.org/index.php?m_id=95&sp_tg=19&sp_DChoice=all&sp_SChoice=species&sp_PChoice=all&sp_FChoice=map&sp_S=$faune_france" -OutFile "./BDD/FAUNE-FRANCE/IMG/$code.png" 
 	}
 }
 
