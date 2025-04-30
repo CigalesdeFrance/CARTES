@@ -1,0 +1,13 @@
+{
+"type": "FeatureCollection",
+"name": "Oligoglena_tibialis",
+"features": [
+{"type": "Feature", "properties": {"ID": "92555885"},"geometry": {"coordinates": [7.14665,43.78699],"type": "Point"},"id": "92555885"},
+{"type": "Feature", "properties": {"ID": "92831814"},"geometry": {"coordinates": [7.48266,43.92331],"type": "Point"},"id": "92831814"},
+{"type": "Feature", "properties": {"ID": "106116733"},"geometry": {"coordinates": [7.09607,43.79188],"type": "Point"},"id": "106116733"},
+{"type": "Feature", "properties": {"ID": "120265473"},"geometry": {"coordinates": [7.50126,43.88642],"type": "Point"},"id": "120265473"},
+{"type": "Feature", "properties": {"ID": "146685116"},"geometry": {"coordinates": [7.51519,43.80388],"type": "Point"},"id": "146685116"},
+{"type": "Feature", "properties": {"ID": "146685117"},"geometry": {"coordinates": [7.51519,43.80388],"type": "Point"},"id": "146685117"},
+{"type": "Feature", "properties": {"ID": "146685119"},"geometry": {"coordinates": [7.51499,43.80452],"type": "Point"},"id": "146685119"},
+{"type": "Feature", "properties": {"ID": "146685120"},"geometry": {"coordinates": [7.51464,43.80547],"type": "Point"},"id": "146685120"}
+]}

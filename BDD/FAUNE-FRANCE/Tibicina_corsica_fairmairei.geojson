@@ -1,0 +1,9 @@
+{
+"type": "FeatureCollection",
+"name": "Tibicina_corsica_fairmairei",
+"features": [
+{"type": "Feature", "properties": {"ID": "120903059"},"geometry": {"coordinates": [3.16671,43.25614],"type": "Point"},"id": "120903059"},
+{"type": "Feature", "properties": {"ID": "120903065"},"geometry": {"coordinates": [3.1666,43.25642],"type": "Point"},"id": "120903065"},
+{"type": "Feature", "properties": {"ID": "120903068"},"geometry": {"coordinates": [3.16604,43.25634],"type": "Point"},"id": "120903068"},
+{"type": "Feature", "properties": {"ID": "121243418"},"geometry": {"coordinates": [1.76224,42.55145],"type": "Point"},"id": "121243418"}
+]}
