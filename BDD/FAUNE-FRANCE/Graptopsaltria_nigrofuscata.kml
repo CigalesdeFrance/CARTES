@@ -12,7 +12,7 @@
 			<name>FAUNE-FRANCE</name>
 			<Placemark>
 				<styleUrl>#faune-france</styleUrl>
-				<description>https://www.faune-france.org/index.php?m_id=54&id=108282188</description>
+				<description>https://www.faune-france.org/index.php?m_id=54&amp;id=108282188</description>
 				<Point><coordinates>2.46104,48.82351</coordinates></Point>
 			</Placemark>
 		</Folder>
