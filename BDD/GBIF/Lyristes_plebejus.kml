@@ -4,7 +4,7 @@
 		<Style id="gbif">
 			<IconStyle>
 				<scale>0.3</scale>
-				<Icon><href>https://maps.google.com/mapfiles/kml/paddle/red-circle-lv.png</href></Icon>
+				<Icon><href>https://maps.google.com/mapfiles/kml/paddle/wht-circle-lv.png</href></Icon>
 			</IconStyle>
 		</Style>
 		<name>Lyristes_plebejus</name>
@@ -7379,6 +7379,11 @@
 				<styleUrl>#gbif</styleUrl>
 				<description>https://www.gbif.org/occurrence/4086854934</description>
 				<Point><coordinates>7.14514,43.96794</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#gbif</styleUrl>
+				<description>https://www.gbif.org/occurrence/5135446614</description>
+				<Point><coordinates>3.228264,43.249329</coordinates></Point>
 			</Placemark> 
 			<Placemark>
 				<styleUrl>#gbif</styleUrl>

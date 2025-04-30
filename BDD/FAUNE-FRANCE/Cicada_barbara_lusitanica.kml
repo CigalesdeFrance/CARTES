@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+	<Document>
+		<Style id="faune-france">
+			<IconStyle>
+				<scale>0.3</scale>
+				<Icon><href>https://maps.google.com/mapfiles/kml/paddle/red-circle-lv.png</href></Icon>
+			</IconStyle>
+		</Style>
+		<name>Cicada_barbara_lusitanica</name>
+		<Folder>
+			<name>FAUNE-FRANCE</name>
+		</Folder>
+	</Document>
+</kml>
