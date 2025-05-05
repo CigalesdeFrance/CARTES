@@ -198,7 +198,13 @@ $cigales_codes | ForEach-Object {
 					$lat = $json_filter.decimalLatitude | Add-Content "./BDD/GBIF/$code-lat.csv" 
 					$long = $json_filter.decimalLongitude | Add-Content "./BDD/GBIF/$code-long.csv" 
 					$id = $json_filter.key | Add-Content "./BDD/GBIF/$code-id.csv" 
-					$date = $json_filter.eventDate | Add-Content "./BDD/GBIF/$code-date.csv" 
+					
+					# date
+					$date_saisie = $json_filter.eventDate
+					foreach ($saisie in $date_saisie) {
+						$date = [datetime]::Parse($saisie)
+						$date.ToString("yyyy-MM-dd") | Add-Content "./BDD/GBIF/$code-date.csv"
+					}
 				}
 				
 				$lat = Get-content "./BDD/GBIF/$code-lat.csv" 
