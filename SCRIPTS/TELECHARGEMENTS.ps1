@@ -60,10 +60,15 @@ $cigales_codes | ForEach-Object {
 					$id = $json_filter.uuid | Add-Content "./BDD/INPN/$code-id.csv"
 					
 					# date
-					$timestamp = $json_filter.eventDate
-					foreach ($time in $timestamp) {
-						$datetime = [datetimeoffset]::FromUnixTimeMilliseconds($time).DateTime
-						$datetime.ToString('yyyy-MM-dd') | Add-Content "./BDD/INPN/$code-date.csv"
+					
+					foreach ($donnee in $json_filter) {
+						if ($donnee.PSObject.Properties.Name -contains "eventDateEnd") {
+							"" | Add-Content "./BDD/INPN/$code-date.csv"
+							} else {
+							$timestamp = $donnee.eventDate
+							$datetime = [datetimeoffset]::FromUnixTimeMilliseconds($timestamp).DateTime
+							$datetime.ToString('yyyy-MM-dd') | Add-Content "./BDD/INPN/$code-date.csv"
+						}
 					}
 					
 					# vérifier la cohérence avec $month et $year
