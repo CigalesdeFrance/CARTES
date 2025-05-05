@@ -214,6 +214,7 @@ $cigales_codes | ForEach-Object {
 							$date.ToString("yyyy-MM-dd") | Add-Content "./BDD/GBIF/$code-date.csv"
 						} catch {
 							# date invalide
+							"" | Add-Content "./BDD/GBIF/$code-date.csv"
 						}
 					}
 				}
