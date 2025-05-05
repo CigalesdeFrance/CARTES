@@ -201,9 +201,15 @@ $cigales_codes | ForEach-Object {
 					
 					# date
 					$date_saisie = $json_filter.eventDate
+					$culture = New-Object System.Globalization.CultureInfo("en-US")
+					
 					foreach ($saisie in $date_saisie) {
-						$date = [datetime]::Parse($saisie)
-						$date.ToString("yyyy-MM-dd") | Add-Content "./BDD/GBIF/$code-date.csv"
+						try {
+							$date = [datetime]::Parse($saisie, $culture)
+							$date.ToString("yyyy-MM-dd") | Add-Content "./BDD/GBIF/$code-date.csv"
+						} catch {
+							# date invalide
+						}
 					}
 				}
 				
