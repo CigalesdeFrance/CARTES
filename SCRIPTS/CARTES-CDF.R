@@ -27,7 +27,7 @@ for (i in 1:length(CIGALES_CODES$CODE)) {
   
   # Fusion des bases de données
   df <- rbind(GBIF,INATURALIST,INPN,OBSERVATION,FAUNE_FRANCE)
-  data <- st_as_sf(data.frame(x=df$Longitude,y=df$Latitude),coords = 1:2,crs=st_crs(CANTONS))
+  data <- st_as_sf(data.frame(x=df$LONGITUDE,y=df$LATITUDE),coords = 1:2,crs=st_crs(CANTONS))
   
   # Recherche des points présents dans les cantons
   CANTONS$CIGALE = lengths(st_contains(CANTONS,data)) > 0

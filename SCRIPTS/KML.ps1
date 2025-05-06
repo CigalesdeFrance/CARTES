@@ -26,9 +26,9 @@ $bdd_codes | ForEach-Object {
 			<name>$bdd_nom</name>$(Import-Csv "./BDD/$bdd_nom/$fichier" | foreach {'
 			<Placemark>
 				<styleUrl>#'+ $bdd_min +'</styleUrl>
-				<description>'+ $bdd_url +'{2}</description>
-				<Point><coordinates>{1},{0}</coordinates></Point>
-			</Placemark>' -f $_.Latitude, $_.Longitude, $_.ID})
+				<description>'+ $bdd_url +'{0}</description>
+				<Point><coordinates>{2},{1}</coordinates></Point>
+			</Placemark>' -f $_.ID, $_.LATITUDE, $_.LONGITUDE})
 		</Folder>
 	</Document>
 </kml>"

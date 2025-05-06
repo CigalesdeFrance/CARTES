@@ -26,10 +26,9 @@ $bdd_codes | ForEach-Object {
 		Set-Content "./BDD/$bdd_nom/$espece.geojson" $geojson
 		
 		$csv | ForEach-Object {
-			$lat = $_.Latitude
-			$long = $_.Longitude
 			$id = $_.ID
-			#$id
+			$lat = $_.LATITUDE
+			$long = $_.LONGITUDE
 			Write-Progress -Activity "$bdd_nom - $espece" -Status "$PercentComplete% achevé" -PercentComplete $PercentComplete
 			
 			$feature = '{"type": "Feature", "properties": {"ID": "'+ $id +'"},"geometry": {"coordinates": ['+ $long +','+ $lat +'],"type": "Point"},"id": "'+ $id +'"},'
