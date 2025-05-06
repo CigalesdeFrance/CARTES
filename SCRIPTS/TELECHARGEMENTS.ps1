@@ -78,7 +78,7 @@ $cigales_codes | ForEach-Object {
 				$coord = Get-content "./BDD/INPN/$code-coord.csv" 
 				$date = Get-content "./BDD/INPN/$code-date.csv"
 				
-				$(for($index=0;$index -lt $coord.Count;$index++){$id[$index] + "," + $coord[$index] + "," + $date[$index] + ","}) | Add-Content "./BDD/INPN/$code.csv"
+				$(for($index=0;$index -lt $coord.Count;$index++){$id[$index] + "," + $coord[$index] + "," + $date[$index] + (if($index -eq 0) {",ALTITUDE"} else {","})}) | Add-Content "./BDD/INPN/$code.csv"
 				(Get-Content "./BDD/INPN/$code.csv") | ? {$_.trim() -ne "" } | Set-Content "./BDD/INPN/$code.csv"
 				
 				Remove-item "./BDD/INPN/$code-id.csv"
@@ -124,7 +124,7 @@ $cigales_codes | ForEach-Object {
 				$coord = Get-content "./BDD/INATURALIST/$code-coord.csv" 
 				$date = Get-content "./BDD/INATURALIST/$code-date.csv"
 				
-				$(for($index=0;$index -lt $coord.Count;$index++){$id[$index] + "," + $coord[$index] + "," + $date[$index] + ","}) | Add-Content "./BDD/INATURALIST/$code.csv"
+				$(for($index=0;$index -lt $coord.Count;$index++){$id[$index] + "," + $coord[$index] + "," + $date[$index] + (if($index -eq 0) {",ALTITUDE"} else {","})}) | Add-Content "./BDD/INATURALIST/$code.csv"
 				(Get-Content "./BDD/INATURALIST/$code.csv") | ? {$_.trim() -ne "" } | Set-Content "./BDD/INATURALIST/$code.csv"
 				
 				Remove-item "./BDD/INATURALIST/$code-id.csv"
@@ -235,7 +235,7 @@ $cigales_codes | ForEach-Object {
 				$coord = Get-content "./BDD/GBIF/$code-coord.csv"
 				$date = Get-content "./BDD/GBIF/$code-date.csv"
 				
-				$(for($index=0;$index -lt $coord.Count;$index++){$id[$index] + "," + $coord[$index] + "," + $date[$index] + ","}) | Add-Content "./BDD/GBIF/$code.csv"
+				$(for($index=0;$index -lt $coord.Count;$index++){$id[$index] + "," + $coord[$index] + "," + $date[$index] + (if($index -eq 0) {",ALTITUDE"} else {","})}) | Add-Content "./BDD/GBIF/$code.csv"
 				(Get-Content "./BDD/GBIF/$code.csv") | ? {$_.trim() -ne "" } | Set-Content "./BDD/GBIF/$code.csv"
 				
 				Remove-item "./BDD/GBIF/$code-id.csv"
