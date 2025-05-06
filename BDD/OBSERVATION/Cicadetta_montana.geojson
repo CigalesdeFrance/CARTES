@@ -2,6 +2,7 @@
 "type": "FeatureCollection",
 "name": "Cicadetta_montana",
 "features": [
+{"type": "Feature", "properties": {"ID": "348745171"},"geometry": {"coordinates": [5.5479927,48.8734621997222],"type": "Point"},"id": "348745171"},
 {"type": "Feature", "properties": {"ID": "348346388"},"geometry": {"coordinates": [5.985675,48.6543805555556],"type": "Point"},"id": "348346388"},
 {"type": "Feature", "properties": {"ID": "332448020"},"geometry": {"coordinates": [1.68715607250308,42.8059613126012],"type": "Point"},"id": "332448020"},
 {"type": "Feature", "properties": {"ID": "326582940"},"geometry": {"coordinates": [3.291745,43.6415116666667],"type": "Point"},"id": "326582940"},
