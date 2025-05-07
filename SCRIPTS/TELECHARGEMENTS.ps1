@@ -78,7 +78,10 @@ $cigales_codes | ForEach-Object {
 				$coord = Get-content "./BDD/INPN/$code-coord.csv" 
 				$date = Get-content "./BDD/INPN/$code-date.csv"
 				
-				$(for($index=0;$index -lt $coord.Count;$index++){$id[$index] + "," + $coord[$index] + "," + $date[$index] + ","}) | Add-Content "./BDD/INPN/$code.csv"
+				$headers_INPN = "$id[0],$coord[0],$date[0],ALTITUDE"
+				$headers_INPN | Add-Content "./BDD/INPN/$code.csv"
+				
+				$(for($index=1;$index -lt $coord.Count;$index++){$id[$index] + "," + $coord[$index] + "," + $date[$index] + ","}) | Add-Content "./BDD/INPN/$code.csv"
 				(Get-Content "./BDD/INPN/$code.csv") | ? {$_.trim() -ne "" } | Set-Content "./BDD/INPN/$code.csv"
 				
 				Remove-item "./BDD/INPN/$code-id.csv"
@@ -124,7 +127,10 @@ $cigales_codes | ForEach-Object {
 				$coord = Get-content "./BDD/INATURALIST/$code-coord.csv" 
 				$date = Get-content "./BDD/INATURALIST/$code-date.csv"
 				
-				$(for($index=0;$index -lt $coord.Count;$index++){$id[$index] + "," + $coord[$index] + "," + $date[$index] + ","}) | Add-Content "./BDD/INATURALIST/$code.csv"
+				$headers_INAT = "$id[0],$coord[0],$date[0],ALTITUDE"
+				$headers_INAT | Add-Content "./BDD/INATURALIST/$code.csv"
+				
+				$(for($index=1;$index -lt $coord.Count;$index++){$id[$index] + "," + $coord[$index] + "," + $date[$index] + ","}) | Add-Content "./BDD/INATURALIST/$code.csv"
 				(Get-Content "./BDD/INATURALIST/$code.csv") | ? {$_.trim() -ne "" } | Set-Content "./BDD/INATURALIST/$code.csv"
 				
 				Remove-item "./BDD/INATURALIST/$code-id.csv"
@@ -235,7 +241,10 @@ $cigales_codes | ForEach-Object {
 				$coord = Get-content "./BDD/GBIF/$code-coord.csv"
 				$date = Get-content "./BDD/GBIF/$code-date.csv"
 				
-				$(for($index=0;$index -lt $coord.Count;$index++){$id[$index] + "," + $coord[$index] + "," + $date[$index] + ","}) | Add-Content "./BDD/GBIF/$code.csv"
+				$headers_GBIF = "$id[0],$coord[0],$date[0],ALTITUDE"
+				$headers_GBIF | Add-Content "./BDD/GBIF/$code.csv"
+				
+				$(for($index=1;$index -lt $coord.Count;$index++){$id[$index] + "," + $coord[$index] + "," + $date[$index] + ","}) | Add-Content "./BDD/GBIF/$code.csv"
 				(Get-Content "./BDD/GBIF/$code.csv") | ? {$_.trim() -ne "" } | Set-Content "./BDD/GBIF/$code.csv"
 				
 				Remove-item "./BDD/GBIF/$code-id.csv"
