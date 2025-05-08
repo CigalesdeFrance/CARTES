@@ -2,8 +2,8 @@
 "type": "FeatureCollection",
 "name": "Tibicina_picta",
 "features": [
-{"type": "Feature", "properties": {"ID": "51c0320e-71ab-44dc-874c-7f92bc4cd698"},"geometry": {"coordinates": [6.65754,43.17471],"type": "Point"},"id": "51c0320e-71ab-44dc-874c-7f92bc4cd698"},
 {"type": "Feature", "properties": {"ID": "2af5b295-2608-4f6b-8d8e-2cf2b1abaf89"},"geometry": {"coordinates": [6.62825,43.1833],"type": "Point"},"id": "2af5b295-2608-4f6b-8d8e-2cf2b1abaf89"},
+{"type": "Feature", "properties": {"ID": "51c0320e-71ab-44dc-874c-7f92bc4cd698"},"geometry": {"coordinates": [6.65754,43.17471],"type": "Point"},"id": "51c0320e-71ab-44dc-874c-7f92bc4cd698"},
 {"type": "Feature", "properties": {"ID": "ae671c13-c924-48ea-83d5-9495faa09f89"},"geometry": {"coordinates": [3.02295,42.77148],"type": "Point"},"id": "ae671c13-c924-48ea-83d5-9495faa09f89"},
 {"type": "Feature", "properties": {"ID": "b3066ec8-d90d-46f1-abff-7973639c44fe"},"geometry": {"coordinates": [3.03608,42.7713],"type": "Point"},"id": "b3066ec8-d90d-46f1-abff-7973639c44fe"},
 {"type": "Feature", "properties": {"ID": "6ecca5b5-685c-4df8-8b02-e0c793b159e9"},"geometry": {"coordinates": [3.16045,43.2753],"type": "Point"},"id": "6ecca5b5-685c-4df8-8b02-e0c793b159e9"},
