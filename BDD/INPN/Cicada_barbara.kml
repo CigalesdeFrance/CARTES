@@ -42,6 +42,21 @@
 			</Placemark> 
 			<Placemark>
 				<styleUrl>#inpn</styleUrl>
+				<description>https://openobs.mnhn.fr/openobs-hub/occurrences/6eb2ae6b-655e-4c6f-9c01-1cc6ebdc974b</description>
+				<Point><coordinates>9.32763,41.64963</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#inpn</styleUrl>
+				<description>https://openobs.mnhn.fr/openobs-hub/occurrences/c9878c80-9f7a-4bcc-8553-83f14c1ed1a6</description>
+				<Point><coordinates>9.32713,41.64765</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#inpn</styleUrl>
+				<description>https://openobs.mnhn.fr/openobs-hub/occurrences/2ade75c6-2bed-4196-84c6-a021dd39f433</description>
+				<Point><coordinates>9.32746,41.64935</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#inpn</styleUrl>
 				<description>https://openobs.mnhn.fr/openobs-hub/occurrences/4fcfd37f-e6a0-4d3f-a92f-9a7d04371186</description>
 				<Point><coordinates>9.32753,41.64971</coordinates></Point>
 			</Placemark> 
@@ -57,8 +72,8 @@
 			</Placemark> 
 			<Placemark>
 				<styleUrl>#inpn</styleUrl>
-				<description>https://openobs.mnhn.fr/openobs-hub/occurrences/2960c285-27cd-467b-93f1-ec6010600697</description>
-				<Point><coordinates>9.32672,41.65041</coordinates></Point>
+				<description>https://openobs.mnhn.fr/openobs-hub/occurrences/f3851cdc-07de-435e-9526-fdbd0e0d08c3</description>
+				<Point><coordinates>9.32753,41.64971</coordinates></Point>
 			</Placemark> 
 			<Placemark>
 				<styleUrl>#inpn</styleUrl>
@@ -67,28 +82,13 @@
 			</Placemark> 
 			<Placemark>
 				<styleUrl>#inpn</styleUrl>
+				<description>https://openobs.mnhn.fr/openobs-hub/occurrences/2960c285-27cd-467b-93f1-ec6010600697</description>
+				<Point><coordinates>9.32672,41.65041</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#inpn</styleUrl>
 				<description>https://openobs.mnhn.fr/openobs-hub/occurrences/59e85057-a072-450a-9b5f-dedf7d241fd7</description>
 				<Point><coordinates>9.32763,41.64963</coordinates></Point>
-			</Placemark> 
-			<Placemark>
-				<styleUrl>#inpn</styleUrl>
-				<description>https://openobs.mnhn.fr/openobs-hub/occurrences/f3851cdc-07de-435e-9526-fdbd0e0d08c3</description>
-				<Point><coordinates>9.32753,41.64971</coordinates></Point>
-			</Placemark> 
-			<Placemark>
-				<styleUrl>#inpn</styleUrl>
-				<description>https://openobs.mnhn.fr/openobs-hub/occurrences/6eb2ae6b-655e-4c6f-9c01-1cc6ebdc974b</description>
-				<Point><coordinates>9.32763,41.64963</coordinates></Point>
-			</Placemark> 
-			<Placemark>
-				<styleUrl>#inpn</styleUrl>
-				<description>https://openobs.mnhn.fr/openobs-hub/occurrences/c9878c80-9f7a-4bcc-8553-83f14c1ed1a6</description>
-				<Point><coordinates>9.32713,41.64765</coordinates></Point>
-			</Placemark> 
-			<Placemark>
-				<styleUrl>#inpn</styleUrl>
-				<description>https://openobs.mnhn.fr/openobs-hub/occurrences/2ade75c6-2bed-4196-84c6-a021dd39f433</description>
-				<Point><coordinates>9.32746,41.64935</coordinates></Point>
 			</Placemark>
 		</Folder>
 	</Document>
