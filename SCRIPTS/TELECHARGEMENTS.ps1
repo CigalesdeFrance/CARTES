@@ -375,7 +375,7 @@ $bdd_codes | ForEach-Object {
 		
 		} else {
 			
-			$resultats-tri = $resultats | Sort-Object ID
+			$resultats_tri = $resultats | Sort-Object ID
 			$resultats_tri | Export-Csv -Path "./BDD/$bdd_nom/$fichier" -NoTypeInformation
 		}
 		
