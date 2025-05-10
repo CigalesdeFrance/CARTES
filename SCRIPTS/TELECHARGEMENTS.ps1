@@ -347,22 +347,17 @@ $bdd_codes | ForEach-Object {
 			if ($actuel_dico.ContainsKey($id)) {
 				$ancien = $actuel_dico[$id]
 				# Vérification des mises à jour
-				if (
-					$ancien.latitude -ne $nouveau.latitude -or
+				if ($ancien.latitude -ne $nouveau.latitude -or
 					$ancien.longitude -ne $nouveau.longitude -or
-					$ancien.date -ne $nouveau.date
-				) {
-
+					$ancien.date -ne $nouveau.date) {
+					
 					#$nouveau.altitude = $ancien.altitude // il est préférable de recalculer l'altitude si modification
 					$resultats += $nouveau
 					
 				} else {
-				
 					$resultats += $ancien
-					
 				}
 			} else {
-
 				$resultats += $nouveau
 			}
 		}
@@ -378,9 +373,7 @@ $bdd_codes | ForEach-Object {
 			$resultats_tri = $resultats | Sort-Object ID
 			$resultats_tri | Export-Csv -Path "./BDD/$bdd_nom/$fichier" -NoTypeInformation
 		}
-		
 	}
-	
 	Remove-Item -Path "./BDD/$bdd_nom/TEMP/" -Recurse -Force
 }
 
