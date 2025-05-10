@@ -2,12 +2,12 @@
 "type": "FeatureCollection",
 "name": "Tibicina_garricola",
 "features": [
-{"type": "Feature", "properties": {"ID": "332449530"},"geometry": {"coordinates": [5.6580018997192,43.326707425147],"type": "Point"},"id": "332449530"},
-{"type": "Feature", "properties": {"ID": "332449529"},"geometry": {"coordinates": [5.6580018997192,43.326707425147],"type": "Point"},"id": "332449529"},
-{"type": "Feature", "properties": {"ID": "332449511"},"geometry": {"coordinates": [5.6909608840942,43.32739423697],"type": "Point"},"id": "332449511"},
 {"type": "Feature", "properties": {"ID": "332449508"},"geometry": {"coordinates": [5.6909608840942,43.32739423697],"type": "Point"},"id": "332449508"},
-{"type": "Feature", "properties": {"ID": "332448614"},"geometry": {"coordinates": [5.6519939129631,43.341249121989],"type": "Point"},"id": "332448614"},
 {"type": "Feature", "properties": {"ID": "332448613"},"geometry": {"coordinates": [5.69096088409424,43.3273942369705],"type": "Point"},"id": "332448613"},
+{"type": "Feature", "properties": {"ID": "332449529"},"geometry": {"coordinates": [5.6580018997192,43.326707425147],"type": "Point"},"id": "332449529"},
+{"type": "Feature", "properties": {"ID": "332448614"},"geometry": {"coordinates": [5.6519939129631,43.341249121989],"type": "Point"},"id": "332448614"},
+{"type": "Feature", "properties": {"ID": "332449530"},"geometry": {"coordinates": [5.6580018997192,43.326707425147],"type": "Point"},"id": "332449530"},
+{"type": "Feature", "properties": {"ID": "332449511"},"geometry": {"coordinates": [5.6909608840942,43.32739423697],"type": "Point"},"id": "332449511"},
 {"type": "Feature", "properties": {"ID": "249231204"},"geometry": {"coordinates": [2.79789996147156,42.9114532470703],"type": "Point"},"id": "249231204"},
 {"type": "Feature", "properties": {"ID": "85834247"},"geometry": {"coordinates": [3.65960833333333,43.526445],"type": "Point"},"id": "85834247"}
 ]}

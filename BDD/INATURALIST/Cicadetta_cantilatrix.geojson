@@ -2,7 +2,7 @@
 "type": "FeatureCollection",
 "name": "Cicadetta_cantilatrix",
 "features": [
-{"type": "Feature", "properties": {"ID": "168637420"},"geometry": {"coordinates": [3.3288953081,44.2289342781],"type": "Point"},"id": "168637420"},
 {"type": "Feature", "properties": {"ID": "168637383"},"geometry": {"coordinates": [3.3149484918,44.2162681632],"type": "Point"},"id": "168637383"},
+{"type": "Feature", "properties": {"ID": "168637420"},"geometry": {"coordinates": [3.3288953081,44.2289342781],"type": "Point"},"id": "168637420"},
 {"type": "Feature", "properties": {"ID": "167523900"},"geometry": {"coordinates": [5.9655445982,48.7434951677],"type": "Point"},"id": "167523900"}
 ]}

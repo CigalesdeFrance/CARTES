@@ -2,11 +2,11 @@
 "type": "FeatureCollection",
 "name": "Cicada_barbara",
 "features": [
-{"type": "Feature", "properties": {"ID": "4936026597"},"geometry": {"coordinates": [2.240608,46.982155],"type": "Point"},"id": "4936026597"},
-{"type": "Feature", "properties": {"ID": "4541670151"},"geometry": {"coordinates": [9.32749,41.64925],"type": "Point"},"id": "4541670151"},
 {"type": "Feature", "properties": {"ID": "4541830159"},"geometry": {"coordinates": [9.32746,41.64935],"type": "Point"},"id": "4541830159"},
-{"type": "Feature", "properties": {"ID": "4541718775"},"geometry": {"coordinates": [9.32746,41.64935],"type": "Point"},"id": "4541718775"},
-{"type": "Feature", "properties": {"ID": "4541767356"},"geometry": {"coordinates": [9.32753,41.64971],"type": "Point"},"id": "4541767356"},
+{"type": "Feature", "properties": {"ID": "4541670151"},"geometry": {"coordinates": [9.32749,41.64925],"type": "Point"},"id": "4541670151"},
+{"type": "Feature", "properties": {"ID": "4936026597"},"geometry": {"coordinates": [2.240608,46.982155],"type": "Point"},"id": "4936026597"},
 {"type": "Feature", "properties": {"ID": "4541782945"},"geometry": {"coordinates": [9.32753,41.64971],"type": "Point"},"id": "4541782945"},
-{"type": "Feature", "properties": {"ID": "4145550340"},"geometry": {"coordinates": [2.367026,48.863399],"type": "Point"},"id": "4145550340"}
+{"type": "Feature", "properties": {"ID": "4541767356"},"geometry": {"coordinates": [9.32753,41.64971],"type": "Point"},"id": "4541767356"},
+{"type": "Feature", "properties": {"ID": "4145550340"},"geometry": {"coordinates": [2.367026,48.863399],"type": "Point"},"id": "4145550340"},
+{"type": "Feature", "properties": {"ID": "4541718775"},"geometry": {"coordinates": [9.32746,41.64935],"type": "Point"},"id": "4541718775"}
 ]}
