@@ -57,3 +57,10 @@ $bdd_codes | ForEach-Object {
 		
 	}
 }
+
+### SAUVEGARDE GIT
+git config user.name 'github-actions[bot]'
+git config user.email 'github-actions[bot]@users.noreply.github.com'
+git add .
+git commit -m "[Bot] Calcul de l'altitude"
+git push origin main -f
