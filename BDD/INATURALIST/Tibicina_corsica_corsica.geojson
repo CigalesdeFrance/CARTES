@@ -2,9 +2,9 @@
 "type": "FeatureCollection",
 "name": "Tibicina_corsica_corsica",
 "features": [
-{"type": "Feature", "properties": {"ID": "167157853"},"geometry": {"coordinates": [9.5519278174,42.1432141103],"type": "Point"},"id": "167157853"},
-{"type": "Feature", "properties": {"ID": "179728671"},"geometry": {"coordinates": [8.85322,42.606125],"type": "Point"},"id": "179728671"},
-{"type": "Feature", "properties": {"ID": "167326400"},"geometry": {"coordinates": [8.7978296821,42.0407684776],"type": "Point"},"id": "167326400"},
 {"type": "Feature", "properties": {"ID": "167157034"},"geometry": {"coordinates": [9.4537278824,42.0566590745],"type": "Point"},"id": "167157034"},
+{"type": "Feature", "properties": {"ID": "167157853"},"geometry": {"coordinates": [9.5519278174,42.1432141103],"type": "Point"},"id": "167157853"},
+{"type": "Feature", "properties": {"ID": "167326400"},"geometry": {"coordinates": [8.7978296821,42.0407684776],"type": "Point"},"id": "167326400"},
+{"type": "Feature", "properties": {"ID": "179728671"},"geometry": {"coordinates": [8.85322,42.606125],"type": "Point"},"id": "179728671"},
 {"type": "Feature", "properties": {"ID": "229328454"},"geometry": {"coordinates": [9.260709174,42.3203937155],"type": "Point"},"id": "229328454"}
 ]}

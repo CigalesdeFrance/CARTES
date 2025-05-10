@@ -2,12 +2,12 @@
 "type": "FeatureCollection",
 "name": "Tibicina_nigronervosa",
 "features": [
+{"type": "Feature", "properties": {"ID": "223695940"},"geometry": {"coordinates": [9.4655771628255,42.90526765249],"type": "Point"},"id": "223695940"},
+{"type": "Feature", "properties": {"ID": "223695942"},"geometry": {"coordinates": [9.3895167344617,43.006548953421],"type": "Point"},"id": "223695942"},
 {"type": "Feature", "properties": {"ID": "286478749"},"geometry": {"coordinates": [9.2941729684856,41.650592643788],"type": "Point"},"id": "286478749"},
 {"type": "Feature", "properties": {"ID": "286478800"},"geometry": {"coordinates": [9.261368516781,41.531634649013],"type": "Point"},"id": "286478800"},
+{"type": "Feature", "properties": {"ID": "286478814"},"geometry": {"coordinates": [9.2976645922595,41.65554006438],"type": "Point"},"id": "286478814"},
 {"type": "Feature", "properties": {"ID": "286478852"},"geometry": {"coordinates": [9.2429239577612,41.51194087132],"type": "Point"},"id": "286478852"},
-{"type": "Feature", "properties": {"ID": "223695942"},"geometry": {"coordinates": [9.3895167344617,43.006548953421],"type": "Point"},"id": "223695942"},
-{"type": "Feature", "properties": {"ID": "223695940"},"geometry": {"coordinates": [9.4655771628255,42.90526765249],"type": "Point"},"id": "223695940"},
 {"type": "Feature", "properties": {"ID": "286478853"},"geometry": {"coordinates": [9.2429239577612,41.51194087132],"type": "Point"},"id": "286478853"},
-{"type": "Feature", "properties": {"ID": "286478854"},"geometry": {"coordinates": [9.2429239577612,41.51194087132],"type": "Point"},"id": "286478854"},
-{"type": "Feature", "properties": {"ID": "286478814"},"geometry": {"coordinates": [9.2976645922595,41.65554006438],"type": "Point"},"id": "286478814"}
+{"type": "Feature", "properties": {"ID": "286478854"},"geometry": {"coordinates": [9.2429239577612,41.51194087132],"type": "Point"},"id": "286478854"}
 ]}

@@ -2,15 +2,15 @@
 "type": "FeatureCollection",
 "name": "Cicadetta_brevipennis_litoralis",
 "features": [
-{"type": "Feature", "properties": {"ID": "3471724210"},"geometry": {"coordinates": [3.00845,42.75386],"type": "Point"},"id": "3471724210"},
+{"type": "Feature", "properties": {"ID": "3471688501"},"geometry": {"coordinates": [3.00845,42.75386],"type": "Point"},"id": "3471688501"},
+{"type": "Feature", "properties": {"ID": "3471699331"},"geometry": {"coordinates": [3.00845,42.75386],"type": "Point"},"id": "3471699331"},
+{"type": "Feature", "properties": {"ID": "3471702122"},"geometry": {"coordinates": [3.00845,42.75386],"type": "Point"},"id": "3471702122"},
+{"type": "Feature", "properties": {"ID": "3471705138"},"geometry": {"coordinates": [2.98155,42.64088],"type": "Point"},"id": "3471705138"},
 {"type": "Feature", "properties": {"ID": "3471710007"},"geometry": {"coordinates": [3.00845,42.75386],"type": "Point"},"id": "3471710007"},
 {"type": "Feature", "properties": {"ID": "3471716682"},"geometry": {"coordinates": [3.00845,42.75386],"type": "Point"},"id": "3471716682"},
-{"type": "Feature", "properties": {"ID": "3471699331"},"geometry": {"coordinates": [3.00845,42.75386],"type": "Point"},"id": "3471699331"},
+{"type": "Feature", "properties": {"ID": "3471720203"},"geometry": {"coordinates": [3.00845,42.75386],"type": "Point"},"id": "3471720203"},
 {"type": "Feature", "properties": {"ID": "3471721821"},"geometry": {"coordinates": [3.00845,42.75386],"type": "Point"},"id": "3471721821"},
 {"type": "Feature", "properties": {"ID": "3471724077"},"geometry": {"coordinates": [3.00845,42.75386],"type": "Point"},"id": "3471724077"},
-{"type": "Feature", "properties": {"ID": "3471720203"},"geometry": {"coordinates": [3.00845,42.75386],"type": "Point"},"id": "3471720203"},
-{"type": "Feature", "properties": {"ID": "3471705138"},"geometry": {"coordinates": [2.98155,42.64088],"type": "Point"},"id": "3471705138"},
-{"type": "Feature", "properties": {"ID": "3471702122"},"geometry": {"coordinates": [3.00845,42.75386],"type": "Point"},"id": "3471702122"},
-{"type": "Feature", "properties": {"ID": "3471688501"},"geometry": {"coordinates": [3.00845,42.75386],"type": "Point"},"id": "3471688501"},
+{"type": "Feature", "properties": {"ID": "3471724210"},"geometry": {"coordinates": [3.00845,42.75386],"type": "Point"},"id": "3471724210"},
 {"type": "Feature", "properties": {"ID": "3861530465"},"geometry": {"coordinates": [2.52164,42.60003],"type": "Point"},"id": "3861530465"}
 ]}

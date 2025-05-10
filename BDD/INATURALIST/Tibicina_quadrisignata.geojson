@@ -2,10 +2,10 @@
 "type": "FeatureCollection",
 "name": "Tibicina_quadrisignata",
 "features": [
-{"type": "Feature", "properties": {"ID": "26908063"},"geometry": {"coordinates": [3.9544411842,44.4689219864],"type": "Point"},"id": "26908063"},
-{"type": "Feature", "properties": {"ID": "87696338"},"geometry": {"coordinates": [3.7123683097,44.0367348101],"type": "Point"},"id": "87696338"},
-{"type": "Feature", "properties": {"ID": "197317077"},"geometry": {"coordinates": [6.5208398351,43.2746677379],"type": "Point"},"id": "197317077"},
-{"type": "Feature", "properties": {"ID": "190291199"},"geometry": {"coordinates": [7.5908962637,44.0158025897],"type": "Point"},"id": "190291199"},
+{"type": "Feature", "properties": {"ID": "170796332"},"geometry": {"coordinates": [4.2403743044,45.4101007323],"type": "Point"},"id": "170796332"},
 {"type": "Feature", "properties": {"ID": "173600751"},"geometry": {"coordinates": [3.6116926931,44.0411909401],"type": "Point"},"id": "173600751"},
-{"type": "Feature", "properties": {"ID": "170796332"},"geometry": {"coordinates": [4.2403743044,45.4101007323],"type": "Point"},"id": "170796332"}
+{"type": "Feature", "properties": {"ID": "190291199"},"geometry": {"coordinates": [7.5908962637,44.0158025897],"type": "Point"},"id": "190291199"},
+{"type": "Feature", "properties": {"ID": "197317077"},"geometry": {"coordinates": [6.5208398351,43.2746677379],"type": "Point"},"id": "197317077"},
+{"type": "Feature", "properties": {"ID": "26908063"},"geometry": {"coordinates": [3.9544411842,44.4689219864],"type": "Point"},"id": "26908063"},
+{"type": "Feature", "properties": {"ID": "87696338"},"geometry": {"coordinates": [3.7123683097,44.0367348101],"type": "Point"},"id": "87696338"}
 ]}

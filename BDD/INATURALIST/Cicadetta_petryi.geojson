@@ -2,11 +2,11 @@
 "type": "FeatureCollection",
 "name": "Cicadetta_petryi",
 "features": [
-{"type": "Feature", "properties": {"ID": "189247102"},"geometry": {"coordinates": [6.627917178,43.8997224236],"type": "Point"},"id": "189247102"},
-{"type": "Feature", "properties": {"ID": "46609635"},"geometry": {"coordinates": [3.08549066,43.98103397],"type": "Point"},"id": "46609635"},
 {"type": "Feature", "properties": {"ID": "163547967"},"geometry": {"coordinates": [6.9745662063,43.7463641143],"type": "Point"},"id": "163547967"},
-{"type": "Feature", "properties": {"ID": "235484509"},"geometry": {"coordinates": [1.4837296307,42.7680939943],"type": "Point"},"id": "235484509"},
+{"type": "Feature", "properties": {"ID": "168815178"},"geometry": {"coordinates": [3.3351958171,44.2112990998],"type": "Point"},"id": "168815178"},
+{"type": "Feature", "properties": {"ID": "189247102"},"geometry": {"coordinates": [6.627917178,43.8997224236],"type": "Point"},"id": "189247102"},
 {"type": "Feature", "properties": {"ID": "230063489"},"geometry": {"coordinates": [3.0416977807,44.6087576955],"type": "Point"},"id": "230063489"},
-{"type": "Feature", "properties": {"ID": "67578221"},"geometry": {"coordinates": [3.2210112384,44.0733971461],"type": "Point"},"id": "67578221"},
-{"type": "Feature", "properties": {"ID": "168815178"},"geometry": {"coordinates": [3.3351958171,44.2112990998],"type": "Point"},"id": "168815178"}
+{"type": "Feature", "properties": {"ID": "235484509"},"geometry": {"coordinates": [1.4837296307,42.7680939943],"type": "Point"},"id": "235484509"},
+{"type": "Feature", "properties": {"ID": "46609635"},"geometry": {"coordinates": [3.08549066,43.98103397],"type": "Point"},"id": "46609635"},
+{"type": "Feature", "properties": {"ID": "67578221"},"geometry": {"coordinates": [3.2210112384,44.0733971461],"type": "Point"},"id": "67578221"}
 ]}
