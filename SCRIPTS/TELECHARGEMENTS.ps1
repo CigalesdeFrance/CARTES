@@ -371,11 +371,12 @@ $bdd_codes | ForEach-Object {
 		
 		if (-not $resultats) {
 		
-			"ID,LATITUDE,LONGITUDE,DATE,ALTITUDE" | Set-Content -Path "./BDD/$bdd_nom/$fichier"
+			'"ID,LATITUDE","LONGITUDE","DATE","ALTITUDE"' | Set-Content -Path "./BDD/$bdd_nom/$fichier"
 		
 		} else {
 			
-			$resultats | Export-Csv -Path "./BDD/$bdd_nom/$fichier" -NoTypeInformation
+			$resultats-tri = $resultats | Sort-Object ID
+			$resultats_tri | Export-Csv -Path "./BDD/$bdd_nom/$fichier" -NoTypeInformation
 		}
 		
 	}
