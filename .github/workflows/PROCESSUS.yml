@@ -13,8 +13,12 @@ jobs:
     uses: ./.github/workflows/TELECHARGEMENTS.yml
     secrets: inherit
 
-  FICHIER-KML-GEOJSON:
+  ALTITUDE:
       needs: TELECHARGEMENTS-BDD
+      uses: ./.github/workflows/ALTITUDE.yml
+
+  FICHIER-KML-GEOJSON:
+      needs: ALTITUDE
       uses: ./.github/workflows/FICHIERS.yml
   
   CARTES:

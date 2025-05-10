@@ -1,0 +1,15 @@
+name: ALTITUDE
+on:
+  workflow_call:
+  workflow_dispatch:
+
+jobs:
+  ALTITUDE:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@main
+      
+      - name: Calcul de l'altitude
+        run:  |
+          git pull origin main
+          ./SCRIPTS/ALTITUDE.ps1

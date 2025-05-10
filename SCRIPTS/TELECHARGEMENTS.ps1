@@ -353,7 +353,7 @@ $bdd_codes | ForEach-Object {
 					$ancien.date -ne $nouveau.date
 				) {
 
-					$nouveau.altitude = $ancien.altitude
+					#$nouveau.altitude = $ancien.altitude // il est préférable de recalculer l'altitude si modification
 					$resultats += $nouveau
 					
 				} else {
