@@ -368,7 +368,7 @@ $bdd_codes | ForEach-Object {
 		
 		if (-not $resultats) {
 		
-			'"ID,LATITUDE","LONGITUDE","DATE","ALTITUDE"' | Set-Content -Path "./BDD/$bdd_nom/$fichier"
+			'"ID","LATITUDE","LONGITUDE","DATE","ALTITUDE"' | Set-Content -Path "./BDD/$bdd_nom/$fichier"
 		
 		} else {
 			
