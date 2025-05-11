@@ -12,36 +12,6 @@
 			<name>GBIF</name>
 			<Placemark>
 				<styleUrl>#gbif</styleUrl>
-				<description>https://www.gbif.org/occurrence/2594760044</description>
-				<Point><coordinates>7.61728,44.11536</coordinates></Point>
-			</Placemark> 
-			<Placemark>
-				<styleUrl>#gbif</styleUrl>
-				<description>https://www.gbif.org/occurrence/2594760045</description>
-				<Point><coordinates>7.60417,44.09524</coordinates></Point>
-			</Placemark> 
-			<Placemark>
-				<styleUrl>#gbif</styleUrl>
-				<description>https://www.gbif.org/occurrence/2594760047</description>
-				<Point><coordinates>7.6026,44.09411</coordinates></Point>
-			</Placemark> 
-			<Placemark>
-				<styleUrl>#gbif</styleUrl>
-				<description>https://www.gbif.org/occurrence/2594760048</description>
-				<Point><coordinates>7.6133,44.10826</coordinates></Point>
-			</Placemark> 
-			<Placemark>
-				<styleUrl>#gbif</styleUrl>
-				<description>https://www.gbif.org/occurrence/2594760049</description>
-				<Point><coordinates>7.6133,44.10826</coordinates></Point>
-			</Placemark> 
-			<Placemark>
-				<styleUrl>#gbif</styleUrl>
-				<description>https://www.gbif.org/occurrence/2594760050</description>
-				<Point><coordinates>7.6026,44.09411</coordinates></Point>
-			</Placemark> 
-			<Placemark>
-				<styleUrl>#gbif</styleUrl>
 				<description>https://www.gbif.org/occurrence/3471688727</description>
 				<Point><coordinates>7.6026,44.09411</coordinates></Point>
 			</Placemark> 
@@ -217,11 +187,6 @@
 			</Placemark> 
 			<Placemark>
 				<styleUrl>#gbif</styleUrl>
-				<description>https://www.gbif.org/occurrence/4083874675</description>
-				<Point><coordinates>7.58777,44.04039</coordinates></Point>
-			</Placemark> 
-			<Placemark>
-				<styleUrl>#gbif</styleUrl>
 				<description>https://www.gbif.org/occurrence/4085458026</description>
 				<Point><coordinates>7.5914,44.08531</coordinates></Point>
 			</Placemark> 
@@ -237,11 +202,6 @@
 			</Placemark> 
 			<Placemark>
 				<styleUrl>#gbif</styleUrl>
-				<description>https://www.gbif.org/occurrence/4085475029</description>
-				<Point><coordinates>7.58415,43.99547</coordinates></Point>
-			</Placemark> 
-			<Placemark>
-				<styleUrl>#gbif</styleUrl>
 				<description>https://www.gbif.org/occurrence/4085477191</description>
 				<Point><coordinates>7.5914,44.08531</coordinates></Point>
 			</Placemark> 
@@ -254,11 +214,6 @@
 				<styleUrl>#gbif</styleUrl>
 				<description>https://www.gbif.org/occurrence/4085490651</description>
 				<Point><coordinates>7.53265,44.13284</coordinates></Point>
-			</Placemark> 
-			<Placemark>
-				<styleUrl>#gbif</styleUrl>
-				<description>https://www.gbif.org/occurrence/4085499598</description>
-				<Point><coordinates>7.58415,43.99547</coordinates></Point>
 			</Placemark> 
 			<Placemark>
 				<styleUrl>#gbif</styleUrl>
@@ -357,11 +312,6 @@
 			</Placemark> 
 			<Placemark>
 				<styleUrl>#gbif</styleUrl>
-				<description>https://www.gbif.org/occurrence/4085626116</description>
-				<Point><coordinates>7.58415,43.99547</coordinates></Point>
-			</Placemark> 
-			<Placemark>
-				<styleUrl>#gbif</styleUrl>
 				<description>https://www.gbif.org/occurrence/4085639558</description>
 				<Point><coordinates>7.59503,44.13024</coordinates></Point>
 			</Placemark> 
@@ -377,23 +327,8 @@
 			</Placemark> 
 			<Placemark>
 				<styleUrl>#gbif</styleUrl>
-				<description>https://www.gbif.org/occurrence/4085663283</description>
-				<Point><coordinates>7.58415,43.99547</coordinates></Point>
-			</Placemark> 
-			<Placemark>
-				<styleUrl>#gbif</styleUrl>
-				<description>https://www.gbif.org/occurrence/4085677557</description>
-				<Point><coordinates>7.58415,43.99547</coordinates></Point>
-			</Placemark> 
-			<Placemark>
-				<styleUrl>#gbif</styleUrl>
 				<description>https://www.gbif.org/occurrence/4085695666</description>
 				<Point><coordinates>7.59503,44.13024</coordinates></Point>
-			</Placemark> 
-			<Placemark>
-				<styleUrl>#gbif</styleUrl>
-				<description>https://www.gbif.org/occurrence/4148519542</description>
-				<Point><coordinates>7.54051,44.0998</coordinates></Point>
 			</Placemark>
 		</Folder>
 	</Document>

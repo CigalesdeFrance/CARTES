@@ -32,21 +32,6 @@
 			</Placemark> 
 			<Placemark>
 				<styleUrl>#inaturalist</styleUrl>
-				<description>https://www.inaturalist.org/observations/167157034</description>
-				<Point><coordinates>9.4537278824,42.0566590745</coordinates></Point>
-			</Placemark> 
-			<Placemark>
-				<styleUrl>#inaturalist</styleUrl>
-				<description>https://www.inaturalist.org/observations/167157853</description>
-				<Point><coordinates>9.5519278174,42.1432141103</coordinates></Point>
-			</Placemark> 
-			<Placemark>
-				<styleUrl>#inaturalist</styleUrl>
-				<description>https://www.inaturalist.org/observations/167326400</description>
-				<Point><coordinates>8.7978296821,42.0407684776</coordinates></Point>
-			</Placemark> 
-			<Placemark>
-				<styleUrl>#inaturalist</styleUrl>
 				<description>https://www.inaturalist.org/observations/179728671</description>
 				<Point><coordinates>8.85322,42.606125</coordinates></Point>
 			</Placemark> 
@@ -54,11 +39,6 @@
 				<styleUrl>#inaturalist</styleUrl>
 				<description>https://www.inaturalist.org/observations/201774336</description>
 				<Point><coordinates>3.2473924377,43.2446823091</coordinates></Point>
-			</Placemark> 
-			<Placemark>
-				<styleUrl>#inaturalist</styleUrl>
-				<description>https://www.inaturalist.org/observations/229328454</description>
-				<Point><coordinates>9.260709174,42.3203937155</coordinates></Point>
 			</Placemark> 
 			<Placemark>
 				<styleUrl>#inaturalist</styleUrl>
@@ -84,16 +64,6 @@
 				<styleUrl>#inaturalist</styleUrl>
 				<description>https://www.inaturalist.org/observations/249936322</description>
 				<Point><coordinates>3.1751083333,43.2611805556</coordinates></Point>
-			</Placemark> 
-			<Placemark>
-				<styleUrl>#inaturalist</styleUrl>
-				<description>https://www.inaturalist.org/observations/63695663</description>
-				<Point><coordinates>2.9802620318,43.0915869519</coordinates></Point>
-			</Placemark> 
-			<Placemark>
-				<styleUrl>#inaturalist</styleUrl>
-				<description>https://www.inaturalist.org/observations/92546427</description>
-				<Point><coordinates>2.9537836835,43.1616666176</coordinates></Point>
 			</Placemark>
 		</Folder>
 	</Document>

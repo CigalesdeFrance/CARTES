@@ -10,61 +10,6 @@
 		<name>Cicadetta_brevipennis_litoralis</name>
 		<Folder>
 			<name>GBIF</name>
-			<Placemark>
-				<styleUrl>#gbif</styleUrl>
-				<description>https://www.gbif.org/occurrence/3471688501</description>
-				<Point><coordinates>3.00845,42.75386</coordinates></Point>
-			</Placemark> 
-			<Placemark>
-				<styleUrl>#gbif</styleUrl>
-				<description>https://www.gbif.org/occurrence/3471699331</description>
-				<Point><coordinates>3.00845,42.75386</coordinates></Point>
-			</Placemark> 
-			<Placemark>
-				<styleUrl>#gbif</styleUrl>
-				<description>https://www.gbif.org/occurrence/3471702122</description>
-				<Point><coordinates>3.00845,42.75386</coordinates></Point>
-			</Placemark> 
-			<Placemark>
-				<styleUrl>#gbif</styleUrl>
-				<description>https://www.gbif.org/occurrence/3471705138</description>
-				<Point><coordinates>2.98155,42.64088</coordinates></Point>
-			</Placemark> 
-			<Placemark>
-				<styleUrl>#gbif</styleUrl>
-				<description>https://www.gbif.org/occurrence/3471710007</description>
-				<Point><coordinates>3.00845,42.75386</coordinates></Point>
-			</Placemark> 
-			<Placemark>
-				<styleUrl>#gbif</styleUrl>
-				<description>https://www.gbif.org/occurrence/3471716682</description>
-				<Point><coordinates>3.00845,42.75386</coordinates></Point>
-			</Placemark> 
-			<Placemark>
-				<styleUrl>#gbif</styleUrl>
-				<description>https://www.gbif.org/occurrence/3471720203</description>
-				<Point><coordinates>3.00845,42.75386</coordinates></Point>
-			</Placemark> 
-			<Placemark>
-				<styleUrl>#gbif</styleUrl>
-				<description>https://www.gbif.org/occurrence/3471721821</description>
-				<Point><coordinates>3.00845,42.75386</coordinates></Point>
-			</Placemark> 
-			<Placemark>
-				<styleUrl>#gbif</styleUrl>
-				<description>https://www.gbif.org/occurrence/3471724077</description>
-				<Point><coordinates>3.00845,42.75386</coordinates></Point>
-			</Placemark> 
-			<Placemark>
-				<styleUrl>#gbif</styleUrl>
-				<description>https://www.gbif.org/occurrence/3471724210</description>
-				<Point><coordinates>3.00845,42.75386</coordinates></Point>
-			</Placemark> 
-			<Placemark>
-				<styleUrl>#gbif</styleUrl>
-				<description>https://www.gbif.org/occurrence/3861530465</description>
-				<Point><coordinates>2.52164,42.60003</coordinates></Point>
-			</Placemark>
 		</Folder>
 	</Document>
 </kml>
