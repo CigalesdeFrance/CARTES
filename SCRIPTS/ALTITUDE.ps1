@@ -54,7 +54,10 @@ $bdd_codes | ForEach-Object {
 				
 				# Mettre à jour les altitudes dans le group
 				for ($i = 0; $i -lt $response.elevations.Count; $i++) {
-					$group[$i].ALTITUDE = $response.elevations[$i].z
+				
+					$altitude = $response.elevations[$i].z					
+					if ($altitude -lt 0) { $altitude = -99999 } # si <0 (erreur, les Cigales sont terrestres) alors saisie d'une altitude facilement repérable a posteriori
+					$group[$i].ALTITUDE = $altitude
 				}
 			}
 			
