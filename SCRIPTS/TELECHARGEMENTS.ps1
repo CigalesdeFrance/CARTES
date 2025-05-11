@@ -54,7 +54,7 @@ $cigales_codes | ForEach-Object {
 			Add-Content "./BDD/INPN/TEMP/$code.csv" "ID,LATITUDE,LONGITUDE,DATE,ALTITUDE"
 		}
 		else {
-			$trurl = 'https://openobs.mnhn.fr/biocache-service/occurrences/search?q=taxonConceptID:' + $inpn +' AND ((dynamicProperties_nivValNationale:"Certain - très probable") OR (dynamicProperties_nivValNationale:"Probable") OR (dynamicProperties_nivValNationale:"Non réalisable")) AND ((dynamicProperties_nivValRegionale:"Certain - très probable") OR (dynamicProperties_nivValRegionale:"Probable") OR (dynamicProperties_nivValRegionale:"Non réalisable") OR (*:* dynamicProperties_nivValRegionale:*))'
+			$trurl = 'https://openobs.mnhn.fr/biocache-service/occurrences/search?q=taxonConceptID:' + $inpn +' AND (raw_dataGeneralizations:"XY+point") AND ((dynamicProperties_nivValNationale:"Certain - très probable") OR (dynamicProperties_nivValNationale:"Probable") OR (dynamicProperties_nivValNationale:"Non réalisable")) AND ((dynamicProperties_nivValRegionale:"Certain - très probable") OR (dynamicProperties_nivValRegionale:"Probable") OR (dynamicProperties_nivValRegionale:"Non réalisable") OR (*:* dynamicProperties_nivValRegionale:*))'
 			$totalRecords = (Invoke-WebRequest $trurl | ConvertFrom-Json).totalRecords
 			if ($totalRecords -eq 0) {
 				"  > L'espèce est présente dans INPN mais ne possède aucune donnée" 
@@ -71,7 +71,8 @@ $cigales_codes | ForEach-Object {
 					"page $num sur $pages"
 					$jsonurl = $trurl + '&startIndex=' + $startIndex + '&pageSize=300'
 					$json = (Invoke-WebRequest $jsonurl | ConvertFrom-Json)
-					$json_filter = $json.occurrences -match "latLong" # Vérification de la présence de coordonnées
+					$json_coord = $json.occurrences -match "latLong" # Vérification de la présence de coordonnées
+					$json_filter = $json_coord | Where-Object { -not $_.PSObject.Properties['coordinateUncertaintyInMeters'] -or ($_.coordinateUncertaintyInMeters -le 100) } # Si présence de précision GPS alors sélection <= 100 m				
 					
 					$id = $json_filter.uuid | Add-Content "./BDD/INPN/TEMP/$code-id.csv"
 					$latLong = $json_filter.latLong | Add-Content "./BDD/INPN/TEMP/$code-coord.csv"
@@ -86,8 +87,6 @@ $cigales_codes | ForEach-Object {
 							$datetime.ToString('yyyy-MM-dd') | Add-Content "./BDD/INPN/TEMP/$code-date.csv"
 						}
 					}
-					
-					######## vérifier la cohérence avec $month et $year ########
 				}
 				
 				$id = Get-content "./BDD/INPN/TEMP/$code-id.csv"
@@ -109,7 +108,7 @@ $cigales_codes | ForEach-Object {
 	else {
 		"  > L'API de l'INPN est inaccessible"
 	}
-	
+ 	
 	# INATURALIST
 	"Inaturalist - $nom"
 	if ($INATURALIST_url.StatusCode -eq "OK") {
@@ -132,7 +131,8 @@ $cigales_codes | ForEach-Object {
 				for ($num=1;$num -le $pages;$num++) {
 					"page $num sur $pages"
 					$json = (Invoke-WebRequest "https://api.inaturalist.org/v1/observations?&place_id=6753&taxon_id=$inaturalist&page=$num&per_page=200" | ConvertFrom-Json)
-					$json_filter = $json.results | where {$_.quality_grade -ne "needs_id"} # Observation au moins validée par une personne
+					$json_valid = $json.results | where { ($_.quality_grade -ne "needs_id") -and ($_.geoprivacy -ne "obscured") } # Observation au moins validée par une personne et non obscurcie
+					$json_filter = $json_valid | Where-Object { $_.positional_accuracy -le 100 } # précision GPS <= 100m
 					
 					$json_filter.id | Add-Content "./BDD/INATURALIST/TEMP/$code-id.csv"
 					$json_filter.location | Add-Content "./BDD/INATURALIST/TEMP/$code-coord.csv"
@@ -182,7 +182,8 @@ $cigales_codes | ForEach-Object {
 					$json = (Invoke-WebRequest "https://observation.org/api/v1/species/$observation/observations/?country_id=78&offset=$offset&limit=300" -Headers $OBS_HEADERS  | ConvertFrom-Json)
 					$json_filter = $json.results | where {$_.is_certain -eq "True"} # Observation certaine
 					$json_valid = $json_filter | where { ($_.validation_status -ne "I") -and ($_.validation_status -ne "N") } # Observation pas en attente ou invalide
-					$json_end = $json_valid | where {$_.number -gt 0} # Effectif supérieur à 0
+					$json_precis = $json_valid | Where-Object { $_.accuracy -le 100 } # précision GPS <= 100m
+					$json_end = $json_precis | where {$_.number -gt 0} # Effectif supérieur à 0
 					
 					For ($i=0; $i -le (($json_end.Length)-1); $i++) {
 						$id = $json_end[$i].id
@@ -224,8 +225,9 @@ $cigales_codes | ForEach-Object {
 					#$offset
 					"page $num sur $pages"
 					$json = (Invoke-WebRequest "https://api.gbif.org/v1/occurrence/search?country=FR&taxon_key=$gbif&occurrenceStatus=PRESENT&offset=$offset&limit=300" | ConvertFrom-Json)
-					$json_filter = $json.results | where { ($_.identificationVerificationStatus -ne "Douteux") -and ($_.identificationVerificationStatus -ne "Invalide") } # Observation non douteuse ou invalide
-					$json_filter = $json_filter -match "decimalLatitude" # Vérification de la présence de coordonnées
+					$json_valid = $json.results | where { ($_.identificationVerificationStatus -ne "Douteux") -and ($_.identificationVerificationStatus -ne "Invalide") } # Observation non douteuse ou invalide
+					$json_coord = $json_valid -match "decimalLatitude" # Vérification de la présence de coordonnées
+					$json_filter = $json_coord | Where-Object { ($_.footprintWKT -and $_.footprintWKT.StartsWith("POINT")) -or ($_.coordinateUncertaintyInMeters -and $_.coordinateUncertaintyInMeters -le 100) } # Observation de type "point" ou avec une précision GPS <= 100 m
 					
 					$id = $json_filter.key | Add-Content "./BDD/GBIF/TEMP/$code-id.csv"
 					$lat = $json_filter.decimalLatitude | Add-Content "./BDD/GBIF/TEMP/$code-lat.csv" 
