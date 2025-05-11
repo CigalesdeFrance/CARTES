@@ -227,7 +227,11 @@ $cigales_codes | ForEach-Object {
 					$json = (Invoke-WebRequest "https://api.gbif.org/v1/occurrence/search?country=FR&taxon_key=$gbif&occurrenceStatus=PRESENT&offset=$offset&limit=300" | ConvertFrom-Json)
 					$json_valid = $json.results | where { ($_.identificationVerificationStatus -ne "Douteux") -and ($_.identificationVerificationStatus -ne "Invalide") } # Observation non douteuse ou invalide
 					$json_coord = $json_valid -match "decimalLatitude" # Vérification de la présence de coordonnées
-					$json_filter = $json_coord | Where-Object { ($_.footprintWKT -and $_.footprintWKT.StartsWith("POINT")) -or ($_.coordinateUncertaintyInMeters -and $_.coordinateUncertaintyInMeters -le 100) } # Observation de type "point" ou avec une précision GPS <= 100 m
+					$json_filter = $json_coord | Where-Object {
+						if ($_.footprintWKT -and $_.footprintWKT.StartsWith("POINT")) { $true }
+						elseif (-not $_.footprintWKT -and $_.coordinateUncertaintyInMeters -and $_.coordinateUncertaintyInMeters -le 100) { $true } 
+						else { $false }
+					} # Observation de type "point" ou avec une précision GPS <= 100 m
 					
 					$id = $json_filter.key | Add-Content "./BDD/GBIF/TEMP/$code-id.csv"
 					$lat = $json_filter.decimalLatitude | Add-Content "./BDD/GBIF/TEMP/$code-lat.csv" 
