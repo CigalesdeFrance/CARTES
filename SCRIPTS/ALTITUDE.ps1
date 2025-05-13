@@ -60,6 +60,9 @@ $bdd_codes | ForEach-Object {
 					$group[$i].ALTITUDE = $altitude
 				}
 			}
+
+   			# Vérification
+      			foreach ($ligne in $csv) { if ($ligne.ALTITUDE -lt 0) { $ligne.ALTITUDE = -99999 } }
 			
 			# Sauvegarder dans le fichier d'origine
 			$csv | Export-Csv -Path "./BDD/$bdd_nom/$fichier" -NoTypeInformation
