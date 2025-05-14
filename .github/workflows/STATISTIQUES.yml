@@ -1,0 +1,17 @@
+name: STATISTIQUES
+on:
+  workflow_call:
+  workflow_dispatch:
+
+jobs:
+  STATISTIQUES:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@main
+      
+      - name: Calcul des statistiques
+        run:  |
+          git pull origin main
+          choco install r.project pandoc --no-progress -y
+          Rscript ./SCRIPTS/STATISTIQUES.R
+          ./SCRIPTS/FIN.ps1

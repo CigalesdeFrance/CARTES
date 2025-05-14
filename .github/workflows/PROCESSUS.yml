@@ -24,3 +24,7 @@ jobs:
   CARTES:
      needs: FICHIER-KML-GEOJSON
      uses: ./.github/workflows/CARTES.yml
+
+  STATISTIQUES:
+     needs: CARTES
+     uses: ./.github/workflows/STATISTIQUES.yml

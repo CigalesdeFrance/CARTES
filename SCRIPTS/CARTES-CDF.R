@@ -16,34 +16,33 @@ map_DEP <- tm_shape(DEPARTEMENTS) + tm_borders(col="grey") + tm_fill(alpha = 0)
 
 #### CREATION DES CARTES ET SAUVEGARDE ####
 for (i in 1:length(CIGALES_CODES$CODE)) {
-  print(CIGALES_CODES$NOM_SCIENTIFIQUE[i])
-
-  # Chargement des points
-  GBIF<- read.csv(paste0("./BDD/GBIF/",CIGALES_CODES$CODE[i],".csv"), h=T, sep=",")
-  INATURALIST<- read.csv(paste0("./BDD/INATURALIST/",CIGALES_CODES$CODE[i],".csv"), h=T, sep=",")
-  INPN<- read.csv(paste0("./BDD/INPN/",CIGALES_CODES$CODE[i],".csv"), h=T, sep=",")
-  OBSERVATION<- read.csv(paste0("./BDD/OBSERVATION/",CIGALES_CODES$CODE[i],".csv"), h=T, sep=",")
-  FAUNE_FRANCE<- read.csv(paste0("./BDD/FAUNE-FRANCE/",CIGALES_CODES$CODE[i],".csv"), h=T, sep=",")
-  
-  # Fusion des bases de données
-  df <- rbind(GBIF,INATURALIST,INPN,OBSERVATION,FAUNE_FRANCE)
-  data <- st_as_sf(data.frame(x=df$LONGITUDE,y=df$LATITUDE),coords = 1:2,crs=st_crs(CANTONS))
-  
-  # Recherche des points présents dans les cantons
-  CANTONS$CIGALE = lengths(st_contains(CANTONS,data)) > 0
-  
-  # Style de la couche variable
-  map_CAN <- tm_shape(CANTONS) + tm_polygons("CIGALE", 
-                                             palette=c("TRUE" = "red", "FALSE" = "white"), 
-                                             border.alpha = 0, 
-                                             legend.show = FALSE)
-  
-  # Création de la carte finale
-  map_fr <- map_CAN + map_DEP + map_REG + tm_layout(title = CIGALES_CODES$NOM_SCIENTIFIQUE[i],
-                                                    fontface = "italic",
-                                                    fontfamily = "serif")
-
-  # Enregistrement  
-  tmap_save(map_fr, filename=paste0("./BDD/CDF/",CIGALES_CODES$CODE[i],".png"))
-
+	print(CIGALES_CODES$NOM_SCIENTIFIQUE[i])
+	
+	# Chargement des points
+	GBIF<- read.csv(paste0("./BDD/GBIF/",CIGALES_CODES$CODE[i],".csv"), h=T, sep=",")
+	INATURALIST<- read.csv(paste0("./BDD/INATURALIST/",CIGALES_CODES$CODE[i],".csv"), h=T, sep=",")
+	INPN<- read.csv(paste0("./BDD/INPN/",CIGALES_CODES$CODE[i],".csv"), h=T, sep=",")
+	OBSERVATION<- read.csv(paste0("./BDD/OBSERVATION/",CIGALES_CODES$CODE[i],".csv"), h=T, sep=",")
+	FAUNE_FRANCE<- read.csv(paste0("./BDD/FAUNE-FRANCE/",CIGALES_CODES$CODE[i],".csv"), h=T, sep=",")
+	
+	# Fusion des bases de données
+	df <- rbind(GBIF,INATURALIST,INPN,OBSERVATION,FAUNE_FRANCE)
+	data <- st_as_sf(data.frame(x=df$LONGITUDE,y=df$LATITUDE),coords = 1:2,crs=st_crs(CANTONS))
+	
+	# Recherche des points présents dans les cantons
+	CANTONS$CIGALE = lengths(st_contains(CANTONS,data)) > 0
+	
+	# Style de la couche variable
+	map_CAN <- tm_shape(CANTONS) + tm_polygons("CIGALE", 
+												palette=c("TRUE" = "red", "FALSE" = "white"),
+												border.alpha = 0,
+												legend.show = FALSE)
+	
+	# Création de la carte finale
+	map_fr <- map_CAN + map_DEP + map_REG + tm_layout(title = CIGALES_CODES$NOM_SCIENTIFIQUE[i],
+														fontface = "italic",
+														fontfamily = "serif")
+	
+	# Enregistrement  
+	tmap_save(map_fr, filename=paste0("./BDD/CDF/",CIGALES_CODES$CODE[i],".png"))
 }
