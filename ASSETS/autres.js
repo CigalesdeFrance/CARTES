@@ -71,8 +71,8 @@ choix.onchange = function() {
 		}
 	}
 
-	phenodiv.innerHTML = '<img class="gbif" src="'+ phenologie_url +'" alt="Phénologie des observations">';
-	altdiv.innerHTML = '<img class="gbif" src="'+ altitude_url +'" alt="Altitudes des observations">';
+	phenodiv.innerHTML = '<img class="gbif" style="max-width: 80%;" src="'+ phenologie_url +'" alt="Phénologie des observations">';
+	altdiv.innerHTML = '<img class="gbif" style="max-width: 80%;" src="'+ altitude_url +'" alt="Altitudes des observations">';
 	
 	};
 	choix.onchange();
