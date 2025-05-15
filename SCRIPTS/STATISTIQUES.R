@@ -6,6 +6,8 @@ library(dplyr)
 library(grid)
 library(cowplot)
 
+Sys.setlocale("LC_TIME", "fr_FR.UTF-8")
+
 #### CREATION DES VARIABLES ####
 CIGALES_CODES <- read.csv(file = "CIGALES-CODES.csv", header = T, sep = ",")
 
@@ -83,6 +85,7 @@ for (i in 1:length(CIGALES_CODES$CODE)) {
 				) +
 			theme_minimal() +
 			theme(axis.text.x = element_text(angle = 45, hjust = 1),
+					axis.title = element_text(face = "bold"),
 					axis.title.y = element_blank(),
 					axis.text.y = element_blank(),
 					axis.ticks.y = element_blank(),
