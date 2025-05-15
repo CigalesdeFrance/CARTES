@@ -23,6 +23,8 @@ choix.onchange = function() {
 	var ff_url = 'https://cartes.cigalesdefrance.fr/BDD/FAUNE-FRANCE/IMG/' + espece + '.png';
 	var onem_url = 'https://cartes.cigalesdefrance.fr/BDD/ONEM/' + espece + '.jpg';
 	var gbif_url = 'https://cartes.cigalesdefrance.fr/BDD/GBIF-EUROPE/'+ espece + '.png';
+	var phenologie_url = 'https://cartes.cigalesdefrance.fr/STATISTIQUES/PHENOLOGIE/'+ espece + '.png';
+	var altitude_url = 'https://cartes.cigalesdefrance.fr/STATISTIQUES/ALTITUDE/'+ espece + '.png';
 	
 	check_ff(ff_url);
 	function check_ff(ff_url) {
@@ -68,6 +70,9 @@ choix.onchange = function() {
 			gbifdiv.innerHTML = '<img class="gbif" src="https://cartes.cigalesdefrance.fr/BDD/GBIF-EUROPE/null.png" alt="Carte vide provenant de GBIF">';
 		}
 	}
+
+	phenodiv.innerHTML = '<img class="gbif" src="'+ phenologie_url +'" alt="Phénologie des observations">';
+	altdiv.innerHTML = '<img class="gbif" src="'+ altitude_url +'" alt="Altitudes des observations">';
 	
 	};
 	choix.onchange();
