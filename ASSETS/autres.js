@@ -23,8 +23,8 @@ choix.onchange = function() {
 	var ff_url = 'https://cartes.cigalesdefrance.fr/BDD/FAUNE-FRANCE/IMG/' + espece + '.png';
 	var onem_url = 'https://cartes.cigalesdefrance.fr/BDD/ONEM/' + espece + '.jpg';
 	var gbif_url = 'https://cartes.cigalesdefrance.fr/BDD/GBIF-EUROPE/'+ espece + '.png';
-	var phenologie_url = 'https://cartes.cigalesdefrance.fr/STATISTIQUES/PHENOLOGIE/'+ espece + '.png';
-	var altitude_url = 'https://cartes.cigalesdefrance.fr/STATISTIQUES/ALTITUDE/'+ espece + '.png';
+	var pheno_url = 'https://cartes.cigalesdefrance.fr/STATISTIQUES/PHENOLOGIE/'+ espece + '.png';
+	var alt_url = 'https://cartes.cigalesdefrance.fr/STATISTIQUES/ALTITUDE/'+ espece + '.png';
 	
 	check_ff(ff_url);
 	function check_ff(ff_url) {
@@ -66,13 +66,40 @@ choix.onchange = function() {
             gbifdiv.innerHTML = '<img class="gbif" src="'+ gbif_url +'" alt="Carte de la répartition de l\'espèce provenant de GBIF">';
 		}
         else {
-			console.log("URL de ONEM inaccessible ⛔");
+			console.log("URL de GBIF inaccessible ⛔");
 			gbifdiv.innerHTML = '<img class="gbif" src="https://cartes.cigalesdefrance.fr/BDD/GBIF-EUROPE/null.png" alt="Carte vide provenant de GBIF">';
 		}
 	}
 
-	phenodiv.innerHTML = '<img class="gbif" style="max-width: 80%;" src="'+ phenologie_url +'" alt="Phénologie des observations">';
-	altdiv.innerHTML = '<img class="gbif" style="max-width: 80%;" src="'+ altitude_url +'" alt="Altitudes des observations">';
+	check_pheno(pheno_url);
+	function check_pheno(pheno_url) {
+        var http = new XMLHttpRequest();
+        http.open('HEAD', pheno_url, false);
+        http.send();
+        if (http.status != 404) {
+			console.log("Phénologie accessible ✅");
+            phenodiv.innerHTML = '<img class="gbif" style="max-width: 80%;" src="'+ pheno_url +'" alt="Phénologie des observations">';
+		}
+        else {
+			console.log("Phénologie inaccessible ⛔");
+			phenodiv.innerHTML = '<img class="gbif" src="https://cartes.cigalesdefrance.fr/STATISTIQUES/PHENOLOGIE/null.png" alt="Aucune phénologie">';
+		}
+	}
+
+	check_alt(alt_url);
+	function check_alt(alt_url) {
+        var http = new XMLHttpRequest();
+        http.open('HEAD', alt_url, false);
+        http.send();
+        if (http.status != 404) {
+			console.log("Altitudes accessibles ✅");
+            altdiv.innerHTML = '<img class="gbif" style="max-width: 80%;" src="'+ alt_url +'" alt="Altitudes des observations">';
+		}
+        else {
+			console.log("Altitudes inaccessibles ⛔");
+			altdiv.innerHTML = '<img class="gbif" src="https://cartes.cigalesdefrance.fr/STATISTIQUES/ALTITUDE/null.png" alt="Aucune altitude">';
+		}
+	}
 	
 	};
 	choix.onchange();
