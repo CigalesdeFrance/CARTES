@@ -129,7 +129,7 @@ window.onload = function go() {
 			layers : [
 				{layer: layer_bdd1,
 					config: {
-						title: "Inaturalist",
+						title: "iNaturalist",
 						description: "Données provenant de Inaturalist, une base de données participative dont les identifications s'effectuent de manière communautaire à partir de photographies.",
 					}
 				},
