@@ -45,187 +45,176 @@ $cigales_codes | ForEach-Object {
 	$gbif = $_.GBIF
 	$col = $_.CATALOGUE_OF_LIFE
 	$fauna_europea = $_.FAUNA_EUROPEA
-
-	# INPN
-	"INPN - $nom"
-	if ($INPN_url.StatusCode -eq "OK") {
-		if ($inpn -eq "") {
-			"  > L'espèce n'existe pas dans INPN"
-			Add-Content "./BDD/INPN/TEMP/$code.csv" "ID,LATITUDE,LONGITUDE,DATE,ALTITUDE"
-		}
-		else {
-			$trurl = 'https://openobs.mnhn.fr/biocache-service/occurrences/search?q=taxonConceptID:' + $inpn +' AND (raw_dataGeneralizations:"XY+point") AND ((dynamicProperties_nivValNationale:"Certain - très probable") OR (dynamicProperties_nivValNationale:"Probable") OR (dynamicProperties_nivValNationale:"Non réalisable")) AND ((dynamicProperties_nivValRegionale:"Certain - très probable") OR (dynamicProperties_nivValRegionale:"Probable") OR (dynamicProperties_nivValRegionale:"Non réalisable") OR (*:* dynamicProperties_nivValRegionale:*))'
-			$totalRecords = (Invoke-WebRequest $trurl | ConvertFrom-Json).totalRecords
-			if ($totalRecords -eq 0) {
-				"  > L'espèce est présente dans INPN mais ne possède aucune donnée" 
+	
+	if ($code -eq "Cicada_orni") {
+		
+		# INPN
+		"INPN - $nom"
+		if ($INPN_url.StatusCode -eq "OK") {
+			if ($inpn -eq "") {
+				"  > L'espèce n'existe pas dans INPN"
 				Add-Content "./BDD/INPN/TEMP/$code.csv" "ID,LATITUDE,LONGITUDE,DATE,ALTITUDE"
 			}
 			else {
-				Add-Content "./BDD/INPN/TEMP/$code-id.csv" "ID"
-				Add-Content "./BDD/INPN/TEMP/$code-coord.csv" "LATITUDE,LONGITUDE"
-				Add-Content "./BDD/INPN/TEMP/$code-date.csv" "DATE"
-				$pages = [math]::floor($totalRecords/1000)
-				for ($num=0;$num -le $pages;$num++) {
-					if ($num -eq 0) {$startIndex=0} else {$startIndex = ($num*1000)}
-					#$startIndex
-					"page $num sur $pages"
-					$jsonurl = $trurl + '&startIndex=' + $startIndex + '&pageSize=1000'
-					$json = (Invoke-WebRequest $jsonurl | ConvertFrom-Json)
-					$json_coord = $json.occurrences -match "latLong" # Vérification de la présence de coordonnées
-					$json_filter = $json_coord | Where-Object { -not $_.PSObject.Properties['coordinateUncertaintyInMeters'] -or ($_.coordinateUncertaintyInMeters -le 100) } # Si présence de précision GPS alors sélection <= 100 m				
+				$trurl = 'https://openobs.mnhn.fr/biocache-service/occurrences/search?q=taxonConceptID:' + $inpn +' AND (raw_dataGeneralizations:"XY+point") AND ((dynamicProperties_nivValNationale:"Certain - très probable") OR (dynamicProperties_nivValNationale:"Probable") OR (dynamicProperties_nivValNationale:"Non réalisable")) AND ((dynamicProperties_nivValRegionale:"Certain - très probable") OR (dynamicProperties_nivValRegionale:"Probable") OR (dynamicProperties_nivValRegionale:"Non réalisable") OR (*:* dynamicProperties_nivValRegionale:*))'
+				$totalRecords = (Invoke-WebRequest $trurl | ConvertFrom-Json).totalRecords
+				if ($totalRecords -eq 0) {
+					"  > L'espèce est présente dans INPN mais ne possède aucune donnée" 
+					Add-Content "./BDD/INPN/TEMP/$code.csv" "ID,LATITUDE,LONGITUDE,DATE,ALTITUDE"
+				}
+				else {
+					$json = @()
 					
-					$id = $json_filter.uuid | Add-Content "./BDD/INPN/TEMP/$code-id.csv"
-					$latLong = $json_filter.latLong | Add-Content "./BDD/INPN/TEMP/$code-coord.csv"
-					
-					# DATE					
-					foreach ($donnee in $json_filter) {
-						if ($donnee.PSObject.Properties.Name -contains "eventDateEnd") {
-							"" | Add-Content "./BDD/INPN/TEMP/$code-date.csv"
-							} else {
-							$timestamp = $donnee.eventDate
-							$datetime = [datetimeoffset]::FromUnixTimeMilliseconds($timestamp).DateTime
-							$datetime.ToString('yyyy-MM-dd') | Add-Content "./BDD/INPN/TEMP/$code-date.csv"
+					$pages = [math]::floor($totalRecords/1000)
+					for ($i = 1; $i -le 3; $i++) { # avec l'INPN obligé de faire tourner plusieurs fois pour avoir toutes les données
+						for ($num=0;$num -le $pages;$num++) {
+							if ($num -eq 0) {$startIndex=0} else {$startIndex = ($num*1000)}
+							#$startIndex
+							"page $num sur $pages ($i/3)"
+							$jsonurl = $trurl + '&startIndex=' + $startIndex + '&pageSize=1000'
+							$json_live = (Invoke-WebRequest $jsonurl | ConvertFrom-Json)
+							$json_data = $json_live.occurrences
+							$json += $json_data
 						}
 					}
+					
+					$json_coord = $json -match "latLong" # Vérification de la présence de coordonnées
+					$json_filter = $json_coord | Where-Object { -not $_.PSObject.Properties['coordinateUncertaintyInMeters'] -or ($_.coordinateUncertaintyInMeters -le 100) } # Si présence de précision GPS alors sélection <= 100 m
+					
+					$export = $json_filter | Select-Object `
+					@{ Name = 'ID'; Expression = { $_.uuid } },
+					@{ Name = 'LATITUDE'; Expression = { ($_.latLong -split ',')[0] } },
+					@{ Name = 'LONGITUDE'; Expression = { ($_.latLong -split ',')[1] } },
+					@{ Name = 'DATE'; Expression = {
+						if ($_.PSObject.Properties.Name -contains "eventDateEnd") { "" 
+						} else { [datetimeoffset]::FromUnixTimeMilliseconds($_.eventDate).DateTime.ToString("yyyy-MM-dd") }
+					}},
+					@{ Name = 'ALTITUDE'; Expression = { "" } }
+					
+					$export | Sort-Object -Property ID -Unique | Export-Csv "./BDD/INPN/TEMP/$code.csv" -NoTypeInformation -Encoding UTF8
+					
 				}
-				
-				$id = Get-content "./BDD/INPN/TEMP/$code-id.csv"
-				$coord = Get-content "./BDD/INPN/TEMP/$code-coord.csv" 
-				$date = Get-content "./BDD/INPN/TEMP/$code-date.csv"
-				
-				$headers_INPN = "$($id[0]),$($coord[0]),$($date[0]),ALTITUDE"
-				$headers_INPN | Add-Content "./BDD/INPN/TEMP/$code.csv"
-				
-				$(for($index=1;$index -lt $coord.Count;$index++){$id[$index] + "," + $coord[$index] + "," + $date[$index] + ","}) | Add-Content "./BDD/INPN/TEMP/$code.csv"
-				(Get-Content "./BDD/INPN/TEMP/$code.csv") | ? {$_.trim() -ne "" } | Set-Content "./BDD/INPN/TEMP/$code.csv"
-				
-				Remove-item "./BDD/INPN/TEMP/$code-id.csv"
-				Remove-item "./BDD/INPN/TEMP/$code-coord.csv"
-				Remove-item "./BDD/INPN/TEMP/$code-date.csv"
 			}
-		}
-	}
-	else {
-		"  > L'API de l'INPN est inaccessible"
-	}
- 	
-	# INATURALIST
-	"Inaturalist - $nom"
-	if ($INATURALIST_url.StatusCode -eq "OK") {
-		if ($inaturalist -eq "") {
-			"  > L'espèce n'existe pas dans Inaturalist"
-			Add-Content "./BDD/INATURALIST/TEMP/$code.csv" "ID,LATITUDE,LONGITUDE,DATE,ALTITUDE"
 		}
 		else {
-			$total_results = (Invoke-WebRequest "https://api.inaturalist.org/v1/observations?&place_id=6753&taxon_id=$inaturalist" | ConvertFrom-Json).total_results
-			if ($total_results -eq 0) {
-				"  > L'espèce est présente dans Inaturalist mais ne possède aucune donnée"
-				Add-Content "./BDD/INATURALIST/TEMP/$code.csv" "ID,LATITUDE,LONGITUDE,DATE,ALTITUDE"		
+			"  > L'API de l'INPN est inaccessible"
+		}
+		
+		# INATURALIST
+		"Inaturalist - $nom"
+		if ($INATURALIST_url.StatusCode -eq "OK") {
+			if ($inaturalist -eq "") {
+				"  > L'espèce n'existe pas dans Inaturalist"
+				Add-Content "./BDD/INATURALIST/TEMP/$code.csv" "ID,LATITUDE,LONGITUDE,DATE,ALTITUDE"
 			}
 			else {
-				Add-Content "./BDD/INATURALIST/TEMP/$code-id.csv" "ID"
-				Add-Content "./BDD/INATURALIST/TEMP/$code-coord.csv" "LATITUDE,LONGITUDE"
-				Add-Content "./BDD/INATURALIST/TEMP/$code-date.csv" "DATE"
-				
-				$pages = [math]::ceiling($total_results/200)
-				for ($num=1;$num -le $pages;$num++) {
-					"page $num sur $pages"
-					$json = (Invoke-WebRequest "https://api.inaturalist.org/v1/observations?&place_id=6753&taxon_id=$inaturalist&page=$num&per_page=200" | ConvertFrom-Json)
-					$json_valid = $json.results | where { ($_.quality_grade -ne "needs_id") -and ($_.geoprivacy -ne "obscured") } # Observation au moins validée par une personne et non obscurcie
+				$total_results = (Invoke-WebRequest "https://api.inaturalist.org/v1/observations?&place_id=6753&taxon_id=$inaturalist" | ConvertFrom-Json).total_results
+				if ($total_results -eq 0) {
+					"  > L'espèce est présente dans Inaturalist mais ne possède aucune donnée"
+					Add-Content "./BDD/INATURALIST/TEMP/$code.csv" "ID,LATITUDE,LONGITUDE,DATE,ALTITUDE"		
+				}
+				else {
+					$json = @()
+					
+					$pages = [math]::ceiling($total_results/200)
+					for ($num=1;$num -le $pages;$num++) {
+						"page $num sur $pages"
+						$json_live = (Invoke-WebRequest "https://api.inaturalist.org/v1/observations?&place_id=6753&taxon_id=$inaturalist&page=$num&per_page=200" | ConvertFrom-Json)
+						$json_data = $json_live.results
+						$json += $json_data
+					}
+					
+					$json_valid = $json | where { ($_.quality_grade -ne "needs_id") -and ($_.geoprivacy -ne "obscured") } # Observation au moins validée par une personne et non obscurcie
 					$json_filter = $json_valid | Where-Object { $_.positional_accuracy -le 100 } # précision GPS <= 100m
 					
-					$json_filter.id | Add-Content "./BDD/INATURALIST/TEMP/$code-id.csv"
-					$json_filter.location | Add-Content "./BDD/INATURALIST/TEMP/$code-coord.csv"
-					$json_filter.observed_on | Add-Content "./BDD/INATURALIST/TEMP/$code-date.csv" 
-				}		
-				
-				$id = Get-content "./BDD/INATURALIST/TEMP/$code-id.csv"
-				$coord = Get-content "./BDD/INATURALIST/TEMP/$code-coord.csv" 
-				$date = Get-content "./BDD/INATURALIST/TEMP/$code-date.csv"
-				
-				$headers_INAT = "$($id[0]),$($coord[0]),$($date[0]),ALTITUDE"
-				$headers_INAT | Add-Content "./BDD/INATURALIST/TEMP/$code.csv"
-				
-				$(for($index=1;$index -lt $coord.Count;$index++){$id[$index] + "," + $coord[$index] + "," + $date[$index] + ","}) | Add-Content "./BDD/INATURALIST/TEMP/$code.csv"
-				(Get-Content "./BDD/INATURALIST/TEMP/$code.csv") | ? {$_.trim() -ne "" } | Set-Content "./BDD/INATURALIST/TEMP/$code.csv"
-				
-				Remove-item "./BDD/INATURALIST/TEMP/$code-id.csv"
-				Remove-item "./BDD/INATURALIST/TEMP/$code-coord.csv"
-				Remove-item "./BDD/INATURALIST/TEMP/$code-date.csv"
-			}
-		}
-	}
-	else {
-		"  > L'API d'iNaturalist est inaccessible"
-	}
-	
-	# OBSERVATION.ORG
-	"Observation.org - $nom"
-	if ($OBSERVATION_url.StatusCode -eq "OK") {
-		if ($observation -eq "") {
-			"  > L'espèce n'existe pas dans Observation.org"
-			Add-Content "./BDD/OBSERVATION/TEMP/$code.csv" "ID,LATITUDE,LONGITUDE,DATE,ALTITUDE"
-		}
-		else {
-			$count = (Invoke-WebRequest "https://observation.org/api/v1/species/$observation/observations/?country_id=78" -Headers $OBS_HEADERS | ConvertFrom-Json).count
-			if ($count -eq 0)  {
-				"  > L'espèce est présente dans Observation.org mais ne possède aucune donnée"
-				Add-Content "./BDD/OBSERVATION/TEMP/$code.csv" "ID,LATITUDE,LONGITUDE,DATE,ALTITUDE"
-			}
-			else {
-				Add-Content "./BDD/OBSERVATION/TEMP/$code.csv" "ID,LATITUDE,LONGITUDE,DATE,ALTITUDE"
-				$pages = [math]::floor($count/300)
-				for ($num=0;$num -le $pages;$num++) {
-					if ($num -eq 0) {$offset=0} else {$offset = ($num*300)}
-					#$offset
-					"page $num sur $pages"
-					$json = (Invoke-WebRequest "https://observation.org/api/v1/species/$observation/observations/?country_id=78&offset=$offset&limit=300" -Headers $OBS_HEADERS  | ConvertFrom-Json)
-					$json_filter = $json.results | where {$_.is_certain -eq "True"} # Observation certaine
-					$json_valid = $json_filter | where { ($_.validation_status -ne "I") -and ($_.validation_status -ne "N") } # Observation pas en attente ou invalide
-					$json_precis = $json_valid | Where-Object { $_.accuracy -le 100 } # précision GPS <= 100m
-					$json_end = $json_precis | where {$_.number -gt 0} # Effectif supérieur à 0
+					$export = $json_filter | Select-Object `
+					@{ Name = 'ID'; Expression = { $_.id } },
+					@{ Name = 'LATITUDE'; Expression = { ($_.location -split ',')[0] } },
+					@{ Name = 'LONGITUDE'; Expression = { ($_.location -split ',')[1] } },
+					@{ Name = 'DATE'; Expression = { $_.observed_on } },
+					@{ Name = 'ALTITUDE'; Expression = { "" } }	
 					
-					For ($i=0; $i -le (($json_end.Length)-1); $i++) {
-						$id = $json_end[$i].id
-						$lat = $json_end[$i].point.coordinates[1]
-						$long = $json_end[$i].point.coordinates[0]
-						$date = $json_end[$i].date
-						$value = "$($id),$($lat),$($long),$($date),"
-						$value | Add-Content "./BDD/OBSERVATION/TEMP/$code.csv"
-					}
+					$export | Sort-Object -Property ID -Unique | Export-Csv  "./BDD/INATURALIST/TEMP/$code.csv" -NoTypeInformation -Encoding UTF8
+					
 				}
 			}
 		}
-	}
-	else {
-		"  > L'API d'Observation.org est inaccessible"
-	}
-	
-	# GBIF
-	"GBIF - $nom"
-	if ($GBIF_url.StatusCode -eq "OK") {
-		if ($GBIF -eq "") {
-			"  > L'espèce n'existe pas dans GBIF"
-			Add-Content "./BDD/GBIF/TEMP/$code.csv" "ID,LATITUDE,LONGITUDE,DATE,ALTITUDE"
+		else {
+			"  > L'API d'iNaturalist est inaccessible"
+		}
+		
+		# OBSERVATION.ORG
+		"Observation.org - $nom"
+		if ($OBSERVATION_url.StatusCode -eq "OK") {
+			if ($observation -eq "") {
+				"  > L'espèce n'existe pas dans Observation.org"
+				Add-Content "./BDD/OBSERVATION/TEMP/$code.csv" "ID,LATITUDE,LONGITUDE,DATE,ALTITUDE"
+			}
+			else {
+				$count = (Invoke-WebRequest "https://observation.org/api/v1/species/$observation/observations/?country_id=78" -Headers $OBS_HEADERS | ConvertFrom-Json).count
+				if ($count -eq 0)  {
+					"  > L'espèce est présente dans Observation.org mais ne possède aucune donnée"
+					Add-Content "./BDD/OBSERVATION/TEMP/$code.csv" "ID,LATITUDE,LONGITUDE,DATE,ALTITUDE"
+				}
+				else {
+					$json = @()
+					
+					$pages = [math]::floor($count/300)
+					for ($num=0;$num -le $pages;$num++) {
+						if ($num -eq 0) {$offset=0} else {$offset = ($num*300)}
+						"page $num sur $pages"
+						$json_live = (Invoke-WebRequest "https://observation.org/api/v1/species/$observation/observations/?country_id=78&offset=$offset&limit=300" -Headers $OBS_HEADERS  | ConvertFrom-Json)
+						$json_data = $json_live.results
+						$json += $json_data
+					}
+					
+					$json_certain = $json | where {$_.is_certain -eq "True"} # Observation certaine
+					$json_valid = $json_certain | where { ($_.validation_status -ne "I") -and ($_.validation_status -ne "N") } # Observation pas en attente ou invalide
+					$json_precis = $json_valid | Where-Object { $_.accuracy -le 100 } # précision GPS <= 100m
+					$json_filter = $json_precis | where {$_.number -gt 0} # Effectif supérieur à 0
+					
+					$export = $json_filter | Select-Object `
+					@{ Name = 'ID'; Expression = { $_.id } },
+					@{ Name = 'LATITUDE'; Expression = { $_.point.coordinates[1] } },
+					@{ Name = 'LONGITUDE'; Expression = { $_.point.coordinates[0] } },
+					@{ Name = 'DATE'; Expression = { $_.date } },
+					@{ Name = 'ALTITUDE'; Expression = { "" } }	
+					
+					$export | Sort-Object -Property ID -Unique | Export-Csv  "./BDD/OBSERVATION/TEMP/$code.csv" -NoTypeInformation -Encoding UTF8
+					
+				}
+			}
 		}
 		else {
-			$count = (Invoke-WebRequest "https://api.gbif.org/v1/occurrence/search?country=FR&taxon_key=$gbif&occurrenceStatus=PRESENT" | ConvertFrom-Json).count
-			if ($count -eq 0)  {
-				"  > L'espèce est présente dans GBIF mais ne possède aucune donnée"
+			"  > L'API d'Observation.org est inaccessible"
+		}
+		
+		# GBIF
+		"GBIF - $nom"
+		if ($GBIF_url.StatusCode -eq "OK") {
+			if ($GBIF -eq "") {
+				"  > L'espèce n'existe pas dans GBIF"
 				Add-Content "./BDD/GBIF/TEMP/$code.csv" "ID,LATITUDE,LONGITUDE,DATE,ALTITUDE"
 			}
 			else {
-				Add-Content "./BDD/GBIF/TEMP/$code-id.csv" "ID"
-				Add-Content "./BDD/GBIF/TEMP/$code-coord.csv" "LATITUDE,LONGITUDE"
-				Add-Content "./BDD/GBIF/TEMP/$code-date.csv" "DATE"
-				
-				$pages = [math]::floor($count/300)
-				for ($num=0;$num -le $pages;$num++) {
-					if ($num -eq 0) {$offset=0} else {$offset = ($num*300)}
-					#$offset
-					"page $num sur $pages"
-					$json = (Invoke-WebRequest "https://api.gbif.org/v1/occurrence/search?country=FR&taxon_key=$gbif&occurrenceStatus=PRESENT&offset=$offset&limit=300" | ConvertFrom-Json)
-					$json_valid = $json.results | where { ($_.identificationVerificationStatus -ne "Douteux") -and ($_.identificationVerificationStatus -ne "Invalide") } # Observation non douteuse ou invalide
+				$count = (Invoke-WebRequest "https://api.gbif.org/v1/occurrence/search?country=FR&taxon_key=$gbif&occurrenceStatus=PRESENT" | ConvertFrom-Json).count
+				if ($count -eq 0)  {
+					"  > L'espèce est présente dans GBIF mais ne possède aucune donnée"
+					Add-Content "./BDD/GBIF/TEMP/$code.csv" "ID,LATITUDE,LONGITUDE,DATE,ALTITUDE"
+				}
+				else {
+					$json = @()
+					
+					$pages = [math]::floor($count/300)
+					for ($num=0;$num -le $pages;$num++) {
+						if ($num -eq 0) {$offset=0} else {$offset = ($num*300)}
+						"page $num sur $pages"
+						$json_live = (Invoke-WebRequest "https://api.gbif.org/v1/occurrence/search?country=FR&taxon_key=$gbif&occurrenceStatus=PRESENT&offset=$offset&limit=300" | ConvertFrom-Json)
+						$json_data = $json_live.results
+						$json += $json_data
+					}
+					
+					$json_valid = $json | where { ($_.identificationVerificationStatus -ne "Douteux") -and ($_.identificationVerificationStatus -ne "Invalide") } # Observation non douteuse ou invalide
 					$json_coord = $json_valid -match "decimalLatitude" # Vérification de la présence de coordonnées
 					$json_filter = $json_coord | Where-Object {
 						if ($_.footprintWKT -and $_.footprintWKT.StartsWith("POINT")) { $true }
@@ -233,89 +222,64 @@ $cigales_codes | ForEach-Object {
 						else { $false }
 					} # Observation de type "point" ou avec une précision GPS <= 100 m
 					
-					$id = $json_filter.key | Add-Content "./BDD/GBIF/TEMP/$code-id.csv"
-					$lat = $json_filter.decimalLatitude | Add-Content "./BDD/GBIF/TEMP/$code-lat.csv" 
-					$long = $json_filter.decimalLongitude | Add-Content "./BDD/GBIF/TEMP/$code-long.csv" 
+					$culture = New-Object System.Globalization.CultureInfo("en-US") #pour que github actions traite la date correctement
 					
-					# DATE
-					$date_saisie = $json_filter.eventDate
-					$culture = New-Object System.Globalization.CultureInfo("en-US")
-					
-					foreach ($saisie in $date_saisie) {
+					$export = $json_filter | Select-Object `
+					@{ Name = 'ID'; Expression = { $_.key } },
+					@{ Name = 'LATITUDE'; Expression = { $_.decimalLatitude } },
+					@{ Name = 'LONGITUDE'; Expression = { $_.decimalLongitude } },
+					@{ Name = 'DATE'; Expression = {
 						try {
-							$date = [datetime]::Parse($saisie, $culture)
-							$date.ToString("yyyy-MM-dd") | Add-Content "./BDD/GBIF/TEMP/$code-date.csv"
-						} catch {
-							# date invalide
-							"" | Add-Content "./BDD/GBIF/TEMP/$code-date.csv"
-						}
-					}
+							$date = [datetime]::Parse($_.eventDate, $culture)
+							$date.ToString("yyyy-MM-dd")
+						} catch { "" } # si date invalide
+					}},
+					@{ Name = 'ALTITUDE'; Expression = { "" } }
+					
+					$export | Sort-Object -Property ID -Unique | Export-Csv "./BDD/GBIF/TEMP/$code.csv" -NoTypeInformation -Encoding UTF8
+					
 				}
-				
-				$lat = Get-content "./BDD/GBIF/TEMP/$code-lat.csv" 
-				$long = Get-content "./BDD/GBIF/TEMP/$code-long.csv" 
-				$(for($index=0;$index -lt $lat.Count;$index++){$lat[$index] + "," + $long[$index]}) | Add-Content "./BDD/GBIF/TEMP/$code-coord.csv"
-				(Get-Content "./BDD/GBIF/TEMP/$code-coord.csv") | ? {$_.trim() -ne "" } | Set-Content "./BDD/GBIF/TEMP/$code-coord.csv"
-				Remove-item "./BDD/GBIF/TEMP/$code-lat.csv" 
-				Remove-item "./BDD/GBIF/TEMP/$code-long.csv" 
-				
-				$id = Get-content "./BDD/GBIF/TEMP/$code-id.csv"
-				$coord = Get-content "./BDD/GBIF/TEMP/$code-coord.csv"
-				$date = Get-content "./BDD/GBIF/TEMP/$code-date.csv"
-				
-				
-				
-				$headers_GBIF = "$($id[0]),$($coord[0]),$($date[0]),ALTITUDE"
-				$headers_GBIF | Add-Content "./BDD/GBIF/TEMP/$code.csv"
-				
-				$(for($index=1;$index -lt $coord.Count;$index++){$id[$index] + "," + $coord[$index] + "," + $date[$index] + ","}) | Add-Content "./BDD/GBIF/TEMP/$code.csv"
-				(Get-Content "./BDD/GBIF/TEMP/$code.csv") | ? {$_.trim() -ne "" } | Set-Content "./BDD/GBIF/TEMP/$code.csv"
-				
-				Remove-item "./BDD/GBIF/TEMP/$code-id.csv"
-				Remove-item "./BDD/GBIF/TEMP/$code-coord.csv"
-				Remove-item "./BDD/GBIF/TEMP/$code-date.csv"
 			}
 		}
-	}
-	else {
-		"  > L'API de GBIF est inaccessible"
-	}
-
-
-	# FAUNE-FRANCE
-	"FAUNE-FRANCE - $nom"
-	if ($FF_url.StatusCode -eq "OK") {
-		if ($faune_france -eq "") {
-			"  > L'espèce n'existe pas dans Faune-France"
-			Add-Content "./BDD/FAUNE-FRANCE/TEMP/$code.csv" "ID,LATITUDE,LONGITUDE,DATE,ALTITUDE"
-		}
 		else {
-			$ff_data_all = (Invoke-WebRequest "https://www.faune-france.org/index.php?m_id=95&action=geojson&sp_tg=19&sp_DChoice=all&sp_PChoice=all&sp_SChoice=species&sp_S=$faune_france" | ConvertFrom-Json).data
-			
-			$ff_data = $ff_data_all | where {$_.c -gt 0} # Effectif supérieur à 0
-			$count = $ff_data.count
-			
-			if ($count -eq 0)  {
-				"  > L'espèce est présente dans Faune-France mais ne possède aucune donnée"
+			"  > L'API de GBIF est inaccessible"
+		}
+		
+		
+		# FAUNE-FRANCE
+		"FAUNE-FRANCE - $nom"
+		if ($FF_url.StatusCode -eq "OK") {
+			if ($faune_france -eq "") {
+				"  > L'espèce n'existe pas dans Faune-France"
 				Add-Content "./BDD/FAUNE-FRANCE/TEMP/$code.csv" "ID,LATITUDE,LONGITUDE,DATE,ALTITUDE"
 			}
 			else {
-				Add-Content "./BDD/FAUNE-FRANCE/TEMP/$code.csv" "ID,LATITUDE,LONGITUDE,DATE,ALTITUDE"
+				$ff_data_all = (Invoke-WebRequest "https://www.faune-france.org/index.php?m_id=95&action=geojson&sp_tg=19&sp_DChoice=all&sp_PChoice=all&sp_SChoice=species&sp_S=$faune_france" | ConvertFrom-Json).data
 				
-				for ($num=0;$num -le ($count -1) ;$num++) {
-					$id = $ff_data[$num].i
-					$lat = $ff_data[$num].p[1]
-					$long = $ff_data[$num].p[0]
-					$date = $ff_data[$num].d
+				$ff_data = $ff_data_all | where {$_.c -gt 0} # Effectif supérieur à 0
+				$count = $ff_data.count
+				
+				if ($count -eq 0)  {
+					"  > L'espèce est présente dans Faune-France mais ne possède aucune donnée"
+					Add-Content "./BDD/FAUNE-FRANCE/TEMP/$code.csv" "ID,LATITUDE,LONGITUDE,DATE,ALTITUDE"
+				}
+				else {
 					
-					$value = "$($id),$($lat),$($long),$($date),"
-					$value | Add-Content "./BDD/FAUNE-FRANCE/TEMP/$code.csv"
+					$export = $ff_data | Select-Object `
+					@{ Name = 'ID'; Expression = { $_.i } },
+					@{ Name = 'LATITUDE'; Expression = { $_.p[1] } },
+					@{ Name = 'LONGITUDE'; Expression = { $_.p[0] } },
+					@{ Name = 'DATE'; Expression = { $_.d } },
+					@{ Name = 'ALTITUDE'; Expression = { "" } }	
+					
+					$export | Sort-Object -Property ID -Unique | Export-Csv  "./BDD/FAUNE-FRANCE/TEMP/$code.csv" -NoTypeInformation -Encoding UTF8
+					
 				}
 			}
 		}
-	}
-	else {
-		"  > Faune-France est inaccessible"
+		else {
+			"  > Faune-France est inaccessible"
+		}
 	}
 }
 
@@ -341,7 +305,7 @@ $bdd_codes | ForEach-Object {
 		# "dictionnaires" d'accès rapide par ID
 		$actuel_dico = @{}
 		foreach ($row in $actuel_csv) { $actuel_dico[$row.id] = $row }
-
+		
 		$nouveau_dico = @{}
 		foreach ($row in $nouveau_csv) { $nouveau_dico[$row.id] = $row }
 		
@@ -354,16 +318,16 @@ $bdd_codes | ForEach-Object {
 				$ancien = $actuel_dico[$id]
 				# Vérification des mises à jour
 				if ($ancien.latitude -ne $nouveau.latitude -or
-					$ancien.longitude -ne $nouveau.longitude -or
-					$ancien.date -ne $nouveau.date) {
+				$ancien.longitude -ne $nouveau.longitude -or
+				$ancien.date -ne $nouveau.date) {
 					
 					#$nouveau.altitude = $ancien.altitude // il est préférable de recalculer l'altitude si modification
 					$resultats += $nouveau
 					
-				} else {
+					} else {
 					$resultats += $ancien
 				}
-			} else {
+				} else {
 				$resultats += $nouveau
 			}
 		}
@@ -371,10 +335,10 @@ $bdd_codes | ForEach-Object {
 		Remove-item "./BDD/$bdd_nom/$fichier"
 		
 		if (-not $resultats) {
-		
+			
 			'"ID","LATITUDE","LONGITUDE","DATE","ALTITUDE"' | Set-Content -Path "./BDD/$bdd_nom/$fichier"
-		
-		} else {
+			
+			} else {
 			
 			$resultats_tri = $resultats | Sort-Object ID
 			$resultats_tri | Export-Csv -Path "./BDD/$bdd_nom/$fichier" -NoTypeInformation
@@ -382,7 +346,6 @@ $bdd_codes | ForEach-Object {
 	}
 	Remove-Item -Path "./BDD/$bdd_nom/TEMP/" -Recurse -Force
 }
-
 
 ### SAUVEGARDE GIT
 git config user.name 'github-actions[bot]'
