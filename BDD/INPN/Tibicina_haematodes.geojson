@@ -3,6 +3,7 @@
 "name": "Tibicina_haematodes",
 "features": [
 {"type": "Feature", "properties": {"ID": "00262e02-101b-4966-a9a9-6507acb78610"},"geometry": {"coordinates": [0.7281,43.54622],"type": "Point"},"id": "00262e02-101b-4966-a9a9-6507acb78610"},
+{"type": "Feature", "properties": {"ID": "0064ecd0-b8bf-4102-b11e-9765a7ab029e"},"geometry": {"coordinates": [1.43466,43.61004],"type": "Point"},"id": "0064ecd0-b8bf-4102-b11e-9765a7ab029e"},
 {"type": "Feature", "properties": {"ID": "0079eae1-6ec1-48af-98b6-1badd139c088"},"geometry": {"coordinates": [0.6472,47.4111],"type": "Point"},"id": "0079eae1-6ec1-48af-98b6-1badd139c088"},
 {"type": "Feature", "properties": {"ID": "009430bb-7729-4231-b446-ecb05854f643"},"geometry": {"coordinates": [2.28162,43.63072],"type": "Point"},"id": "009430bb-7729-4231-b446-ecb05854f643"},
 {"type": "Feature", "properties": {"ID": "00c45519-cefc-4636-88ee-d0e8c78459fa"},"geometry": {"coordinates": [1.78991,43.78448],"type": "Point"},"id": "00c45519-cefc-4636-88ee-d0e8c78459fa"},
@@ -1611,6 +1612,7 @@
 {"type": "Feature", "properties": {"ID": "c0ff7123-ad09-437a-b2b8-ec63b94b04a1"},"geometry": {"coordinates": [5.30857,44.50567],"type": "Point"},"id": "c0ff7123-ad09-437a-b2b8-ec63b94b04a1"},
 {"type": "Feature", "properties": {"ID": "c11438d0-29c3-4b75-9aad-cc172ed7cc17"},"geometry": {"coordinates": [1.82769,44.93124],"type": "Point"},"id": "c11438d0-29c3-4b75-9aad-cc172ed7cc17"},
 {"type": "Feature", "properties": {"ID": "c12593f9-4b40-45e2-8921-cb064410400d"},"geometry": {"coordinates": [3.73141,43.84971],"type": "Point"},"id": "c12593f9-4b40-45e2-8921-cb064410400d"},
+{"type": "Feature", "properties": {"ID": "c1273cdb-c59c-4bd9-bb0f-a6e58b32d746"},"geometry": {"coordinates": [2.04049,42.91809],"type": "Point"},"id": "c1273cdb-c59c-4bd9-bb0f-a6e58b32d746"},
 {"type": "Feature", "properties": {"ID": "c164982b-931c-4e22-9ea6-68ea65e8b98c"},"geometry": {"coordinates": [4.17953,44.39681],"type": "Point"},"id": "c164982b-931c-4e22-9ea6-68ea65e8b98c"},
 {"type": "Feature", "properties": {"ID": "c1c96d1a-c90e-4615-85c2-6a9b9eaa1729"},"geometry": {"coordinates": [4.164,44.384],"type": "Point"},"id": "c1c96d1a-c90e-4615-85c2-6a9b9eaa1729"},
 {"type": "Feature", "properties": {"ID": "c1f13998-880b-4b0e-b6ca-a56623f87cef"},"geometry": {"coordinates": [4.84888,44.85204],"type": "Point"},"id": "c1f13998-880b-4b0e-b6ca-a56623f87cef"},
