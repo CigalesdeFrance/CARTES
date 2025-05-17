@@ -64,12 +64,12 @@ $cigales_codes | ForEach-Object {
 				Add-Content "./BDD/INPN/TEMP/$code-id.csv" "ID"
 				Add-Content "./BDD/INPN/TEMP/$code-coord.csv" "LATITUDE,LONGITUDE"
 				Add-Content "./BDD/INPN/TEMP/$code-date.csv" "DATE"
-				$pages = [math]::floor($totalRecords/300)
+				$pages = [math]::floor($totalRecords/1000)
 				for ($num=0;$num -le $pages;$num++) {
-					if ($num -eq 0) {$startIndex=0} else {$startIndex = ($num*300)}
+					if ($num -eq 0) {$startIndex=0} else {$startIndex = ($num*1000)}
 					#$startIndex
 					"page $num sur $pages"
-					$jsonurl = $trurl + '&startIndex=' + $startIndex + '&pageSize=300'
+					$jsonurl = $trurl + '&startIndex=' + $startIndex + '&pageSize=1000'
 					$json = (Invoke-WebRequest $jsonurl | ConvertFrom-Json)
 					$json_coord = $json.occurrences -match "latLong" # Vérification de la présence de coordonnées
 					$json_filter = $json_coord | Where-Object { -not $_.PSObject.Properties['coordinateUncertaintyInMeters'] -or ($_.coordinateUncertaintyInMeters -le 100) } # Si présence de précision GPS alors sélection <= 100 m				
