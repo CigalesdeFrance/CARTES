@@ -1507,6 +1507,11 @@
 			</Placemark> 
 			<Placemark>
 				<styleUrl>#observation</styleUrl>
+				<description>https://observation.org/observation/184769837</description>
+				<Point><coordinates>4.652031,44.382629</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#observation</styleUrl>
 				<description>https://observation.org/observation/194772267</description>
 				<Point><coordinates>5.23491811752319,43.5140800476074</coordinates></Point>
 			</Placemark> 
