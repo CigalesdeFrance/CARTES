@@ -3,6 +3,7 @@
 "name": "Tettigettula_pygmea",
 "features": [
 {"type": "Feature", "properties": {"ID": "158847744"},"geometry": {"coordinates": [3.77523007,43.81324228],"type": "Point"},"id": "158847744"},
+{"type": "Feature", "properties": {"ID": "163169065"},"geometry": {"coordinates": [6.71444004,43.97143603],"type": "Point"},"id": "163169065"},
 {"type": "Feature", "properties": {"ID": "193182751"},"geometry": {"coordinates": [3.89941812,43.67963028],"type": "Point"},"id": "193182751"},
 {"type": "Feature", "properties": {"ID": "195863925"},"geometry": {"coordinates": [4.031722,43.715805],"type": "Point"},"id": "195863925"},
 {"type": "Feature", "properties": {"ID": "197726446"},"geometry": {"coordinates": [0.85870683,43.80783314],"type": "Point"},"id": "197726446"},
@@ -79,6 +80,9 @@
 {"type": "Feature", "properties": {"ID": "316604131"},"geometry": {"coordinates": [7.0378828048706,43.616756439209],"type": "Point"},"id": "316604131"},
 {"type": "Feature", "properties": {"ID": "316604248"},"geometry": {"coordinates": [7.01998841017485,43.6213965628372],"type": "Point"},"id": "316604248"},
 {"type": "Feature", "properties": {"ID": "319229684"},"geometry": {"coordinates": [7.04853985458612,43.5951629869395],"type": "Point"},"id": "319229684"},
+{"type": "Feature", "properties": {"ID": "319235627"},"geometry": {"coordinates": [0.916411997751255,44.4547729492188],"type": "Point"},"id": "319235627"},
+{"type": "Feature", "properties": {"ID": "320003961"},"geometry": {"coordinates": [4.4742,44.6058416666667],"type": "Point"},"id": "320003961"},
+{"type": "Feature", "properties": {"ID": "321105180"},"geometry": {"coordinates": [5.073694,44.160492],"type": "Point"},"id": "321105180"},
 {"type": "Feature", "properties": {"ID": "332448059"},"geometry": {"coordinates": [6.338310357389,43.396703121448],"type": "Point"},"id": "332448059"},
 {"type": "Feature", "properties": {"ID": "332448062"},"geometry": {"coordinates": [6.32981803592631,43.39643701838],"type": "Point"},"id": "332448062"},
 {"type": "Feature", "properties": {"ID": "332448101"},"geometry": {"coordinates": [6.2223822932094,43.37301352112],"type": "Point"},"id": "332448101"},
