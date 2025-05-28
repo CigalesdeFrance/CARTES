@@ -3999,6 +3999,21 @@
 				<styleUrl>#gbif</styleUrl>
 				<description>https://www.gbif.org/occurrence/5158317304</description>
 				<Point><coordinates>3.824898,43.599586</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#gbif</styleUrl>
+				<description>https://www.gbif.org/occurrence/5164270318</description>
+				<Point><coordinates>2.38664,43.168921</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#gbif</styleUrl>
+				<description>https://www.gbif.org/occurrence/5164616341</description>
+				<Point><coordinates>2.039686,43.866811</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#gbif</styleUrl>
+				<description>https://www.gbif.org/occurrence/5164689319</description>
+				<Point><coordinates>1.963466,43.424743</coordinates></Point>
 			</Placemark>
 		</Folder>
 	</Document>
