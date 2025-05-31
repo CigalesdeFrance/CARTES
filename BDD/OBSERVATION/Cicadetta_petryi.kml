@@ -254,6 +254,11 @@
 				<styleUrl>#observation</styleUrl>
 				<description>https://observation.org/observation/332449512</description>
 				<Point><coordinates>5.6909608840942,43.32739423697</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#observation</styleUrl>
+				<description>https://observation.org/observation/353430844</description>
+				<Point><coordinates>4.6245850785708,43.6859546569276</coordinates></Point>
 			</Placemark>
 		</Folder>
 	</Document>
