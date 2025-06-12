@@ -120,5 +120,17 @@
 {"type": "Feature", "properties": {"ID": "160302845"},"geometry": {"coordinates": [6.22704,43.37209],"type": "Point"},"id": "160302845"},
 {"type": "Feature", "properties": {"ID": "160302850"},"geometry": {"coordinates": [6.22916,43.35169],"type": "Point"},"id": "160302850"},
 {"type": "Feature", "properties": {"ID": "160302874"},"geometry": {"coordinates": [6.20622,43.37034],"type": "Point"},"id": "160302874"},
-{"type": "Feature", "properties": {"ID": "160302900"},"geometry": {"coordinates": [6.2839,43.39514],"type": "Point"},"id": "160302900"}
+{"type": "Feature", "properties": {"ID": "160302900"},"geometry": {"coordinates": [6.2839,43.39514],"type": "Point"},"id": "160302900"},
+{"type": "Feature", "properties": {"ID": "160353801"},"geometry": {"coordinates": [6.26403,43.34206],"type": "Point"},"id": "160353801"},
+{"type": "Feature", "properties": {"ID": "160353812"},"geometry": {"coordinates": [6.26475,43.34216],"type": "Point"},"id": "160353812"},
+{"type": "Feature", "properties": {"ID": "160353827"},"geometry": {"coordinates": [6.26223,43.34225],"type": "Point"},"id": "160353827"},
+{"type": "Feature", "properties": {"ID": "160353856"},"geometry": {"coordinates": [6.34649,43.3918],"type": "Point"},"id": "160353856"},
+{"type": "Feature", "properties": {"ID": "160353871"},"geometry": {"coordinates": [6.18974,43.34098],"type": "Point"},"id": "160353871"},
+{"type": "Feature", "properties": {"ID": "160353872"},"geometry": {"coordinates": [6.18883,43.34139],"type": "Point"},"id": "160353872"},
+{"type": "Feature", "properties": {"ID": "160353873"},"geometry": {"coordinates": [6.18948,43.34107],"type": "Point"},"id": "160353873"},
+{"type": "Feature", "properties": {"ID": "160353874"},"geometry": {"coordinates": [6.21611,43.36688],"type": "Point"},"id": "160353874"},
+{"type": "Feature", "properties": {"ID": "160353876"},"geometry": {"coordinates": [6.23678,43.36776],"type": "Point"},"id": "160353876"},
+{"type": "Feature", "properties": {"ID": "160353888"},"geometry": {"coordinates": [6.30855,43.38672],"type": "Point"},"id": "160353888"},
+{"type": "Feature", "properties": {"ID": "160353890"},"geometry": {"coordinates": [6.30907,43.38914],"type": "Point"},"id": "160353890"},
+{"type": "Feature", "properties": {"ID": "160353900"},"geometry": {"coordinates": [6.22225,43.37589],"type": "Point"},"id": "160353900"}
 ]}
