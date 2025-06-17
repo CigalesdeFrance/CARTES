@@ -1347,6 +1347,11 @@
 			</Placemark> 
 			<Placemark>
 				<styleUrl>#faune-france</styleUrl>
+				<description>https://www.faune-france.org/index.php?m_id=54&amp;id=160558384</description>
+				<Point><coordinates>3.30339,48.45838</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#faune-france</styleUrl>
 				<description>https://www.faune-france.org/index.php?m_id=54&amp;id=27746676</description>
 				<Point><coordinates>7.21646,48.00379</coordinates></Point>
 			</Placemark> 
