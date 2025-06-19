@@ -331,7 +331,7 @@ $bdd_codes | ForEach-Object {
 		
 		Remove-item "./BDD/$bdd_nom/$fichier"
 		
-		if (-not $resultats) {
+		if (-not $resultats -or $espece -eq "Tibicina_corsica") { #si pas de résultat ou suppression des données de Tibicina corsica (qui occasionne des doublons)
 			
 			'"ID","LATITUDE","LONGITUDE","DATE","ALTITUDE"' | Set-Content -Path "./BDD/$bdd_nom/$fichier"
 			
