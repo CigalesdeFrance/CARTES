@@ -3,5 +3,6 @@
 "name": "Cicadetta_montana",
 "features": [
 {"type": "Feature", "properties": {"ID": "286007115"},"geometry": {"coordinates": [6.7670128607,46.0392994934],"type": "Point"},"id": "286007115"},
-{"type": "Feature", "properties": {"ID": "286282592"},"geometry": {"coordinates": [6.7674127795,46.0391723507],"type": "Point"},"id": "286282592"}
+{"type": "Feature", "properties": {"ID": "286282592"},"geometry": {"coordinates": [6.7674127795,46.0391723507],"type": "Point"},"id": "286282592"},
+{"type": "Feature", "properties": {"ID": "290275988"},"geometry": {"coordinates": [7.1334257349,44.1937439773],"type": "Point"},"id": "290275988"}
 ]}
