@@ -422,6 +422,11 @@
 			</Placemark> 
 			<Placemark>
 				<styleUrl>#inaturalist</styleUrl>
+				<description>https://www.inaturalist.org/observations/291852779</description>
+				<Point><coordinates>3.7773666667,43.7808805556</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#inaturalist</styleUrl>
 				<description>https://www.inaturalist.org/observations/47118443</description>
 				<Point><coordinates>3.7924094018,43.867825129</coordinates></Point>
 			</Placemark> 
