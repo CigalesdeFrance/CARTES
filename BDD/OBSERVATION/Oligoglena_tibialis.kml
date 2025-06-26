@@ -10,6 +10,41 @@
 		<name>Oligoglena_tibialis</name>
 		<Folder>
 			<name>OBSERVATION</name>
+			<Placemark>
+				<styleUrl>#observation</styleUrl>
+				<description>https://observation.org/observation/358905019</description>
+				<Point><coordinates>7.514101,43.804657</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#observation</styleUrl>
+				<description>https://observation.org/observation/358905023</description>
+				<Point><coordinates>7.514785,43.805264</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#observation</styleUrl>
+				<description>https://observation.org/observation/358905035</description>
+				<Point><coordinates>7.514045,43.804792</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#observation</styleUrl>
+				<description>https://observation.org/observation/358905043</description>
+				<Point><coordinates>7.514002,43.805373</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#observation</styleUrl>
+				<description>https://observation.org/observation/358905268</description>
+				<Point><coordinates>7.513666,43.804567</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#observation</styleUrl>
+				<description>https://observation.org/observation/358905283</description>
+				<Point><coordinates>7.51439,43.804427</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#observation</styleUrl>
+				<description>https://observation.org/observation/358905304</description>
+				<Point><coordinates>7.513788,43.804444</coordinates></Point>
+			</Placemark>
 		</Folder>
 	</Document>
 </kml>

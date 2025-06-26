@@ -52,6 +52,21 @@
 			</Placemark> 
 			<Placemark>
 				<styleUrl>#observation</styleUrl>
+				<description>https://observation.org/observation/358891232</description>
+				<Point><coordinates>6.615744,43.512005</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#observation</styleUrl>
+				<description>https://observation.org/observation/358898126</description>
+				<Point><coordinates>6.218654,43.45735</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#observation</styleUrl>
+				<description>https://observation.org/observation/358898141</description>
+				<Point><coordinates>6.218691,43.458713</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#observation</styleUrl>
 				<description>https://observation.org/observation/85834247</description>
 				<Point><coordinates>3.65960833333333,43.526445</coordinates></Point>
 			</Placemark>

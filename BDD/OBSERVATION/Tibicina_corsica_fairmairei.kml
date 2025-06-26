@@ -10,6 +10,11 @@
 		<name>Tibicina_corsica_fairmairei</name>
 		<Folder>
 			<name>OBSERVATION</name>
+			<Placemark>
+				<styleUrl>#observation</styleUrl>
+				<description>https://observation.org/observation/358891898</description>
+				<Point><coordinates>3.174738,43.260922</coordinates></Point>
+			</Placemark>
 		</Folder>
 	</Document>
 </kml>

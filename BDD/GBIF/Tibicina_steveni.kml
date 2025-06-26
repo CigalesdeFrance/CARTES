@@ -214,6 +214,11 @@
 				<styleUrl>#gbif</styleUrl>
 				<description>https://www.gbif.org/occurrence/5188088186</description>
 				<Point><coordinates>3.996386,44.227891</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#gbif</styleUrl>
+				<description>https://www.gbif.org/occurrence/5198334653</description>
+				<Point><coordinates>3.996196,44.227766</coordinates></Point>
 			</Placemark>
 		</Folder>
 	</Document>
