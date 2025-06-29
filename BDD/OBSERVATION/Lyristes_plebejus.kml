@@ -1987,6 +1987,11 @@
 			</Placemark> 
 			<Placemark>
 				<styleUrl>#observation</styleUrl>
+				<description>https://observation.org/observation/247355423</description>
+				<Point><coordinates>6.77124929428101,43.4701309204102</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#observation</styleUrl>
 				<description>https://observation.org/observation/247681306</description>
 				<Point><coordinates>4.585875,43.79433</coordinates></Point>
 			</Placemark> 
