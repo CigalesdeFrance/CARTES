@@ -164,5 +164,7 @@
 {"type": "Feature", "properties": {"ID": "160990340"},"geometry": {"coordinates": [6.21547,43.36929],"type": "Point"},"id": "160990340"},
 {"type": "Feature", "properties": {"ID": "160990472"},"geometry": {"coordinates": [6.22135,43.3757],"type": "Point"},"id": "160990472"},
 {"type": "Feature", "properties": {"ID": "160990473"},"geometry": {"coordinates": [6.24654,43.38507],"type": "Point"},"id": "160990473"},
-{"type": "Feature", "properties": {"ID": "160990515"},"geometry": {"coordinates": [6.22193,43.37555],"type": "Point"},"id": "160990515"}
+{"type": "Feature", "properties": {"ID": "160990515"},"geometry": {"coordinates": [6.22193,43.37555],"type": "Point"},"id": "160990515"},
+{"type": "Feature", "properties": {"ID": "161138475"},"geometry": {"coordinates": [6.24071,43.38049],"type": "Point"},"id": "161138475"},
+{"type": "Feature", "properties": {"ID": "161138476"},"geometry": {"coordinates": [6.23487,43.37656],"type": "Point"},"id": "161138476"}
 ]}
