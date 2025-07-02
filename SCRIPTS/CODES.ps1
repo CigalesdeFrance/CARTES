@@ -23,8 +23,6 @@ $cigales_codes | ForEach-Object {
 
 	echo "Vérification de $nom"
 	
-	if ($nom -eq "Oligoglena tibialis") { $nom = "Cicadivetta tibialis" } # corrections taxonomiques entrée
-	
 	# FAUNE-FRANCE
 	if ($faune_france -eq "") { Write-Host "  > $nom "-NoNewline; Write-Host "n'existe pas" -ForegroundColor Yellow -NoNewline;Write-Host " dans Faune-France" }
 	elseif ($code -eq "Cicada_barbara") { Write-Host "  > $nom "-NoNewline; Write-Host "n'existe pas officiellement" -ForegroundColor Yellow -NoNewline;Write-Host " dans Faune-France" } # faux-positif
@@ -43,8 +41,6 @@ $cigales_codes | ForEach-Object {
 		}
 	}
 	
-	if ($nom -eq "Tibicina picta") { $nom = "Tibicina tomentosa" } # corrections taxonomiques entrée
-	
 	# OBSERVATION
 	if ($observation -eq "") { Write-Host "  > $nom "-NoNewline; Write-Host "n'existe pas" -ForegroundColor Yellow -NoNewline;Write-Host " dans Observation.org" }
 	else {		
@@ -61,8 +57,6 @@ $cigales_codes | ForEach-Object {
 			$obs_erreurs > "./BDD/OBSERVATION/erreurs.txt"
 		}
 	}
-	
-	if ($nom -eq "Cicadivetta tibialis") { $nom = "Oligoglena tibialis" } # corrections taxonomiques sortie
 
 	# INPN
 	if ($inpn -eq "") { Write-Host "  > $nom "-NoNewline; Write-Host "n'existe pas" -ForegroundColor Yellow -NoNewline;Write-Host " dans l'INPN" }
@@ -77,7 +71,7 @@ $cigales_codes | ForEach-Object {
 		}
 	}
 	
-	if ($nom -eq "Tibicina tomentosa") { $nom = "Tibicina picta" } # corrections taxonomiques sortie
+	if ($nom -eq "Platypleura kaempferi") { $nom = "Planopleura kaempferi" } # corrections taxonomiques entrée
 	
 	# WAD - World Auchenorrhyncha Database
 	if ($wad -eq "") { Write-Host "  > $nom "-NoNewline; Write-Host "n'existe pas" -ForegroundColor Yellow -NoNewline;Write-Host " dans World Auchenorrhyncha Database" }
@@ -94,7 +88,8 @@ $cigales_codes | ForEach-Object {
 		}
 	}
 
-	
+	if ($nom -eq "Planopleura kaempferi") { $nom = "Platypleura kaempferi" } # corrections taxonomiques sortie
+
 	# INATURALIST
 	if ($inaturalist -eq "") { Write-Host "  > $nom "-NoNewline; Write-Host "n'existe pas" -ForegroundColor Yellow -NoNewline;Write-Host " dans iNaturalist" }
 	else {		
