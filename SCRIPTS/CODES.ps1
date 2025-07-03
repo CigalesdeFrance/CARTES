@@ -1,13 +1,13 @@
 $cigales_codes = Import-CSV "CIGALES-CODES.csv"
 
 # Test des URL
-$INPN_url = (Invoke-WebRequest -Uri 'https://openobs.mnhn.fr/biocache-service/occurrences/search' -SkipHttpErrorCheck -ErrorAction Stop).BaseResponse
-$INATURALIST_url = (Invoke-WebRequest -Uri 'https://api.inaturalist.org/v1/docs/' -SkipHttpErrorCheck -ErrorAction Stop).BaseResponse
-$OBSERVATION_url = (Invoke-WebRequest -Uri 'https://observation.org/api/v1/docs/' -SkipHttpErrorCheck -ErrorAction Stop).BaseResponse
-$GBIF_url = (Invoke-WebRequest -Uri 'https://api.gbif.org/v1/occurrence/search' -SkipHttpErrorCheck -ErrorAction Stop).BaseResponse
-$FF_url = (Invoke-WebRequest -Uri 'https://www.faune-france.org' -SkipHttpErrorCheck -ErrorAction Stop).BaseResponse
-$WAD_url = (Invoke-WebRequest -Uri 'https://hoppers.speciesfile.org/' -SkipHttpErrorCheck -ErrorAction Stop).BaseResponse
-$FE_url = (Invoke-WebRequest -Uri 'https://www.eu-nomen.eu/portal/index.php' -SkipHttpErrorCheck -ErrorAction Stop).BaseResponse
+try { $INPN_url = (Invoke-WebRequest -Uri 'https://openobs.mnhn.fr/biocache-service/occurrences/search' -SkipHttpErrorCheck -ErrorAction Stop).BaseResponse } catch { $INPN_url = New-Object -TypeName PSObject -Property @{ StatusCode = "NOK"; Message = "Le site est inaccessible" } }
+try { $INATURALIST_url = (Invoke-WebRequest -Uri 'https://api.inaturalist.org/v1/docs/' -SkipHttpErrorCheck -ErrorAction Stop).BaseResponse } catch { $INATURALIST_url = New-Object -TypeName PSObject -Property @{ StatusCode = "NOK"; Message = "Le site est inaccessible" } }
+try { $OBSERVATION_url = (Invoke-WebRequest -Uri 'https://observation.org/api/v1/docs/' -SkipHttpErrorCheck -ErrorAction Stop).BaseResponse } catch { $OBSERVATION_url = New-Object -TypeName PSObject -Property @{ StatusCode = "NOK"; Message = "Le site est inaccessible" } }
+try { $GBIF_url = (Invoke-WebRequest -Uri 'https://api.gbif.org/v1/occurrence/search' -SkipHttpErrorCheck -ErrorAction Stop).BaseResponse } catch { $GBIF_url = New-Object -TypeName PSObject -Property @{ StatusCode = "NOK"; Message = "Le site est inaccessible" } }
+try { $FF_url = (Invoke-WebRequest -Uri 'https://www.faune-france.org' -SkipHttpErrorCheck -ErrorAction Stop).BaseResponse } catch { $FF_url = New-Object -TypeName PSObject -Property @{ StatusCode = "NOK"; Message = "Le site est inaccessible" } }
+try { $WAD_url = (Invoke-WebRequest -Uri 'https://hoppers.speciesfile.org/' -SkipHttpErrorCheck -ErrorAction Stop).BaseResponse } catch { $WAD_url = New-Object -TypeName PSObject -Property @{ StatusCode = "NOK"; Message = "Le site est inaccessible" } }
+try { $FE_url = (Invoke-WebRequest -Uri 'https://www.eu-nomen.eu/portal/index.php' -SkipHttpErrorCheck -ErrorAction Stop).BaseResponse } catch { $FE_url = New-Object -TypeName PSObject -Property @{ StatusCode = "NOK"; Message = "Le site est inaccessible" } }
 
 $ff_erreurs = "Faune-France :"
 $inpn_erreurs = "INPN :"
