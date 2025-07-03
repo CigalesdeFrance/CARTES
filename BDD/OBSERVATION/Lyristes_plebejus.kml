@@ -3452,6 +3452,11 @@
 			</Placemark> 
 			<Placemark>
 				<styleUrl>#observation</styleUrl>
+				<description>https://observation.org/observation/317212101</description>
+				<Point><coordinates>2.95111441612244,43.0358810424805</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#observation</styleUrl>
 				<description>https://observation.org/observation/317238672</description>
 				<Point><coordinates>1.70701146125794,44.4738486261104</coordinates></Point>
 			</Placemark> 

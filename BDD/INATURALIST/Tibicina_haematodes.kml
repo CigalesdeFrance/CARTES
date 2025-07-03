@@ -1152,6 +1152,11 @@
 			</Placemark> 
 			<Placemark>
 				<styleUrl>#inaturalist</styleUrl>
+				<description>https://www.inaturalist.org/observations/291433496</description>
+				<Point><coordinates>5.9922806333,45.4593660513</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#inaturalist</styleUrl>
 				<description>https://www.inaturalist.org/observations/291719541</description>
 				<Point><coordinates>5.2730555556,44.6636111111</coordinates></Point>
 			</Placemark> 
@@ -1287,6 +1292,16 @@
 			</Placemark> 
 			<Placemark>
 				<styleUrl>#inaturalist</styleUrl>
+				<description>https://www.inaturalist.org/observations/294263297</description>
+				<Point><coordinates>5.4357957188,44.177704663</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#inaturalist</styleUrl>
+				<description>https://www.inaturalist.org/observations/294284623</description>
+				<Point><coordinates>1.8973594531,43.2449536119</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#inaturalist</styleUrl>
 				<description>https://www.inaturalist.org/observations/294296580</description>
 				<Point><coordinates>0.5138428509,45.6677544233</coordinates></Point>
 			</Placemark> 
@@ -1294,6 +1309,21 @@
 				<styleUrl>#inaturalist</styleUrl>
 				<description>https://www.inaturalist.org/observations/294331164</description>
 				<Point><coordinates>1.0699033365,43.6077650864</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#inaturalist</styleUrl>
+				<description>https://www.inaturalist.org/observations/294520598</description>
+				<Point><coordinates>3.7177861374,43.8617078466</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#inaturalist</styleUrl>
+				<description>https://www.inaturalist.org/observations/294525472</description>
+				<Point><coordinates>2.8922222222,43.9616666667</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#inaturalist</styleUrl>
+				<description>https://www.inaturalist.org/observations/294565985</description>
+				<Point><coordinates>1.8613414932,43.2144447835</coordinates></Point>
 			</Placemark> 
 			<Placemark>
 				<styleUrl>#inaturalist</styleUrl>

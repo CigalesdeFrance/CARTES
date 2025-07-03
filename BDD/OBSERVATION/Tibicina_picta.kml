@@ -10,6 +10,11 @@
 		<name>Tibicina_picta</name>
 		<Folder>
 			<name>OBSERVATION</name>
+			<Placemark>
+				<styleUrl>#observation</styleUrl>
+				<description>https://observation.org/observation/358891972</description>
+				<Point><coordinates>3.176522,43.261114</coordinates></Point>
+			</Placemark>
 		</Folder>
 	</Document>
 </kml>
