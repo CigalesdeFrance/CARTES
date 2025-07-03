@@ -289,6 +289,11 @@ $bdd_codes | ForEach-Object {
 	$bdd_url = $_.BDD_URL
 	
 	" > $bdd_nom"
+	if ($bdd_nom -eq "INPN" -and $INPN_url.StatusCode -ne "OK") { continue }
+	if ($bdd_nom -eq "INATURALIST" -and $INATURALIST_url.StatusCode -ne "OK") { continue }
+	if ($bdd_nom -eq "OBSERVATION" -and $OBSERVATION_url.StatusCode -ne "OK") { continue }
+	if ($bdd_nom -eq "GBIF" -and $GBIF_url.StatusCode -ne "OK") { continue }
+	if ($bdd_nom -eq "FAUNE-FRANCE" -and $FF_url.StatusCode -ne "OK") { continue }
 	
 	$files = Get-ChildItem "./BDD/$bdd_nom/" -Filter *.csv
 	
