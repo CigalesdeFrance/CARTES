@@ -59,11 +59,7 @@ $cigales_codes | ForEach-Object {
 	if ($OBSERVATION_url.StatusCode -eq "OK") {
 		if ($observation -eq "") { Write-Host "  > $nom "-NoNewline; Write-Host "n'existe pas" -ForegroundColor Yellow -NoNewline;Write-Host " dans Observation.org" }
 		else {		
-			Invoke-WebRequest -Uri "https://observation.org/species/$observation/" -OutFile "./BDD/OBSERVATION/code.html"
-			$Source = Get-Content -path "./BDD/OBSERVATION/code.html" -raw
-			Remove-item "./BDD/OBSERVATION/code.html"
-			$Source -match '<i class="species-scientific-name">(.*?)</i>' | Out-Null
-			$Sourcecode = $matches[1]
+			$Sourcecode = (Invoke-RestMethod -Uri "https://observation.org/api/v1/species/$observation/" -Method Get).scientific_name
 			
 			if ($nom -eq $Sourcecode) { Write-Host "  > Le code espèce de $nom dans Observation.org est "-NoNewline; Write-Host "correct" -ForegroundColor Green }
 			else {
