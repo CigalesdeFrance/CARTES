@@ -3552,6 +3552,16 @@
 			</Placemark> 
 			<Placemark>
 				<styleUrl>#observation</styleUrl>
+				<description>https://observation.org/observation/318268064</description>
+				<Point><coordinates>3.2371973991394,43.2990379333496</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#observation</styleUrl>
+				<description>https://observation.org/observation/318268176</description>
+				<Point><coordinates>3.26173830032349,43.283031463623</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#observation</styleUrl>
 				<description>https://observation.org/observation/318271102</description>
 				<Point><coordinates>5.1688619,44.0150249</coordinates></Point>
 			</Placemark> 
@@ -7004,6 +7014,16 @@
 				<styleUrl>#observation</styleUrl>
 				<description>https://observation.org/observation/360229083</description>
 				<Point><coordinates>6.49396321666667,43.8359673472222</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#observation</styleUrl>
+				<description>https://observation.org/observation/360584030</description>
+				<Point><coordinates>4.8379115956644,43.7983472738119</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#observation</styleUrl>
+				<description>https://observation.org/observation/360610307</description>
+				<Point><coordinates>4.6909857,43.865393</coordinates></Point>
 			</Placemark> 
 			<Placemark>
 				<styleUrl>#observation</styleUrl>
