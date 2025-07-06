@@ -7042,6 +7042,21 @@
 			</Placemark> 
 			<Placemark>
 				<styleUrl>#observation</styleUrl>
+				<description>https://observation.org/observation/360970220</description>
+				<Point><coordinates>4.68946867234151,43.8647181959072</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#observation</styleUrl>
+				<description>https://observation.org/observation/361006197</description>
+				<Point><coordinates>4.4175516,44.5485924997222</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#observation</styleUrl>
+				<description>https://observation.org/observation/361063662</description>
+				<Point><coordinates>6.3806376,43.4691492</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#observation</styleUrl>
 				<description>https://observation.org/observation/49553913</description>
 				<Point><coordinates>4.56543087959,43.927455926</coordinates></Point>
 			</Placemark> 

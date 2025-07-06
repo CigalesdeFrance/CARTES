@@ -2662,6 +2662,16 @@
 			</Placemark> 
 			<Placemark>
 				<styleUrl>#observation</styleUrl>
+				<description>https://observation.org/observation/360955865</description>
+				<Point><coordinates>-0.3491263,45.5707763</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#observation</styleUrl>
+				<description>https://observation.org/observation/361090964</description>
+				<Point><coordinates>4.34945234836567,44.4174042191305</coordinates></Point>
+			</Placemark> 
+			<Placemark>
+				<styleUrl>#observation</styleUrl>
 				<description>https://observation.org/observation/50119821</description>
 				<Point><coordinates>6.09556674957,43.0333567045</coordinates></Point>
 			</Placemark> 
