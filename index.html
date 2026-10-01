@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<title>Cigales de France - Site en création</title>
+		
+		<style>
+			:root {
+			--green: #596b45;
+			--green-dark: #3f5031;
+			--cream: #f7f4eb;
+			--text: #222;
+			--gold: #b89b55;
+			}
+			
+			* {
+			box-sizing: border-box;
+			}
+			
+			body {
+			margin: 0;
+			min-height: 100vh;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			
+			font-family: Georgia, "Times New Roman", serif;
+			color: var(--text);
+			
+			background:
+			radial-gradient(circle at top, #ffffff 0%, var(--cream) 65%),
+			var(--cream);
+			}
+			
+			.page {
+			width: min(90%, 760px);
+			padding: 60px 30px;
+			text-align: center;
+			}
+			
+			.logo {
+			width: min(360px, 75vw);
+			height: auto;
+			margin-bottom: 35px;
+			
+			filter: drop-shadow(0 12px 18px rgba(0, 0, 0, 0.12));
+			}
+			
+			.separator {
+			width: 70px;
+			height: 2px;
+			margin: 0 auto 28px;
+			background: var(--gold);
+			}
+			
+			h1 {
+			margin: 0;
+			font-size: clamp(2rem, 5vw, 3.2rem);
+			font-weight: normal;
+			color: var(--green-dark);
+			letter-spacing: 0.02em;
+			}
+			
+			.subtitle {
+			max-width: 620px;
+			margin: 22px auto 0;
+			
+			font-size: clamp(1.05rem, 2.5vw, 1.3rem);
+			line-height: 1.7;
+			color: #555;
+			}
+			
+			.notice {
+			display: inline-block;
+			margin-top: 38px;
+			padding: 12px 24px;
+			
+			border: 1px solid rgba(89, 107, 69, 0.35);
+			border-radius: 30px;
+			
+			font-size: 0.95rem;
+			color: var(--green-dark);
+			background: rgba(255, 255, 255, 0.6);
+			}
+			
+			footer {
+			margin-top: 65px;
+			font-family: Arial, sans-serif;
+			font-size: 0.8rem;
+			color: #888;
+			}
+			
+			footer a {
+			color: var(--green-dark);
+			text-decoration: none;
+			transition: color 0.2s ease;
+			}
+			
+			footer a:hover {
+			color: var(--gold);
+			text-decoration: underline;
+			}
+			
+			footer span {
+			margin: 0 6px;
+			}
+			
+			
+			@media (max-width: 500px) {
+			.page {
+			padding: 35px 20px;
+			}
+			
+			.logo {
+			margin-bottom: 25px;
+			}
+			
+			footer {
+			margin-top: 45px;
+			}
+			}
+		</style>
+	</head>
+	
+	<body>
+		
+		<main class="page">
+			<img class="logo" src="https://www.cigalesdefrance.fr/_media/logo-cicadas.png" alt="Cigales de France" >
+			<div class="separator"></div>
+			<h1>Site en cours de mise à jour</h1>
+			
+			<p class="subtitle">Les cartes de répartition des Cigales de France reviendront bientôt.</p>
+			
+			<footer>
+				<a href="https://www.cigalesdefrance.fr/" target="_blank" rel="noopener">Site officiel</a>
+				<span>·</span>
+				<a href="https://github.com/CigalesdeFrance/CARTES" target="_blank" rel="noopener">GitHub</a>
+				<span>·</span>
+				<span>&copy; <span id="year"></span>- Cigales de France</span>
+			</footer>
+			<script>
+				document.getElementById("year").textContent = new Date().getFullYear();
+			</script>
+		</main>
+	</body>
+</html>
